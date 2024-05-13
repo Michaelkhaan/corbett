@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <div className="w-full h-[300px] flex flex-col items-center overflow-hidden relative">
+    <div className="w-full h-[600px] flex flex-col items-center overflow-hidden relative">
       <Image
         src="/hero.png"
         alt=""
@@ -18,7 +18,7 @@ function Hero() {
         <h1 className="text-2xl lg:text-5xl text-white font-extrabold lg:w-[300px] tracking-widest text-center">
           SAFARI CORBETT
         </h1>
-        <h1 className="text-xl text-white font-semibold border border-white text-center">
+        <h1 className="text-xl text-white font-semibold border border-white text-center mt-5">
           NATIONAL PARK
         </h1>
       </div>

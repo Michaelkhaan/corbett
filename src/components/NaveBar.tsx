@@ -28,7 +28,7 @@ function NaveBar() {
         <FaWhatsapp className="text-green-500" />
         <h1 className="text-sm text-white">info@corbett.in</h1>
       </div>
-      <GiHamburgerMenu className="block lg:hidden" />
+      <GiHamburgerMenu className="block lg:hidden text-white" />
     </div>
   );
 }
