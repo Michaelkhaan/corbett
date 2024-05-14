@@ -4,16 +4,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function OurGuestLoveUs() {
   return (
-    <div className="w-full bg-[url('/bglayers.png')] py-10 mt-10">
+    <div className="w-full bg-[url('/bglayers.png')] py-10 mt-10 px-4s">
       <h1 className="text-center text-3xl font-extrabold mb-10">
         OUR GUEST LOVE US
       </h1>
       <Swiper
         spaceBetween={1}
-        slidesPerView={2}
+        slidesPerView={1}
+        slidesOffsetBefore={50}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
           },
           1024: {
             slidesPerView: 2.5,
@@ -22,10 +23,11 @@ export default function OurGuestLoveUs() {
           1200: {
             slidesPerView: 4.3,
             spaceBetween: 50,
+            slidesOffsetBefore: 200,
           },
         }}
       >
-        <SwiperSlide className="lg:block hidden" />
+        {/* <SwiperSlide className="hidden" /> */}
         {Array?.from({ length: 10 })?.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="flex items-center gap-4">
