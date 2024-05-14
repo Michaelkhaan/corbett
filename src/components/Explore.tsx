@@ -2,38 +2,42 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { Navigation } from 'swiper/modules';
-import SwiperCore from "swiper"
+import { Navigation } from "swiper/modules";
+import SwiperCore from "swiper";
 
 SwiperCore.use([Navigation]);
 function Explore() {
   const swiperRef = useRef(null);
 
-  const slideNext = () => {
-    
-  };
+  const slideNext = () => {};
 
-  const slidePrev = () => {
-    
-  };
+  const slidePrev = () => {};
 
   return (
     <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
-      <div className="flex flex-col w-full lg:w-1/4 items-center">
+      <div className="flex flex-col w-full lg:w-1/4 items-start lg:items-center px-4">
         <h1 className="text-xl font-bold">BOOK A PERMIT</h1>
-        <p className="text-base">
-          FOR JUNGLE SAFFARI <br /> CORBETT TOURISM
+        <p className="text-base lg:w-[200px] text-center">
+          FOR JUNGLE SAFFARI CORBETT TOURISM
         </p>
         <button className="bg-black rounded-xs px-4 text-white">
           Book Saffari
         </button>
       </div>
-      <div className="flex flex-col w-full lg:w-3/4">
-        <div className="w-full">
+      <div className="flex flex-col w-full lg:w-3/4 px-4">
+        <h1 className="text-2xl font-bold">
+          Explore the Untamed Destinations of jim corbett
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
+          incidunt.
+        </p>
+        <div className="w-full mt-5">
           <Swiper
-          ref={swiperRef}
-          navigation={true} modules={[Navigation]}
-            spaceBetween={2}
+            ref={swiperRef}
+            navigation={true}
+            modules={[Navigation]}
+            spaceBetween={3}
             slidesPerView={2.5}
             breakpoints={{
               0: {
@@ -79,10 +83,16 @@ function Explore() {
           </Swiper>
         </div>
         <div className="w-full flex items-center gap-3 mt-2">
-          <span  onClick={slideNext} className="w-6 aspect-square rounded-full border border-black flex items-center justify-center">
+          <span
+            onClick={slideNext}
+            className="w-6 aspect-square rounded-full border border-black flex items-center justify-center"
+          >
             <IoIosArrowBack />
           </span>
-          <span onClick={slidePrev}className="w-6 aspect-square rounded-full border border-black flex items-center justify-center">
+          <span
+            onClick={slidePrev}
+            className="w-6 aspect-square rounded-full border border-black flex items-center justify-center"
+          >
             <IoIosArrowForward />
           </span>
         </div>

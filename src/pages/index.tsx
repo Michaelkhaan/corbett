@@ -211,7 +211,7 @@ export default function Home() {
       <div className="w-11/12 lg:w-1/2 mx-auto mt-10">
         <ButtonCard />
       </div>
-      <Explore/>
+      <Explore />
       <div className="w-full flex flex-col items-center justify-center mt-10">
         <h1 className="text-2xl font-extrabold">OUR PACKAGES</h1>
         <p className="text-sm text-center">
@@ -265,8 +265,16 @@ export default function Home() {
           )}
         </span>
       </div>
-      <OurGuestLoveUs/>
-      <Image src="/image.png" alt="" width={0} height={0} className="w-3/5 mx-auto mt-10" unoptimized priority />
+      <OurGuestLoveUs />
+      <Image
+        src="/image.png"
+        alt=""
+        width={0}
+        height={0}
+        className="w-full lg:w-3/5 mx-auto mt-10"
+        unoptimized
+        priority
+      />
       <div className="w-full lg:w-5/6 mx-auto px-4 lg:px-20 mt-10 lg:mt-20 flex flex-wrap items-start justify-center">
         <div className="w-full lg:w-1/5">
           <h1 className="text-2xl font-bold w-[300px]">
