@@ -19,10 +19,10 @@ function ButtonCard() {
           key={index}
           className="w-full bg-white rounded-full px-2 py-1 flex items-center"
         >
-          <h1 className="text-[10px]">{e?.title}</h1>
+          <h1 className="text-[10px] font-medium">{e?.title}</h1>
         </div>
       ))}
-      <button className="w-full bg-[#f8bd01] rounded-full px-2 text-[10px] py-1">
+      <button className="w-full bg-[#f8bd01] rounded-full px-2 text-[10px] font-bold uppercase py-1">
         Submit
       </button>
     </div>

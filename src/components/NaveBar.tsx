@@ -14,8 +14,9 @@ function NaveBar() {
   ];
   return (
     <div className="w-full bg-black/70 flex items-center justify-between px-10 lg:px-32 py-3 fixed top-0 z-50">
-      <div>
-        <h1 className="text-xl text-white font-bold">Corbett</h1>
+      <div className="relative">
+        <h1 className="text-xl text-white font-bold relative">Corbett</h1>
+        <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
       </div>
       <ul className="lg:flex items-center gap-5 hidden">
         {navData?.map((nav, index) => (
