@@ -69,11 +69,14 @@ function Footer() {
         </div>
 
         <div className="bg-stone-700">
-          <div className="flex items-center justify-center">
-            <h4 className="text-sm text-white px-1">2024</h4>
-            <AiOutlineCopyright className="text-white" />
-            <p className="text-sm text-white px-1">copyright corbetttour.com</p>
-            <span className="text-white">|</span>
+          <div className="flex flex-col md:flex-row items-center justify-center">
+            <h4 className="text-sm text-white px-1">2024 ©</h4>
+
+            <p className="text-sm text-white px-1">
+              copyright corbetttour.com
+              <span className="text-white"> | </span>
+            </p>
+
             <p className="text-sm text-white px-2">
               Designed by www.feelbrand.in
             </p>

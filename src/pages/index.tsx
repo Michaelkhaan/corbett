@@ -272,7 +272,7 @@ export default function Home() {
         alt=""
         width={0}
         height={0}
-        className="w-3/5 mx-auto mt-10"
+        className="w-full lg:w-3/5 mx-auto mt-10"
         unoptimized
         priority
       />
