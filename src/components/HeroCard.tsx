@@ -9,15 +9,15 @@ interface Props {
 
 function HeroCard({ image, title, className }: Props) {
   return (
-    <div className="w-[120px] aspect-square rounded-lg bg-black flex flex-col items-center justify-end pb-5">
+    <div className="w-[14%] min-w-[170px] max-w-[210px] rounded-[20px] bg-black flex flex-col items-center justify-end p-5 py-8">
       <Image
         src={image}
         alt=""
         width={0}
         height={0}
-        className={`w-14 ${className}`}
+        className={`${className}`}
       />
-      <h1 className="text-sm text-white mt-2">{title}</h1>
+      <h1 className="text-[20px] font-Gotham text-white/60 mt-2">{title}</h1>
     </div>
   );
 }

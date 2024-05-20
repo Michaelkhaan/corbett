@@ -14,6 +14,7 @@ import OurGuestLoveUs from "@/components/OurGuestLoveUs";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import Discover from "@/components/Discover";
+import Nfooter from "@/components/Nfooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -198,21 +199,24 @@ export default function Home() {
   return (
     <div className="w-full">
       <Hero />
-      <div className="w-11/12 lg:w-1/2 flex flex-wrap justify-center mx-auto gap-5 mt-5 lg:-mt-14">
+      {/* <img src="/test/hero.png" className="w-full"/> */}
+      <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-2 md:gap-5  lg:-mt-14 -mt-5">
         {heroCard?.map((e, index) => (
           <HeroCard
             key={index}
             image={e?.image}
             title={e?.title}
-            className={`${index !== 1 ? "" : "aspect-video !w-20"} ${
-              index === 2 ? "!w-12" : ""
-            } ${index === 3 ? "!w-[70px]" : ""}`}
+            className={`
+            ${index === 0 ? "aspect-[74/72] w-[74px]" : ""} 
+            ${index === 1 ? "aspect-[117/72] w-[117px]" : ""} 
+            ${index === 2 ? "aspect-[56/78] w-[56px]" : ""}
+            ${index === 3 ? "aspect-[117/80] w-[117px]" : ""}`}
           />
         ))}
       </div>
-      <div className="w-11/12 lg:w-1/2 mx-auto mt-10">
+      {/* <div className="w-11/12 lg:w-1/2 mx-auto mt-10"> */}
         <ButtonCard />
-      </div>
+      {/* </div> */}
       <Explore />
       <div className="w-full flex flex-col items-center justify-center mt-10">
         <h1 className="2xl:text-[56px] lg:text-[50px] sm:text-[47px] text-[40px] font-extrabold font-FONTSpringDemo">OUR PACKAGES</h1>
@@ -345,7 +349,8 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
+      <Nfooter/>
     </div>
   );
 }

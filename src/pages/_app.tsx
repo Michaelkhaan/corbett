@@ -8,8 +8,23 @@ const Gotham = localFont({
   src: [
     {
       path: "../../public/fonts/gotham/GothamBold.ttf",
-      weight: "400",
-      style: "normal",
+      weight: "700",
+      style: "bold",
+    },
+    {
+      path: "../../public/fonts/gotham/GothamLight.ttf",
+      weight: "200",
+      style: "light",
+    },
+    {
+      path: "../../public/fonts/gotham/GothamMedium.ttf",
+      weight: "500",
+      style: "medium",
+    },
+    {
+      path: "../../public/fonts/gotham/GothamBook.ttf",
+      weight: "600",
+      style: "semibold",
     },
   ],
   variable: "--Gotham",
@@ -37,8 +52,8 @@ const dejavu = localFont({
 });
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${Gotham?.variable} ${frinkRio?.variable} ${dejavu?.variable} `}>
-      <Component {...pageProps} />;
+    <main className={`${Gotham?.variable} ${frinkRio?.variable} `}>
+      <Component {...pageProps} />
     </main>
   );
 }
