@@ -1,17 +1,25 @@
 import Image from "next/image";
 import React, { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
 
 SwiperCore.use([Navigation]);
 function Explore() {
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<SwiperRef | null>(null);
 
-  const slideNext = () => {};
+  const slideNext = () => {
+    if (swiperRef?.current) {
+      swiperRef?.current?.swiper?.slideNext();
+    }
+  };
 
-  const slidePrev = () => {};
+  const slidePrev = () => {
+    if (swiperRef?.current) {
+      swiperRef?.current?.swiper?.slidePrev();
+    }
+  };
 
   return (
     <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
@@ -42,10 +50,9 @@ function Explore() {
         <div className="w-full mt-5">
           <Swiper
             ref={swiperRef}
-            navigation={true}
-            modules={[Navigation]}
             spaceBetween={3}
             slidesPerView={2.5}
+            loop={true}
             breakpoints={{
               0: {
                 slidesPerView: 1.3,
@@ -68,8 +75,6 @@ function Explore() {
                 spaceBetween: 0,
               },
             }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             {Array?.from({ length: 10 })?.map((item, index) => (
               <SwiperSlide key={index}>
