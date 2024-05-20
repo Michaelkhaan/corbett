@@ -27,8 +27,9 @@ export default function Nfooter() {
           <div className="flex flex-col items-center">
             <h1 className="2xl:text-3xl text-xl text-black font-bold relative font-frinkRio">
               corbett
+              <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
             </h1>
-            <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
+           
             <h4 className="text-[22px] font-bold font-frinkRio">
               ITS NOT JUST A HAIR.
             </h4>

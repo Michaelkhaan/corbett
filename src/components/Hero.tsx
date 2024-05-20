@@ -17,10 +17,10 @@ function Hero() {
       <NaveBar />
       <div className="my-auto flex flex-col items-center">
         <h1 className="text-xl 2xl:text-5xl text-white font-bold text-center font-frinkRio ">Adventure</h1>
-        <h1 className="text-2xl lg:text-5xl 2xl:text-[134px] text-white font-extrabold tracking-widest text-center font-frinkRio">
+        <h1 className="text-[80px] leading-[1] lg:text-[100px] 2xl:text-[134px] text-white font-extrabold tracking-widest text-center font-frinkRio">
           SAFARI <br/> CORBETT
         </h1>
-        <div className="cs-border mt-5">
+        <div className="mt-5">
         <h1 className=" relative  text-xl text-white border border-white font-semibold  text-center  px-5 py-1">
           NATIONAL PARK
         </h1>
