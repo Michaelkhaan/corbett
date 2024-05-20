@@ -52,7 +52,7 @@ export default function Nfooter() {
             </div>
           </div>
         </div>
-        <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2">
+        <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full">
           <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham font-bold">
             <li className="">Home</li>
             <li className="">About us</li>
@@ -63,7 +63,7 @@ export default function Nfooter() {
             <li>Dhikala Rest House</li>
           </ul>
         </div>
-        <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2">
+        <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full">
           <ul className="lg:px-4 2xl:px-0 text-[14px] font-Gotham font-bold">
             <li>Contact Us</li>
             <li>Terms & Conditions </li>

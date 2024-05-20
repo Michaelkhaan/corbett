@@ -199,7 +199,7 @@ export default function Home() {
     <div className="w-full">
       <Hero />
       {/* <img src="/test/hero.png" className="w-full"/> */}
-      <div className="w-11/12 lg:w-full flex flex-wrap justify-center mx-auto gap-5 mt-5 lg:-mt-14">
+      <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-2 md:gap-5  lg:-mt-14 -mt-5">
         {heroCard?.map((e, index) => (
           <HeroCard
             key={index}
