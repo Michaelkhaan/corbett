@@ -17,13 +17,16 @@ function Explore() {
     <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
       <div className="flex w-full lg:w-1/4 items-start px-4">
         <div className="mx-auto">
-        <h1 className="2xl:text-[29px] text-xl font-bold font-Gotham">BOOK A PERMIT</h1>
-        <p className="2xl:text-[20px] text-xs font-Gotham text-left">
-          FOR JUNGLE SAFFARI <br/>CORBETT TOURISM
-        </p>
-        <button className="bg-black 2xl:text-base text-[10px] font-Gotham rounded-xs px-4 text-white mt-2 2xl:mt-3">
-          Book Saffari
-        </button>
+          <h1 className="2xl:text-[29px] text-xl font-bold font-Gotham">
+            BOOK A PERMIT
+          </h1>
+          <p className="2xl:text-[20px] text-xs font-Gotham text-left">
+            FOR JUNGLE SAFFARI <br />
+            CORBETT TOURISM
+          </p>
+          <button className="bg-black 2xl:text-base text-[10px] font-Gotham rounded-xs px-4 text-white mt-2 2xl:mt-3">
+            Book Saffari
+          </button>
         </div>
       </div>
       <div className="flex flex-col w-full lg:w-3/4 px-4">
@@ -72,7 +75,11 @@ function Explore() {
               <SwiperSlide key={index}>
                 <div className="w-full relative">
                   <Image
-                    src={index % 2 === 0 ? "/Jeep.jpg" : "/Tiger.jpg"}
+                    src={
+                      index % 2 === 0
+                        ? "/jeepsaffari.png"
+                        : "/cantersaffari.png"
+                    }
                     alt=""
                     width={0}
                     height={0}

@@ -1,7 +1,8 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import 'swiper/css/bundle'
-import 'swiper/swiper-bundle.css';
+import "swiper/css/bundle";
+import "swiper/swiper-bundle.css";
+import "swiper/css/effect-cards";
 import localFont from "next/font/local";
 
 const Gotham = localFont({

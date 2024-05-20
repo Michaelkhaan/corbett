@@ -53,56 +53,56 @@ export default function Home() {
   const packagesData = [
     {
       image: "/deer.png",
-      title: "Jeep Saffari",
+      title: "Bijrani Saffari zone",
       rooms: "3 TO 14 NIGHTS FROM",
       subtitle: "per person",
       prices: "35,399",
     },
     {
-      image: "/jeepsaffari.png",
-      title: "Jeep Saffari",
+      image: "/saffarizone.png",
+      title: "Bijrani Saffari zone",
       rooms: "3 TO 14 NIGHTS FROM",
       subtitle: "per person",
       prices: "35,399",
     },
     {
       image: "/deer.png",
-      title: "Jeep Saffari",
+      title: "Bijrani Saffari zone",
       rooms: "3 TO 14 NIGHTS FROM",
       subtitle: "per person",
       prices: "35,399",
     },
     {
       image: "/saffarizone.png",
-      title: "Jeep Saffari",
+      title: "Bijrani Saffari zone",
+      rooms: "3 TO 14 NIGHTS FROM",
+      subtitle: "per person",
+      prices: "35,399",
+    },
+    {
+      image: "/deer.png",
+      title: "Bijrani Saffari zone",
       rooms: "3 TO 14 NIGHTS FROM",
       subtitle: "per person",
       prices: "35,399",
     },
     {
       image: "/saffarizone.png",
-      title: "Jeep Saffari",
+      title: "Bijrani Saffari zone",
+      rooms: "3 TO 14 NIGHTS FROM",
+      subtitle: "per person",
+      prices: "35,399",
+    },
+    {
+      image: "/deer.png",
+      title: "Bijrani Saffari zone",
       rooms: "3 TO 14 NIGHTS FROM",
       subtitle: "per person",
       prices: "35,399",
     },
     {
       image: "/saffarizone.png",
-      title: "Jeep Saffari",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      image: "/saffarizone.png",
-      title: "Jeep Saffari",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      image: "/saffarizone.png",
-      title: "Jeep Saffari",
+      title: "Bijrani Saffari zone",
       rooms: "3 TO 14 NIGHTS FROM",
       subtitle: "per person",
       prices: "35,399",
@@ -215,29 +215,36 @@ export default function Home() {
         ))}
       </div>
       {/* <div className="w-11/12 lg:w-1/2 mx-auto mt-10"> */}
-        <ButtonCard />
+      <ButtonCard />
       {/* </div> */}
       <Explore />
       <div className="w-full flex flex-col items-center justify-center mt-10">
-        <h1 className="2xl:text-[56px] lg:text-[50px] sm:text-[47px] text-[40px] font-extrabold font-FONTSpringDemo">OUR PACKAGES</h1>
-        <p className="text-sm text-center font-gotham">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est fugiat
-          eos facere similique sit rem.
+        <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[40px] leading-[23.69px] font-extrabold font-frinkRio">
+          OUR PACKAGES
+        </h1>
+        <p className="text-[12px] leading-[16px] font-medium text-center font-gotham lg:w-[470px] mt-2">
+          We craft our packages based on your budget, taste & preference however
+          these are some most popular packages our guest has chosen.
         </p>
         <div className="w-full flex flex-col font-gotham items-center justify-center mt-10">
-          <h1 className="text-xl font-semibold text-gray-800">
-            Best Price Packages{" "}
-            <span className="text-base font-semibold font-gotham">With in Your budget</span>
+          <h1 className="text-[10.74px] leading-[23px] font-bold text-gray-800 font-Gotham">
+            Best priced packages with in your budget
           </h1>
-          <div className="w-11/12 md:w-2/5 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-5 mt-3">
-            <div className="bg-[#f8bd01] rounded-full px-6 py-1">
-              <h1 className="text-xs text-white">Less then Rs 10,000</h1>
+          <div className="w-11/12 md:w-2/5 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
+            <div className="bg-[#f8bd01] rounded-full px-6 py-1 flex justify-center">
+              <h1 className="text-[10px] text-white font-Gotham">
+                Less then Rs 10,000
+              </h1>
             </div>
-            <div className="bg-white border rounded-full px-6 py-1">
-              <h1 className="text-xs text-black">Less then Rs 10,000</h1>
+            <div className="bg-white border rounded-full px-2 flex justify-center py-1">
+              <h1 className="text-xs text-black font-Gotham">
+                Rs 10,000 to Rs 20,000
+              </h1>
             </div>
-            <div className="bg-white border rounded-full px-6 py-1">
-              <h1 className="text-xs text-black">Less then Rs 10,000</h1>
+            <div className="bg-white border rounded-full px-1 py-1 flex justify-center">
+              <h1 className="text-[10.74px] leading-4 text-black font-Gotham">
+                Rs 30,000 to Rs 50,000
+              </h1>
             </div>
           </div>
           <div className="w-11/12 lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
@@ -254,7 +261,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full h-full border mt-5 relative">
+      <div className="w-full h-full border mt-20 relative">
         <video
           id="video"
           className="aspect-video w-full max-h-96 object-cover relative"
@@ -281,9 +288,9 @@ export default function Home() {
         unoptimized
         priority
       /> */}
-      <Discover/>
+      <Discover />
       <div className="w-full lg:w-5/6 mx-auto px-4 lg:px-20 mt-10 lg:mt-20 flex flex-wrap items-start justify-center">
-        <div className="w-full lg:w-1/5">
+        <div className="w-full lg:w-[15%] mt-2">
           <h1 className="text-2xl font-bold w-[300px]">
             FAQ Regarding Benzaara Travels
           </h1>
@@ -291,7 +298,7 @@ export default function Home() {
             Enquire Now
           </button>
         </div>
-        <div className="w-full lg:w-3/4 lg:pl-28">
+        <div className="w-full lg:w-[85%] lg:pl-28">
           {faq?.map((e, index) => (
             <FAQ key={index} question={e?.title} />
           ))}
@@ -350,7 +357,7 @@ export default function Home() {
         </div>
       </div>
       {/* <Footer /> */}
-      <Nfooter/>
+      <Nfooter />
     </div>
   );
 }
