@@ -15,22 +15,26 @@ function Explore() {
 
   return (
     <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
-      <div className="flex flex-col w-full lg:w-1/4 items-start lg:items-center px-4">
-        <h1 className="text-xl font-bold">BOOK A PERMIT</h1>
-        <p className="text-base lg:w-[200px] text-center">
-          FOR JUNGLE SAFFARI CORBETT TOURISM
+      <div className="flex w-full lg:w-1/4 items-start px-4">
+        <div className="mx-auto">
+        <h1 className="2xl:text-[29px] text-xl font-bold font-Gotham">BOOK A PERMIT</h1>
+        <p className="2xl:text-[20px] text-xs font-Gotham text-left">
+          FOR JUNGLE SAFFARI <br/>CORBETT TOURISM
         </p>
-        <button className="bg-black rounded-xs px-4 text-white">
+        <button className="bg-black 2xl:text-base text-[10px] font-Gotham rounded-xs px-4 text-white mt-2 2xl:mt-3">
           Book Saffari
         </button>
+        </div>
       </div>
       <div className="flex flex-col w-full lg:w-3/4 px-4">
-        <h1 className="text-2xl font-bold">
+        <h1 className="2xl:text-[33px] text-xl font-bold font-frinkRio">
           Explore the Untamed Destinations of jim corbett
         </h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
-          incidunt.
+        <p className="font-Gotham 2xl:text-base text-xs ">
+          We craft tour packages based on your budget, taste & preference
+          however these are
+          <br />
+          some most popular packages our guests have chosen.
         </p>
         <div className="w-full mt-5">
           <Swiper
@@ -74,7 +78,7 @@ function Explore() {
                     height={0}
                     className="w-full aspect-video object-cover relative"
                   />
-                  <h1 className="text-white text-2xl font-extrabold absolute bottom-5 left-5 lg:w-[100px]">
+                  <h1 className="text-white font-frinkRio 2xl:text-[41px] text-2xl 2xl:leading-[36px] leading-5 font-bold absolute bottom-5 left-5 lg:w-[100px]">
                     JEEP SAFFARI
                   </h1>
                 </div>

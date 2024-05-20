@@ -20,9 +20,11 @@ function Hero() {
         <h1 className="text-2xl lg:text-5xl 2xl:text-[134px] text-white font-extrabold tracking-widest text-center font-frinkRio">
           SAFARI <br/> CORBETT
         </h1>
-        <h1 className="text-xl text-white font-semibold border border-white text-center mt-5 px-5 py-1">
+        <div className="cs-border mt-5">
+        <h1 className=" relative  text-xl text-white border border-white font-semibold  text-center  px-5 py-1">
           NATIONAL PARK
         </h1>
+        </div>
       </div>
     </div>
   );
