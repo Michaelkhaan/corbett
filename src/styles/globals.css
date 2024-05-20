@@ -15,7 +15,34 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+@font-face {
+  font-family: 'FONTSpringDemo';
+  src: url('/public/fonts/frink-rio/FONTSpringDemo.woff') format('woff')
+       url('/public/fonts/frink-rio/FONTSpringDemo.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/public//fonts/gotham/GothamMedium.ttf') format('ttf'),
+       url('/public/fonts/gotham/GothamMedium_1.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/public//fonts/gotham/GothamMedium.ttf') format('ttf'),
+       url('/public/fonts/gotham/GothamMedium_1.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DejaVu Sans';
+  src: url('/public/fonts/gotham/dejavu-sans.woff2') format('woff2'),
+       url('/public/fonts/gotham/dejavu-sans.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -31,3 +58,4 @@ body {
     text-wrap: balance;
   }
 }
+

@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import "swiper/css";
+import 'swiper/css/bundle'
+import 'swiper/swiper-bundle.css';
 import localFont from "next/font/local";
 
 const Gotham = localFont({
@@ -24,10 +25,19 @@ const frinkRio = localFont({
   ],
   variable: "--frinkRio",
 });
-
+const dejavu = localFont({
+  src: [
+    {
+      path: "../../public/fonts/gotham/dejavu-sans.woff",
+      weight: "800",
+      style: "bold",
+    },
+  ],
+  variable: "--dejavu",
+});
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${Gotham?.variable} ${frinkRio?.variable} `}>
+    <main className={`${Gotham?.variable} ${frinkRio?.variable} ${dejavu?.variable} `}>
       <Component {...pageProps} />;
     </main>
   );

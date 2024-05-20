@@ -13,6 +13,7 @@ import Explore from "@/components/Explore";
 import OurGuestLoveUs from "@/components/OurGuestLoveUs";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import Discover from "@/components/Discover";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -214,15 +215,15 @@ export default function Home() {
       </div>
       <Explore />
       <div className="w-full flex flex-col items-center justify-center mt-10">
-        <h1 className="text-2xl font-extrabold">OUR PACKAGES</h1>
-        <p className="text-sm text-center">
+        <h1 className="2xl:text-[56px] lg:text-[50px] sm:text-[47px] text-[40px] font-extrabold font-FONTSpringDemo">OUR PACKAGES</h1>
+        <p className="text-sm text-center font-gotham">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Est fugiat
           eos facere similique sit rem.
         </p>
-        <div className="w-full flex flex-col items-center justify-center mt-10">
-          <h1 className="text-xl font-semibold">
+        <div className="w-full flex flex-col font-gotham items-center justify-center mt-10">
+          <h1 className="text-xl font-semibold text-gray-800">
             Best Price Packages{" "}
-            <span className="text-sm">With in Your budget</span>
+            <span className="text-base font-semibold font-gotham">With in Your budget</span>
           </h1>
           <div className="w-11/12 md:w-2/5 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-5 mt-3">
             <div className="bg-[#f8bd01] rounded-full px-6 py-1">
@@ -267,7 +268,7 @@ export default function Home() {
         </span>
       </div>
       <OurGuestLoveUs />
-      <Image
+      {/* <Image
         src="/image.png"
         alt=""
         width={0}
@@ -275,7 +276,8 @@ export default function Home() {
         className="w-full lg:w-3/5 mx-auto mt-10"
         unoptimized
         priority
-      />
+      /> */}
+      <Discover/>
       <div className="w-full lg:w-5/6 mx-auto px-4 lg:px-20 mt-10 lg:mt-20 flex flex-wrap items-start justify-center">
         <div className="w-full lg:w-1/5">
           <h1 className="text-2xl font-bold w-[300px]">
@@ -313,8 +315,8 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full mt-20 px-4 lg:px-32">
-        <h1 className="text-2xl lg:text-3xl font-bold text-center">
-          All Inclusive Tours, Chalo Bag Bharo Nikal Pado
+        <h1 className="text-xl lg:text-2xl font-medium text-gray-700 font-Ghotam text-center">
+          All inclusive tours, Chalo Bag Bharo Nikal Pado
         </h1>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {tourCard?.map((e, index) => (

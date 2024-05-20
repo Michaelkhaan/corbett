@@ -14,7 +14,7 @@ function TourCard({ image, title, desc }: Props) {
         <Image src={image} alt="" width={0} height={0} className="w-8" />
       </span>
       <div>
-        <h1 className="text-lg font-bold">{title}</h1>
+        <h1 className="text-2xl font-dejavu font-medium text-[#000000]">{title}</h1>
         <p className="text-sm">{desc}</p>
       </div>
     </div>
