@@ -23,7 +23,7 @@ export default function Discover() {
 	};
   return (
     <div className="w-full my-16 grid place-items-center">
-    <div className="max-w-screen-lg w-full grid lg:grid-cols-2 gap-16 items-center">
+    {/* <div className="max-w-screen-lg w-full grid lg:grid-cols-2 gap-16 items-center">
       <div className="relative">
         <Swiper
            loop={true}
@@ -62,7 +62,7 @@ export default function Discover() {
           package, all designed keeping in mind your interests!
         </p>
       </div>
-    </div>
+    </div> */}
   </div>
  
   );
