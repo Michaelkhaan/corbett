@@ -17,7 +17,9 @@ const config: Config = {
         Gotham: ['var(--Gotham)'],
         frinkRio: ['var(--frinkRio)'],
         FONTSpringDemo: ['FONTSpringDemo', 'Arial', 'sans-serif'],
-        dejavu:['var(--dejavu)']
+        dejavu:['var(--dejavu)'],
+        myriadPro:['var(--myriadPro)']
+
       },
       boxShadow: {
         card: '0px 0px 4px 0px #00000040',

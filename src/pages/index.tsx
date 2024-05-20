@@ -112,15 +112,19 @@ export default function Home() {
   const faq = [
     {
       title: "Is ATM Facility available in Haridwar?",
+      answer: "answer 1",
     },
     {
       title: "Is ATM Facility available in Haridwar?",
+      answer: "answer 2",
     },
     {
       title: "Is ATM Facility available in Haridwar?",
+      answer: "answer 3",
     },
     {
       title: "Is ATM Facility available in Haridwar?",
+      answer: "answer 4",
     },
   ];
 
@@ -289,19 +293,21 @@ export default function Home() {
         priority
       /> */}
       <Discover />
-      <div className="w-full lg:w-5/6 mx-auto px-4 lg:px-20 mt-10 lg:mt-20 flex flex-wrap items-start justify-center">
-        <div className="w-full lg:w-[15%] mt-2">
-          <h1 className="text-2xl font-bold w-[300px]">
-            FAQ Regarding Benzaara Travels
-          </h1>
-          <button className="bg-[#e9e951] rounded-lg mt-6 px-3 py-2">
-            Enquire Now
-          </button>
-        </div>
-        <div className="w-full lg:w-[85%] lg:pl-28">
-          {faq?.map((e, index) => (
-            <FAQ key={index} question={e?.title} />
-          ))}
+      <div className="px-4 lg:w-[80%] w-11/12 mx-auto mt-10 lg:mt-20">
+        <div className="grid grid-cols-7  mx-auto gap-2">
+          <div className="lg:col-span-2 col-span-12 mt-3">
+            <h1 className="text-2xl font-bold lg:w-[300px] w-full">
+              FAQ Regarding Benzaara Travels
+            </h1>
+            <button className="bg-[#e9e951] rounded-lg mt-6 px-3 py-2">
+              Enquire Now
+            </button>
+          </div>
+          <div className="lg:col-span-5 col-span-12">
+            {faq?.map((e, index) => (
+              <FAQ key={index} question={e?.title} answer={e?.answer} />
+            ))}
+          </div>
         </div>
       </div>
       <div className="w-full bg-[#f2f2f2] mt-20 py-8">

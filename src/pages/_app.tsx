@@ -51,9 +51,20 @@ const dejavu = localFont({
   ],
   variable: "--dejavu",
 });
+const myriadPro=localFont({
+ src:[
+  {
+    path:'../../public/fonts/myriad-pro/MYRIADPRO-SEMIBOLD.woff',
+    weight:"600",
+    style:"semibold"
+  }
+
+ ],
+ variable:"--myriadPro"
+})
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${Gotham?.variable} ${frinkRio?.variable} `}>
+    <main className={`${Gotham?.variable} ${frinkRio?.variable} ${myriadPro?.variable} `}>
       <Component {...pageProps} />
     </main>
   );
