@@ -305,7 +305,7 @@ export default function Home() {
           </div>
           <div className="lg:col-span-5 col-span-12">
             {faq?.map((e, index) => (
-              <FAQ key={index} question={e?.title} answer={e?.answer} />
+              <FAQ key={index?.toString()} question={e?.title} answer={e?.answer} />
             ))}
           </div>
         </div>
