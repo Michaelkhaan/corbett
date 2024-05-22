@@ -23,7 +23,7 @@ export default function Nfooter() {
             </h5>
           </div>
         </div>
-        <div className="2xl:w-[37%] lg:w-[43%] md:w-1/2 md:order-2 order-5">
+        <div className="2xl:w-[37%] lg:w-[43%] md:w-1/2 w-full md:order-2 order-5">
           <div className="flex flex-col items-center">
             <h1 className="2xl:text-3xl text-xl text-black font-bold relative font-frinkRio">
               corbett
