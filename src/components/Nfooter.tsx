@@ -7,7 +7,7 @@ export default function Nfooter() {
   return (
     <div className="w-full bg-[#F8F9FD]">
       <div className="2xl:w-[70%] lg:w-4/5 flex mx-auto py-10 flex-wrap w-11/12">
-        <div className="2xl:w-[27%] lg:w-[33%] md:w-1/2">
+        <div className="2xl:w-[27%] lg:w-[33%] md:w-1/2 md:order-1">
           <div className="2xl:px-8">
             <h1 className="font-bold font-frinkRio text-base">contact us</h1>
             <h5 className="text-[14px] font-Gotham font-medium">
@@ -23,7 +23,7 @@ export default function Nfooter() {
             </h5>
           </div>
         </div>
-        <div className="2xl:w-[37%] lg:w-[43%] md:w-1/2">
+        <div className="2xl:w-[37%] lg:w-[43%] md:w-1/2 md:order-2 order-5">
           <div className="flex flex-col items-center">
             <h1 className="2xl:text-3xl text-xl text-black font-bold relative font-frinkRio">
               corbett
@@ -52,7 +52,7 @@ export default function Nfooter() {
             </div>
           </div>
         </div>
-        <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full">
+        <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-3">
           <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham font-bold">
             <li className="">Home</li>
             <li className="">About us</li>
@@ -63,7 +63,7 @@ export default function Nfooter() {
             <li>Dhikala Rest House</li>
           </ul>
         </div>
-        <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full">
+        <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-4">
           <ul className="lg:px-4 2xl:px-0 text-[14px] font-Gotham font-bold">
             <li>Contact Us</li>
             <li>Terms & Conditions </li>

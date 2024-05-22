@@ -94,7 +94,7 @@ export default function Discover() {
             </svg>
           </div>
         </div>
-        <div className=" text-left">
+        <div className="text-left px-4 lg:px-0">
           <h1 className="text-2xl lg:text-4xl font-bold font-gotham leading-16 text-gray-500">
             Discover the World, specially curated for you!
           </h1>
@@ -107,7 +107,7 @@ export default function Discover() {
             <p className="font-gotham  text-sm">
               Tell us what you want and what we will design it for you
             </p>
-            <div className="flex mt-2 gap-6">
+            <div className="flex mt-2 gap-2 flex-col items-center md:flex-row md:gap-6">
               <button className="bg-[#FED800] w-[180px] text-base font-gotham px-5 py-1 rounded">
                 Enquire now
               </button>

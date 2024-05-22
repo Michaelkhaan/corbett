@@ -24,11 +24,11 @@ function Explore() {
   return (
     <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
       <div className="flex w-full lg:w-1/4 items-start px-4">
-        <div className="mx-auto">
+        <div className="mx-auto flex flex-col lg:items-start items-center">
           <h1 className="2xl:text-[29px] text-xl font-bold font-Gotham">
             BOOK A PERMIT
           </h1>
-          <p className="2xl:text-[20px] text-xs font-Gotham text-left">
+          <p className="2xl:text-[20px] text-xs font-Gotham text-center lg:text-left ">
             FOR JUNGLE SAFFARI <br />
             CORBETT TOURISM
           </p>
