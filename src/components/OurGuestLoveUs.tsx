@@ -32,7 +32,7 @@ export default function OurGuestLoveUs() {
           <SwiperSlide key={index}>
             <div className="flex items-center gap-4">
               <Image
-                src={index % 2 === 0 ? "/Jeep.jpg" : "/Tiger.jpg"}
+                src="Layer.png"
                 alt=""
                 width={0}
                 height={0}

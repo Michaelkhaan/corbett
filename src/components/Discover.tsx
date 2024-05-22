@@ -28,7 +28,7 @@ export default function Discover() {
         <div className="relative flex justify-between items-center overflow-hidden">
           <div
             onClick={goPrev}
-            className="p-[5px] border border-gray-300 rounded-full cursor-pointer"
+            className="p-[5px] border border-gray-300 rounded-full cursor-pointer hidden lg:block"
           >
             <svg
               className="rotate-[-90deg]"
@@ -76,7 +76,7 @@ export default function Discover() {
 
           <div
             onClick={goNext}
-            className=" p-[5px] border border-gray-300 rounded-full cursor-pointer"
+            className=" p-[5px] border border-gray-300 rounded-full cursor-pointer hidden lg:block"
           >
             <svg
               className="rotate-[90deg]"
@@ -96,7 +96,8 @@ export default function Discover() {
         </div>
         <div className="text-left px-4 lg:px-0">
           <h1 className="text-2xl 2xl:text-4xl lg:text-3xl font-medium font-gotham leading-16 text-gray-700">
-            Discover the World,<br/> specially curated for you!
+            Discover the World,
+            <br /> specially curated for you!
           </h1>
           <p className="mt-4 font-gotham  2xl:text-base text-sm text-gray-600">
             Our exclusive customized holidays division can cater to every travel
