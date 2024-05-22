@@ -28,7 +28,7 @@ export default function Discover() {
         <div className="relative flex justify-between items-center overflow-hidden">
           <div
             onClick={goPrev}
-            className="p-[5px] border border-gray-300 rounded-full"
+            className="p-[5px] border border-gray-300 rounded-full cursor-pointer"
           >
             <svg
               className="rotate-[-90deg]"
@@ -76,7 +76,7 @@ export default function Discover() {
 
           <div
             onClick={goNext}
-            className=" p-[5px] border border-gray-300 rounded-full"
+            className=" p-[5px] border border-gray-300 rounded-full cursor-pointer"
           >
             <svg
               className="rotate-[90deg]"
@@ -95,20 +95,20 @@ export default function Discover() {
           </div>
         </div>
         <div className="text-left px-4 lg:px-0">
-          <h1 className="text-2xl lg:text-4xl font-bold font-gotham leading-16 text-gray-500">
-            Discover the World, specially curated for you!
+          <h1 className="text-2xl 2xl:text-4xl lg:text-3xl font-medium font-gotham leading-16 text-gray-700">
+            Discover the World,<br/> specially curated for you!
           </h1>
-          <p className="mt-4">
+          <p className="mt-4 font-gotham  2xl:text-base text-sm text-gray-600">
             Our exclusive customized holidays division can cater to every travel
             need: hotel, air tickets, VISA, sightseeings, transfer or the entire
             package, all designed keeping in mind your interests!
           </p>
           <div className="flex w-full flex-col mt-6">
-            <p className="font-gotham  text-sm">
+            <p className="font-gotham  text-sm font-medium text-gray-600">
               Tell us what you want and what we will design it for you
             </p>
             <div className="flex mt-2 gap-2 flex-col items-center md:flex-row md:gap-6">
-              <button className="bg-[#FED800] w-[180px] text-base font-gotham px-5 py-1 rounded">
+              <button className="bg-[#FED800] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded">
                 Enquire now
               </button>
               <p className="">or</p>

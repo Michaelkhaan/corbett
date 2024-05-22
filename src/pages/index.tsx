@@ -222,11 +222,11 @@ export default function Home() {
       <ButtonCard />
       {/* </div> */}
       <Explore />
-      <div className="w-full flex flex-col items-center justify-center mt-10">
+      <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px]">
         <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[40px] leading-[23.69px] font-extrabold font-frinkRio">
           OUR PACKAGES
         </h1>
-        <p className="text-[12px] leading-[16px] font-medium text-center font-gotham lg:w-[470px] mt-2">
+        <p className="2xl:text-base text-[12px] leading-[16px] font-medium text-center font-gotham lg:w-[470px] mt-2">
           We craft our packages based on your budget, taste & preference however
           these are some most popular packages our guest has chosen.
         </p>

@@ -20,7 +20,20 @@ function Explore() {
       swiperRef?.current?.swiper?.slidePrev();
     }
   };
-
+  const imageArray = [
+    {
+      src: "/jeepsaffari.png",
+      title: "JEEP SAFARI",
+    },
+    {
+      src: "/cantersaffari.png",
+      title: "CANTER SAFARI",
+    },
+    {
+      src: "/dhikalaresort.png",
+      title: "DHIKALA RESORT",
+    },
+  ];
   return (
     <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
       <div className="flex w-full lg:w-1/4 items-start px-4">
@@ -76,26 +89,22 @@ function Explore() {
               },
             }}
           >
-            {Array?.from({ length: 10 })?.map((item, index) => (
-              <SwiperSlide key={index}>
+              {imageArray?.map((image, index) => (
+              <SwiperSlide >
                 <div className="w-full relative">
-                  <Image
-                    src={
-                      index % 2 === 0
-                        ? "/jeepsaffari.png"
-                        : "/cantersaffari.png"
-                    }
-                    alt=""
+                <Image
+                    src={image?.src}
+                    alt={image?.title}
                     width={0}
                     height={0}
-                    className="w-full aspect-video object-cover relative"
+                    className="w-full aspect-video shirnk-0 object-cover relative"
                   />
                   <h1 className="text-white font-frinkRio 2xl:text-[41px] text-2xl 2xl:leading-[36px] leading-5 font-bold absolute bottom-5 left-5 lg:w-[100px]">
-                    JEEP SAFFARI
+                    {image?.title}
                   </h1>
                 </div>
               </SwiperSlide>
-            ))}
+))}
           </Swiper>
         </div>
         <div className="w-full flex items-center gap-3 mt-2">
