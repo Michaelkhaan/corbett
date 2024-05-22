@@ -24,35 +24,11 @@ export default function Discover() {
   };
   return (
     <div className="w-full my-16 grid place-items-center">
-      <div className="max-w-screen-lg w-full grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative">
-          <Swiper
-            loop={true}
-            spaceBetween={30}
-            slidesPerView={1}
-            ref={swiperRef}
-            className="rounded-xl"
-            effect={"cards"}
-            modules={[EffectCards]}
-          >
-            <SwiperSlide>
-              <img
-                src="/hero.png"
-                className="w-full rounded-xl h-[360px] object-cover aspect-square"
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="/saffarizone.png"
-                className="w-full rounded-xl h-[360px] object-cover aspect-square"
-                alt="slide_image"
-              />
-            </SwiperSlide>
-          </Swiper>
+      <div className="max-w-screen-lg w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative flex justify-between items-center overflow-hidden">
           <div
             onClick={goPrev}
-            className="absolute -left-12 top-1/2 transform -translate-y-1/2 -translate-x-1/2 p-[5px] border border-gray-300 rounded-full"
+            className="p-[5px] border border-gray-300 rounded-full"
           >
             <svg
               className="rotate-[-90deg]"
@@ -69,9 +45,38 @@ export default function Discover() {
               <rect x="0" y="0" width="36" height="36" fill-opacity="0" />
             </svg>
           </div>
+          <Swiper
+            loop={true}
+            spaceBetween={30}
+            slidesPerView={1}
+            ref={swiperRef}
+            className="rounded-xl w-4/5"
+            effect={"cards"}
+            modules={[EffectCards]}
+          >
+            <SwiperSlide>
+              <Image
+                width={0}
+                height={0}
+                src="/hero.png"
+                className="w-full rounded-xl aspect-video object-cover"
+                alt="slide_image"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                width={0}
+                height={0}
+                src="/saffarizone.png"
+                className="w-full rounded-xl aspect-video object-cover"
+                alt="slide_image"
+              />
+            </SwiperSlide>
+          </Swiper>
+
           <div
             onClick={goNext}
-            className="absolute -right-7 top-1/2 transform -translate-y-1/2 translate-x-1/2 p-[5px] border border-gray-300 rounded-full"
+            className=" p-[5px] border border-gray-300 rounded-full"
           >
             <svg
               className="rotate-[90deg]"
