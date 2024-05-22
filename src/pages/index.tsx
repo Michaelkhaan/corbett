@@ -296,10 +296,10 @@ export default function Home() {
       <div className="px-4 lg:w-[80%] w-11/12 mx-auto mt-10 lg:mt-20">
         <div className="grid grid-cols-7  mx-auto gap-2">
           <div className="lg:col-span-2 col-span-12 mt-3">
-            <h1 className="text-2xl font-bold lg:w-[300px] w-full">
+            <h1 className="lg:text-xl 2xl:text-2xl font-bold font-Gotham lg:w-[300px] 2xl:w-[400px] w-full">
               FAQ Regarding Benzaara Travels
             </h1>
-            <button className="bg-[#e9e951] rounded-lg mt-6 px-3 py-2">
+            <button className="bg-[#e9e951] rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham">
               Enquire Now
             </button>
           </div>
@@ -315,8 +315,8 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full bg-[#f2f2f2] mt-20 py-8">
-        <h1 className="text-2xl lg:text-5xl font-bold text-center">
-          Jim Corbett Saffari Price and Zone
+        <h1 className="text-2xl lg:text-5xl font-bold font-Gotham tracking-tighter text-center">
+          Jim Corbett Saffari Price And Zones
         </h1>
         <div className="w-full mt-5">
           <Buttons />
