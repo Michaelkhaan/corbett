@@ -24,35 +24,11 @@ export default function Discover() {
   };
   return (
     <div className="w-full my-16 grid place-items-center">
-      <div className="max-w-screen-lg w-full grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative">
-          <Swiper
-            loop={true}
-            spaceBetween={30}
-            slidesPerView={1}
-            ref={swiperRef}
-            className="rounded-xl"
-            effect={"cards"}
-            modules={[EffectCards]}
-          >
-            <SwiperSlide>
-              <img
-                src="/hero.png"
-                className="w-full rounded-xl h-[360px] object-cover aspect-square"
-                alt="slide_image"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="/saffarizone.png"
-                className="w-full rounded-xl h-[360px] object-cover aspect-square"
-                alt="slide_image"
-              />
-            </SwiperSlide>
-          </Swiper>
+      <div className="max-w-screen-lg w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative flex justify-between items-center overflow-hidden">
           <div
             onClick={goPrev}
-            className="absolute -left-12 top-1/2 transform -translate-y-1/2 -translate-x-1/2 p-[5px] border border-gray-300 rounded-full"
+            className="p-[5px] border border-gray-300 rounded-full cursor-pointer"
           >
             <svg
               className="rotate-[-90deg]"
@@ -69,9 +45,38 @@ export default function Discover() {
               <rect x="0" y="0" width="36" height="36" fill-opacity="0" />
             </svg>
           </div>
+          <Swiper
+            loop={true}
+            spaceBetween={30}
+            slidesPerView={1}
+            ref={swiperRef}
+            className="rounded-xl w-4/5"
+            effect={"cards"}
+            modules={[EffectCards]}
+          >
+            <SwiperSlide>
+              <Image
+                width={0}
+                height={0}
+                src="/hero.png"
+                className="w-full rounded-xl aspect-video object-cover"
+                alt="slide_image"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                width={0}
+                height={0}
+                src="/saffarizone.png"
+                className="w-full rounded-xl aspect-video object-cover"
+                alt="slide_image"
+              />
+            </SwiperSlide>
+          </Swiper>
+
           <div
             onClick={goNext}
-            className="absolute -right-7 top-1/2 transform -translate-y-1/2 translate-x-1/2 p-[5px] border border-gray-300 rounded-full"
+            className=" p-[5px] border border-gray-300 rounded-full cursor-pointer"
           >
             <svg
               className="rotate-[90deg]"
@@ -89,21 +94,21 @@ export default function Discover() {
             </svg>
           </div>
         </div>
-        <div className=" text-left">
-          <h1 className="text-2xl lg:text-4xl font-bold font-gotham leading-16 text-gray-500">
-            Discover the World, specially curated for you!
+        <div className="text-left px-4 lg:px-0">
+          <h1 className="text-2xl 2xl:text-4xl lg:text-3xl font-medium font-gotham leading-16 text-gray-700">
+            Discover the World,<br/> specially curated for you!
           </h1>
-          <p className="mt-4">
+          <p className="mt-4 font-gotham  2xl:text-base text-sm text-gray-600">
             Our exclusive customized holidays division can cater to every travel
             need: hotel, air tickets, VISA, sightseeings, transfer or the entire
             package, all designed keeping in mind your interests!
           </p>
           <div className="flex w-full flex-col mt-6">
-            <p className="font-gotham  text-sm">
+            <p className="font-gotham  text-sm font-medium text-gray-600">
               Tell us what you want and what we will design it for you
             </p>
-            <div className="flex mt-2 gap-6">
-              <button className="bg-[#FED800] w-[180px] text-base font-gotham px-5 py-1 rounded">
+            <div className="flex mt-2 gap-2 flex-col items-center md:flex-row md:gap-6">
+              <button className="bg-[#FED800] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded">
                 Enquire now
               </button>
               <p className="">or</p>

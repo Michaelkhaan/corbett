@@ -1,18 +1,39 @@
 import Image from "next/image";
 import React, { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
 
 SwiperCore.use([Navigation]);
 function Explore() {
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<SwiperRef | null>(null);
 
-  const slideNext = () => {};
+  const slideNext = () => {
+    if (swiperRef?.current) {
+      swiperRef?.current?.swiper?.slideNext();
+    }
+  };
 
-  const slidePrev = () => {};
-
+  const slidePrev = () => {
+    if (swiperRef?.current) {
+      swiperRef?.current?.swiper?.slidePrev();
+    }
+  };
+  const imageArray = [
+    {
+      src: "/jeepsaffari.png",
+      title: "JEEP SAFARI",
+    },
+    {
+      src: "/cantersaffari.png",
+      title: "CANTER SAFARI",
+    },
+    {
+      src: "/dhikalaresort.png",
+      title: "DHIKALA RESORT",
+    },
+  ];
   return (
     <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
       <div className="flex w-full lg:w-1/4 items-start px-4">
@@ -20,7 +41,7 @@ function Explore() {
           <h1 className="2xl:text-[29px] text-xl font-bold tracking-tighter font-Gotham">
             BOOK A PERMIT
           </h1>
-          <p className="2xl:text-[20px] text-xs font-Gotham text-left">
+          <p className="2xl:text-[20px] text-xs font-Gotham text-center lg:text-left ">
             FOR JUNGLE SAFFARI <br />
             CORBETT TOURISM
           </p>
@@ -42,10 +63,9 @@ function Explore() {
         <div className="w-full mt-5">
           <Swiper
             ref={swiperRef}
-            navigation={true}
-            modules={[Navigation]}
             spaceBetween={3}
             slidesPerView={2.5}
+            loop={true}
             breakpoints={{
               0: {
                 slidesPerView: 1.3,
@@ -68,25 +88,19 @@ function Explore() {
                 spaceBetween: 0,
               },
             }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
-            {Array?.from({ length: 10 })?.map((item, index) => (
+            {imageArray?.map((image, index) => (
               <SwiperSlide key={index}>
                 <div className="w-full relative">
                   <Image
-                    src={
-                      index % 2 === 0
-                        ? "/jeepsaffari.png"
-                        : "/cantersaffari.png"
-                    }
-                    alt=""
+                    src={image?.src}
+                    alt={image?.title}
                     width={0}
                     height={0}
-                    className="w-full aspect-video object-cover relative"
+                    className="w-full aspect-video shirnk-0 object-cover relative"
                   />
                   <h1 className="text-white font-frinkRio 2xl:text-[41px] text-2xl 2xl:leading-[36px] leading-5 font-bold absolute bottom-5 left-5 lg:w-[100px]">
-                    JEEP SAFFARI
+                    {image?.title}
                   </h1>
                 </div>
               </SwiperSlide>
