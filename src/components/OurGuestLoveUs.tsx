@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function OurGuestLoveUs() {
   return (
     <div className="w-full bg-[url('/bglayers.png')] py-10 mt-10 px-4s">
-      <h1 className="text-center text-3xl font-extrabold mb-10">
+      <h1 className="text-center text-[30.7px] font-Gotham font-medium mb-10">
         OUR GUEST LOVE US
       </h1>
       <Swiper
@@ -39,14 +39,14 @@ export default function OurGuestLoveUs() {
                 className="w-8 aspect-square object-cover rounded-full"
               />
               <div className="">
-                <h1 className="text-gray/60 text-[10px] ">
+                <h1 className="text-gray/60 text-[10px] font-Gotham">
                   Good service and staff as well
                 </h1>
-                <h2 className="text-gray/60 text-[10px] ">
+                <h2 className="text-gray/60 text-[10px] font-Gotham">
                   Our experience were good for Jeep safari!
                 </h2>
-                <p className="text-[10px] ">
-                  <span className="font-bold">sakshi Thakur, </span>
+                <p className="text-[10px] font-Gotham font-extrabold">
+                  <span className="font-bold text-[12px]">sakshi Thakur, </span>
                   Director seta media Pune
                 </p>
               </div>

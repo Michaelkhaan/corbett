@@ -17,7 +17,7 @@ function Explore() {
     <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
       <div className="flex w-full lg:w-1/4 items-start px-4">
         <div className="mx-auto">
-          <h1 className="2xl:text-[29px] text-xl font-bold font-Gotham">
+          <h1 className="2xl:text-[29px] text-xl font-bold tracking-tighter font-Gotham">
             BOOK A PERMIT
           </h1>
           <p className="2xl:text-[20px] text-xs font-Gotham text-left">
@@ -25,7 +25,7 @@ function Explore() {
             CORBETT TOURISM
           </p>
           <button className="bg-black 2xl:text-base text-[10px] font-Gotham rounded-xs px-4 text-white mt-2 2xl:mt-3">
-            Book Saffari
+            ENQUERY
           </button>
         </div>
       </div>
@@ -33,7 +33,7 @@ function Explore() {
         <h1 className="2xl:text-[33px] text-xl font-bold font-frinkRio">
           Explore the Untamed Destinations of jim corbett
         </h1>
-        <p className="font-Gotham 2xl:text-base text-xs ">
+        <p className="font-Gotham 2xl:text-[15px] leading-6 text-xs mt-4">
           We craft tour packages based on your budget, taste & preference
           however these are
           <br />
