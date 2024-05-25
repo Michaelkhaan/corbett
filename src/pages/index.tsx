@@ -321,7 +321,7 @@ export default function Home() {
         <div className="w-full mt-5">
           <Buttons />
         </div>
-        <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 lg:px-20 mt-10 gap-5">
+        <div className="w-11/12  2xl:w-[70%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 lg:px-20 mt-10 gap-5">
           {priceCard?.map((e, index) => (
             <PriceCard
               key={index}
@@ -368,8 +368,6 @@ export default function Home() {
       </div>
       {/* <Footer /> */}
       <Nfooter />
-    
-    
     </div>
   );
 }

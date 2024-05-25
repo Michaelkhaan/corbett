@@ -21,9 +21,14 @@ export default function OurGuestLoveUs() {
             spaceBetween: 40,
           },
           1200: {
-            slidesPerView: 4.3,
+            slidesPerView: 3,
             spaceBetween: 50,
             slidesOffsetBefore: 200,
+          },
+          1600: {
+            slidesPerView: 4.3,
+            spaceBetween: 50,
+            slidesOffsetBefore: 400,
           },
         }}
       >
