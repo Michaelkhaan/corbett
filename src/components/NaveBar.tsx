@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -12,6 +12,8 @@ function NaveBar() {
     "Dhikala Rest House",
     "Contact Us",
   ];
+
+  const [open , setOpen]= useState(false)
   return (
     <>
       {/* <img src="/test/image.png" className="w-full" /> */}
@@ -24,7 +26,9 @@ function NaveBar() {
             </h1>
             <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
           </div>
-          <ul className="lg:flex items-center 2xl:gap-6 gap-3 hidden">
+          <ul className={`${
+          open ? "left-0 " : "-left-[100%] lg:left-0"
+        } flex lg:flex-row flex-col lg:items-center 2xl:gap-6 gap-3 absolute bg-black/65  top-14 px-8 lg:px-0 gap-y-4 py-2 lg:relative lg:top-0 lg:bg-transparent w-full lg:w-auto transition-all duration-700 ease-in `}>
             {navData?.map((nav, index) => (
               <li
                 key={index}
@@ -40,7 +44,7 @@ function NaveBar() {
               info@corbett.in
             </h1>
           </div>
-          <GiHamburgerMenu className="block lg:hidden text-white" />
+          <GiHamburgerMenu onClick={()=>setOpen(!open)} className="block lg:hidden text-white" />
         </div>
       </div>
     </>
