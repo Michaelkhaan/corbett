@@ -54,7 +54,7 @@ function Explore() {
         <h1 className="2xl:text-[33px] text-xl font-bold font-frinkRio">
           Explore the Untamed Destinations of jim corbett
         </h1>
-        <p className="font-Gotham 2xl:text-[15px] leading-6 text-xs mt-4">
+        <p className="font-Gotham font-semibold 2xl:text-[15px] leading-6 text-base mt-4">
           We craft tour packages based on your budget, taste & preference
           however these are
           <br />

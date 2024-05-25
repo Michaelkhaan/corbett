@@ -1,11 +1,14 @@
 import React from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsFacebook, BsYoutube } from "react-icons/bs";
-import { FaInstagram, FaLinkedinIn, FaPinterest } from "react-icons/fa6";
+import { FaInstagram, FaLinkedinIn, FaPinterest, FaWhatsapp } from "react-icons/fa6";
 
 export default function Nfooter() {
   return (
     <div className="w-full bg-[#F8F9FD]">
+      <div className="border rounded-full w-12 h-12 flex items-center justify-center bg-black fixed right-10 bottom-20">
+        <FaWhatsapp className="text-2xl text-[#47e1d9]" />
+      </div>
       <div className="2xl:w-[70%] lg:w-4/5 flex mx-auto py-10 flex-wrap w-11/12">
         <div className="2xl:w-[27%] lg:w-[33%] md:w-1/2 md:order-1">
           <div className="2xl:px-8">
