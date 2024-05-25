@@ -368,6 +368,8 @@ export default function Home() {
       </div>
       {/* <Footer /> */}
       <Nfooter />
+    
+    
     </div>
   );
 }
