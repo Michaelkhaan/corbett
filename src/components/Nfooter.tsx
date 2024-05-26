@@ -18,11 +18,11 @@ export default function Nfooter() {
         <div className="2xl:w-[27%] lg:w-[33%] md:w-1/2 md:order-1">
           <div className="2xl:px-8">
             <h1 className="font-bold font-frinkRio text-base">contact us</h1>
-            <h5 className="text-[14px] font-Gotham font-medium">
+            <h5 className="text-[14px] font-Gotham font-semibold">
               <span className="font-bold">A : </span>
               A2,Ramnagar,Jim Corbette, Utranchal.
             </h5>
-            <h5 className="text-[14px] font-Gotham font-medium">
+            <h5 className="text-[14px] font-Gotham font-semibold">
               <span className="font-bold">E : </span>info@jimcorbettour.com
             </h5>
             <h5 className="text-base font-Gotham font-bold mt-4">
