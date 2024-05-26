@@ -61,7 +61,7 @@ export default function Nfooter() {
           </div>
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-3">
-          <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham font-bold">
+          <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham font-semibold">
             <li className="">Home</li>
             <li className="">About us</li>
             <li>Packages</li>
@@ -72,7 +72,7 @@ export default function Nfooter() {
           </ul>
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-4">
-          <ul className="lg:px-4 2xl:px-0 text-[14px] font-Gotham font-bold">
+          <ul className="lg:px-4 2xl:px-0 text-[14px] font-Gotham font-semibold">
             <li>Contact Us</li>
             <li>Terms & Conditions </li>
             <li>Privacy Policy</li>
