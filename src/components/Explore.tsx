@@ -91,13 +91,13 @@ function Explore() {
           >
             {imageArray?.map((image, index) => (
               <SwiperSlide key={index}>
-                <div className="w-full relative">
+                <div className="w-full relative pr-2">
                   <Image
                     src={image?.src}
                     alt={image?.title}
                     width={0}
                     height={0}
-                    className="w-full aspect-video shirnk-0 object-cover relative"
+                    className="w-full !aspect-[1.2] object-cover relative"
                   />
                   <h1 className="text-white font-frinkRio 2xl:text-[41px] text-2xl 2xl:leading-[36px] leading-5 font-bold absolute bottom-5 left-5 lg:w-[100px]">
                     {image?.title}
