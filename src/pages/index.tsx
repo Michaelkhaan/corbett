@@ -231,7 +231,7 @@ export default function Home() {
           these are some most popular packages our guest has chosen.
         </p>
         <div className="w-full flex flex-col font-gotham items-center justify-center mt-10">
-          <h1 className="text-[10.74px] leading-[23px] font-[680px] text-black font-Gotham">
+          <h1 className="text-[22px] leading-[23px] font-[680px] text-black font-Gotham">
             Best priced packages with in your budget
           </h1>
           <div className="w-11/12 md:w-2/5 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
