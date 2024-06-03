@@ -216,7 +216,7 @@ function index() {
           <div className="w-full mt-5">
             <Touricons />
           </div>
-          <div className="w-full">
+          <div className="w-full mt-10">
             <Data />
           </div>
         </div>
