@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaMinus } from "react-icons/fa6";
+import { FaMinus, FaPlus } from "react-icons/fa6";
 
 interface Props {
   className?: string;
@@ -18,14 +18,18 @@ function Itinerary({ className, days, title, desc, key }: Props) {
   return (
     <>
       <div
-        className={`w-1/2 rounded-full  px-5 py-1.5 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
+        className={`w-full 2xl:w-1/3 rounded-full  px-5 py-1.5 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
           openId === key ? "bg-[#f8bd00]" : "bg-[#e0e0e0]"
         }`}
         onClick={() => handleToggle(key)}
       >
         <div className="flex justify-between items-center  w-full">
-          <h1 className="font-Gotham text-sm">{days}</h1>
-          <FaMinus className={`text-black`} />
+          <h1 className="font-Gotham font-bold text-sm">{days}</h1>
+          {openId === key ? (
+            <FaMinus className={`text-black`} />
+          ) : (
+            <FaPlus className="text-black" />
+          )}
         </div>
       </div>
       <div
