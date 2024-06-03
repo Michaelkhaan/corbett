@@ -54,7 +54,7 @@ function Explore() {
         <h1 className="2xl:text-[33px] text-xl font-bold font-frinkRio">
           Explore the Untamed Destinations of jim corbett
         </h1>
-        <p className="font-Gotham 2xl:text-[15px] leading-6 text-xs mt-4">
+        <p className="font-Gotham font-semibold 2xl:text-[15px] leading-6 text-base mt-4">
           We craft tour packages based on your budget, taste & preference
           however these are
           <br />
@@ -91,13 +91,13 @@ function Explore() {
           >
             {imageArray?.map((image, index) => (
               <SwiperSlide key={index}>
-                <div className="w-full relative">
+                <div className="w-full relative pr-2">
                   <Image
                     src={image?.src}
                     alt={image?.title}
                     width={0}
                     height={0}
-                    className="w-full aspect-video shirnk-0 object-cover relative"
+                    className="w-full !aspect-[1.2] object-cover relative"
                   />
                   <h1 className="text-white font-frinkRio 2xl:text-[41px] text-2xl 2xl:leading-[36px] leading-5 font-bold absolute bottom-5 left-5 lg:w-[100px]">
                     {image?.title}

@@ -222,16 +222,16 @@ export default function Home() {
       <ButtonCard />
       {/* </div> */}
       <Explore />
-      <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px]">
+      <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px] ">
         <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
           OUR PACKAGES
         </h1>
-        <p className="2xl:text-base text-[12px] leading-[16px] font-medium text-center font-gotham lg:w-[470px] mt-2">
+        <p className="2xl:text-base text-[15px] leading-[20px] font-semibold text-center font-Gotham lg:w-[470px] mt-4">
           We craft our packages based on your budget, taste & preference however
           these are some most popular packages our guest has chosen.
         </p>
         <div className="w-full flex flex-col font-gotham items-center justify-center mt-10">
-          <h1 className="text-[10.74px] leading-[23px] font-bold text-gray-800 font-Gotham">
+          <h1 className="text-[22px] leading-[23px] font-[680px] text-black font-Gotham">
             Best priced packages with in your budget
           </h1>
           <div className="w-11/12 md:w-2/5 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
@@ -321,7 +321,7 @@ export default function Home() {
         <div className="w-full mt-5">
           <Buttons />
         </div>
-        <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 lg:px-20 mt-10 gap-5">
+        <div className="w-11/12  2xl:w-[70%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 lg:px-20 mt-10 gap-5">
           {priceCard?.map((e, index) => (
             <PriceCard
               key={index}
@@ -351,9 +351,8 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full mt-10">
-        <h1 className="text-lg font-semibold text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-          doloremque.
+        <h1 className="text-lg font-semibold font-Gotham text-center leading-6 text-base ">
+          LET YOUR <span className="font-[400]">SAFARI TOUR</span> WITH SPECIAL OFFERS AND DEAL
         </h1>
         <div className="w-full flex items-center justify-center gap-2 mt-3 pb-5 px-4">
           <input
@@ -368,8 +367,6 @@ export default function Home() {
       </div>
       {/* <Footer /> */}
       <Nfooter />
-    
-    
     </div>
   );
 }
