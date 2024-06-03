@@ -18,7 +18,7 @@ function Itinerary({ className, days, title, desc, key }: Props) {
   return (
     <>
       <div
-        className={`w-full 2xl:w-1/3 rounded-full  px-5 py-1.5 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
+        className={`w-full 2xl:w-1/3 rounded-lg lg:rounded-full  px-5 py-1.5 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
           openId === key ? "bg-[#f8bd00]" : "bg-[#e0e0e0]"
         }`}
         onClick={() => handleToggle(key)}

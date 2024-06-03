@@ -17,7 +17,7 @@ function Itinerary({ className, question, answer, key }: Props) {
   return (
     <>
       <div
-        className={`w-full rounded-full  px-5 py-3 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
+        className={`w-full rounded-lg lg:rounded-full  px-5 py-3 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
           openId === key
             ? "bg-black text-white"
             : "bg-white border border-black rounded-full text-black"

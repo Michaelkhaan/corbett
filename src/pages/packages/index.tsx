@@ -177,7 +177,7 @@ function index() {
               Repudiandae, sit iusto?
             </p>
           </div>
-          <div className="w-full border-b border-gray-700 mt-5" />
+          <div className="w-11/12 border-b border-gray-700 mt-5" />
           <div className="2xl:px-10 mt-5">
             <h1 className="text-[21px] font-Gotham font-bold leading-8">
               Itinerary (Day Wise)
@@ -194,12 +194,12 @@ function index() {
               ))}
             </div>
           </div>
-          <div className="w-full pb-5 mt-14">
+          <div className="w-full mx-auto pb-5 mt-14">
             <Package />
             <Packageexc className="mt-16" />
           </div>
-          <div className="w-full mt-14 2xl:px-6">
-            <h1 className="text-xl font-Gotham font-bold px-5">
+          <div className="w-full mx-auto mt-14 2xl:px-6">
+            <h1 className="text-xl font-Gotham font-bold lg:px-5">
               FAQ Regarding Corbett Saffari!
             </h1>
             {faq?.map((e, index) => (
@@ -211,7 +211,7 @@ function index() {
             ))}
           </div>
         </div>
-        <div className="w-11/12 2xl:w-2/6 mx-auto mt-6">
+        <div className="w-full 2xl:w-2/6 mx-auto mt-6">
           <Highlight />
           <div className="w-full mt-5">
             <Touricons />
@@ -221,8 +221,8 @@ function index() {
           </div>
         </div>
       </div>
-      <div className="w-11/12 mx-auto flex flex-col font-gotham items-center justify-center mt-20 lg:mt-40">
-        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-Gotham">
+      <div className="w-full mx-auto flex flex-col font-gotham items-center justify-center mt-20 lg:mt-40">
+        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-Gotham px-3">
           Best priced packages with in your budget
         </h1>
         <div className="w-11/12 md:w-2/6 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">

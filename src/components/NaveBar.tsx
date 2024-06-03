@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -6,17 +8,39 @@ interface Props {
   className?: string;
 }
 function NaveBar({ className }: Props) {
+  const router = useRouter();
   const navData = [
-    "Home",
-    "AboutUs",
-    "Packages",
-    "Jeep Safari",
-    "Canter Safari",
-    "Dhikala Rest House",
-    "Contact Us",
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "About Us",
+      link: "/aboutus",
+    },
+    {
+      title: "Packages",
+      link: "/packages",
+    },
+    {
+      title: "Jeep Safari",
+      link: "/jeepsafari",
+    },
+    {
+      title: "Canter Safari",
+      link: "/cantersafari",
+    },
+    {
+      title: "Dhikala Rest House",
+      link: "/dhikalaresthouse",
+    },
+    {
+      title: "Contact Us",
+      link: "/contactus",
+    },
   ];
 
-  const [open , setOpen]= useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <>
       {/* <img src="/test/image.png" className="w-full" /> */}
@@ -29,16 +53,22 @@ function NaveBar({ className }: Props) {
             </h1>
             <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
           </div>
-          <ul className={`${
-          open ? "left-0 " : "-left-[100%] lg:left-0"
-        } flex lg:flex-row flex-col lg:items-center 2xl:gap-6 gap-3 absolute bg-black/65  top-14 px-8 lg:px-0 gap-y-4 py-2 lg:relative lg:top-0 lg:bg-transparent w-full lg:w-auto transition-all duration-700 ease-in z-50 `}>
+          <ul
+            className={`${
+              open ? "left-0 " : "-left-[100%] lg:left-0"
+            } flex lg:flex-row flex-col lg:items-center 2xl:gap-6 gap-3 absolute bg-black/65  top-14 px-8 lg:px-0 gap-y-4 py-2 lg:relative lg:top-0 lg:bg-transparent w-full lg:w-auto transition-all duration-700 ease-in z-50 `}
+          >
             {navData?.map((nav, index) => (
-              <li
-                key={index}
-                className="text-white 2xl:text-base lg:text-xs font-semibold font-Gotham cursor-pointer"
-              >
-                {nav}
-              </li>
+              <Link key={index} href={nav?.link}>
+                <li
+                  className="text-white 2xl:text-base lg:text-xs font-semibold font-Gotham cursor-pointer"
+                  style={{
+                    color: nav?.link === router?.pathname ? "#00f9e9" : "white",
+                  }}
+                >
+                  {nav?.title}
+                </li>
+              </Link>
             ))}
           </ul>
           <div className="lg:flex items-center 2xl:gap-5 lg:gap-2 hidden">
@@ -47,7 +77,10 @@ function NaveBar({ className }: Props) {
               info@corbett.in
             </h1>
           </div>
-          <GiHamburgerMenu onClick={()=>setOpen(!open)} className="block lg:hidden text-white" />
+          <GiHamburgerMenu
+            onClick={() => setOpen(!open)}
+            className="block lg:hidden text-white"
+          />
         </div>
       </div>
     </>
