@@ -17,7 +17,7 @@ function HeroCard({ image, title, className }: Props) {
         height={0}
         className={`${className}`}
       />
-      <h1 className="text-[20px] font-Gotham text-white/60 mt-2">{title}</h1>
+      <h1 className="text-[20px] font-Gotham font-semibold text-white mt-2">{title}</h1>
     </div>
   );
 }
