@@ -5,7 +5,34 @@ import NaveBar from "@/components/NaveBar";
 import OverView from "@/components/OverView";
 import TariffPrice from "@/components/TariffPrice";
 import Image from "next/image";
+import PackageFAQ from "@/components/PackageFAQ";
+import OurGuestLoveUs from "@/components/OurGuestLoveUs";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Go from "@/components/Go";
+import Nfooter from "@/components/Nfooter";
 
+const faq = [
+  {
+    question: "1. What type of climate does thailand have?",
+    answer:
+      "2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
+  },
+  {
+    question: "3. What type of climate does thailand have?",
+    answer:
+      "4.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
+  },
+  {
+    question: "5.What type of climate does thailand have?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
+  },
+  {
+    question: "6. What type of climate does thailand have?",
+    answer:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
+  },
+];
 const Jeep = () => {
   return (
    <div className="w-full">
@@ -49,6 +76,23 @@ const Jeep = () => {
           </div>
           <TariffPrice/>
           <Attractions/>
+          <div className=" bg-[#efefee] py-12 mt-16">
+         <div className="flex md:w-[70%] w-11/12  mx-auto flex-col justify-start items-start">
+         <p className="text-xl font-medium font-Gotham">FAQ Regarding Corbett safari!</p>
+         {faq?.map((e, index) => (
+              <PackageFAQ
+                key={index?.toString()}
+                question={e?.question}
+                answer={e?.answer}
+              />
+            ))}
+            </div>
+         </div>
+         <OurGuestLoveUs className="!mt-0"/>
+         <div className="pt-12 pb-6">
+       <Go/>
+       </div>
+       <Nfooter />
         </div>
     </div>
   );
@@ -56,34 +100,3 @@ const Jeep = () => {
 
 export default Jeep;
 
-
- {/* <div>
-        <div className="w-full relative flex justify-center items-center flex-col">
-          <Image
-            src="/jeephero.png"
-            alt="Jeep Hero"
-            width={0}
-            height={0}
-            className="w-full object-cover"
-          />
-          <h1 className="text-white font-frinkRio 2xl:text-[39px] text-2xl 2xl:leading-[36px] leading-5 font-bold absolute">
-            Jeep Sapari
-          </h1>
-          <Image
-            src="/vectorsmart.png"
-            alt="Vector Smart"
-            width={0}
-            height={0}
-            className="w-full object-cover absolute bottom-0 left-0"
-          />
-        </div>
-        <div className="w-full mt-5 flex justify-center items-center flex-col">
-          <h1>Explore the world with JM Corbett Jeep Safari</h1>
-          <p className="text-center w-[54%]">
-            Welcome to JM Corbett Jeep Safari,your gateway to adventure in the heart of nature's bounty!
-            Nestled amidst the picturesque landscapes of Jim Corbett National Park,
-            potentially add some custom CSS. Here's a solution that addresses
-            your requirement:
-          </p>
-        </div>
-      </div> */}

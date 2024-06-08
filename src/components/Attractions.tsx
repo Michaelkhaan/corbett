@@ -31,3 +31,4 @@ const Attractions = () => {
 };
 
 export default Attractions;
+
