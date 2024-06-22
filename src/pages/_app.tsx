@@ -23,7 +23,7 @@ const Gotham = localFont({
       style: "medium",
     },
     {
-      path: "../../public/fonts/gotham/Gotham-light.otf",
+      path: "../../public/fonts/gotham/Gotham-Light.otf",
       weight: "600",
       style: "semibold",
     },
