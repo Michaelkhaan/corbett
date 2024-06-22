@@ -51,7 +51,9 @@ function NaveBar({ className }: Props) {
             <h1 className="2xl:text-3xl text-2xl text-white font-bold font-frinkRio cursor-pointer">
               corbett
             </h1>
-            <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
+            <span
+              className={`w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 ${className}`}
+            ></span>
           </div>
           <ul
             className={`${
