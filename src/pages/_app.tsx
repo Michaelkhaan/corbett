@@ -23,9 +23,14 @@ const Gotham = localFont({
       style: "medium",
     },
     {
-      path: "../../public/fonts/gotham/GothamBook.ttf",
+      path: "../../public/fonts/gotham/Gotham-Light.otf",
       weight: "600",
       style: "semibold",
+    },
+    {
+      path: "../../public/fonts/gotham/Gotham-XLight.otf",
+      weight: "400",
+      style: "normal",
     },
   ],
   variable: "--Gotham",
@@ -37,6 +42,11 @@ const frinkRio = localFont({
       path: "../../public/fonts/frink-rio/Fontspring-DEMO-frinkrio-extrabold.ttf",
       weight: "800",
       style: "bold",
+    },
+    {
+      path: "../../public/fonts/frink-rio/Fontspring-DEMO-frinkrio-regular.ttf",
+      weight: "400",
+      style: "nurmal",
     },
   ],
   variable: "--frinkRio",

@@ -2,9 +2,12 @@ import Image from "next/image";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function OurGuestLoveUs() {
+interface Props{
+  className?:string
+}
+export default function OurGuestLoveUs({className}:Props) {
   return (
-    <div className="w-full bg-[url('/bglayers.png')] py-10 mt-10 px-4s">
+    <div className={`w-full bg-[url('/bglayers.png')] py-10 mt-10 px-4s ${className}`}>
       <h1 className="text-center text-[30.7px] font-Gotham font-medium mb-10">
         OUR GUEST LOVE US
       </h1>
@@ -34,7 +37,8 @@ export default function OurGuestLoveUs() {
       >
         {/* <SwiperSlide className="hidden" /> */}
         {Array?.from({ length: 10 })?.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index}
+          >
             <div className="flex items-center gap-4">
               <Image
                 src="Layer.png"
