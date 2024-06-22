@@ -17,7 +17,7 @@ const Attractions = () => {
       <div className="absolute 2xl:top-[610px] xl:top-[600px] lg:top-80 top-60 mt-4 left-[52%] transform -translate-x-1/2">
         <p className="2xl:text-3xl xl:text-2xl text-xl lg:w-[68%] text-end w-11/12">Scenic Landscapes</p>
         <p className="2xl:text-lg xl:text-lg font-Gotham text-xs lg:w-[68%] w-11/12 text-right rtl">
-          Marvel at the park's breathtaking vistas, from dense forests meandering rivers to rolling hills and tranquil lakes, each offering postcard-worthy views and photo opportunities.
+          {"Marvel at the park's breathtaking vistas, from dense forests meandering rivers to rolling hills and tranquil lakes, each offering postcard-worthy views and photo opportunities."}
         </p>
       </div>
     </div>

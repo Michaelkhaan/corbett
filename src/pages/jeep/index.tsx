@@ -62,7 +62,7 @@ const Jeep = () => {
     <div className="w-full mt-5 flex justify-center items-center flex-col">
           <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-lg text-base">Explore the world with JM Corbett Jeep Safari</h1>
           <p className="text-center w-full lg:text-[15px] text-xs px-4 font-frinkRio">
-            Welcome to JM Corbett Jeep Safari,your gateway to adventure in the heart of nature's bounty!
+           {" Welcome to JM Corbett Jeep Safari,your gateway to adventure in the heart of nature's bounty!"}
           <br/>  Nestled amidst the picturesque landscapes of Jim Corbett National Park, <br/>
             our safari experiences offer an unparalleled opportunity to immerse yourself <br/>
              in the beauty and diversity of indian

@@ -7,10 +7,10 @@ const TariffPrice=()=>{
           </div>
           <div className="lg:w-[60%] w-full flex flex-col justify-start items-center space-y-2">
             <p className="text-black font-normal text-xs leading-6 font-Gotham">
-              Prepare for an adrenaline-fueled expedition as you traverse rugged terrain and dense foliage in search of the park's majestic inhabitants. From elusive tigers and graceful elephants to vibrant birdlife and endemic flora, every moment promises a new and exhilarating encounter with nature's wonders.
+              {"Prepare for an adrenaline-fueled expedition as you traverse rugged terrain and dense foliage in search of the park's majestic inhabitants. From elusive tigers and graceful elephants to vibrant birdlife and endemic flora, every moment promises a new and exhilarating encounter with nature's wonders."}
             </p>
             <p className="text-black font-normal text-xs leading-6 font-Gotham">
-              Our knowledgeable guides share fascinating insights into the park's ecology and conservation efforts, enriching your safari experience with their expertise and passion for wildlife.
+              {"Our knowledgeable guides share fascinating insights into the park's ecology and conservation efforts, enriching your safari experience with their expertise and passion for wildlife."}
             </p>
           </div>
         </div> 

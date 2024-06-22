@@ -7,10 +7,10 @@ const OverView = () => {
         <div className="flex flex-col items-start justify-center">
           <p className="2xl:text-2xl text-lg font-Gotham font-medium text-start">OverView</p>
           <p className="mt-4 text-[10px] w-11/12 font-normal font-Gotham">
-            Welcome to JM Corbett Jeep Safari, your gateway to adventure in the heart of nature's bounty!
+           {` Welcome to JM Corbett Jeep Safari, your gateway to adventure in the heart of nature's bounty!
             Nestled amidst the picturesque landscapes of Jim Corbett National Park, 
             our safari experiences offer an unparalleled opportunity to immerse yourself 
-            in the beauty and diversity of India.
+            in the beauty and diversity of India.`}
           </p>
         </div>
         <div className="flex justify-center items-center lg:mt-0 mt-6">
