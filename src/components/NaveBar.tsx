@@ -24,7 +24,7 @@ function NaveBar({ className }: Props) {
     },
     {
       title: "Jeep Safari",
-      link: "/jeepsafari",
+      link: "/jeep",
     },
     {
       title: "Canter Safari",
