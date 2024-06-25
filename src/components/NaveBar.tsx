@@ -16,7 +16,7 @@ function NaveBar({ className }: Props) {
     },
     {
       title: "About Us",
-      link: "/aboutus",
+      link: "/aboutUs",
     },
     {
       title: "Packages",
@@ -45,7 +45,7 @@ function NaveBar({ className }: Props) {
     <>
       {/* <img src="/test/image.png" className="w-full" /> */}
 
-      <div className="w-full bg-black/70  py-3 ssssz-50 z-50">
+      <div className="w-full bg-black/70  py-3 z-50">
         <div className="mx-auto w-11/12 lg:w-3/4 2xl:w-[70%] flex items-center justify-between lg:px-1 2xl:px-3 2xl:pr-12">
           <div className="relative">
             <h1 className="2xl:text-3xl text-2xl text-white font-bold font-frinkRio cursor-pointer">
