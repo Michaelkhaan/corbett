@@ -51,16 +51,16 @@ const frinkRio = localFont({
   ],
   variable: "--frinkRio",
 });
-const dejavu = localFont({
-  src: [
-    {
-      path: "../../public/fonts/gotham/dejavu-sans.woff",
-      weight: "800",
-      style: "bold",
-    },
-  ],
-  variable: "--dejavu",
-});
+// const dejavu = localFont({
+//   src: [
+//     {
+//       path: "../../public/fonts/gotham/dejavu-sans.woff",
+//       weight: "800",
+//       style: "bold",
+//     },
+//   ],
+//   variable: "--dejavu",
+// });
 const myriadPro=localFont({
  src:[
   {
