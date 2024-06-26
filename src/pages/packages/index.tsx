@@ -14,22 +14,22 @@ import React from "react";
 function index() {
   const itineraryData = [
     {
-      days: "Days 1",
+      days: "Day 1",
       title: "Arrival at the Jungle Book Resort",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, sed blanditiis? Libero molestiae ex dolores.",
     },
     {
-      days: "Days 2",
+      days: "Day 2",
       title: "Arrival at the Jungle Book Resort",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, sed blanditiis? Libero molestiae ex dolores.",
     },
     {
-      days: "Days 3",
+      days: "Day 3",
       title: "Arrival at the Jungle Book Resort",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, sed blanditiis? Libero molestiae ex dolores.",
     },
     {
-      days: "Days 4",
+      days: "Day 4",
       title: "Arrival at the Jungle Book Resort",
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, sed blanditiis? Libero molestiae ex dolores.",
     },
@@ -120,22 +120,24 @@ function index() {
   return (
     <div className="w-full">
       <NaveBar className="!bg-[#f8bd00]" />
-      <div className="w-11/12 md:w-[70%] mx-auto mt-5 flex flex-col md:flex-row items-center justify-between gap-2">
+      <div className="w-11/12 lg:w-[72%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row items-center justify-between gap-2">
         <div className="w-full md:w-auto text-start">
-          <h1 className="text-[32px] font-bold font-frinkRio whitespace-nowrap">
+          <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
             The Jungle Book
           </h1>
-          <p className="text-[16px] font-Gotham font-bold">
+          <p className="text-xs lg:text-[12px] 2xl:text-[16px] font-Gotham font-bold">
             1 Nights, 2 Guest{" "}
-            <span className="text-base font-semibold font-Gotham">
+            <span className="text-xs 2xl:text-base font-semibold font-Gotham">
               (No extra charges)
             </span>
           </p>
         </div>
-        <div className="w-full flex flex-col min-[300px]:flex-row pr-20 items-center justify-between md:justify-end md:gap-40 gap-2">
+        <div className="w-full flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
           <div className="w-full md:w-auto text-start">
-            <h1 className="text-[20px] font-Gotham font-regular">Start From</h1>
-            <p className="flex items-center text-[32px] font-Gotham font-bold leading-[28px]">
+            <h1 className="text-sm lg:text-base 2xl:text-[20px] font-Gotham font-regular">
+              Start From
+            </h1>
+            <p className="flex items-center lg:text-2xl text-lg 2xl:text-[32px] font-Gotham font-bold leading-[28px]">
               <span>
                 <Image
                   src="/currency.png"
@@ -150,13 +152,13 @@ function index() {
             <p className="text-[8px] font-Gotham pl-5">per person</p>
           </div>
           <div className="w-full md:w-auto flex justify-start">
-            <button className="bg-black text-white text-lg tracking-widest px-8 py-3 font-Gotham font-medium ">
+            <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-Gotham font-medium ">
               ENQUERY
             </button>
           </div>
         </div>
       </div>
-      <div className="w-11/12 md:w-3/4 mx-auto mt-5">
+      <div className="w-11/12 lg:w-3/4 mx-auto mt-5">
         <Image
           src="/Layer 45.png"
           alt=""
@@ -165,13 +167,13 @@ function index() {
           className="w-full"
         />
       </div>
-      <div className="w-11/12 2xl:w-3/4 mx-auto flex lg:flex-row justify-between flex-col gap-10">
-        <div className="w-full 2xl:w-3/5 mx-auto">
+      <div className="w-11/12 lg:w-3/4 mx-auto flex lg:flex-row justify-between flex-col gap-10">
+        <div className="w-full lg:w-3/5 mx-auto">
           <div className="2xl:px-10">
-            <h1 className="text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter mt-5">
+            <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter mt-5">
               Package-1 The Jungle Book
             </h1>
-            <p className="text-xl font-Gotham leading-8 mt-2">
+            <p className="lg:text-sm text-xs 2xl:text-xl font-Gotham leading-8 mt-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
               quia sed consequuntur ab pariatur? Perferendis, adipisci at?
               Repudiandae, sit iusto?
@@ -179,10 +181,10 @@ function index() {
           </div>
           <div className="w-11/12 border-b border-gray-700 mt-5" />
           <div className="2xl:px-10 mt-5">
-            <h1 className="text-[21px] font-Gotham font-bold leading-8">
+            <h1 className="lg:text-lg text-sm 2xl:text-[21px] font-Gotham font-bold leading-8">
               Itinerary (Day Wise)
             </h1>
-            <div className="w-full mt-3">
+            <div className="w-full lg:w-1/2 2xl:w-full mt-3">
               {itineraryData?.map((e, index) => (
                 <Itinerary
                   className="mb-4"
@@ -211,7 +213,7 @@ function index() {
             ))}
           </div>
         </div>
-        <div className="w-full 2xl:w-2/6 mx-auto mt-6">
+        <div className="w-full lg:w-2/6 mx-auto mt-6">
           <Highlight />
           <div className="w-full mt-5">
             <Touricons />
@@ -225,7 +227,7 @@ function index() {
         <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-Gotham px-3">
           Best priced packages with in your budget
         </h1>
-        <div className="w-11/12 md:w-2/6 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
+        <div className="w-11/12 lg:w-1/2 2xl:w-2/6 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
           <div className="bg-[#f8bd01] rounded-full px-6 py-2 flex justify-center">
             <h1 className="text-[10px] text-white font-Gotham">
               Less then Rs 10,000
@@ -242,7 +244,7 @@ function index() {
             </h1>
           </div>
         </div>
-        <div className="w-11/12 lg:w-3/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
+        <div className="w-11/12 lg:w-[60%] 2xl:w-3/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
           {packagesData?.map((e, index) => (
             <PackageCard
               key={index}
