@@ -1,14 +1,11 @@
+import Layout from "@/components/Layout";
+import NaveBar from "@/components/NaveBar";
 import Package from "@/components/Package";
 import Packageexc from "@/components/Packageexc";
 import React from "react";
 
 function index() {
-  return (
-    <div>
-      <Package />
-      <Packageexc />
-    </div>
-  );
+  return <Layout></Layout>;
 }
 
 export default index;
