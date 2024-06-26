@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import SideBar from "@/components/SideBar";
 import Header from "@/components/Header";
+import Login from "./Login";
 
 interface Props {
   children?: ReactNode;
@@ -42,6 +43,9 @@ const Layout: React.FC<Props> = ({ children, className = "" }) => {
       link: baseUrl + "/contact_us",
     },
   ];
+
+  const auth = true;
+  if (auth) return <Login />;
   return (
     <div className="w-full h-screen flex">
       <title>Employee</title>
