@@ -2,8 +2,7 @@ import React from "react";
 import NaveBar from "./NaveBar";
 import Image from "next/image";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { Autoplay , Pagination, Navigation} from "swiper/modules";
-
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 function Hero() {
   const imageArray = [
@@ -24,10 +23,10 @@ function Hero() {
             disableOnInteraction: false,
             waitForTransition: true,
           }}
+          navigation={true}
           speed={3000}
           loop={true}
-          modules={[Autoplay , Pagination, Navigation]}
-          navigation={true}
+          modules={[Autoplay, Navigation, Pagination]}
         >
           {imageArray?.map((e, index) => (
             <SwiperSlide key={index}>

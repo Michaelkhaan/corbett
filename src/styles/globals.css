@@ -16,30 +16,30 @@
   }
 }
 @font-face {
-  font-family: 'FONTSpringDemo';
-  src: url('/public/fonts/frink-rio/FONTSpringDemo.woff') format('woff')
-       url('/public/fonts/frink-rio/FONTSpringDemo.woff2') format('woff2');
+  font-family: "FONTSpringDemo";
+  src: url("/public/fonts/frink-rio/FONTSpringDemo.woff") format("woff")
+    url("/public/fonts/frink-rio/FONTSpringDemo.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url('/public//fonts/gotham/GothamMedium.ttf') format('ttf'),
-       url('/public/fonts/gotham/GothamMedium_1.ttf') format('ttf');
+  font-family: "Gotham";
+  src: url("/public//fonts/gotham/GothamMedium.ttf") format("ttf"),
+    url("/public/fonts/gotham/GothamMedium_1.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url('/public//fonts/gotham/GothamMedium.ttf') format('ttf'),
-       url('/public/fonts/gotham/GothamMedium_1.ttf') format('ttf');
+  font-family: "Gotham";
+  src: url("/public//fonts/gotham/GothamMedium.ttf") format("ttf"),
+    url("/public/fonts/gotham/GothamMedium_1.ttf") format("ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'DejaVu Sans';
-  src: url('/public/fonts/gotham/dejavu-sans.woff2') format('woff2'),
-       url('/public/fonts/gotham/dejavu-sans.woff') format('woff');
+  font-family: "DejaVu Sans";
+  src: url("/public/fonts/gotham/dejavu-sans.woff2") format("woff2"),
+    url("/public/fonts/gotham/dejavu-sans.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
@@ -78,9 +78,16 @@ border-right-style: calc(--background-start-rgb);
 .cs-border {
   border: 10px solid transparent;
   /* padding: 15px; */
-  border-image: url('/test/border.png') 2% repeat;
+  border-image: url("/test/border.png") 2% repeat;
   /* border-image-slice: 50; */
   border-image-width: 10px;
   /* border-image-slice: 2fr; */
   /* border-image-repeat: repeat; */
+}
+.swiper-button-prev {
+  z-index: 150;
+}
+.swiper-button-next {
+  z-index: 150;
+  cursor: pointer;
 }
