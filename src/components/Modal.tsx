@@ -1,7 +1,9 @@
 import React from "react";
 
 interface ModalProps {
+  //@ts-ignore
   newSlide: Omit<Slide, "id">;
+  //@ts-ignore
   setNewSlide: React.Dispatch<React.SetStateAction<Omit<Slide, "id">>>;
   addSlide: () => void;
   closeModal: () => void;

@@ -1,7 +1,6 @@
 import Buttons from "@/components/Buttons";
 import Go from "@/components/Go";
 import { Youtube } from "@/components/Icons";
-import Map from "@/components/Map";
 import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
 import Image from "next/image";
@@ -81,13 +80,13 @@ function index() {
         </div>
         <div className="w-full lg:w-1/2 lg:-mt-8">
           {/* <Map address="1600 Amphitheatre Parkway, Mountain View, CA" /> */}
-          <Image
-            src={"/GoogleMap.webp"}
-            alt=""
-            width={0}
-            height={0}
-            className="w-full"
-          />
+          <iframe
+            width="100%"
+            height="500"
+            // id="gmap_canvas"
+            src="https://maps.google.com/maps?q=india&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            // scrolling="no"
+          ></iframe>
         </div>
       </div>
       <div className="pt-12 pb-6">
