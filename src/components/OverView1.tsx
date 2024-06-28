@@ -8,19 +8,19 @@ const OverView1 = () => {
             Overview
           </h1>
           <p className="text-[14px] font-Gotham mt-3 tracking-wide leading-6">
-            Dhikala is a popular tourist spot in corbett Tiger Reserved.Many
+            {` Dhikala is a popular tourist spot in corbett Tiger Reserved.Many
             elephant and spoted deer can be seen in the large Dhikala Chaur
             area. it's also a realy place to see the rare Hog Deer. Wildelife
             lover enjoy <br />
             staying at Dhikala and to get there, you initially enter through
             Dhangari gate, which is 18 km from Ramnagar and 31 km from the
-            Dhikala complex.
+            Dhikala complex.`}
           </p>
           <p className="mt-5 text-[14px] font-Gotham tracking-wide leading-6">
             {" "}
-            Dhikala is open to tourists from November 15 to June 15,but
+            {` Dhikala is open to tourists from November 15 to June 15,but
             unfortunately it's closed during the monson season. The complex
-            overLooks the
+            overLooks the`}
             <br />
             Ramganga Reservoir, a great spot to see crocodiles and gharials.{" "}
           </p>
