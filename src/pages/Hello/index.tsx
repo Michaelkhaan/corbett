@@ -6,7 +6,7 @@ import Packageexc from "@/components/Packageexc";
 import React from "react";
 
 function index() {
-  return <Layout>hjdfkj</Layout>;
+  return <Layout></Layout>;
 }
 
 export default index;

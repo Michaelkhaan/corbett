@@ -36,15 +36,15 @@ const Layout: React.FC<Props> = ({ children, className = "" }) => {
 
     {
       title: "Dhikala Rest House",
-      link: baseUrl + "/dhikala_rest_house",
+      link: baseUrl + "/dhikala",
     },
     {
       title: "Contact Us",
-      link: baseUrl + "/contact_us",
+      link: baseUrl + "/contactUs",
     },
   ];
 
-  const auth = true;
+  const auth = false;
   if (auth) return <Login />;
   return (
     <div className="w-full h-screen flex">
