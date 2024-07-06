@@ -40,7 +40,7 @@ const Layout: React.FC<Props> = ({ children, className = "" }) => {
     },
     {
       title: "Contact Us",
-      link: baseUrl + "/contactUs",
+      link: baseUrl + "/contact_us",
     },
   ];
 

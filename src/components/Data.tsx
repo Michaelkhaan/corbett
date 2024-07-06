@@ -6,14 +6,14 @@ export default function Data() {
       <h1 className="mb-5 text-lg ">Where do you want to go?</h1>
 
       <input
-        type="text"
+        type="date"
         placeholder="Travel Date"
         className="px-12 w-full focus:outline-none border border-black py-1 mb-4"
       />
 
       <input
         type="text"
-        placeholder="Number"
+        placeholder="Number or Email Address"
         className=" px-12 w-full focus:outline-none border border-black py-1 mb-4"
       />
 
