@@ -1,4 +1,3 @@
-import Buttons from "@/components/Buttons";
 import Go from "@/components/Go";
 import { Youtube } from "@/components/Icons";
 import NaveBar from "@/components/NaveBar";
@@ -25,35 +24,36 @@ function index() {
         </h1>
       </div>
       <div className="w-full flex flex-col lg:flex-row gap-10 mt-8">
-        <div className="w-full md:w-1/2 px-4 lg:px-0 lg:pl-40 2xl:pl-56">
-          <h1 className="text-2xl lg:text-3xl font-Gotham font-bold">
+        <div className="w-full lg:w-1/2 px-4 lg:px-0 lg:pl-40 2xl:pl-56">
+          <h1 className="text-xl lg:text-2xl 2xl:text-3xl font-Gotham font-bold">
             Customer Support
           </h1>
-          <p className="text-lg text-gray-700 font-Gotham font-semibold lg:w-[500px] 2xl:w-[600px]">
+          <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-Gotham font-semibold lg:w-[500px] 2xl:w-[600px]">
             Our customer support is committed to providing you with extensive
             knwoledge about our tours and procedures. we are here to guide you
             every step of the way, ensuring your travelling experience with
             Kesari Tours is seamless and memorable. Contact us now to have all
             of your travle-related question answered
           </p>
-          <button className="bg-black px-4 py-2 w-full md:w-1/3 mt-8 text-white text-sm font-Gotham">
-            Ask a Question
-          </button>
           <div className="mt-10">
-            <h1 className="text-3xl font-Gotham font-bold">Address</h1>
-            <p className="text-lg text-gray-700 font-Gotham font-semibold mt-5">
+            <h1 className="lg:text-2xl text-xl 2xl:text-3xl font-Gotham font-bold">
+              Address
+            </h1>
+            <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-Gotham font-semibold mt-5">
               Block Road Khatari, Near Durga Mil, <br /> Noori Masjid, Ramnagar
               -244715 distt Nainital <br /> Uttarkand, India
             </p>
           </div>
           <div className="bg-black w-full lg:w-3/4 h-[1px] mt-5" />
           <div className="mt-6">
-            <h1 className="text-3xl font-Gotham font-bold">Call No.(24X7)</h1>
-            <p className="text-lg tracking-wide text-gray-700 font-Gotham font-bold flex items-center gap-2 mt-4">
+            <h1 className="lg:text-2xl text-xl 2xl:text-3xl font-Gotham font-bold">
+              Call No.(24X7)
+            </h1>
+            <p className="text-sm lg:text-base 2xl:text-lg tracking-wide text-gray-700 font-Gotham font-bold flex items-center gap-2 mt-4">
               <FaPhone /> <span>+91-9917681111</span>{" "}
               <span>+91-9105531111</span>
             </p>
-            <p className="text-lg mt-2 tracking-wide text-gray-700 font-Gotham font-bold flex items-center gap-2">
+            <p className="text-sm lg:text-base 2xl:text-lg mt-2 tracking-wide text-gray-700 font-Gotham font-bold flex items-center gap-2">
               <BsEnvelope /> <span>booking@jimcorbettpark.co.in</span>
             </p>
           </div>
