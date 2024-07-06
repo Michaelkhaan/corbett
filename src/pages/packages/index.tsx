@@ -1,6 +1,7 @@
 import Data from "@/components/Data";
 import Highlight from "@/components/Highlight";
 import Itinerary from "@/components/Itinerary";
+import Model from "@/components/Model";
 import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
 import Package from "@/components/Package";
@@ -9,9 +10,19 @@ import PackageFAQ from "@/components/PackageFAQ";
 import Packageexc from "@/components/Packageexc";
 import Touricons from "@/components/Touricons";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
-function index() {
+function Index() {
+  const [open, setOpen] = useState(false);
+  const [selectedPrice, setSelectedPrice] = useState("lessThan10k");
+
+  const handleClick = (price: any) => {
+    setSelectedPrice(price);
+  };
+
+  const onClick = () => {
+    setOpen(!open);
+  };
   const itineraryData = [
     {
       days: "Day 1",
@@ -151,7 +162,7 @@ function index() {
             </p>
             <p className="text-[8px] font-Gotham pl-5">per person</p>
           </div>
-          <div className="w-full md:w-auto flex justify-start">
+          <div className="w-full md:w-auto flex justify-end" onClick={onClick}>
             <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-Gotham font-medium ">
               ENQUERY
             </button>
@@ -227,19 +238,37 @@ function index() {
         <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-Gotham px-3">
           Best priced packages with in your budget
         </h1>
+
         <div className="w-11/12 lg:w-1/2 2xl:w-2/6 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
-          <div className="bg-[#f8bd01] rounded-full px-6 py-2 flex justify-center">
-            <h1 className="text-[10px] text-white font-Gotham">
-              Less then Rs 10,000
-            </h1>
+          <div
+            className={`${
+              selectedPrice === "lessThan10k"
+                ? "bg-[#f8bd01] text-white"
+                : "bg-white border text-black"
+            } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
+            onClick={() => handleClick("lessThan10k")}
+          >
+            <h1 className="text-[10px] font-Gotham">Less than Rs 10,000</h1>
           </div>
-          <div className="bg-white border rounded-full px-2 flex justify-center py-2">
-            <h1 className="text-xs text-black font-Gotham">
-              Rs 10,000 to Rs 20,000
-            </h1>
+          <div
+            className={`${
+              selectedPrice === "10kTo20k"
+                ? "bg-[#f8bd01] text-white"
+                : "bg-white border text-black"
+            } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
+            onClick={() => handleClick("10kTo20k")}
+          >
+            <h1 className="text-xs font-Gotham">Rs 10,000 to Rs 20,000</h1>
           </div>
-          <div className="bg-white border rounded-full px-1 py-2 flex justify-center">
-            <h1 className="text-[10.74px] leading-4 text-black font-Gotham">
+          <div
+            className={`${
+              selectedPrice === "30kTo50k"
+                ? "bg-[#f8bd01] text-white"
+                : "bg-white border text-black"
+            } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
+            onClick={() => handleClick("30kTo50k")}
+          >
+            <h1 className="text-[10.74px] leading-4 font-Gotham">
               Rs 30,000 to Rs 50,000
             </h1>
           </div>
@@ -273,10 +302,19 @@ function index() {
             </button>
           </div>
         </div>
+        <Model
+          show={open}
+          onClose={() => setOpen(false)}
+          containerClass="!w-1/3"
+        >
+          <div className="bg-white">
+            <Data />
+          </div>
+        </Model>
       </div>
       <Nfooter />
     </div>
   );
 }
 
-export default index;
+export default Index;

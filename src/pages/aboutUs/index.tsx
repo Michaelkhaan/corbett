@@ -66,7 +66,7 @@ function index() {
           </p>
         </div>
       </div>
-      <div className="w-11/12 mt-20 grid grid-col-1 lg:grid-cols-3 2xl:grid-cols-2">
+      <div className="w-full lg:w-11/12 mt-20 grid grid-col-1 lg:grid-cols-3 2xl:grid-cols-2">
         <div className="w-full flex flex-col lg:items-end lg:col-span-2 2xl:col-span-1">
           <div>
             <h1 className="lg:text-3xl text-xl 2xl:text-5xl font-Gotham font-bold px-4">
@@ -83,7 +83,7 @@ function index() {
             alt=""
             width={0}
             height={0}
-            className="w-full 2xl:w-[80%]"
+            className="w-full 2xl:w-[80%] h-[300px] 2xl:h-auto object-cover"
           />
         </div>
       </div>
@@ -96,7 +96,7 @@ function index() {
           </p>
         </div>
         <div className="w-full px-4 flex flex-col lg:flex-row lg:items-center gap-8">
-          <div className="w-full sm:w-1/2 2xl:w-1/4 aspect-video bg-black flex items-center justify-center mt-10">
+          <div className="w-full h-[300px] lg:h-auto lg:w-1/2 2xl:w-1/4 aspect-video bg-black flex items-center justify-center mt-10">
             <h1 className="text-white text-xl font-Gotham font-bold">
               Coming Pic
             </h1>
@@ -128,14 +128,14 @@ function index() {
               minimising their ecological footprint
             </p>
           </div>
-          <div className="w-full sm:w-1/2 lg:w-1/3 2xl:w-1/4 aspect-video bg-black flex items-center justify-center lg:mt-10">
+          <div className="w-full h-[300px] lg:h-auto lg:w-1/3 2xl:w-1/4 aspect-video bg-black flex items-center justify-center lg:mt-10">
             <h1 className="text-white text-xl font-Gotham font-bold">
               Coming Pic
             </h1>
           </div>
         </div>
         <div className="w-full px-4 flex flex-col lg:flex-row lg:items-center gap-8">
-          <div className="w-full sm:w-1/2 2xl:w-1/4 aspect-video bg-black flex items-center justify-center mt-10">
+          <div className="w-full h-[300px] lg:h-auto lg:w-1/2 2xl:w-1/4 aspect-video bg-black flex items-center justify-center mt-10">
             <h1 className="text-white text-xl font-Gotham font-bold">
               Coming Pic
             </h1>
