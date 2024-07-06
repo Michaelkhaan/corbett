@@ -47,7 +47,7 @@ const Jeep = () => {
    <NaveBar />
    <div className="absolute inset-0 flex items-center justify-center">
         <h1 className="text-white font-frinkRio 2xl:text-[52px] text-2xl 2xl:leading-[36px] leading-5 font-bold">
-          Jeep Sapari
+          Jeep Safari
         </h1>
       </div>
           <Image
