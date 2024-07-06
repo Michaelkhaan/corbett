@@ -38,7 +38,9 @@ function Itinerary({ className, question, answer, key }: Props) {
           openId === key ? "" : "hidden"
         }`}
       >
-        <p className="text-black text-xs font-Gotham">{answer}</p>
+        <p className="text-black text-xs font-Gotham 2xl:text-[15px]">
+          {answer}
+        </p>
       </div>
     </>
   );

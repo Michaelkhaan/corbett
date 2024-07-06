@@ -91,7 +91,7 @@ function index() {
         />
         <NaveBar />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white font-frinkRio 2xl:text-[52px] text-5xl 2xl:leading-[36px] leading-5 font-bold">
+          <h1 className="text-white font-frinkRio 2xl:text-[52px] lg:text-4xl 2xl:leading-[36px] leading-5 font-bold sm:text-3xl text-2xl">
             DHIKALA REST HOUSE
           </h1>
         </div>
@@ -120,7 +120,7 @@ function index() {
       </div> */}
       <div>
         <OverView1 />
-        <div className="flex lg:w-[70%] 2xl:w-[50%] w-11/12  mx-auto flex-col justify-start items-start">
+        <div className="flex lg:w-[75%] 2xl:w-[65%] w-11/12  mx-auto flex-col justify-start items-start">
           {jungle?.map((e, index) => (
             <JungleSaferi
               key={index?.toString()}

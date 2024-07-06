@@ -3,12 +3,12 @@ import TraficTable from "./TraficTable";
 const TraficPrice1 = () => {
   return (
     <div className="w-full bg-yellow-400 h-auto">
-      <div className="lg:w-[70%]  mx-auto">
-        <div className="flex justify-center md:gap-20 py-10 md:flex-row flex-col px-4">
-          <h1 className="text-4xl">Trafic Price</h1>
+      <div className="lg:w-[75%] 2xl:w-[65%] mx-auto">
+        <div className="flex justify-center md:gap-20 py-10 md:flex-row flex-col px-2">
+          <h1 className="text-4xl whitespace-nowrap">Trafic Price</h1>
 
-          <div className="lg:w-[70%] 2xl:w-[50%] mt-4  ">
-            <p className="text-base leading-5">
+          <div className="flex-grow  mt-4  ">
+            <p className="text-base 2xl:text-[20px] leading-5">
               {`The cost of stying at Dhikala varies based on the type of
               accomadation. so our option range from cozy forest rest houses to
               bunk beds in logs huts. all equiped with basic amenities. price

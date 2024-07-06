@@ -46,7 +46,9 @@ function JungleSaferi({
         onClick={() => handleToggle(key)}
       >
         <div className="flex justify-between items-center w-full">
-          <h1 className="font-bold text-lg tracking-wider">{Title}</h1>
+          <h1 className="font-bold text-lg tracking-wider font-Gotham">
+            {Title}
+          </h1>
           {openId === key ? (
             <FaMinus className={`text-[#f8bd00]`} />
           ) : (
@@ -59,15 +61,31 @@ function JungleSaferi({
           openId === key ? "" : "hidden"
         }`}
       >
-        <h5 className="text-black text-lg font-bold mt-2">{Dhikala}</h5>
-        <p className="text-black text-xs">{desc}</p>
-        <p className=" text-black text-xs mt-4 tracking-wide">{desc1}</p>
-        <h1 className="text-black text-lg font-bold mt-6">{canter}</h1>
-        <p className=" text-black text-xs tracking-wide mt-1">{canterdesc}</p>
-        <h1 className="text-black text-lg font-bold mt-6">{Elephant}</h1>
-        <p className="text-black text-xs tracking-wide mt-1">{Elephdesc}</p>
-        <h1 className="text-black text-lg font-bold mt-6">{jeep}</h1>
-        <p className="text-black text-xs tracking-wide mt-1">{jeepdesc}</p>
+        <h5 className="text-black text-lg font-bold mt-2 font-Gotham">
+          {Dhikala}
+        </h5>
+        <p className="text-black text-xs 2xl:text-[15px] font-Gotham">{desc}</p>
+        <p className=" text-black text-xs 2xl:text-[15px] mt-4 tracking-wide font-Gotham">
+          {desc1}
+        </p>
+        <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+          {canter}
+        </h1>
+        <p className=" text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+          {canterdesc}
+        </p>
+        <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+          {Elephant}
+        </h1>
+        <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+          {Elephdesc}
+        </p>
+        <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+          {jeep}
+        </h1>
+        <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+          {jeepdesc}
+        </p>
       </div>
     </>
   );
