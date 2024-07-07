@@ -11,31 +11,31 @@ export default function Touricons() {
       <div className="grid grid-cols-3 items-center justify-center gap-y-4 px-3 lg:px-8">
         <div className="flex flex-col items-center">
           <span className="w-16 aspect-square rounded-full bg-black flex items-center justify-center">
-            <Image src="Layer 47 copy.png" alt="" width={40} height={40} />
+            <Image src="/Layer 47 copy.png" alt="" width={40} height={40} />
           </span>
           <h1>Hotel</h1>
         </div>
         <div className="flex flex-col items-center">
           <span className="w-16 aspect-square rounded-full bg-black flex items-center justify-center">
-            <Image src="Layer 48.png" alt="" width={40} height={40} />
+            <Image src="/Layer 48.png" alt="" width={40} height={40} />
           </span>
           <h1>Meals</h1>
         </div>
         <div className="flex flex-col items-center">
           <span className="w-16 aspect-square rounded-full bg-black flex items-center justify-center">
-            <Image src="Layer 47 copy.png" alt="" width={40} height={40} />
+            <Image src="/Layer 47 copy.png" alt="" width={40} height={40} />
           </span>
           <h1>Transport</h1>
         </div>
         <div className="flex flex-col items-center">
           <span className="w-16 aspect-square rounded-full bg-black flex items-center justify-center">
-            <Image src="Layer 47 copy.png" alt="" width={40} height={40} />
+            <Image src="/Layer 47 copy.png" alt="" width={40} height={40} />
           </span>
           <h1>Flight</h1>
         </div>
         <div className="flex flex-col items-center">
           <span className="w-16 aspect-square rounded-full bg-black flex items-center justify-center">
-            <Image src="Layer 48.png" alt="" width={40} height={40} />
+            <Image src="/Layer 48.png" alt="" width={40} height={40} />
           </span>
           <h1>Sightseeing</h1>
         </div>

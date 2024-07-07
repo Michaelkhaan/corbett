@@ -11,7 +11,7 @@ export default function Highlight() {
       <ul className="text-[#000000] leading-[34px] font-Gotham text-sm 2xl:text-[16px] mt-3">
         <span className="flex items-center gap-3">
           <Image
-            src="Layer 46.png"
+            src="/Layer 46.png"
             alt=""
             width={0}
             height={0}
@@ -21,7 +21,7 @@ export default function Highlight() {
         </span>
         <span className="flex items-center gap-3 mt-2">
           <Image
-            src="Layer 46.png"
+            src="/Layer 46.png"
             alt=""
             width={0}
             height={0}
@@ -32,7 +32,7 @@ export default function Highlight() {
         <span className="flex items-center gap-3 mt-2">
           {" "}
           <Image
-            src="Layer 46.png"
+            src="/Layer 46.png"
             alt=""
             width={0}
             height={0}
@@ -42,7 +42,7 @@ export default function Highlight() {
         </span>
         <span className="flex items-center gap-3 mt-2">
           <Image
-            src="Layer 46.png"
+            src="/Layer 46.png"
             alt=""
             width={0}
             height={0}
@@ -53,7 +53,7 @@ export default function Highlight() {
         <span className="flex items-center gap-3 mt-2">
           {" "}
           <Image
-            src="Layer 46.png"
+            src="/Layer 46.png"
             alt=""
             width={0}
             height={0}

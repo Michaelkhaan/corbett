@@ -4,6 +4,16 @@ import "swiper/css/bundle";
 import "swiper/swiper-bundle.css";
 import "swiper/css/effect-cards";
 import localFont from "next/font/local";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+    },
+  },
+});
 
 const Gotham = localFont({
   src: [
@@ -61,21 +71,24 @@ const frinkRio = localFont({
 //   ],
 //   variable: "--dejavu",
 // });
-const myriadPro=localFont({
- src:[
-  {
-    path:'../../public/fonts/myriad-pro/MYRIADPRO-SEMIBOLD.woff',
-    weight:"600",
-    style:"semibold"
-  }
-
- ],
- variable:"--myriadPro"
-})
+const myriadPro = localFont({
+  src: [
+    {
+      path: "../../public/fonts/myriad-pro/MYRIADPRO-SEMIBOLD.woff",
+      weight: "600",
+      style: "semibold",
+    },
+  ],
+  variable: "--myriadPro",
+});
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${Gotham?.variable} ${frinkRio?.variable} ${myriadPro?.variable} `}>
-      <Component {...pageProps} />
+    <main
+      className={`${Gotham?.variable} ${frinkRio?.variable} ${myriadPro?.variable} `}
+    >
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
     </main>
   );
 }
