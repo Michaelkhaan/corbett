@@ -1,0 +1,32 @@
+overwrite: true
+schema: "https://www.corbett-server.cruxdevs.com/graphql"
+documents:
+  - "src/queries/gql-strings/queries/*.gql"
+  - "src/queries/gql-strings/mutations/*.gql"
+  - "src/queries/gql-strings/fragments/*.gql"
+  - "src/queries/gql-strings/subscriptions/*.gql"
+  - "src/queries/gql-strings/forms/*.gql"
+generates:
+  src/queries/generated/index.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-query"
+      - add:
+          content: "import { API_URL, fetchParams } from '../../../config/index'"
+    config:
+      fetcher:
+        endpoint: "API_URL"
+        fetchParams: "fetchParams()"
+
+  src/queries/generated/index.d.ts:
+    plugins:
+      - "typescript-graphql-files-modules"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
+
+config:
+  namingConvention:
+    enumValues: "keep"
+  reactQueryVersion: 5

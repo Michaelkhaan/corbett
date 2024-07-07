@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 export default function Data() {
@@ -7,8 +8,8 @@ export default function Data() {
 
       <input
         type="date"
-        placeholder="Travel Date"
-        className="px-12 w-full focus:outline-none border border-black py-1 mb-4"
+        placeholder="travel date"
+        className="px-12 w-full focus:outline-none border border-black py-1 mb-4 hover:border-black"
       />
 
       <input
