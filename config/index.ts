@@ -2,10 +2,10 @@ export const API_URL = 'https://www.corbett-server.cruxdevs.com/graphql';
 
 export const fetchParams = () => {
   let token = '';
-  if (typeof window !== 'undefined') {
-    token = localStorage.getItem('token') || '';
-    token = JSON.parse(token)?.state?.token;
-  }
+  // if (typeof window !== 'undefined') {
+  //   token = localStorage.getItem('token') || '';
+  //   token = JSON.parse(token)?.state?.token;
+  // }
 
   return {
     headers: {
