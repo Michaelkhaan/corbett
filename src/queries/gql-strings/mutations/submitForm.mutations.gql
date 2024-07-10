@@ -1,0 +1,5 @@
+mutation SubmitForm($date: String!, $contact: String!, $city: String!) {
+  submitForm(date: $date, contact: $contact, city: $city) {
+    message
+  }
+}

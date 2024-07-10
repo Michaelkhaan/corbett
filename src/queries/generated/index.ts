@@ -1,5 +1,5 @@
 import { API_URL, fetchParams } from '../../../config/index'
-import { useQuery, UseQueryOptions } from '@tanstack/react-query';
+import { useMutation, useQuery, UseMutationOptions, UseQueryOptions } from '@tanstack/react-query';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -266,12 +266,42 @@ export type User = {
   name: Scalars['String']['output'];
 };
 
+export type SubmitFormMutationVariables = Exact<{
+  date: Scalars['String']['input'];
+  contact: Scalars['String']['input'];
+  city: Scalars['String']['input'];
+}>;
+
+
+export type SubmitFormMutation = { __typename?: 'Mutation', submitForm: { __typename?: 'Message', message: string } };
+
 export type GetAllCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllCategoriesQuery = { __typename?: 'Query', getAllCategories?: Array<{ __typename?: 'Category', id: number, name: string } | null> | null };
 
 
+
+export const SubmitFormDocument = `
+    mutation SubmitForm($date: String!, $contact: String!, $city: String!) {
+  submitForm(date: $date, contact: $contact, city: $city) {
+    message
+  }
+}
+    `;
+
+export const useSubmitFormMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<SubmitFormMutation, TError, SubmitFormMutationVariables, TContext>) => {
+    
+    return useMutation<SubmitFormMutation, TError, SubmitFormMutationVariables, TContext>(
+      {
+    mutationKey: ['SubmitForm'],
+    mutationFn: (variables?: SubmitFormMutationVariables) => fetcher<SubmitFormMutation, SubmitFormMutationVariables>(SubmitFormDocument, variables)(),
+    ...options
+  }
+    )};
 
 export const GetAllCategoriesDocument = `
     query GetAllCategories {
