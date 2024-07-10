@@ -1,0 +1,59 @@
+query GetAllPackages($startPrice: Float, $endPrice: Float) {
+  getAllPackages(startPrice: $startPrice, endPrice: $endPrice) {
+    total
+    data {
+      image
+      name
+      price
+      title
+      category_id
+      Category {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      Exclusions {
+        package_id
+        title
+        updatedAt
+        id
+        createdAt
+      }
+      Faqs {
+        package_id
+        title
+        updatedAt
+        description
+        id
+        createdAt
+      }
+      Highlights {
+        package_id
+        updatedAt
+        name
+        id
+        createdAt
+      }
+      Includes {
+        createdAt
+        id
+        image
+        name
+        package_id
+        updatedAt
+      }
+      Inclusions {
+        createdAt
+        id
+        package_id
+        title
+        updatedAt
+      }
+      createdAt
+      description
+      id
+      updatedAt
+    }
+  }
+}

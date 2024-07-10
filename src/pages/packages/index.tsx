@@ -1,11 +1,17 @@
 import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
 import PackageCard from "@/components/PackageCard";
+import { useGetAllPackagesQuery } from "@/queries/generated";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import { start } from "repl";
 
 function Index() {
-  const [selectedPrice, setSelectedPrice] = useState("lessThan10k");
+  const [selectedPrice, setSelectedPrice] = useState({
+    start: 0,
+    end: 100,
+    id: 1,
+  });
   const router = useRouter();
 
   const onClick = (id: string) => {
@@ -16,72 +22,92 @@ function Index() {
     setSelectedPrice(price);
   };
 
-  const packagesData = [
-    {
-      id: "1",
-      image: "/deer.png",
-      title: "Bijrani Saffari zone",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      id: "2",
-      image: "/saffarizone.png",
-      title: "Bijrani Saffari zone",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      id: "3",
-      image: "/deer.png",
-      title: "Bijrani Saffari zone",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      id: "4",
-      image: "/saffarizone.png",
-      title: "Bijrani Saffari zone",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      id: "5",
-      image: "/deer.png",
-      title: "Bijrani Saffari zone",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      id: "6",
-      image: "/saffarizone.png",
-      title: "Bijrani Saffari zone",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      id: "7",
-      image: "/deer.png",
-      title: "Bijrani Saffari zone",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-    {
-      id: "8",
-      image: "/saffarizone.png",
-      title: "Bijrani Saffari zone",
-      rooms: "3 TO 14 NIGHTS FROM",
-      subtitle: "per person",
-      prices: "35,399",
-    },
-  ];
+  // const packagesData = [
+  //   {
+  //     id: "1",
+  //     image: "/deer.png",
+  //     title: "Bijrani Saffari zone",
+  //     rooms: "3 TO 14 NIGHTS FROM",
+  //     subtitle: "per person",
+  //     prices: "35,399",
+  //   },
+  //   {
+  //     id: "2",
+  //     image: "/saffarizone.png",
+  //     title: "Bijrani Saffari zone",
+  //     rooms: "3 TO 14 NIGHTS FROM",
+  //     subtitle: "per person",
+  //     prices: "35,399",
+  //   },
+  //   {
+  //     id: "3",
+  //     image: "/deer.png",
+  //     title: "Bijrani Saffari zone",
+  //     rooms: "3 TO 14 NIGHTS FROM",
+  //     subtitle: "per person",
+  //     prices: "35,399",
+  //   },
+  //   {
+  //     id: "4",
+  //     image: "/saffarizone.png",
+  //     title: "Bijrani Saffari zone",
+  //     rooms: "3 TO 14 NIGHTS FROM",
+  //     subtitle: "per person",
+  //     prices: "35,399",
+  //   },
+  //   {
+  //     id: "5",
+  //     image: "/deer.png",
+  //     title: "Bijrani Saffari zone",
+  //     rooms: "3 TO 14 NIGHTS FROM",
+  //     subtitle: "per person",
+  //     prices: "35,399",
+  //   },
+  //   {
+  //     id: "6",
+  //     image: "/saffarizone.png",
+  //     title: "Bijrani Saffari zone",
+  //     rooms: "3 TO 14 NIGHTS FROM",
+  //     subtitle: "per person",
+  //     prices: "35,399",
+  //   },
+  //   {
+  //     id: "7",
+  //     image: "/deer.png",
+  //     title: "Bijrani Saffari zone",
+  //     rooms: "3 TO 14 NIGHTS FROM",
+  //     subtitle: "per person",
+  //     prices: "35,399",
+  //   },
+  //   {
+  //     id: "8",
+  //     image: "/saffarizone.png",
+  //     title: "Bijrani Saffari zone",
+  //     rooms: "3 TO 14 NIGHTS FROM",
+  //     subtitle: "per person",
+  //     prices: "35,399",
+  //   },
+  // ];
+
+  const { data: packages } = useGetAllPackagesQuery({
+    startPrice: selectedPrice?.start,
+    endPrice: selectedPrice?.end,
+  });
+
+  const packagesData = useMemo(() => {
+    return packages?.getAllPackages?.data?.map((data) => {
+      return {
+        id: data?.id?.toString() || "",
+        image: data?.image || "",
+        title: data?.title || "",
+        rooms: "3 rooms" || "",
+        subtitle: "per person" || "",
+        prices: data?.price?.toString() || "",
+      };
+    });
+  }, [packages]);
+
+  console.log(packages);
 
   return (
     <div className="w-full">
@@ -94,31 +120,31 @@ function Index() {
         <div className="w-11/12 lg:w-1/2 2xl:w-2/6 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
           <div
             className={`${
-              selectedPrice === "lessThan10k"
+              selectedPrice?.id === 1
                 ? "bg-[#f8bd01] text-white"
                 : "bg-white border text-black"
             } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
-            onClick={() => handleClick("lessThan10k")}
+            onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
           >
             <h1 className="text-[10px] font-Gotham">Less than Rs 10,000</h1>
           </div>
           <div
             className={`${
-              selectedPrice === "10kTo20k"
+              selectedPrice?.id === 2
                 ? "bg-[#f8bd01] text-white"
                 : "bg-white border text-black"
             } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
-            onClick={() => handleClick("10kTo20k")}
+            onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
           >
             <h1 className="text-xs font-Gotham">Rs 10,000 to Rs 20,000</h1>
           </div>
           <div
             className={`${
-              selectedPrice === "30kTo50k"
+              selectedPrice?.id === 3
                 ? "bg-[#f8bd01] text-white"
                 : "bg-white border text-black"
             } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
-            onClick={() => handleClick("30kTo50k")}
+            onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
           >
             <h1 className="text-[10.74px] leading-4 font-Gotham">
               Rs 30,000 to Rs 50,000

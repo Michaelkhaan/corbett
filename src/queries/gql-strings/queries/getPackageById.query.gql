@@ -1,0 +1,36 @@
+query GetPackageById($getPackageByIdId: ID!) {
+  getPackageById(id: $getPackageByIdId) {
+    title
+    price
+    image
+    id
+    Faqs {
+      id
+      title
+      description
+    }
+    Exclusions {
+      id
+      title
+    }
+    Highlights {
+      id
+      name
+      package_id
+    }
+    Includes {
+      image
+      name
+      id
+    }
+    Inclusions {
+      id
+      title
+    }
+    Itinerary {
+      name
+      title
+      description
+    }
+  }
+}

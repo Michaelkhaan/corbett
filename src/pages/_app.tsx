@@ -5,6 +5,7 @@ import "swiper/swiper-bundle.css";
 import "swiper/css/effect-cards";
 import localFont from "next/font/local";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ToastContainer } from "react-toastify";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -88,6 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
+        <ToastContainer />
       </QueryClientProvider>
     </main>
   );
