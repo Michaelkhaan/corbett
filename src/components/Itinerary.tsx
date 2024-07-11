@@ -18,7 +18,7 @@ function Itinerary({ className, days, title, desc, key }: Props) {
   return (
     <>
       <div
-        className={`w-full 2xl:w-1/3 rounded-lg lg:rounded-full  px-5 py-1.5 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
+        className={`w-full 2xl:w-1/3 rounded-lg lg:rounded-full px-5 py-1.5 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
           openId === key ? "bg-[#f8bd00]" : "bg-[#e0e0e0]"
         }`}
         onClick={() => handleToggle(key)}
@@ -37,7 +37,9 @@ function Itinerary({ className, days, title, desc, key }: Props) {
           openId === key ? "" : "hidden"
         }`}
       >
-        <h1 className="text-sm text-black font-Gotham">{title}</h1>
+        <h1 className="text-sm text-black font-Gotham font-extrabold ">
+          {title}
+        </h1>
         <p className="text-black text-xs font-Gotham">{desc}</p>
       </div>
     </>

@@ -321,6 +321,21 @@ export type GetAllFormQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllFormQuery = { __typename?: 'Query', getAllForm?: { __typename?: 'FormResponse', total?: number | null, data?: Array<{ __typename?: 'Form', date: string, contact: string, city: string } | null> | null } | null };
 
+export type GetAllPackagesQueryVariables = Exact<{
+  startPrice?: InputMaybe<Scalars['Float']['input']>;
+  endPrice?: InputMaybe<Scalars['Float']['input']>;
+}>;
+
+
+export type GetAllPackagesQuery = { __typename?: 'Query', getAllPackages: { __typename?: 'PackageResponse', total: number, data: Array<{ __typename?: 'Package', image?: string | null, name: string, price: number, title: string, category_id: number, createdAt: string, description?: string | null, id: number, updatedAt: string, Category?: { __typename?: 'Category', id: number, name: string, createdAt: string, updatedAt: string } | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', package_id: number, title: string, updatedAt: string, id: number, createdAt: string } | null> | null, Faqs?: Array<{ __typename?: 'PackageFaq', package_id: number, title: string, updatedAt: string, description?: string | null, id: number, createdAt: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', package_id: number, updatedAt: string, name: string, id: number, createdAt: string } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', createdAt: string, id: number, image?: string | null, name: string, package_id: number, updatedAt: string } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', createdAt: string, id: number, package_id: number, title: string, updatedAt: string } | null> | null } | null> } };
+
+export type GetPackageByIdQueryVariables = Exact<{
+  getPackageByIdId: Scalars['ID']['input'];
+}>;
+
+
+export type GetPackageByIdQuery = { __typename?: 'Query', getPackageById: { __typename?: 'Package', title: string, price: number, image?: string | null, id: number, Faqs?: Array<{ __typename?: 'PackageFaq', id: number, title: string, description?: string | null } | null> | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', id: number, title: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', id: number, name: string, package_id: number } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', image?: string | null, name: string, id: number } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', id: number, title: string } | null> | null, Itinerary?: Array<{ __typename?: 'Itinerary', name: string, title: string, description?: string | null } | null> | null } };
+
 
 
 export const AddCategoryDocument = `
@@ -436,6 +451,139 @@ export const useGetAllFormQuery = <
       {
     queryKey: variables === undefined ? ['GetAllForm'] : ['GetAllForm', variables],
     queryFn: fetcher<GetAllFormQuery, GetAllFormQueryVariables>(GetAllFormDocument, variables),
+    ...options
+  }
+    )};
+
+export const GetAllPackagesDocument = `
+    query GetAllPackages($startPrice: Float, $endPrice: Float) {
+  getAllPackages(startPrice: $startPrice, endPrice: $endPrice) {
+    total
+    data {
+      image
+      name
+      price
+      title
+      category_id
+      Category {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      Exclusions {
+        package_id
+        title
+        updatedAt
+        id
+        createdAt
+      }
+      Faqs {
+        package_id
+        title
+        updatedAt
+        description
+        id
+        createdAt
+      }
+      Highlights {
+        package_id
+        updatedAt
+        name
+        id
+        createdAt
+      }
+      Includes {
+        createdAt
+        id
+        image
+        name
+        package_id
+        updatedAt
+      }
+      Inclusions {
+        createdAt
+        id
+        package_id
+        title
+        updatedAt
+      }
+      createdAt
+      description
+      id
+      updatedAt
+    }
+  }
+}
+    `;
+
+export const useGetAllPackagesQuery = <
+      TData = GetAllPackagesQuery,
+      TError = unknown
+    >(
+      variables?: GetAllPackagesQueryVariables,
+      options?: Omit<UseQueryOptions<GetAllPackagesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<GetAllPackagesQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useQuery<GetAllPackagesQuery, TError, TData>(
+      {
+    queryKey: variables === undefined ? ['GetAllPackages'] : ['GetAllPackages', variables],
+    queryFn: fetcher<GetAllPackagesQuery, GetAllPackagesQueryVariables>(GetAllPackagesDocument, variables),
+    ...options
+  }
+    )};
+
+export const GetPackageByIdDocument = `
+    query GetPackageById($getPackageByIdId: ID!) {
+  getPackageById(id: $getPackageByIdId) {
+    title
+    price
+    image
+    id
+    Faqs {
+      id
+      title
+      description
+    }
+    Exclusions {
+      id
+      title
+    }
+    Highlights {
+      id
+      name
+      package_id
+    }
+    Includes {
+      image
+      name
+      id
+    }
+    Inclusions {
+      id
+      title
+    }
+    Itinerary {
+      name
+      title
+      description
+    }
+  }
+}
+    `;
+
+export const useGetPackageByIdQuery = <
+      TData = GetPackageByIdQuery,
+      TError = unknown
+    >(
+      variables: GetPackageByIdQueryVariables,
+      options?: Omit<UseQueryOptions<GetPackageByIdQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<GetPackageByIdQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useQuery<GetPackageByIdQuery, TError, TData>(
+      {
+    queryKey: ['GetPackageById', variables],
+    queryFn: fetcher<GetPackageByIdQuery, GetPackageByIdQueryVariables>(GetPackageByIdDocument, variables),
     ...options
   }
     )};
