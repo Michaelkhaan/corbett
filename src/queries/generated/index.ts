@@ -71,6 +71,23 @@ export type HighlightInput = {
   name: Scalars['String']['input'];
 };
 
+export type Itinerary = {
+  __typename?: 'Itinerary';
+  createdAt: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['Int']['output'];
+  name: Scalars['String']['output'];
+  package_id: Scalars['Int']['output'];
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
+export type ItineraryInput = {
+  description?: InputMaybe<Scalars['String']['input']>;
+  name: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+};
+
 export type LoginResponse = {
   __typename?: 'LoginResponse';
   data?: Maybe<User>;
@@ -117,6 +134,7 @@ export type MutationAddPackageArgs = {
   image?: InputMaybe<Scalars['String']['input']>;
   includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>>>;
   inclusions?: InputMaybe<Array<InputMaybe<PackageInclusionInput>>>;
+  itinerary?: InputMaybe<Array<InputMaybe<ItineraryInput>>>;
   name: Scalars['String']['input'];
   price: Scalars['Float']['input'];
   title: Scalars['String']['input'];
@@ -150,6 +168,7 @@ export type MutationUpdatePackageArgs = {
   image?: InputMaybe<Scalars['String']['input']>;
   includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>>>;
   inclusions?: InputMaybe<Array<InputMaybe<PackageInclusionInput>>>;
+  itinerary?: InputMaybe<Array<InputMaybe<ItineraryInput>>>;
   name: Scalars['String']['input'];
   price: Scalars['Float']['input'];
   title: Scalars['String']['input'];
@@ -169,6 +188,7 @@ export type Package = {
   Highlights?: Maybe<Array<Maybe<Highlight>>>;
   Includes?: Maybe<Array<Maybe<TourInclude>>>;
   Inclusions?: Maybe<Array<Maybe<PackageInclusion>>>;
+  Itinerary?: Maybe<Array<Maybe<Itinerary>>>;
   category_id: Scalars['Int']['output'];
   createdAt: Scalars['String']['output'];
   description?: Maybe<Scalars['String']['output']>;
@@ -184,7 +204,6 @@ export type PackageExclusion = {
   __typename?: 'PackageExclusion';
   createdAt: Scalars['String']['output'];
   id: Scalars['Int']['output'];
-  package?: Maybe<Package>;
   package_id: Scalars['Int']['output'];
   title: Scalars['String']['output'];
   updatedAt: Scalars['String']['output'];
@@ -199,7 +218,6 @@ export type PackageFaq = {
   createdAt: Scalars['String']['output'];
   description?: Maybe<Scalars['String']['output']>;
   id: Scalars['Int']['output'];
-  package?: Maybe<Package>;
   package_id: Scalars['Int']['output'];
   title: Scalars['String']['output'];
   updatedAt: Scalars['String']['output'];
@@ -214,7 +232,6 @@ export type PackageInclusion = {
   __typename?: 'PackageInclusion';
   createdAt: Scalars['String']['output'];
   id: Scalars['Int']['output'];
-  package?: Maybe<Package>;
   package_id: Scalars['Int']['output'];
   title: Scalars['String']['output'];
   updatedAt: Scalars['String']['output'];
@@ -240,6 +257,12 @@ export type Query = {
 };
 
 
+export type QueryGetAllPackagesArgs = {
+  endPrice?: InputMaybe<Scalars['Float']['input']>;
+  startPrice?: InputMaybe<Scalars['Float']['input']>;
+};
+
+
 export type QueryGetPackageByIdArgs = {
   id: Scalars['ID']['input'];
 };
@@ -250,7 +273,6 @@ export type TourInclude = {
   id: Scalars['Int']['output'];
   image?: Maybe<Scalars['String']['output']>;
   name: Scalars['String']['output'];
-  package?: Maybe<Package>;
   package_id: Scalars['Int']['output'];
   updatedAt: Scalars['String']['output'];
 };
@@ -266,6 +288,20 @@ export type User = {
   name: Scalars['String']['output'];
 };
 
+export type AddCategoryMutationVariables = Exact<{
+  name: Scalars['String']['input'];
+}>;
+
+
+export type AddCategoryMutation = { __typename?: 'Mutation', addCategory: { __typename?: 'Message', message: string } };
+
+export type DeleteCategoryMutationVariables = Exact<{
+  deleteCategoryId: Scalars['ID']['input'];
+}>;
+
+
+export type DeleteCategoryMutation = { __typename?: 'Mutation', deleteCategory: { __typename?: 'Message', message: string } };
+
 export type SubmitFormMutationVariables = Exact<{
   date: Scalars['String']['input'];
   contact: Scalars['String']['input'];
@@ -280,7 +316,54 @@ export type GetAllCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllCategoriesQuery = { __typename?: 'Query', getAllCategories?: Array<{ __typename?: 'Category', id: number, name: string } | null> | null };
 
+export type GetAllFormQueryVariables = Exact<{ [key: string]: never; }>;
 
+
+export type GetAllFormQuery = { __typename?: 'Query', getAllForm?: { __typename?: 'FormResponse', total?: number | null, data?: Array<{ __typename?: 'Form', date: string, contact: string, city: string } | null> | null } | null };
+
+
+
+export const AddCategoryDocument = `
+    mutation addCategory($name: String!) {
+  addCategory(name: $name) {
+    message
+  }
+}
+    `;
+
+export const useAddCategoryMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<AddCategoryMutation, TError, AddCategoryMutationVariables, TContext>) => {
+    
+    return useMutation<AddCategoryMutation, TError, AddCategoryMutationVariables, TContext>(
+      {
+    mutationKey: ['addCategory'],
+    mutationFn: (variables?: AddCategoryMutationVariables) => fetcher<AddCategoryMutation, AddCategoryMutationVariables>(AddCategoryDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const DeleteCategoryDocument = `
+    mutation deleteCategory($deleteCategoryId: ID!) {
+  deleteCategory(id: $deleteCategoryId) {
+    message
+  }
+}
+    `;
+
+export const useDeleteCategoryMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<DeleteCategoryMutation, TError, DeleteCategoryMutationVariables, TContext>) => {
+    
+    return useMutation<DeleteCategoryMutation, TError, DeleteCategoryMutationVariables, TContext>(
+      {
+    mutationKey: ['deleteCategory'],
+    mutationFn: (variables?: DeleteCategoryMutationVariables) => fetcher<DeleteCategoryMutation, DeleteCategoryMutationVariables>(DeleteCategoryDocument, variables)(),
+    ...options
+  }
+    )};
 
 export const SubmitFormDocument = `
     mutation SubmitForm($date: String!, $contact: String!, $city: String!) {
@@ -324,6 +407,35 @@ export const useGetAllCategoriesQuery = <
       {
     queryKey: variables === undefined ? ['GetAllCategories'] : ['GetAllCategories', variables],
     queryFn: fetcher<GetAllCategoriesQuery, GetAllCategoriesQueryVariables>(GetAllCategoriesDocument, variables),
+    ...options
+  }
+    )};
+
+export const GetAllFormDocument = `
+    query GetAllForm {
+  getAllForm {
+    total
+    data {
+      date
+      contact
+      city
+    }
+  }
+}
+    `;
+
+export const useGetAllFormQuery = <
+      TData = GetAllFormQuery,
+      TError = unknown
+    >(
+      variables?: GetAllFormQueryVariables,
+      options?: Omit<UseQueryOptions<GetAllFormQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<GetAllFormQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useQuery<GetAllFormQuery, TError, TData>(
+      {
+    queryKey: variables === undefined ? ['GetAllForm'] : ['GetAllForm', variables],
+    queryFn: fetcher<GetAllFormQuery, GetAllFormQueryVariables>(GetAllFormDocument, variables),
     ...options
   }
     )};

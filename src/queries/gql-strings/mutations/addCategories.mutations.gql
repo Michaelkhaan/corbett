@@ -1,0 +1,5 @@
+mutation addCategory($name: String!) {
+  addCategory(name: $name) {
+    message
+  }
+}
