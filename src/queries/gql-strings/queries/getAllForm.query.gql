@@ -1,0 +1,10 @@
+query GetAllForm {
+  getAllForm {
+    total
+    data {
+      date
+      contact
+      city
+    }
+  }
+}

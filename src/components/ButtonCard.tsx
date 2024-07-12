@@ -69,7 +69,6 @@ function ButtonCard() {
         contact: data.Number,
         city: data.city,
       });
-      // console.log("API Response", response);
       toast.success("Form submitted successfully!");
     } catch (error) {
       toast.error("Error submitting form. Please try again.");
