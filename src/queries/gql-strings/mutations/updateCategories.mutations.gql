@@ -1,0 +1,5 @@
+mutation UpdateCategory($updateCategoryId: ID!, $name: String!) {
+  updateCategory(id: $updateCategoryId, name: $name) {
+    message
+  }
+}

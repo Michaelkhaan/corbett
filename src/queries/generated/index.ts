@@ -109,6 +109,7 @@ export type Mutation = {
   deleteCategory: Message;
   deletePackage: Message;
   submitForm: Message;
+  updateCategory: Message;
   updatePackage: Message;
   updateProfile?: Maybe<Message>;
 };
@@ -155,6 +156,12 @@ export type MutationSubmitFormArgs = {
   city: Scalars['String']['input'];
   contact: Scalars['String']['input'];
   date: Scalars['String']['input'];
+};
+
+
+export type MutationUpdateCategoryArgs = {
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
 };
 
 
@@ -311,6 +318,14 @@ export type SubmitFormMutationVariables = Exact<{
 
 export type SubmitFormMutation = { __typename?: 'Mutation', submitForm: { __typename?: 'Message', message: string } };
 
+export type UpdateCategoryMutationVariables = Exact<{
+  updateCategoryId: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+}>;
+
+
+export type UpdateCategoryMutation = { __typename?: 'Mutation', updateCategory: { __typename?: 'Message', message: string } };
+
 export type GetAllCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -397,6 +412,27 @@ export const useSubmitFormMutation = <
       {
     mutationKey: ['SubmitForm'],
     mutationFn: (variables?: SubmitFormMutationVariables) => fetcher<SubmitFormMutation, SubmitFormMutationVariables>(SubmitFormDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const UpdateCategoryDocument = `
+    mutation UpdateCategory($updateCategoryId: ID!, $name: String!) {
+  updateCategory(id: $updateCategoryId, name: $name) {
+    message
+  }
+}
+    `;
+
+export const useUpdateCategoryMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<UpdateCategoryMutation, TError, UpdateCategoryMutationVariables, TContext>) => {
+    
+    return useMutation<UpdateCategoryMutation, TError, UpdateCategoryMutationVariables, TContext>(
+      {
+    mutationKey: ['UpdateCategory'],
+    mutationFn: (variables?: UpdateCategoryMutationVariables) => fetcher<UpdateCategoryMutation, UpdateCategoryMutationVariables>(UpdateCategoryDocument, variables)(),
     ...options
   }
     )};
