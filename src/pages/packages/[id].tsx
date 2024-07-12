@@ -22,9 +22,9 @@ function Index() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const [selectedPrice, setSelectedPrice] = useState({
-    start: 0,
-    end: 100,
-    id: 1,
+    start: null,
+    end: null,
+    id: null,
   });
 
   const handleClick = (price: any) => {
@@ -68,7 +68,7 @@ function Index() {
       <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row items-center justify-between gap-2">
         <div className="w-full md:w-auto text-start">
           <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
-            {data?.getPackageById?.title}
+            {data?.getPackageById?.Category?.name}
           </h1>
           <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-Gotham font-bold">
             1 Nights, 2 Guest{" "}
@@ -189,7 +189,7 @@ function Index() {
                 ? "bg-[#f8bd01] text-white"
                 : "bg-white border text-black"
             } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
-            onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
+            onClick={() => handleClick({ start: 1, end: 10000, id: 1 })}
           >
             <h1 className="text-[10px] font-Gotham">Less than Rs 10,000</h1>
           </div>

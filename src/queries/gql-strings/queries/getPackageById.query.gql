@@ -32,5 +32,8 @@ query GetPackageById($getPackageByIdId: ID!) {
       title
       description
     }
+    Category {
+      name
+    }
   }
 }

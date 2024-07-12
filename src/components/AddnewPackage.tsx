@@ -9,12 +9,14 @@ import {
 } from "@/queries/generated";
 import { toast } from "react-toastify";
 import Spinner from "./spinner";
+import uploadFile from "@/utils/uploadFile";
 
 const schema = yup.object().shape({
   packageName: yup.string().required("Package name is required"),
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
   category: yup.string().required("Type is required"),
+  image: yup.string().required("image is required"),
   pricePerPerson: yup
     .number()
     .required("Price per person is required")
@@ -60,6 +62,7 @@ function AddnewPackage() {
     control,
     handleSubmit,
     register,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -67,6 +70,7 @@ function AddnewPackage() {
       packageName: "",
       title: "",
       description: "",
+      image: "",
       category: "",
       //@ts-ignore
       pricePerPerson: "",
@@ -125,6 +129,7 @@ function AddnewPackage() {
         title: data.title,
         description: data.description,
         price: parseFloat(data.pricePerPerson),
+        image: data.image,
 
         itinerary: data.itinerary.map((itinerary: any) => ({
           name: itinerary.day,
@@ -151,10 +156,22 @@ function AddnewPackage() {
         categoryId: parseInt(data.category),
       });
       toast?.success("Package added successfully");
+      // setIsModalOpen(false);
     } catch (errors) {
       toast?.error("invalid package");
     }
     console.log(data);
+  };
+
+  const upload = async (e: any, field: any) => {
+    try {
+      const file = e.target.files[0];
+      const url = await uploadFile(file);
+      setValue(field.name, url); // Set the value of the image URL field
+      toast?.success("Image uploaded successfully");
+    } catch (errors) {
+      toast?.error("Failed to upload image");
+    }
   };
 
   return (
@@ -181,7 +198,11 @@ function AddnewPackage() {
         {/* Existing form fields... */}
         <div className="selectImage rounded-lg px-5 py-4 mt-4">
           <p className="mb-2">Main Package Image</p>
-          <input type="file" className="w-full border-2 rounded-lg py-2 px-2" />
+          <input
+            type="file"
+            onChange={(e) => upload(e, { name: "image" })}
+            className="w-full border-2 rounded-lg py-2 px-2"
+          />
         </div>
         <div className="selectImage rounded-lg px-5 py-4 mt-5">
           <label htmlFor="packageName">Package Name</label>
@@ -300,16 +321,13 @@ function AddnewPackage() {
                   //@ts-ignore
                   <input
                     type="file"
-                    {...field}
+                    onChange={(e) =>
+                      upload(e, { name: `tourIncludes.${index}.image` })
+                    }
                     className="w-full border-2 rounded-lg py-2 px-2"
                   />
                 )}
               />
-              {errors.tourIncludes && errors.tourIncludes[index]?.image && (
-                <p className="text-red-500">
-                  {errors.tourIncludes[index].image.message}
-                </p>
-              )}
 
               <input
                 {...register(`tourIncludes.${index}.name`)}

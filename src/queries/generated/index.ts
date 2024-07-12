@@ -109,6 +109,7 @@ export type Mutation = {
   deleteCategory: Message;
   deletePackage: Message;
   submitForm: Message;
+  updateCategory: Message;
   updatePackage: Message;
   updateProfile?: Maybe<Message>;
 };
@@ -155,6 +156,12 @@ export type MutationSubmitFormArgs = {
   city: Scalars['String']['input'];
   contact: Scalars['String']['input'];
   date: Scalars['String']['input'];
+};
+
+
+export type MutationUpdateCategoryArgs = {
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
 };
 
 
@@ -320,6 +327,13 @@ export type DeleteCategoryMutationVariables = Exact<{
 
 export type DeleteCategoryMutation = { __typename?: 'Mutation', deleteCategory: { __typename?: 'Message', message: string } };
 
+export type DeletePackageMutationVariables = Exact<{
+  deletePackageId: Scalars['ID']['input'];
+}>;
+
+
+export type DeletePackageMutation = { __typename?: 'Mutation', deletePackage: { __typename?: 'Message', message: string } };
+
 export type SubmitFormMutationVariables = Exact<{
   date: Scalars['String']['input'];
   contact: Scalars['String']['input'];
@@ -352,7 +366,7 @@ export type GetPackageByIdQueryVariables = Exact<{
 }>;
 
 
-export type GetPackageByIdQuery = { __typename?: 'Query', getPackageById: { __typename?: 'Package', title: string, price: number, image?: string | null, id: number, Faqs?: Array<{ __typename?: 'PackageFaq', id: number, title: string, description?: string | null } | null> | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', id: number, title: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', id: number, name: string, package_id: number } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', image?: string | null, name: string, id: number } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', id: number, title: string } | null> | null, Itinerary?: Array<{ __typename?: 'Itinerary', name: string, title: string, description?: string | null } | null> | null } };
+export type GetPackageByIdQuery = { __typename?: 'Query', getPackageById: { __typename?: 'Package', title: string, price: number, image?: string | null, id: number, Faqs?: Array<{ __typename?: 'PackageFaq', id: number, title: string, description?: string | null } | null> | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', id: number, title: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', id: number, name: string, package_id: number } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', image?: string | null, name: string, id: number } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', id: number, title: string } | null> | null, Itinerary?: Array<{ __typename?: 'Itinerary', name: string, title: string, description?: string | null } | null> | null, Category?: { __typename?: 'Category', name: string } | null } };
 
 
 
@@ -428,6 +442,27 @@ export const useDeleteCategoryMutation = <
       {
     mutationKey: ['deleteCategory'],
     mutationFn: (variables?: DeleteCategoryMutationVariables) => fetcher<DeleteCategoryMutation, DeleteCategoryMutationVariables>(DeleteCategoryDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const DeletePackageDocument = `
+    mutation DeletePackage($deletePackageId: ID!) {
+  deletePackage(id: $deletePackageId) {
+    message
+  }
+}
+    `;
+
+export const useDeletePackageMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<DeletePackageMutation, TError, DeletePackageMutationVariables, TContext>) => {
+    
+    return useMutation<DeletePackageMutation, TError, DeletePackageMutationVariables, TContext>(
+      {
+    mutationKey: ['DeletePackage'],
+    mutationFn: (variables?: DeletePackageMutationVariables) => fetcher<DeletePackageMutation, DeletePackageMutationVariables>(DeletePackageDocument, variables)(),
     ...options
   }
     )};
@@ -619,6 +654,9 @@ export const GetPackageByIdDocument = `
       name
       title
       description
+    }
+    Category {
+      name
     }
   }
 }
