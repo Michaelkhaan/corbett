@@ -1,0 +1,5 @@
+mutation DeletePackage($deletePackageId: ID!) {
+  deletePackage(id: $deletePackageId) {
+    message
+  }
+}

@@ -8,9 +8,9 @@ import { start } from "repl";
 
 function Index() {
   const [selectedPrice, setSelectedPrice] = useState({
-    start: 0,
-    end: 100,
-    id: 1,
+    start: null,
+    end: null,
+    id: null,
   });
   const router = useRouter();
 

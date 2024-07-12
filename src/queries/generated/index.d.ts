@@ -8,10 +8,28 @@ declare module '*/addCategories.mutations.gql' {
 }
     
 
+declare module '*/addPackage.mutation.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const AddPackage: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/deleteCategories.mutations.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;
   export const deleteCategory: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/deletePackage.mutation.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const DeletePackage: DocumentNode;
 
   export default defaultDocument;
 }

@@ -14,15 +14,17 @@ import {
   useGetPackageByIdQuery,
 } from "@/queries/generated";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
 import { start } from "repl";
 
 function Index() {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
   const [selectedPrice, setSelectedPrice] = useState({
-    start: 0,
-    end: 100,
-    id: 1,
+    start: null,
+    end: null,
+    id: null,
   });
 
   const handleClick = (price: any) => {
@@ -33,9 +35,14 @@ function Index() {
     setOpen(!open);
   };
 
-  const { data } = useGetPackageByIdQuery({
-    getPackageByIdId: "2",
-  });
+  const { data } = useGetPackageByIdQuery(
+    {
+      getPackageByIdId: router?.query?.id?.toString() || "",
+    },
+    {
+      enabled: !!router?.query?.id?.toString(),
+    }
+  );
 
   const { data: packages } = useGetAllPackagesQuery({
     startPrice: selectedPrice?.start,
@@ -61,7 +68,7 @@ function Index() {
       <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row items-center justify-between gap-2">
         <div className="w-full md:w-auto text-start">
           <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
-            {data?.getPackageById?.title}
+            {data?.getPackageById?.Category?.name}
           </h1>
           <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-Gotham font-bold">
             1 Nights, 2 Guest{" "}
@@ -135,11 +142,11 @@ function Index() {
             </div>
           )}
           <div className="w-full mx-auto pb-5 mt-14">
-            {data?.getPackageById?.Inclusions?.length && (
-              <Package data={data?.getPackageById?.Exclusions as any} />
+            {!!data?.getPackageById?.Inclusions?.length && (
+              <Package data={data?.getPackageById?.Inclusions as any} />
             )}
 
-            {data?.getPackageById?.Exclusions?.length && (
+            {!!data?.getPackageById?.Exclusions?.length && (
               <Packageexc data={data?.getPackageById?.Exclusions as any} />
             )}
           </div>
@@ -182,7 +189,7 @@ function Index() {
                 ? "bg-[#f8bd01] text-white"
                 : "bg-white border text-black"
             } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
-            onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
+            onClick={() => handleClick({ start: 1, end: 10000, id: 1 })}
           >
             <h1 className="text-[10px] font-Gotham">Less than Rs 10,000</h1>
           </div>
