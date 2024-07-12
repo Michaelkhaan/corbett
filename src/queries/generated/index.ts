@@ -288,6 +288,24 @@ export type User = {
   name: Scalars['String']['output'];
 };
 
+export type AddPackageMutationVariables = Exact<{
+  categoryId: Scalars['Int']['input'];
+  name: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+  price: Scalars['Float']['input'];
+  image?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  highlights?: InputMaybe<Array<InputMaybe<HighlightInput>> | InputMaybe<HighlightInput>>;
+  includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>> | InputMaybe<TourIncludeInput>>;
+  inclusions?: InputMaybe<Array<InputMaybe<PackageInclusionInput>> | InputMaybe<PackageInclusionInput>>;
+  exclusions?: InputMaybe<Array<InputMaybe<PackageExclusionInput>> | InputMaybe<PackageExclusionInput>>;
+  faqs?: InputMaybe<Array<InputMaybe<PackageFaqInput>> | InputMaybe<PackageFaqInput>>;
+  itinerary?: InputMaybe<Array<InputMaybe<ItineraryInput>> | InputMaybe<ItineraryInput>>;
+}>;
+
+
+export type AddPackageMutation = { __typename?: 'Mutation', addPackage: { __typename?: 'Message', message: string } };
+
 export type SubmitFormMutationVariables = Exact<{
   date: Scalars['String']['input'];
   contact: Scalars['String']['input'];
@@ -318,6 +336,40 @@ export type GetPackageByIdQueryVariables = Exact<{
 export type GetPackageByIdQuery = { __typename?: 'Query', getPackageById: { __typename?: 'Package', title: string, price: number, image?: string | null, id: number, Faqs?: Array<{ __typename?: 'PackageFaq', id: number, title: string, description?: string | null } | null> | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', id: number, title: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', id: number, name: string, package_id: number } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', image?: string | null, name: string, id: number } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', id: number, title: string } | null> | null, Itinerary?: Array<{ __typename?: 'Itinerary', name: string, title: string, description?: string | null } | null> | null } };
 
 
+
+export const AddPackageDocument = `
+    mutation AddPackage($categoryId: Int!, $name: String!, $title: String!, $price: Float!, $image: String, $description: String, $highlights: [HighlightInput], $includes: [TourIncludeInput], $inclusions: [PackageInclusionInput], $exclusions: [PackageExclusionInput], $faqs: [PackageFaqInput], $itinerary: [ItineraryInput]) {
+  addPackage(
+    category_id: $categoryId
+    name: $name
+    title: $title
+    price: $price
+    image: $image
+    description: $description
+    highlights: $highlights
+    includes: $includes
+    inclusions: $inclusions
+    exclusions: $exclusions
+    faqs: $faqs
+    itinerary: $itinerary
+  ) {
+    message
+  }
+}
+    `;
+
+export const useAddPackageMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<AddPackageMutation, TError, AddPackageMutationVariables, TContext>) => {
+    
+    return useMutation<AddPackageMutation, TError, AddPackageMutationVariables, TContext>(
+      {
+    mutationKey: ['AddPackage'],
+    mutationFn: (variables?: AddPackageMutationVariables) => fetcher<AddPackageMutation, AddPackageMutationVariables>(AddPackageDocument, variables)(),
+    ...options
+  }
+    )};
 
 export const SubmitFormDocument = `
     mutation SubmitForm($date: String!, $contact: String!, $city: String!) {

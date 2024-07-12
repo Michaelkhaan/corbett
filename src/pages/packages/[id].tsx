@@ -14,11 +14,13 @@ import {
   useGetPackageByIdQuery,
 } from "@/queries/generated";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
 import { start } from "repl";
 
 function Index() {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
   const [selectedPrice, setSelectedPrice] = useState({
     start: 0,
     end: 100,
@@ -33,9 +35,14 @@ function Index() {
     setOpen(!open);
   };
 
-  const { data } = useGetPackageByIdQuery({
-    getPackageByIdId: "2",
-  });
+  const { data } = useGetPackageByIdQuery(
+    {
+      getPackageByIdId: router?.query?.id?.toString() || "",
+    },
+    {
+      enabled: !!router?.query?.id?.toString(),
+    }
+  );
 
   const { data: packages } = useGetAllPackagesQuery({
     startPrice: selectedPrice?.start,
@@ -135,11 +142,11 @@ function Index() {
             </div>
           )}
           <div className="w-full mx-auto pb-5 mt-14">
-            {data?.getPackageById?.Inclusions?.length && (
-              <Package data={data?.getPackageById?.Exclusions as any} />
+            {!!data?.getPackageById?.Inclusions?.length && (
+              <Package data={data?.getPackageById?.Inclusions as any} />
             )}
 
-            {data?.getPackageById?.Exclusions?.length && (
+            {!!data?.getPackageById?.Exclusions?.length && (
               <Packageexc data={data?.getPackageById?.Exclusions as any} />
             )}
           </div>

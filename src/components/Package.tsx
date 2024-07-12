@@ -5,6 +5,7 @@ interface Data {
 }
 
 function Package({ data }: { data: Data[] }) {
+  console.log(data, "..");
   return (
     <div className="w-full px-5 py-4 border border-[#5d5d5d]">
       <h1 className="text-[21px] leading-[32px] font-medium font-Gotham">

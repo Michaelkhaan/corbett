@@ -1,0 +1,31 @@
+mutation AddPackage(
+  $categoryId: Int!
+  $name: String!
+  $title: String!
+  $price: Float!
+  $image: String
+  $description: String
+  $highlights: [HighlightInput]
+  $includes: [TourIncludeInput]
+  $inclusions: [PackageInclusionInput]
+  $exclusions: [PackageExclusionInput]
+  $faqs: [PackageFaqInput]
+  $itinerary: [ItineraryInput]
+) {
+  addPackage(
+    category_id: $categoryId
+    name: $name
+    title: $title
+    price: $price
+    image: $image
+    description: $description
+    highlights: $highlights
+    includes: $includes
+    inclusions: $inclusions
+    exclusions: $exclusions
+    faqs: $faqs
+    itinerary: $itinerary
+  ) {
+    message
+  }
+}

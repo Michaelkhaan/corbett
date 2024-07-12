@@ -1,4 +1,13 @@
 
+declare module '*/addPackage.mutation.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const AddPackage: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/submitForm.mutations.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;
