@@ -1,0 +1,33 @@
+mutation UpdatePackage(
+  $updatePackageId: ID!
+  $name: String!
+  $title: String!
+  $image: String
+  $categoryId: Int
+  $description: String
+  $price: Float!
+  $highlights: [HighlightInput]
+  $includes: [TourIncludeInput]
+  $inclusions: [PackageInclusionInput]
+  $exclusions: [PackageExclusionInput]
+  $faqs: [PackageFaqInput]
+  $itinerary: [ItineraryInput]
+) {
+  updatePackage(
+    id: $updatePackageId
+    name: $name
+    title: $title
+    image: $image
+    category_id: $categoryId
+    description: $description
+    price: $price
+    highlights: $highlights
+    includes: $includes
+    inclusions: $inclusions
+    exclusions: $exclusions
+    faqs: $faqs
+    itinerary: $itinerary
+  ) {
+    message
+  }
+}

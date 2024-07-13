@@ -53,6 +53,15 @@ declare module '*/updateCategories.mutations.gql' {
 }
     
 
+declare module '*/updatePackage.multan.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const UpdatePackage: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/getAllCategories.query.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;

@@ -351,6 +351,25 @@ export type UpdateCategoryMutationVariables = Exact<{
 
 export type UpdateCategoryMutation = { __typename?: 'Mutation', updateCategory: { __typename?: 'Message', message: string } };
 
+export type UpdatePackageMutationVariables = Exact<{
+  updatePackageId: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+  image?: InputMaybe<Scalars['String']['input']>;
+  categoryId?: InputMaybe<Scalars['Int']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  price: Scalars['Float']['input'];
+  highlights?: InputMaybe<Array<InputMaybe<HighlightInput>> | InputMaybe<HighlightInput>>;
+  includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>> | InputMaybe<TourIncludeInput>>;
+  inclusions?: InputMaybe<Array<InputMaybe<PackageInclusionInput>> | InputMaybe<PackageInclusionInput>>;
+  exclusions?: InputMaybe<Array<InputMaybe<PackageExclusionInput>> | InputMaybe<PackageExclusionInput>>;
+  faqs?: InputMaybe<Array<InputMaybe<PackageFaqInput>> | InputMaybe<PackageFaqInput>>;
+  itinerary?: InputMaybe<Array<InputMaybe<ItineraryInput>> | InputMaybe<ItineraryInput>>;
+}>;
+
+
+export type UpdatePackageMutation = { __typename?: 'Mutation', updatePackage: { __typename?: 'Message', message: string } };
+
 export type GetAllCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -513,6 +532,41 @@ export const useUpdateCategoryMutation = <
       {
     mutationKey: ['UpdateCategory'],
     mutationFn: (variables?: UpdateCategoryMutationVariables) => fetcher<UpdateCategoryMutation, UpdateCategoryMutationVariables>(UpdateCategoryDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const UpdatePackageDocument = `
+    mutation UpdatePackage($updatePackageId: ID!, $name: String!, $title: String!, $image: String, $categoryId: Int, $description: String, $price: Float!, $highlights: [HighlightInput], $includes: [TourIncludeInput], $inclusions: [PackageInclusionInput], $exclusions: [PackageExclusionInput], $faqs: [PackageFaqInput], $itinerary: [ItineraryInput]) {
+  updatePackage(
+    id: $updatePackageId
+    name: $name
+    title: $title
+    image: $image
+    category_id: $categoryId
+    description: $description
+    price: $price
+    highlights: $highlights
+    includes: $includes
+    inclusions: $inclusions
+    exclusions: $exclusions
+    faqs: $faqs
+    itinerary: $itinerary
+  ) {
+    message
+  }
+}
+    `;
+
+export const useUpdatePackageMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<UpdatePackageMutation, TError, UpdatePackageMutationVariables, TContext>) => {
+    
+    return useMutation<UpdatePackageMutation, TError, UpdatePackageMutationVariables, TContext>(
+      {
+    mutationKey: ['UpdatePackage'],
+    mutationFn: (variables?: UpdatePackageMutationVariables) => fetcher<UpdatePackageMutation, UpdatePackageMutationVariables>(UpdatePackageDocument, variables)(),
     ...options
   }
     )};

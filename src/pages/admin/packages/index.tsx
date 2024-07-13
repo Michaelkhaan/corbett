@@ -1,118 +1,140 @@
-import AddnewPackage from "@/components/AddnewPackage";
+import React, { useState } from "react";
+import Image from "next/image";
 import Layout from "@/components/Layout";
 import Model from "@/components/Model";
 import Spinner from "@/components/spinner";
+import AddnewPackage from "@/components/AddnewPackage";
 import {
   useDeletePackageMutation,
   useGetAllPackagesQuery,
+  useUpdatePackageMutation,
 } from "@/queries/generated";
-import Image from "next/image";
-import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-function Index() {
+const Index = () => {
   const [open, setOpen] = useState(false);
-  const [deletePackageId, setDeletePackageId] = useState(null);
   const [addPackage, setAddPackage] = useState(false);
-  const [packages, setPackages] = useState([
-    {
-      id: 1,
-      name: "Beach Paradise",
-      title: "Ultimate Beachfront Experience",
-      image: "/deer.png",
-    },
-    // Add more packages as needed
-  ]);
-  const [loading, setLoading] = useState(false);
-
-  const handlePackage = () => {
-    setAddPackage(true);
-  };
+  const [updatePackageId, setUpdatePackageId] = useState(null);
+  const [updateName, setUpdateName] = useState("");
+  const [updateTitle, setUpdateTitle] = useState("");
+  const [updatePrice, setUpdatePrice] = useState("");
+  const [packagesId, setPackagesId] = useState(null);
 
   const { data, refetch } = useGetAllPackagesQuery();
-  //   const { data: packageDate, } = use();
-
   const { mutateAsync, isPending } = useDeletePackageMutation();
+  const { mutateAsync: updatePackage } = useUpdatePackageMutation();
 
   const handleDelete = async (id: any) => {
-    setDeletePackageId(id);
+    setPackagesId(id);
     try {
-      await mutateAsync({
-        deletePackageId: id,
-      });
-      toast.success("Package deleted successfully!");
+      const res = await mutateAsync({ deletePackageId: id });
+      toast.success(res?.deletePackage?.message);
       refetch();
-    } catch (err: any) {
-      toast?.error(err?.message);
+    } catch (err) {
+      toast.error("Packagen is Not Deleted!");
     }
+    setPackagesId(null);
+  };
 
-    setDeletePackageId(null);
+  const handleUpdateModalOpen = (
+    id: any,
+    name: any,
+    title: any,
+    price: any
+  ) => {
+    setPackagesId(id);
+    setUpdateName(name);
+    setUpdateTitle(title);
+    setUpdatePrice(price.toString()); // Convert price to string for input field
+    setOpen(true);
+  };
+
+  const handleUpdate = async (e: any) => {
+    e.preventDefault();
+    if (packagesId)
+      try {
+        const res = await updatePackage({
+          updatePackageId: packagesId || "",
+          name: updateName,
+          title: updateTitle,
+          price: parseFloat(updatePrice), // Convert price back to number if needed
+        });
+        toast.success(res?.updatePackage?.message);
+        refetch();
+        setOpen(false);
+      } catch (error) {
+        toast.error("Failed to update package.");
+      }
+  };
+
+  const handleAddPackage = () => {
+    setAddPackage(true);
   };
 
   return (
     <Layout>
-      <div>
-        <div className="flex items-center justify-center flex-col ">
-          <h1 className="text-blue-400 text-2xl mt-3 font-bold">
-            Admin Panel - Packages
-          </h1>
-          <button
-            className="  bg-blue-400 text-white w-36 h-10 rounded flex items-center justify-center mt-5"
-            onClick={handlePackage}
-          >
-            Add Packages
-          </button>
-        </div>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4">
+      <div className="p-4">
+        <h1 className="text-blue-400 text-2xl font-bold mb-4">
+          Admin Panel - Packages
+        </h1>
+        <button
+          className="bg-blue-400 text-white w-36 h-10 rounded flex items-center justify-center"
+          onClick={handleAddPackage}
+        >
+          Add Packages
+        </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {data?.getAllPackages?.data.map((pkg) => (
-            <div
-              key={pkg?.id}
-              className="w-full shadow-card mt-5 px-3 py-3 rounded"
-            >
+            <div key={pkg?.id} className="bg-white shadow-md rounded p-4">
               <h1>Main Package Image</h1>
               <Image
-                src={pkg?.image || ""}
+                src={pkg?.image || "/default-image.png"}
                 alt=""
-                width={0}
-                height={0}
+                width={300}
+                height={200}
                 className="w-full"
               />
-              <div className="flex flex-col">
-                <label htmlFor="">Name</label>
+              <div className="mt-3">
+                <label htmlFor="" className="block">
+                  Name
+                </label>
                 <input
                   type="text"
                   value={pkg?.name}
                   readOnly
-                  className="border p-[3px] rounded"
+                  className="border p-2 rounded w-full"
                 />
               </div>
-              <div className="flex flex-col mt-3">
-                <label htmlFor="">Title</label>
+              <div className="mt-3">
+                <label htmlFor="" className="block">
+                  Title
+                </label>
                 <input
                   type="text"
                   value={pkg?.title}
                   readOnly
-                  className="border p-[3px] rounded"
+                  className="border p-2 rounded w-full"
                 />
               </div>
-              <div className="w-full flex items-center justify-between pb-3">
+              <div className="flex justify-between mt-4">
                 <button
-                  onClick={() => {
-                    setOpen(true);
-                  }}
-                  className="bg-[#e9b306] w-[70px] h-[35px] rounded mt-3"
+                  onClick={() =>
+                    handleUpdateModalOpen(
+                      pkg?.id,
+                      pkg?.name,
+                      pkg?.title,
+                      pkg?.price
+                    )
+                  }
+                  className="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-4 rounded"
                 >
                   Update
                 </button>
                 <button
                   onClick={() => handleDelete(pkg?.id)}
-                  className="bg-[#ed4444] w-[70px] h-[35px] rounded mt-3 flex items-center justify-center"
+                  className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded flex items-center justify-center"
                 >
-                  {isPending && deletePackageId == pkg?.id ? (
-                    <Spinner />
-                  ) : (
-                    "Delete"
-                  )}
+                  {isPending && packagesId === pkg?.id ? <Spinner /> : "Delete"}
                 </button>
               </div>
             </div>
@@ -123,22 +145,62 @@ function Index() {
           onClose={() => setAddPackage(false)}
           containerClass="!w-[80%] bg-white h-screen overflow-y-auto py-10"
         >
-          <div>
-            <AddnewPackage />
-          </div>
+          <AddnewPackage />
         </Model>
         <Model
-          onClose={() => {
-            setOpen(false);
-          }}
           show={open}
-          containerClass="bg-white"
+          onClose={() => setOpen(false)}
+          containerClass="bg-white p-4 rounded"
         >
-          update
+          <h2 className="text-lg font-bold mb-4">Update Package</h2>
+          <form onSubmit={handleUpdate}>
+            <div className="mb-3">
+              <label htmlFor="updateName" className="block">
+                Name
+              </label>
+              <input
+                type="text"
+                id="updateName"
+                value={updateName}
+                onChange={(e) => setUpdateName(e.target.value)}
+                className="border p-2 rounded w-full"
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="updateTitle" className="block">
+                Title
+              </label>
+              <input
+                type="text"
+                id="updateTitle"
+                value={updateTitle}
+                onChange={(e) => setUpdateTitle(e.target.value)}
+                className="border p-2 rounded w-full"
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="updatePrice" className="block">
+                Price
+              </label>
+              <input
+                type="number"
+                id="updatePrice"
+                value={updatePrice}
+                onChange={(e) => setUpdatePrice(e.target.value)}
+                className="border p-2 rounded w-full"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
+            >
+              Update
+            </button>
+          </form>
         </Model>
       </div>
     </Layout>
   );
-}
+};
 
 export default Index;
