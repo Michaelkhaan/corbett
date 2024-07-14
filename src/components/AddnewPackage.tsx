@@ -57,7 +57,10 @@ const schema = yup.object().shape({
   ),
 });
 
-function AddnewPackage() {
+interface Props {
+  onClose: () => void;
+}
+function AddnewPackage( {  onClose}:Props) {
   const {
     control,
     handleSubmit,
@@ -157,6 +160,7 @@ function AddnewPackage() {
       });
       toast?.success("Package added successfully");
       // setIsModalOpen(false);
+      onClose()
     } catch (errors) {
       toast?.error("invalid package");
     }
@@ -531,6 +535,7 @@ function AddnewPackage() {
           </button>
           <button
             type="button"
+            onClick={onClose}
             className="bg-red-700 text-white px-5 py-1 rounded-lg mt-4"
           >
             Cancel

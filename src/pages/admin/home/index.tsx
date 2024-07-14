@@ -1,5 +1,6 @@
 import AddnewPackage from "@/components/AddnewPackage";
 import Layout from "@/components/Layout";
+import Categories from "@/components/admin/Categories";
 import Explore from "@/components/admin/Explore";
 import Image from "next/image";
 import React from "react";
@@ -74,9 +75,9 @@ function index() {
     //   </div> */}
     //   <Explore />
     // </Layout>
-    <div>
-      <AddnewPackage />
-    </div>
+    <Layout>
+      <Categories/>
+    </Layout>
   );
 }
 

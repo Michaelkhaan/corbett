@@ -35,6 +35,15 @@ declare module '*/deletePackage.mutation.gql' {
 }
     
 
+declare module '*/login.mutation.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const Login: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/submitForm.mutations.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;

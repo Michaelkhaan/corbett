@@ -1,17 +1,21 @@
 "use client";
-import React, { useState } from "react";
-import { TiMessage } from "react-icons/ti";
-import { AiOutlineBell } from "react-icons/ai";
-import { RxCross2 } from "react-icons/rx";
-import { useRouter } from "next/router";
+import useAuth from "@/zustand/store";
+import React from "react";
 
-const Header = () => {
-  const router = useRouter();
+const Header: React.FC = () => {
+  const { logout } = useAuth();
 
   return (
     <div
-      className={`w-full shadow-lg z-50 rounded bg-[#F8F8F8] sticky top-0  py-8 px-1 md:px-4 flex justify-between items-center`}
-    ></div>
+      className="w-full shadow-lg z-50 rounded bg-[#F8F8F8] sticky top-0 py-4 px-1 md:px-4 flex justify-end items-center"
+    >
+      <button
+        onClick={logout}
+        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75"
+      >
+        LogOut
+      </button>
+    </div>
   );
 };
 
