@@ -10,6 +10,8 @@ import {
   useUpdatePackageMutation,
 } from "@/queries/generated";
 import { toast } from "react-toastify";
+import UpdatePackage from "@/components/UpdatePackage";
+import { Router, useRouter } from "next/router";
 
 const Index = () => {
   const [open, setOpen] = useState(false);
@@ -24,6 +26,8 @@ const Index = () => {
   const { mutateAsync, isPending } = useDeletePackageMutation();
   const { mutateAsync: updatePackage } = useUpdatePackageMutation();
 
+  const router = useRouter();
+
   const handleDelete = async (id: any) => {
     setPackagesId(id);
     try {
@@ -36,36 +40,30 @@ const Index = () => {
     setPackagesId(null);
   };
 
-  const handleUpdateModalOpen = (
-    id: any,
-    name: any,
-    title: any,
-    price: any
-  ) => {
-    setPackagesId(id);
-    setUpdateName(name);
-    setUpdateTitle(title);
-    setUpdatePrice(price.toString()); // Convert price to string for input field
+  const handleUpdateModalOpen = (id: any) => {
     setOpen(true);
+    router?.push({
+      query: { id: id },
+    });
   };
 
-  const handleUpdate = async (e: any) => {
-    e.preventDefault();
-    if (packagesId)
-      try {
-        const res = await updatePackage({
-          updatePackageId: packagesId || "",
-          name: updateName,
-          title: updateTitle,
-          price: parseFloat(updatePrice), // Convert price back to number if needed
-        });
-        toast.success(res?.updatePackage?.message);
-        refetch();
-        setOpen(false);
-      } catch (error) {
-        toast.error("Failed to update package.");
-      }
-  };
+  // const handleUpdate = async (e: any) => {
+  //   e.preventDefault();
+  //   if (packagesId)
+  //     try {
+  //       const res = await updatePackage({
+  //         updatePackageId: packagesId || "",
+  //         name: updateName,
+  //         title: updateTitle,
+  //         price: parseFloat(updatePrice), // Convert price back to number if needed
+  //       });
+  //       toast.success(res?.updatePackage?.message);
+  //       refetch();
+  //       setOpen(false);
+  //     } catch (error) {
+  //       toast.error("Failed to update package.");
+  //     }
+  // };
 
   const handleAddPackage = () => {
     setAddPackage(true);
@@ -73,7 +71,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <div className="p-4">
+      <div className="p-4 flex flex-col items-center justify-center">
         <h1 className="text-blue-400 text-2xl font-bold mb-4">
           Admin Panel - Packages
         </h1>
@@ -118,14 +116,7 @@ const Index = () => {
               </div>
               <div className="flex justify-between mt-4">
                 <button
-                  onClick={() =>
-                    handleUpdateModalOpen(
-                      pkg?.id,
-                      pkg?.name,
-                      pkg?.title,
-                      pkg?.price
-                    )
-                  }
+                  onClick={() => handleUpdateModalOpen(pkg?.id)}
                   className="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-4 rounded"
                 >
                   Update
@@ -150,9 +141,9 @@ const Index = () => {
         <Model
           show={open}
           onClose={() => setOpen(false)}
-          containerClass="bg-white p-4 rounded"
+          containerClass="bg-white p-4 rounded !w-[80%] h-screen overflow-y-auto"
         >
-          <h2 className="text-lg font-bold mb-4">Update Package</h2>
+          {/* <h2 className="text-lg font-bold mb-4">Update Package</h2>
           <form onSubmit={handleUpdate}>
             <div className="mb-3">
               <label htmlFor="updateName" className="block">
@@ -196,7 +187,11 @@ const Index = () => {
             >
               Update
             </button>
-          </form>
+          </form> */}
+
+          <div>
+            <UpdatePackage />
+          </div>
         </Model>
       </div>
     </Layout>

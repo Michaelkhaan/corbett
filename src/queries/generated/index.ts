@@ -393,7 +393,7 @@ export type GetPackageByIdQueryVariables = Exact<{
 }>;
 
 
-export type GetPackageByIdQuery = { __typename?: 'Query', getPackageById: { __typename?: 'Package', title: string, price: number, image?: string | null, id: number, Faqs?: Array<{ __typename?: 'PackageFaq', id: number, title: string, description?: string | null } | null> | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', id: number, title: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', id: number, name: string, package_id: number } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', image?: string | null, name: string, id: number } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', id: number, title: string } | null> | null, Itinerary?: Array<{ __typename?: 'Itinerary', name: string, title: string, description?: string | null } | null> | null, Category?: { __typename?: 'Category', name: string } | null } };
+export type GetPackageByIdQuery = { __typename?: 'Query', getPackageById: { __typename?: 'Package', title: string, price: number, image?: string | null, id: number, name: string, description?: string | null, Category?: { __typename?: 'Category', id: number, name: string } | null, Faqs?: Array<{ __typename?: 'PackageFaq', id: number, title: string, description?: string | null } | null> | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', id: number, title: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', id: number, name: string, package_id: number } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', image?: string | null, name: string, id: number } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', id: number, title: string } | null> | null, Itinerary?: Array<{ __typename?: 'Itinerary', name: string, title: string, description?: string | null } | null> | null } };
 
 
 
@@ -710,6 +710,12 @@ export const GetPackageByIdDocument = `
     price
     image
     id
+    name
+    description
+    Category {
+      id
+      name
+    }
     Faqs {
       id
       title
@@ -737,9 +743,6 @@ export const GetPackageByIdDocument = `
       name
       title
       description
-    }
-    Category {
-      name
     }
   }
 }

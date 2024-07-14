@@ -167,7 +167,7 @@ function AddnewPackage() {
     try {
       const file = e.target.files[0];
       const url = await uploadFile(file);
-      setValue(field.name, url); // Set the value of the image URL field
+      setValue(field.name, url);
       toast?.success("Image uploaded successfully");
     } catch (errors) {
       toast?.error("Failed to upload image");
