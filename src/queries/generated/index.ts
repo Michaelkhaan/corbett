@@ -334,6 +334,14 @@ export type DeletePackageMutationVariables = Exact<{
 
 export type DeletePackageMutation = { __typename?: 'Mutation', deletePackage: { __typename?: 'Message', message: string } };
 
+export type LoginMutationVariables = Exact<{
+  email: Scalars['String']['input'];
+  password: Scalars['String']['input'];
+}>;
+
+
+export type LoginMutation = { __typename?: 'Mutation', Login: { __typename?: 'LoginResponse', token?: string | null, message?: string | null } };
+
 export type SubmitFormMutationVariables = Exact<{
   date: Scalars['String']['input'];
   contact: Scalars['String']['input'];
@@ -490,6 +498,28 @@ export const useDeletePackageMutation = <
       {
     mutationKey: ['DeletePackage'],
     mutationFn: (variables?: DeletePackageMutationVariables) => fetcher<DeletePackageMutation, DeletePackageMutationVariables>(DeletePackageDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const LoginDocument = `
+    mutation Login($email: String!, $password: String!) {
+  Login(email: $email, password: $password) {
+    token
+    message
+  }
+}
+    `;
+
+export const useLoginMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<LoginMutation, TError, LoginMutationVariables, TContext>) => {
+    
+    return useMutation<LoginMutation, TError, LoginMutationVariables, TContext>(
+      {
+    mutationKey: ['Login'],
+    mutationFn: (variables?: LoginMutationVariables) => fetcher<LoginMutation, LoginMutationVariables>(LoginDocument, variables)(),
     ...options
   }
     )};
