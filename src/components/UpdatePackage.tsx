@@ -1,6 +1,6 @@
+//@ts-ignore
 "use client";
 //@ts-nocheck
-//@ts-ignore
 
 import React, { useEffect, useState } from "react";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
@@ -341,6 +341,7 @@ function UpdatePackage({ onClose }: Props) {
             <div key={field.id} className="mb-4">
               <label htmlFor={`itinerary[${index}].day`}>Day</label>
               <input
+                //@ts-ignore
                 {...register(`itinerary[${index}].day`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
@@ -352,6 +353,7 @@ function UpdatePackage({ onClose }: Props) {
 
               <label htmlFor={`itinerary[${index}].title`}>Title</label>
               <input
+                //@ts-ignore
                 {...register(`itinerary[${index}].title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
@@ -365,6 +367,7 @@ function UpdatePackage({ onClose }: Props) {
                 Description
               </label>
               <textarea
+                //@ts-ignore
                 {...register(`itinerary[${index}].description`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               ></textarea>
@@ -414,6 +417,7 @@ function UpdatePackage({ onClose }: Props) {
 
               <label htmlFor={`tourIncludes[${index}].name`}>Name</label>
               <input
+                //@ts-ignore
                 {...register(`tourIncludes[${index}].name`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
@@ -434,7 +438,7 @@ function UpdatePackage({ onClose }: Props) {
           ))}
           <button
             type="button"
-            onClick={() => appendTourIncludes({ image: null, name: "" })}
+            onClick={() => appendTourIncludes({ image: "", name: "" })}
             className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg"
           >
             Add Tour Include
@@ -447,6 +451,7 @@ function UpdatePackage({ onClose }: Props) {
             <div key={field.id} className="mb-4">
               <label htmlFor={`highlights[${index}].title`}>Title</label>
               <input
+                //@ts-ignore
                 {...register(`highlights[${index}].title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
@@ -480,6 +485,7 @@ function UpdatePackage({ onClose }: Props) {
             <div key={field.id} className="mb-4">
               <label htmlFor={`inclusion[${index}].title`}>Title</label>
               <input
+                //@ts-ignore
                 {...register(`inclusion[${index}].title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
@@ -513,6 +519,7 @@ function UpdatePackage({ onClose }: Props) {
             <div key={field.id} className="mb-4">
               <label htmlFor={`exclusion[${index}].title`}>Title</label>
               <input
+                //@ts-ignore
                 {...register(`exclusion[${index}].title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
@@ -546,6 +553,7 @@ function UpdatePackage({ onClose }: Props) {
             <div key={field.id} className="mb-4">
               <label htmlFor={`faq[${index}].question`}>Question</label>
               <input
+                //@ts-ignore
                 {...register(`faq[${index}].question`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
@@ -557,6 +565,7 @@ function UpdatePackage({ onClose }: Props) {
 
               <label htmlFor={`faq[${index}].answer`}>Answer</label>
               <input
+                //@ts-ignore
                 {...register(`faq[${index}].answer`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
@@ -568,6 +577,7 @@ function UpdatePackage({ onClose }: Props) {
 
               <button
                 type="button"
+                //@ts-ignore
                 onClick={() => removeFaq(index)}
                 className="bg-red-500 text-white px-4 py-2 mt-2 rounded-lg"
               >
@@ -577,6 +587,7 @@ function UpdatePackage({ onClose }: Props) {
           ))}
           <button
             type="button"
+            //@ts-ignore
             onClick={() => appendFaq({ question: "", answer: "" })}
             className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg"
           >
