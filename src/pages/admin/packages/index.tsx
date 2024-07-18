@@ -136,7 +136,7 @@ const Index = () => {
           onClose={() => setAddPackage(false)}
           containerClass="!w-[80%] bg-white h-screen overflow-y-auto py-10"
         >
-          <AddnewPackage onClose={() => [setAddPackage(false) , refetch() ]}  />
+          <AddnewPackage onClose={() => [setAddPackage(false), refetch()]} />
         </Model>
         <Model
           show={open}
@@ -190,7 +190,7 @@ const Index = () => {
           </form> */}
 
           <div>
-            <UpdatePackage />
+            <UpdatePackage onClose={() => [setOpen(false), refetch()]} />
           </div>
         </Model>
       </div>

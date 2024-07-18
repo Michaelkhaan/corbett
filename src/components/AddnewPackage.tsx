@@ -60,7 +60,7 @@ const schema = yup.object().shape({
 interface Props {
   onClose: () => void;
 }
-function AddnewPackage( {  onClose}:Props) {
+function AddnewPackage({ onClose }: Props) {
   const {
     control,
     handleSubmit,
@@ -160,7 +160,7 @@ function AddnewPackage( {  onClose}:Props) {
       });
       toast?.success("Package added successfully");
       // setIsModalOpen(false);
-      onClose()
+      onClose();
     } catch (errors) {
       toast?.error("invalid package");
     }
@@ -189,7 +189,6 @@ function AddnewPackage( {  onClose}:Props) {
           {...register("category")}
           className="w-full border-2 rounded-lg py-2 px-2 mt-2"
         >
-          <option value="">Select a type</option>
           {data?.getAllCategories?.map((category: any) => (
             <option key={category.id} value={category.id}>
               {category.name}
