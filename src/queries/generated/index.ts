@@ -128,15 +128,17 @@ export type MutationAddCategoryArgs = {
 
 export type MutationAddPackageArgs = {
   category_id: Scalars['Int']['input'];
+  day?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   exclusions?: InputMaybe<Array<InputMaybe<PackageExclusionInput>>>;
   faqs?: InputMaybe<Array<InputMaybe<PackageFaqInput>>>;
   highlights?: InputMaybe<Array<InputMaybe<HighlightInput>>>;
-  image?: InputMaybe<Scalars['String']['input']>;
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>>>;
   inclusions?: InputMaybe<Array<InputMaybe<PackageInclusionInput>>>;
   itinerary?: InputMaybe<Array<InputMaybe<ItineraryInput>>>;
   name: Scalars['String']['input'];
+  night?: InputMaybe<Scalars['String']['input']>;
   price: Scalars['Float']['input'];
   title: Scalars['String']['input'];
 };
@@ -167,16 +169,18 @@ export type MutationUpdateCategoryArgs = {
 
 export type MutationUpdatePackageArgs = {
   category_id?: InputMaybe<Scalars['Int']['input']>;
+  day?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   exclusions?: InputMaybe<Array<InputMaybe<PackageExclusionInput>>>;
   faqs?: InputMaybe<Array<InputMaybe<PackageFaqInput>>>;
   highlights?: InputMaybe<Array<InputMaybe<HighlightInput>>>;
   id: Scalars['ID']['input'];
-  image?: InputMaybe<Scalars['String']['input']>;
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>>>;
   inclusions?: InputMaybe<Array<InputMaybe<PackageInclusionInput>>>;
   itinerary?: InputMaybe<Array<InputMaybe<ItineraryInput>>>;
   name: Scalars['String']['input'];
+  night?: InputMaybe<Scalars['String']['input']>;
   price: Scalars['Float']['input'];
   title: Scalars['String']['input'];
 };
@@ -198,10 +202,12 @@ export type Package = {
   Itinerary?: Maybe<Array<Maybe<Itinerary>>>;
   category_id: Scalars['Int']['output'];
   createdAt: Scalars['String']['output'];
+  day?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   id: Scalars['Int']['output'];
-  image?: Maybe<Scalars['String']['output']>;
+  images?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   name: Scalars['String']['output'];
+  night?: Maybe<Scalars['String']['output']>;
   price: Scalars['Float']['output'];
   title: Scalars['String']['output'];
   updatedAt: Scalars['String']['output'];
@@ -307,7 +313,9 @@ export type AddPackageMutationVariables = Exact<{
   name: Scalars['String']['input'];
   title: Scalars['String']['input'];
   price: Scalars['Float']['input'];
-  image?: InputMaybe<Scalars['String']['input']>;
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>> | InputMaybe<Scalars['String']['input']>>;
+  day?: InputMaybe<Scalars['String']['input']>;
+  night?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   highlights?: InputMaybe<Array<InputMaybe<HighlightInput>> | InputMaybe<HighlightInput>>;
   includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>> | InputMaybe<TourIncludeInput>>;
@@ -363,10 +371,12 @@ export type UpdatePackageMutationVariables = Exact<{
   updatePackageId: Scalars['ID']['input'];
   name: Scalars['String']['input'];
   title: Scalars['String']['input'];
-  image?: InputMaybe<Scalars['String']['input']>;
-  categoryId?: InputMaybe<Scalars['Int']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
   price: Scalars['Float']['input'];
+  categoryId?: InputMaybe<Scalars['Int']['input']>;
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>> | InputMaybe<Scalars['String']['input']>>;
+  day?: InputMaybe<Scalars['String']['input']>;
+  night?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
   highlights?: InputMaybe<Array<InputMaybe<HighlightInput>> | InputMaybe<HighlightInput>>;
   includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>> | InputMaybe<TourIncludeInput>>;
   inclusions?: InputMaybe<Array<InputMaybe<PackageInclusionInput>> | InputMaybe<PackageInclusionInput>>;
@@ -394,14 +404,14 @@ export type GetAllPackagesQueryVariables = Exact<{
 }>;
 
 
-export type GetAllPackagesQuery = { __typename?: 'Query', getAllPackages: { __typename?: 'PackageResponse', total: number, data: Array<{ __typename?: 'Package', image?: string | null, name: string, price: number, title: string, category_id: number, createdAt: string, description?: string | null, id: number, updatedAt: string, Category?: { __typename?: 'Category', id: number, name: string, createdAt: string, updatedAt: string } | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', package_id: number, title: string, updatedAt: string, id: number, createdAt: string } | null> | null, Faqs?: Array<{ __typename?: 'PackageFaq', package_id: number, title: string, updatedAt: string, description?: string | null, id: number, createdAt: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', package_id: number, updatedAt: string, name: string, id: number, createdAt: string } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', createdAt: string, id: number, image?: string | null, name: string, package_id: number, updatedAt: string } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', createdAt: string, id: number, package_id: number, title: string, updatedAt: string } | null> | null } | null> } };
+export type GetAllPackagesQuery = { __typename?: 'Query', getAllPackages: { __typename?: 'PackageResponse', total: number, data: Array<{ __typename?: 'Package', images?: Array<string | null> | null, name: string, price: number, title: string, night?: string | null, day?: string | null, category_id: number, createdAt: string, description?: string | null, id: number, updatedAt: string, Category?: { __typename?: 'Category', id: number, name: string, createdAt: string, updatedAt: string } | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', package_id: number, title: string, updatedAt: string, id: number, createdAt: string } | null> | null, Faqs?: Array<{ __typename?: 'PackageFaq', package_id: number, title: string, updatedAt: string, description?: string | null, id: number, createdAt: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', package_id: number, updatedAt: string, name: string, id: number, createdAt: string } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', createdAt: string, id: number, image?: string | null, name: string, package_id: number, updatedAt: string } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', createdAt: string, id: number, package_id: number, title: string, updatedAt: string } | null> | null } | null> } };
 
 export type GetPackageByIdQueryVariables = Exact<{
   getPackageByIdId: Scalars['ID']['input'];
 }>;
 
 
-export type GetPackageByIdQuery = { __typename?: 'Query', getPackageById: { __typename?: 'Package', title: string, price: number, image?: string | null, id: number, name: string, description?: string | null, Category?: { __typename?: 'Category', id: number, name: string } | null, Faqs?: Array<{ __typename?: 'PackageFaq', id: number, title: string, description?: string | null } | null> | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', id: number, title: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', id: number, name: string, package_id: number } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', image?: string | null, name: string, id: number } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', id: number, title: string } | null> | null, Itinerary?: Array<{ __typename?: 'Itinerary', name: string, title: string, description?: string | null } | null> | null } };
+export type GetPackageByIdQuery = { __typename?: 'Query', getPackageById: { __typename?: 'Package', id: number, category_id: number, images?: Array<string | null> | null, day?: string | null, night?: string | null, name: string, title: string, description?: string | null, price: number, createdAt: string, updatedAt: string, Category?: { __typename?: 'Category', id: number, name: string } | null, Highlights?: Array<{ __typename?: 'Highlight', id: number, name: string } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', id: number, name: string, image?: string | null } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', id: number, title: string } | null> | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', id: number, title: string } | null> | null, Itinerary?: Array<{ __typename?: 'Itinerary', id: number, name: string, title: string, description?: string | null } | null> | null, Faqs?: Array<{ __typename?: 'PackageFaq', id: number, title: string, description?: string | null } | null> | null } };
 
 
 
@@ -427,13 +437,15 @@ export const useAddCategoryMutation = <
     )};
 
 export const AddPackageDocument = `
-    mutation AddPackage($categoryId: Int!, $name: String!, $title: String!, $price: Float!, $image: String, $description: String, $highlights: [HighlightInput], $includes: [TourIncludeInput], $inclusions: [PackageInclusionInput], $exclusions: [PackageExclusionInput], $faqs: [PackageFaqInput], $itinerary: [ItineraryInput]) {
+    mutation AddPackage($categoryId: Int!, $name: String!, $title: String!, $price: Float!, $images: [String], $day: String, $night: String, $description: String, $highlights: [HighlightInput], $includes: [TourIncludeInput], $inclusions: [PackageInclusionInput], $exclusions: [PackageExclusionInput], $faqs: [PackageFaqInput], $itinerary: [ItineraryInput]) {
   addPackage(
     category_id: $categoryId
     name: $name
     title: $title
     price: $price
-    image: $image
+    images: $images
+    day: $day
+    night: $night
     description: $description
     highlights: $highlights
     includes: $includes
@@ -567,15 +579,17 @@ export const useUpdateCategoryMutation = <
     )};
 
 export const UpdatePackageDocument = `
-    mutation UpdatePackage($updatePackageId: ID!, $name: String!, $title: String!, $image: String, $categoryId: Int, $description: String, $price: Float!, $highlights: [HighlightInput], $includes: [TourIncludeInput], $inclusions: [PackageInclusionInput], $exclusions: [PackageExclusionInput], $faqs: [PackageFaqInput], $itinerary: [ItineraryInput]) {
+    mutation UpdatePackage($updatePackageId: ID!, $name: String!, $title: String!, $price: Float!, $categoryId: Int, $images: [String], $day: String, $night: String, $description: String, $highlights: [HighlightInput], $includes: [TourIncludeInput], $inclusions: [PackageInclusionInput], $exclusions: [PackageExclusionInput], $faqs: [PackageFaqInput], $itinerary: [ItineraryInput]) {
   updatePackage(
     id: $updatePackageId
     name: $name
     title: $title
-    image: $image
-    category_id: $categoryId
-    description: $description
     price: $price
+    category_id: $categoryId
+    images: $images
+    day: $day
+    night: $night
+    description: $description
     highlights: $highlights
     includes: $includes
     inclusions: $inclusions
@@ -660,10 +674,12 @@ export const GetAllPackagesDocument = `
   getAllPackages(startPrice: $startPrice, endPrice: $endPrice) {
     total
     data {
-      image
+      images
       name
       price
       title
+      night
+      day
       category_id
       Category {
         id
@@ -736,41 +752,46 @@ export const useGetAllPackagesQuery = <
 export const GetPackageByIdDocument = `
     query GetPackageById($getPackageByIdId: ID!) {
   getPackageById(id: $getPackageByIdId) {
-    title
-    price
-    image
     id
+    category_id
+    images
+    day
+    night
     name
+    title
     description
+    price
+    createdAt
+    updatedAt
     Category {
       id
       name
     }
-    Faqs {
-      id
-      title
-      description
-    }
-    Exclusions {
-      id
-      title
-    }
     Highlights {
       id
       name
-      package_id
     }
     Includes {
-      image
-      name
       id
+      name
+      image
     }
     Inclusions {
       id
       title
     }
+    Exclusions {
+      id
+      title
+    }
     Itinerary {
+      id
       name
+      title
+      description
+    }
+    Faqs {
+      id
       title
       description
     }

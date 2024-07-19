@@ -2,10 +2,12 @@ query GetAllPackages($startPrice: Float, $endPrice: Float) {
   getAllPackages(startPrice: $startPrice, endPrice: $endPrice) {
     total
     data {
-      image
+      images
       name
       price
       title
+      night
+      day
       category_id
       Category {
         id

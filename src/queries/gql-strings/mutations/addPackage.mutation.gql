@@ -3,7 +3,9 @@ mutation AddPackage(
   $name: String!
   $title: String!
   $price: Float!
-  $image: String
+  $images: [String]
+  $day: String
+  $night: String
   $description: String
   $highlights: [HighlightInput]
   $includes: [TourIncludeInput]
@@ -17,7 +19,9 @@ mutation AddPackage(
     name: $name
     title: $title
     price: $price
-    image: $image
+    images: $images
+    day: $day
+    night: $night
     description: $description
     highlights: $highlights
     includes: $includes

@@ -53,7 +53,7 @@ function Index() {
     return packages?.getAllPackages?.data?.map((data) => {
       return {
         id: data?.id?.toString() || "",
-        image: data?.image || "",
+        images: data?.images || "",
         title: data?.title || "",
         rooms: "3 rooms" || "",
         subtitle: "per person" || "",
@@ -71,7 +71,7 @@ function Index() {
             {data?.getPackageById?.Category?.name}
           </h1>
           <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-Gotham font-bold">
-            1 Nights, 2 Guest{" "}
+            1 Nights, 2 Guest
             <span className="text-[12px] 2xl:text-base font-semibold font-Gotham">
               (No extra charges)
             </span>
@@ -105,7 +105,7 @@ function Index() {
       </div>
       <div className="w-11/12 lg:w-3/4 mx-auto mt-5">
         <Image
-          src={data?.getPackageById?.image || "/Layer 45.png"}
+          src={data?.getPackageById?.images?.toString() || "/Layer 45.png"}
           alt=""
           width={0}
           height={0}
@@ -221,7 +221,8 @@ function Index() {
             <PackageCard
               key={index}
               title={e?.title}
-              image={e?.image || "/deer.png"}
+              //@ts-ignore
+              images={e?.images || "/deer.png"}
               price={e?.prices}
               rooms={e?.rooms}
               subtitle={e?.subtitle}

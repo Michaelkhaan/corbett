@@ -2,10 +2,12 @@ mutation UpdatePackage(
   $updatePackageId: ID!
   $name: String!
   $title: String!
-  $image: String
-  $categoryId: Int
-  $description: String
   $price: Float!
+  $categoryId: Int
+  $images: [String]
+  $day: String
+  $night: String
+  $description: String
   $highlights: [HighlightInput]
   $includes: [TourIncludeInput]
   $inclusions: [PackageInclusionInput]
@@ -17,10 +19,12 @@ mutation UpdatePackage(
     id: $updatePackageId
     name: $name
     title: $title
-    image: $image
-    category_id: $categoryId
-    description: $description
     price: $price
+    category_id: $categoryId
+    images: $images
+    day: $day
+    night: $night
+    description: $description
     highlights: $highlights
     includes: $includes
     inclusions: $inclusions

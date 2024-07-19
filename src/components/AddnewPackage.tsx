@@ -16,7 +16,10 @@ const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
   category: yup.string().required("Type is required"),
-  image: yup.string().required("image is required"),
+  images: yup
+    .array()
+    .of(yup.string().required())
+    .min(1, "At least one image is required"),
   pricePerPerson: yup
     .number()
     .required("Price per person is required")
@@ -132,7 +135,7 @@ function AddnewPackage({ onClose }: Props) {
         title: data.title,
         description: data.description,
         price: parseFloat(data.pricePerPerson),
-        image: data.image,
+        images: data.images,
 
         itinerary: data.itinerary.map((itinerary: any) => ({
           name: itinerary.day,
@@ -178,6 +181,27 @@ function AddnewPackage({ onClose }: Props) {
     }
   };
 
+  const uploadmulti = async (
+    e: React.ChangeEvent<HTMLInputElement>,
+    field: any
+  ) => {
+    try {
+      const files = Array.from(e.target.files ?? []);
+      const ImageList = await Promise.all(
+        files.map(async (file) => {
+          const url = await uploadFile(file);
+          return url;
+        })
+      );
+
+      setValue(field.name, ImageList);
+      toast?.success("Image uploaded successfully");
+    } catch (error) {
+      console.error(error); // Log the error for debugging
+      toast?.error("Failed to upload image");
+    }
+  };
+
   return (
     <div className="w-3/4 mx-auto mt-5">
       <h1 className="text-2xl font-extrabold text-blue-700 text-center">
@@ -198,12 +222,12 @@ function AddnewPackage({ onClose }: Props) {
         {errors.category && (
           <p className="text-red-500">{errors.category.message}</p>
         )}
-        {/* Existing form fields... */}
         <div className="selectImage rounded-lg px-5 py-4 mt-4">
           <p className="mb-2">Main Package Image</p>
           <input
             type="file"
-            onChange={(e) => upload(e, { name: "image" })}
+            multiple
+            onChange={(e) => uploadmulti(e, { name: "image" })}
             className="w-full border-2 rounded-lg py-2 px-2"
           />
         </div>

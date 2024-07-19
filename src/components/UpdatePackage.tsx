@@ -21,7 +21,10 @@ const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
   category: yup.string().required("Type is required"),
-  image: yup.string().required("image is required"),
+  images: yup
+    .array()
+    .of(yup.string().required())
+    .min(1, "At least one image is required"),
   pricePerPerson: yup
     .number()
     .required("Price per person is required")
@@ -89,7 +92,11 @@ function UpdatePackage({ onClose }: Props) {
       packageName: packageData?.getPackageById?.name,
       title: packageData?.getPackageById?.title,
       description: packageData?.getPackageById?.description || "",
-      image: packageData?.getPackageById?.image || "",
+      images: Array.isArray(packageData?.getPackageById?.images)
+        ? packageData.getPackageById.images.filter(
+            (img): img is string => img !== null
+          )
+        : [],
       category: packageData?.getPackageById?.Category?.id.toString() || "",
       pricePerPerson: packageData?.getPackageById?.price,
       itinerary: packageData?.getPackageById?.Itinerary?.map((e) => {
@@ -134,7 +141,11 @@ function UpdatePackage({ onClose }: Props) {
       packageName: packageData?.getPackageById?.name,
       title: packageData?.getPackageById?.title,
       description: packageData?.getPackageById?.description || "",
-      image: packageData?.getPackageById?.image || "",
+      images: Array.isArray(packageData?.getPackageById?.images)
+        ? packageData.getPackageById.images.filter(
+            (img): img is string => img !== null
+          )
+        : [],
       category: packageData?.getPackageById?.Category?.id.toString() || "",
       pricePerPerson: packageData?.getPackageById?.price,
       itinerary: packageData?.getPackageById?.Itinerary?.map((e) => {
@@ -219,7 +230,7 @@ function UpdatePackage({ onClose }: Props) {
         title: data.title,
         description: data.description,
         price: parseFloat(data.pricePerPerson),
-        image: data.image,
+        images: data.images,
         itinerary: data.itinerary.map((itinerary: any) => ({
           name: itinerary.day,
           description: itinerary.description,
