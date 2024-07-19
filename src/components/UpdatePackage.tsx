@@ -345,9 +345,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`itinerary[${index}].day`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.itinerary?.[index]?.day && (
+              {errors?.itinerary?.[index]?.day && (
                 <p className="text-red-500">
-                  {errors.itinerary[index].day.message}
+                  {(errors as any)?.itinerary?.[index]?.day.message}
                 </p>
               )}
 
@@ -357,9 +357,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`itinerary[${index}].title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.itinerary?.[index]?.title && (
+              {errors?.itinerary?.[index]?.title && (
                 <p className="text-red-500">
-                  {errors.itinerary[index].title.message}
+                  {(errors as any)?.itinerary?.[index]?.title.message ?? ""}
                 </p>
               )}
 
@@ -371,9 +371,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`itinerary[${index}].description`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               ></textarea>
-              {errors.itinerary?.[index]?.description && (
+              {errors?.itinerary?.[index]?.description && (
                 <p className="text-red-500">
-                  {errors.itinerary[index].description.message}
+                  {(errors as any)?.itinerary[index]?.description.message ?? ""}
                 </p>
               )}
 
@@ -409,9 +409,9 @@ function UpdatePackage({ onClose }: Props) {
                 }
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.tourIncludes?.[index]?.image && (
+              {errors?.tourIncludes?.[index]?.image && (
                 <p className="text-red-500">
-                  {errors.tourIncludes[index].image.message}
+                  {(errors as any)?.tourIncludes?.[index]?.image?.message ?? ""}
                 </p>
               )}
 
@@ -421,9 +421,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`tourIncludes[${index}].name`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.tourIncludes?.[index]?.name && (
+              {errors?.tourIncludes?.[index]?.name && (
                 <p className="text-red-500">
-                  {errors.tourIncludes[index].name.message}
+                  {errors?.tourIncludes?.[index]?.name?.message ?? ""}
                 </p>
               )}
 
@@ -455,9 +455,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`highlights[${index}].title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.highlights?.[index]?.title && (
+              {errors?.highlights?.[index]?.title && (
                 <p className="text-red-500">
-                  {errors.highlights[index].title.message}
+                  {(errors as any)?.highlights?.[index]?.title?.message ?? ""}
                 </p>
               )}
 
@@ -489,9 +489,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`inclusion[${index}].title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.inclusion?.[index]?.title && (
+              {errors?.inclusion?.[index]?.title && (
                 <p className="text-red-500">
-                  {errors.inclusion[index].title.message}
+                  {(errors as any)?.inclusion?.[index]?.title?.message ?? ""}
                 </p>
               )}
 
@@ -523,9 +523,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`exclusion[${index}].title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.exclusion?.[index]?.title && (
+              {errors?.exclusion?.[index]?.title && (
                 <p className="text-red-500">
-                  {errors.exclusion[index].title.message}
+                  {(errors as any)?.exclusion?.[index]?.title?.message ?? ""}
                 </p>
               )}
 
@@ -557,9 +557,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`faq[${index}].question`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.faq?.[index]?.question && (
+              {errors?.faq?.[index]?.question && (
                 <p className="text-red-500">
-                  {errors.faq[index].question.message}
+                  {(errors as any)?.faq?.[index]?.question?.message ?? ""}
                 </p>
               )}
 
@@ -569,9 +569,9 @@ function UpdatePackage({ onClose }: Props) {
                 {...register(`faq[${index}].answer`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
               />
-              {errors.faq?.[index]?.answer && (
+              {errors?.faq?.[index]?.answer && (
                 <p className="text-red-500">
-                  {errors.faq[index].answer.message}
+                  {(errors as any)?.faq?.[index]?.answer?.message ?? ""}
                 </p>
               )}
 

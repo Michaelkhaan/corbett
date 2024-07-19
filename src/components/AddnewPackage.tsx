@@ -217,6 +217,15 @@ function AddnewPackage({ onClose }: Props) {
             <p className="text-red-500">{errors.packageName.message}</p>
           )}
 
+          <label htmlFor="title">Duration</label>
+          <input
+            {...register("title")}
+            className="w-full border-2 rounded-lg py-2 px-2 mt-2"
+          />
+          {errors.title && (
+            <p className="text-red-500">{errors.title.message}</p>
+          )}
+
           <label htmlFor="title">Title</label>
           <input
             {...register("title")}
