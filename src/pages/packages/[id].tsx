@@ -17,6 +17,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
 import { start } from "repl";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -62,11 +64,35 @@ function Index() {
     });
   }, [packages]);
 
+  const imageArray = [
+    {
+      src: "/Layer 45.png",
+    },
+    {
+      src: "/Layer 45.png",
+    },
+  ];
+
   return (
     <div className="w-full">
       <NaveBar className="!bg-[#f8bd00]" />
+      <div className="w-full flex justify-center mt-2">
+      <div className="w-11/12 lg:w-3/4 flex">
+      <p className="cursor-pointer pr-1 font-Gotham text-[10px] flex items-center" onClick={()=>(router.push("/"))}>Home <span className="pl-[3px] mt-[1px]">{'>'} 
+            </span></p>
+            <p className="cursor-pointer pr-1 font-Gotham text-[10px] flex items-center" onClick={()=>(router.push("/packages"))}>Package <span className="pl-[3px] mt-[1px]">{'>'} 
+            </span></p>
+            <p className=" pr-1 font-Gotham text-[10px] font-bold flex items-center">{data?.getPackageById?.name} <span className="pl-[3px] mt-[1px]">
+            </span></p>
+          
+            </div>
+
+      </div>
+      
+
       <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <div className="w-full md:w-auto text-start">
+        
           <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
             {data?.getPackageById?.Category?.name}
           </h1>
@@ -96,7 +122,10 @@ function Index() {
             </p>
             <p className="text-[8px] font-Gotham pl-5">per person</p>
           </div>
-          <div className="w-full md:w-auto flex justify-start sm:justify-end" onClick={onClick}>
+          <div
+            className="w-full md:w-auto flex justify-start sm:justify-end"
+            onClick={onClick}
+          >
             <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-Gotham font-medium ">
               ENQUERY
             </button>
@@ -104,13 +133,31 @@ function Index() {
         </div>
       </div>
       <div className="w-11/12 lg:w-3/4 mx-auto mt-5">
-        <Image
-          src={data?.getPackageById?.image || "/Layer 45.png"}
-          alt=""
-          width={0}
-          height={0}
-          className="w-full h-[350px] object-cover"
-        />
+        <Swiper
+          className="w-full h-full"
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+            waitForTransition: true,
+          }}
+          navigation={true}
+          speed={3000}
+          loop={true}
+          modules={[Autoplay, Navigation, Pagination]}
+        >
+          {imageArray?.map((e, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={data?.getPackageById?.image || "/Layer 45.png"}
+                alt=""
+                width={0}
+                height={0}
+                className="w-full h-[350px] object-cover"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {/* </div> */}
       </div>
       <div className="w-11/12 lg:w-3/4 mx-auto flex lg:flex-row justify-between flex-col gap-10">
         <div className="w-full lg:w-3/5 mx-auto">
