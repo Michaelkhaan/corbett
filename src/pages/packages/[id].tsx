@@ -65,7 +65,7 @@ function Index() {
   return (
     <div className="w-full">
       <NaveBar className="!bg-[#f8bd00]" />
-      <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row items-center justify-between gap-2">
+      <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <div className="w-full md:w-auto text-start">
           <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
             {data?.getPackageById?.Category?.name}
@@ -77,7 +77,7 @@ function Index() {
             </span>
           </p>
         </div>
-        <div className="w-1/2 flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
+        <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
           <div className="w-full md:w-auto text-start">
             <h1 className="text-sm lg:text-base 2xl:text-[20px] font-Gotham font-regular">
               Start From
@@ -96,7 +96,7 @@ function Index() {
             </p>
             <p className="text-[8px] font-Gotham pl-5">per person</p>
           </div>
-          <div className="w-full md:w-auto flex justify-end" onClick={onClick}>
+          <div className="w-full md:w-auto flex justify-start sm:justify-end" onClick={onClick}>
             <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-Gotham font-medium ">
               ENQUERY
             </button>
@@ -136,6 +136,8 @@ function Index() {
                     days={e?.name || ""}
                     title={e?.title}
                     desc={e?.description || ""}
+                    isOpen={index === 0 ? true : false}
+                    paraClass="lg:w-[450px] xl:w-[600px]"
                   />
                 ))}
               </div>

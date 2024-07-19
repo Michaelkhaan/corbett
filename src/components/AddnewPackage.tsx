@@ -153,8 +153,8 @@ function AddnewPackage({ onClose }: Props) {
           title: exclusion.title,
         })),
         faqs: data.faq.map((faq: any) => ({
-          title: faq.answer,
-          description: faq.question,
+          description: faq.answer,
+          title: faq.question,
         })),
         categoryId: parseInt(data.category),
       });
