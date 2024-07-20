@@ -278,7 +278,7 @@ function Index() {
               key={index}
               title={e?.title}
               //@ts-ignore
-              image={e?.images?.[0] || "/deer.png"}
+              images={e?.images}
               price={e?.prices}
               rooms={e?.rooms}
               subtitle={e?.subtitle}

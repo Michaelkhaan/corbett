@@ -255,7 +255,7 @@ export default function Home() {
               >
                 <PackageCard
                   title={e?.title}
-                  image={e?.image}
+                  images={e?.images}
                   price={e?.prices}
                   rooms={e?.rooms}
                   subtitle={e?.subtitle}

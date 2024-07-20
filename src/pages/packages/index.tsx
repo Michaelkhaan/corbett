@@ -107,8 +107,7 @@ function Index() {
             >
               <PackageCard
                 title={e?.title}
-                //@ts-ignore
-                images={e?.images}
+                images={e?.images as string[]}
                 price={e?.prices}
                 rooms={e?.rooms}
                 subtitle={e?.subtitle}

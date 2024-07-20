@@ -3,17 +3,17 @@ import React from "react";
 
 interface Props {
   title: string;
-  image: string;
+  images: string[];
   price: string;
   rooms: string;
   subtitle: string;
 }
 
-function PackageCard({ title, image, price, rooms, subtitle }: Props) {
+function PackageCard({ title, images, price, rooms, subtitle }: Props) {
   return (
     <div className="w-full mt-4">
       <Image
-        src={image}
+        src={images?.[0] || "/deer.png"}
         alt=""
         width={0}
         height={0}
