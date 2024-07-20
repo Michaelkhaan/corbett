@@ -7,9 +7,11 @@ interface Props {
   key: string;
   title?: string;
   desc?: string;
+  paraClass?:string;
+  isOpen?: boolean;
 }
-function Itinerary({ className, days, title, desc, key }: Props) {
-  const [openId, setOpenId] = useState(null);
+function Itinerary({ className, days, title, desc, key, paraClass , isOpen }: Props) {
+  const [openId, setOpenId] = useState(isOpen ? key : null );
 
   const handleToggle = (id: any) => {
     console.log(id);
@@ -18,7 +20,7 @@ function Itinerary({ className, days, title, desc, key }: Props) {
   return (
     <>
       <div
-        className={`w-full 2xl:w-1/3 rounded-lg lg:rounded-full px-5 py-1.5 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
+        className={`w-full sm:w-1/3 lg:w-full xl:w-[70%] 2xl:w-1/2 rounded-lg lg:rounded-full px-5 py-1.5 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
           openId === key ? "bg-[#f8bd00]" : "bg-[#e0e0e0]"
         }`}
         onClick={() => handleToggle(key)}
@@ -35,7 +37,7 @@ function Itinerary({ className, days, title, desc, key }: Props) {
       <div
         className={`w-full text-black transition-all duration-1000 ease-in-out  ${
           openId === key ? "" : "hidden"
-        }`}
+        } ${paraClass} ` }
       >
         <h1 className="text-sm text-black font-Gotham font-extrabold ">
           {title}

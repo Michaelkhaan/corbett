@@ -17,6 +17,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
 import { start } from "repl";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -65,19 +67,47 @@ function Index() {
   return (
     <div className="w-full">
       <NaveBar className="!bg-[#f8bd00]" />
-      <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row items-center justify-between gap-2">
-        <div className="w-full md:w-auto text-start">
-          <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
-            {data?.getPackageById?.Category?.name}
-          </h1>
-          <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-Gotham font-bold">
-            1 Nights, 2 Guest
-            <span className="text-[12px] 2xl:text-base font-semibold font-Gotham">
-              (No extra charges)
-            </span>
+      <div className="w-full flex justify-center mt-2">
+        <div className="w-11/12 lg:w-3/4 flex">
+          <p
+            className="cursor-pointer pr-1 font-Gotham text-[10px] flex items-center"
+            onClick={() => router.push("/")}
+          >
+            Home <span className="pl-[3px] mt-[1px]">{">"}</span>
+          </p>
+          <p
+            className="cursor-pointer pr-1 font-Gotham text-[10px] flex items-center"
+            onClick={() => router.push("/packages")}
+          >
+            Package <span className="pl-[3px] mt-[1px]">{">"}</span>
+          </p>
+          <p className=" pr-1 font-Gotham text-[10px] font-bold flex items-center">
+            {data?.getPackageById?.name}{" "}
+            <span className="pl-[3px] mt-[1px]"></span>
           </p>
         </div>
-        <div className="w-1/2 flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
+      </div>
+
+      <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+        <div className="w-full md:w-auto text-start">
+          <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
+            {data?.getPackageById?.name}
+          </h1>
+          {data?.getPackageById?.night || data?.getPackageById?.day ? (
+            <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-Gotham font-bold">
+              {data?.getPackageById?.night
+                ? data?.getPackageById?.night + ", "
+                : ""}
+              {data?.getPackageById?.day ? data?.getPackageById?.day : ""}
+              {/* Nights, 2 Guest */}
+              <span className="text-[12px] 2xl:text-base font-semibold font-Gotham">
+                {" "}
+                (No extra charges)
+              </span>
+            </p>
+          ) : null}
+        </div>
+        <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
           <div className="w-full md:w-auto text-start">
             <h1 className="text-sm lg:text-base 2xl:text-[20px] font-Gotham font-regular">
               Start From
@@ -96,7 +126,10 @@ function Index() {
             </p>
             <p className="text-[8px] font-Gotham pl-5">per person</p>
           </div>
-          <div className="w-full md:w-auto flex justify-end" onClick={onClick}>
+          <div
+            className="w-full md:w-auto flex justify-start sm:justify-end"
+            onClick={onClick}
+          >
             <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-Gotham font-medium ">
               ENQUERY
             </button>
@@ -104,13 +137,31 @@ function Index() {
         </div>
       </div>
       <div className="w-11/12 lg:w-3/4 mx-auto mt-5">
-        <Image
-          src={data?.getPackageById?.images?.toString() || "/Layer 45.png"}
-          alt=""
-          width={0}
-          height={0}
-          className="w-full h-[350px] object-cover"
-        />
+        <Swiper
+          className="w-full h-full"
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+            waitForTransition: true,
+          }}
+          navigation={true}
+          speed={3000}
+          loop={true}
+          modules={[Autoplay, Navigation, Pagination]}
+        >
+          {data?.getPackageById?.images?.map((e, index) => (
+            <SwiperSlide key={index}>
+              <Image
+                src={e?.toString() || "/Layer 45.png"}
+                alt=""
+                width={0}
+                height={0}
+                className="w-full h-[350px] object-cover"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {/* </div> */}
       </div>
       <div className="w-11/12 lg:w-3/4 mx-auto flex lg:flex-row justify-between flex-col gap-10">
         <div className="w-full lg:w-3/5 mx-auto">
@@ -119,11 +170,11 @@ function Index() {
               {data?.getPackageById?.title}
             </h1>
             <p className="lg:text-sm text-xs 2xl:text-xl font-Gotham leading-8 mt-2">
-              {data?.getPackageById?.title}
+              {data?.getPackageById?.description}
             </p>
           </div>
           <div className="w-11/12 border-b border-gray-700 mt-5" />
-          {data?.getPackageById?.Itinerary?.length && (
+          {data?.getPackageById?.Itinerary?.length ? (
             <div className="2xl:px-10 mt-5">
               <h1 className="lg:text-lg text-sm 2xl:text-[21px] font-Gotham font-bold leading-8">
                 Itinerary (Day Wise)
@@ -136,41 +187,46 @@ function Index() {
                     days={e?.name || ""}
                     title={e?.title}
                     desc={e?.description || ""}
+                    isOpen={index === 0 ? true : false}
+                    paraClass="lg:w-[450px] xl:w-[600px]"
                   />
                 ))}
               </div>
             </div>
-          )}
+          ) : null}
           <div className="w-full mx-auto pb-5 mt-14">
-            {!!data?.getPackageById?.Inclusions?.length && (
+            {!!data?.getPackageById?.Inclusions?.length ? (
               <Package data={data?.getPackageById?.Inclusions as any} />
-            )}
+            ) : null}
 
-            {!!data?.getPackageById?.Exclusions?.length && (
+            {!!data?.getPackageById?.Exclusions?.length ? (
               <Packageexc data={data?.getPackageById?.Exclusions as any} />
-            )}
+            ) : null}
           </div>
-          <div className="w-full mx-auto mt-14 2xl:px-6">
-            <h1 className="text-xl font-Gotham font-bold lg:px-5">
-              FAQ Regarding Corbett Saffari!
-            </h1>
-            {data?.getPackageById?.Faqs?.map((e, index) => (
-              <PackageFAQ
-                key={index?.toString()}
-                question={e?.title || ""}
-                answer={e?.description || ""}
-              />
-            ))}
-          </div>
+
+          {data?.getPackageById?.Faqs?.length ? (
+            <div className="w-full mx-auto mt-14 2xl:px-6">
+              <h1 className="text-xl font-Gotham font-bold lg:px-5">
+                FAQ Regarding Corbett Saffari!
+              </h1>
+              {data?.getPackageById?.Faqs?.map((e, index) => (
+                <PackageFAQ
+                  key={index?.toString()}
+                  question={e?.title || ""}
+                  answer={e?.description || ""}
+                />
+              ))}
+            </div>
+          ) : null}
         </div>
         <div className="w-full lg:w-2/6 mx-auto mt-6">
-          {data?.getPackageById?.Highlights?.length && (
+          {data?.getPackageById?.Highlights?.length ? (
             <Highlight data={data?.getPackageById?.Highlights as any} />
-          )}
+          ) : null}
           <div className="w-full mt-5">
-            {data?.getPackageById?.Includes?.length && (
+            {data?.getPackageById?.Includes?.length ? (
               <Touricons data={data?.getPackageById?.Includes as any} />
-            )}
+            ) : null}
           </div>
           <div className="w-full mt-10">
             <Data />
@@ -222,7 +278,7 @@ function Index() {
               key={index}
               title={e?.title}
               //@ts-ignore
-              images={e?.images || "/deer.png"}
+              image={e?.images?.[0] || "/deer.png"}
               price={e?.prices}
               rooms={e?.rooms}
               subtitle={e?.subtitle}

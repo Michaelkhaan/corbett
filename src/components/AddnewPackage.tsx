@@ -16,6 +16,8 @@ const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
   category: yup.string().required("Type is required"),
+  night: yup.string().required("night is required"),
+  day: yup.string().required("day is required"),
   images: yup
     .array()
     .of(yup.string().required())
@@ -75,8 +77,10 @@ function AddnewPackage({ onClose }: Props) {
     defaultValues: {
       packageName: "",
       title: "",
+      night: "",
+      day: "",
       description: "",
-      image: "",
+      images: [],
       category: "",
       //@ts-ignore
       pricePerPerson: "",
@@ -133,6 +137,8 @@ function AddnewPackage({ onClose }: Props) {
       await mutateAsync({
         name: data.packageName,
         title: data.title,
+        night: data.night,
+        day: data.day,
         description: data.description,
         price: parseFloat(data.pricePerPerson),
         images: data.images,
@@ -156,8 +162,8 @@ function AddnewPackage({ onClose }: Props) {
           title: exclusion.title,
         })),
         faqs: data.faq.map((faq: any) => ({
-          title: faq.answer,
-          description: faq.question,
+          description: faq.answer,
+          title: faq.question,
         })),
         categoryId: parseInt(data.category),
       });
@@ -195,7 +201,7 @@ function AddnewPackage({ onClose }: Props) {
       );
 
       setValue(field.name, ImageList);
-      toast?.success("Image uploaded successfully");
+      if (files?.length) toast?.success("Image uploaded successfully");
     } catch (error) {
       console.error(error); // Log the error for debugging
       toast?.error("Failed to upload image");
@@ -227,7 +233,7 @@ function AddnewPackage({ onClose }: Props) {
           <input
             type="file"
             multiple
-            onChange={(e) => uploadmulti(e, { name: "image" })}
+            onChange={(e) => uploadmulti(e, { name: "images" })}
             className="w-full border-2 rounded-lg py-2 px-2"
           />
         </div>
@@ -242,10 +248,34 @@ function AddnewPackage({ onClose }: Props) {
           )}
 
           <label htmlFor="title">Duration</label>
-          <input
-            {...register("title")}
-            className="w-full border-2 rounded-lg py-2 px-2 mt-2"
-          />
+          <div className=" flex gap-4">
+            <select
+              {...register("night")}
+              className="w-full border-2 rounded-lg py-2 px-2 mt-2"
+            >
+              {[...Array(15)].map((e, night) => (
+                <option
+                  key={night}
+                  value={night ? `${night} Night${night !== 1 ? "s" : ""}` : ""}
+                >
+                  {night} Night{night !== 1 ? "s" : ""}
+                </option>
+              ))}
+            </select>
+            <select
+              {...register("day")}
+              className="w-full border-2 rounded-lg py-2 px-2 mt-2"
+            >
+              {[...Array(16)].map((e, day) => (
+                <option
+                  key={day}
+                  value={day ? `${day} Day${day !== 1 ? "s" : ""}` : ""}
+                >
+                  {day} Day{day !== 1 ? "s" : ""}
+                </option>
+              ))}
+            </select>
+          </div>
           {errors.title && (
             <p className="text-red-500">{errors.title.message}</p>
           )}
@@ -271,7 +301,7 @@ function AddnewPackage({ onClose }: Props) {
           <label htmlFor="pricePerPerson">Price per Person</label>
           <input
             {...register("pricePerPerson")}
-            type="number"
+            type="text"
             placeholder="0"
             className="w-full border-2 rounded-lg py-2 px-2 mt-2"
           />

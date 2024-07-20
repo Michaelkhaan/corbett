@@ -21,6 +21,8 @@ const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
   category: yup.string().required("Type is required"),
+  night: yup.string().required("night is required"),
+  day: yup.string().required("day is required"),
   images: yup
     .array()
     .of(yup.string().required())
@@ -91,6 +93,8 @@ function UpdatePackage({ onClose }: Props) {
     defaultValues: {
       packageName: packageData?.getPackageById?.name,
       title: packageData?.getPackageById?.title,
+      night: packageData?.getPackageById?.night || "",
+      day: packageData?.getPackageById?.day || "",
       description: packageData?.getPackageById?.description || "",
       images: Array.isArray(packageData?.getPackageById?.images)
         ? packageData.getPackageById.images.filter(
@@ -228,6 +232,8 @@ function UpdatePackage({ onClose }: Props) {
         updatePackageId: router?.query?.id?.toString() || "", // Pass the package id here
         name: data.packageName,
         title: data.title,
+        day: data?.day,
+        night: data?.night,
         description: data.description,
         price: parseFloat(data.pricePerPerson),
         images: data.images,
@@ -275,6 +281,27 @@ function UpdatePackage({ onClose }: Props) {
     }
   };
 
+  const uploadmulti = async (
+    e: React.ChangeEvent<HTMLInputElement>,
+    field: any
+  ) => {
+    try {
+      const files = Array.from(e.target.files ?? []);
+      const ImageList = await Promise.all(
+        files.map(async (file) => {
+          const url = await uploadFile(file);
+          return url;
+        })
+      );
+
+      setValue(field.name, ImageList);
+      if (files?.length) toast?.success("Image uploaded successfully");
+    } catch (error) {
+      console.error(error); // Log the error for debugging
+      toast?.error("Failed to upload image");
+    }
+  };
+
   return (
     <div className="w-3/4 mx-auto mt-5">
       <h1 className="text-2xl font-extrabold text-blue-700 text-center">
@@ -301,7 +328,7 @@ function UpdatePackage({ onClose }: Props) {
           <p className="mb-2">Main Package Image</p>
           <input
             type="file"
-            onChange={(e) => upload(e, { name: "image" })}
+            onChange={(e) => uploadmulti(e, { name: "images" })}
             className="w-full border-2 rounded-lg py-2 px-2"
           />
         </div>
@@ -313,6 +340,39 @@ function UpdatePackage({ onClose }: Props) {
           />
           {errors.packageName && (
             <p className="text-red-500">{errors.packageName.message}</p>
+          )}
+
+          <label htmlFor="title">Duration</label>
+          <div className=" flex gap-4">
+            <select
+              {...register("night")}
+              className="w-full border-2 rounded-lg py-2 px-2 mt-2"
+            >
+              {[...Array(15)].map((e, night) => (
+                <option
+                  key={night}
+                  value={night ? `${night} Night${night !== 1 ? "s" : ""}` : ""}
+                >
+                  {night} Night{night !== 1 ? "s" : ""}
+                </option>
+              ))}
+            </select>
+            <select
+              {...register("day")}
+              className="w-full border-2 rounded-lg py-2 px-2 mt-2"
+            >
+              {[...Array(16)].map((e, day) => (
+                <option
+                  key={day}
+                  value={day ? `${day} Day${day !== 1 ? "s" : ""}` : ""}
+                >
+                  {day} Day{day !== 1 ? "s" : ""}
+                </option>
+              ))}
+            </select>
+          </div>
+          {errors.title && (
+            <p className="text-red-500">{errors.title.message}</p>
           )}
 
           <label htmlFor="title">Title</label>

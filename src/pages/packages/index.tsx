@@ -45,7 +45,21 @@ function Index() {
   return (
     <div className="w-full">
       <NaveBar className="!bg-[#f8bd00]" />
-      <div className="w-full mx-auto flex flex-col font-gotham items-center justify-center mt-20 lg:mt-10">
+      <div className="w-full flex justify-center mt-2">
+        <div className="w-11/12 lg:w-3/4 flex">
+          <p
+            className="cursor-pointer pr-1 font-Gotham text-[10px] flex items-center"
+            onClick={() => router.push("/")}
+          >
+            Home <span className="pl-[3px] mt-[1px]">{">"}</span>
+          </p>
+          <p className=" pr-1 font-bold font-Gotham text-[10px] flex items-center">
+            package <span className="pl-[3px] mt-[1px]"></span>
+          </p>
+        </div>
+      </div>
+
+      <div className="w-full mx-auto flex flex-col font-gotham items-center justify-center lg:mt-10">
         <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-Gotham px-3">
           Best priced packages with in your budget
         </h1>

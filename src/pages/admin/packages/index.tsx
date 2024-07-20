@@ -25,7 +25,6 @@ const Index = () => {
   const { data, refetch } = useGetAllPackagesQuery();
   const { mutateAsync, isPending } = useDeletePackageMutation();
   const { mutateAsync: updatePackage } = useUpdatePackageMutation();
-
   const router = useRouter();
 
   const handleDelete = async (id: any) => {
@@ -86,7 +85,7 @@ const Index = () => {
             <div key={pkg?.id} className="bg-white shadow-md rounded p-4">
               <h1>Main Package Image</h1>
               <Image
-                src={pkg?.image || "/default-image.png"}
+                src={pkg?.images?.[0] || "/default-image.png"}
                 alt=""
                 width={300}
                 height={200}

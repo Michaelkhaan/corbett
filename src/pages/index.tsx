@@ -43,7 +43,7 @@ export default function Home() {
     return packages?.getAllPackages?.data?.map((data) => {
       return {
         id: data?.id?.toString() || "",
-        image: data?.image || "",
+        image: data?.images || "",
         title: data?.title || "",
         rooms: "3 rooms" || "",
         subtitle: "per person" || "",
