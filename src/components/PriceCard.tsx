@@ -26,19 +26,19 @@ function PriceCard({ name, title, subtitle, desc, subdesc, image }: Props) {
       <h1 className="text-lg font-bold font-Gotham mt-4">{name}</h1>
       <div className="flex items-center gap-2 mt-2">
         <LuCheckCircle className="text-[#3f2892]" />
-        <h1 className="text-[10px] font-Gotham">{title}</h1>
+        <h1 className="text-xs font-medium text-gray-600 font-Gotham">{title}</h1>
       </div>
       <div className="flex items-center gap-2 mt-2">
         <LuCheckCircle className="text-[#3f2892]" />
-        <h1 className="text-[10px] font-Gotham">{subtitle}</h1>
+        <h1 className="text-xs font-medium text-gray-600 font-Gotham">{subtitle}</h1>
       </div>
       <div className="flex items-center gap-2 mt-2">
         <LuCheckCircle className="text-[#3f2892]" />
-        <h1 className="text-[10px] font-Gotham">{desc}</h1>
+        <h1 className="text-xs font-medium text-gray-600  font-Gotham">{desc}</h1>
       </div>
       <div className="flex items-center gap-2 mt-2">
         <LuCheckCircle className="text-[#3f2892]" />
-        <h1 className="text-[10px] font-Gotham">{subdesc}</h1>
+        <h1 className="text-xs font-medium text-gray-600 font-Gotham">{subdesc}</h1>
       </div>
     </div>
   );

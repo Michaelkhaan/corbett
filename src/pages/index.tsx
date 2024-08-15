@@ -70,18 +70,22 @@ export default function Home() {
     {
       image: "/nightsleep.png",
       title: "Night Stay",
+      link: '/dhikalaresthouse'
     },
     {
       image: "/jeep.png",
       title: "Saffari",
+      link: '/jeep'
     },
     {
       image: "/packages.png",
       title: "Packages",
+      link: '/packages'
     },
     {
       image: "/resort.png",
       title: "Resorts",
+        link: '/dhikalaresthouse'
     },
   ];
 
@@ -186,6 +190,7 @@ export default function Home() {
             key={index}
             image={e?.image}
             title={e?.title}
+            link= {e?.link}
             className={`
             ${index === 0 ? "aspect-[74/72] w-[74px]" : ""} 
             ${index === 1 ? "aspect-[117/72] w-[117px]" : ""} 

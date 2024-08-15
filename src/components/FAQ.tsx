@@ -21,7 +21,7 @@ function FAQ({ question, key, answer }: Props) {
       onClick={() => handleToggle(key)}
     >
       <div className="flex justify-between items-center  w-full">
-        <h1 className="font-Gotham text-sm">{question}</h1>
+        <h1 className="font-gotham  2xl:text-base text-sm text-gray-600">{question}</h1>
         <span className="w-6 aspect-square bg-black rounded-full flex items-center justify-center">
           <TiMediaPlay
             className={`text-white ${

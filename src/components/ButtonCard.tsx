@@ -12,9 +12,9 @@ const schema = yup.object().shape({
   Number: yup
     .string()
     .required('Number is required'),
-  city: yup
+    emailID: yup
     .string()
-    .required('City is required'),
+    .required('Eamil ID is required'),
 });
 
 function ButtonCard() {
@@ -22,6 +22,7 @@ function ButtonCard() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
@@ -32,9 +33,12 @@ function ButtonCard() {
       const response = await submitForm({
         date: data.travelDate,
         contact: data.Number,
-        city: data.city,
+        city: data.emailID,
+
       });
       toast.success(response?.submitForm?.message);
+      reset();
+      
     } catch (error) {
       toast.error("Error submitting form. Please try again.");
     }
@@ -64,11 +68,12 @@ function ButtonCard() {
 
       <div className="flex relative flex-col">
         <input
-          placeholder="City"
-          {...register("city")}
-          className={`w-11/12 mx-auto bg-white rounded-full px-5 py-2 flex items-center focus:outline-none ${errors.city ? '-mb-0' : ''}`}
+          placeholder="email ID"
+          type="email"
+          {...register("emailID")}
+          className={`w-11/12 mx-auto bg-white rounded-full px-5 py-2 flex items-center focus:outline-none ${errors.emailID ? '-mb-0' : ''}`}
         />
-        {errors.city && <p className="absolute left-5 sm:left-3 text-sm -bottom-6 sm:-bottom-[18px] md:-bottom-5  text-red-600">{errors.city.message}</p>}
+        {errors.emailID && <p className="absolute left-5 sm:left-3 text-sm -bottom-6 sm:-bottom-[18px] md:-bottom-5  text-red-600">{errors.emailID.message}</p>}
       </div>
 
       <div className="flex flex-col">

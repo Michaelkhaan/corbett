@@ -387,6 +387,8 @@ function UpdatePackage({ onClose }: Props) {
           <label htmlFor="description">Description</label>
           <textarea
             {...register("description")}
+            cols={50}
+            rows={10}
             className="w-full border-2 rounded-lg py-2 px-2 mt-2"
           ></textarea>
           {errors.description && (
@@ -439,8 +441,11 @@ function UpdatePackage({ onClose }: Props) {
               </label>
               <textarea
                 //@ts-ignore
+                
                 {...register(`itinerary[${index}].description`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
+                cols={50}
+                rows={10}
               ></textarea>
               {errors?.itinerary?.[index]?.description && (
                 <p className="text-red-500">
@@ -649,7 +654,8 @@ function UpdatePackage({ onClose }: Props) {
               <button
                 type="button"
                 //@ts-ignore
-                onClick={() => removeFaq(index)}
+                // onClick={() => removeFaq(index)}
+                onClick={() => removeFaqsFields(index)}
                 className="bg-red-500 text-white px-4 py-2 mt-2 rounded-lg"
               >
                 Remove
@@ -659,7 +665,8 @@ function UpdatePackage({ onClose }: Props) {
           <button
             type="button"
             //@ts-ignore
-            onClick={() => appendFaq({ question: "", answer: "" })}
+            // onClick={() => appendFaq({ question: "", answer: "" })}
+            onClick={() => appendFaqsFields({ question: "", answer: "" })} 
             className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg"
           >
             Add FAQ

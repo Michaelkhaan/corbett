@@ -14,10 +14,10 @@ function TourCard({ image, title, desc }: Props) {
         <Image src={image} alt="" width={0} height={0} className="w-8" />
       </span>
       <div>
-        <h1 className="lg:text-base 2xl:text-2xl font-Gotham font-semiblod text-gray-700">
+        <h1 className="lg:text-base 2xl:text-2xl font-Gotham font-bold text-gray-600">
           {title}
         </h1>
-        <p className="text-[10px] text-gray-500 font-Gotham mt-1">{desc}</p>
+        <p className="text-[10px] font-medium  text-gray-500  font-Gotham mt-1">{desc}</p>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ interface Props{
 }
 export default function OurGuestLoveUs({className}:Props) {
   return (
-    <div className={`w-full bg-[url('/bglayers.png')] py-10 mt-10 px-4s ${className}`}>
+    <div className={`w-full bg-[url('/bglayers.png')] py-16 px-4s ${className}`}>
       <h1 className="text-center text-[30.7px] font-Gotham font-medium mb-10">
         OUR GUEST LOVE US
       </h1>
@@ -48,14 +48,14 @@ export default function OurGuestLoveUs({className}:Props) {
                 className="w-8 aspect-square object-cover rounded-full"
               />
               <div className="">
-                <h1 className="text-gray/60 text-[10px] font-Gotham">
+                <h1 className="text-gray/60 text-sm font-Gotham">
                   Good service and staff as well
                 </h1>
-                <h2 className="text-gray/60 text-[10px] font-Gotham">
+                <h2 className="text-gray/60 text-sm font-Gotham">
                   Our experience were good for Jeep safari!
                 </h2>
-                <p className="text-[10px] font-Gotham font-extrabold">
-                  <span className="font-bold text-[12px]">sakshi Thakur, </span>
+                <p className="text-xs font-Gotham ">
+                  <span className=" text-sm font-bold">sakshi Thakur, </span>
                   Director seta media Pune
                 </p>
               </div>
