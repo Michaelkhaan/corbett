@@ -31,9 +31,9 @@ function Index() {
     return packages?.getAllPackages?.data?.map((data) => {
       return {
         id: data?.id?.toString() || "",
-        images: data?.images || "",
-        title: data?.title || "",
-        rooms: "3 rooms" || "",
+        images: data?.images || [],
+        title: data?.name || "",
+        rooms: `${data?.day} ${data?.night}`,
         subtitle: "per person" || "",
         prices: data?.price?.toString() || "",
       };
@@ -107,7 +107,7 @@ function Index() {
             >
               <PackageCard
                 title={e?.title}
-                images={e?.images as string[]}
+                image={e?.images?.[0] as string}
                 price={e?.prices}
                 rooms={e?.rooms}
                 subtitle={e?.subtitle}

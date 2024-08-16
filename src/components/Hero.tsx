@@ -23,7 +23,8 @@ function Hero() {
             disableOnInteraction: false,
             waitForTransition: true,
           }}
-          navigation={true}
+          // navigation={true}
+          effect={'fade'}
           speed={3000}
           loop={true}
           modules={[Autoplay, Navigation, Pagination]}

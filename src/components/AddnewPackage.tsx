@@ -71,6 +71,7 @@ function AddnewPackage({ onClose }: Props) {
     handleSubmit,
     register,
     setValue,
+    watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -208,6 +209,13 @@ function AddnewPackage({ onClose }: Props) {
     }
   };
 
+  // console.log(watch('images'),"images")
+
+  const removeImage = (index: number) => {
+    const updatedImages = (watch("images") || []).filter((_, i) => i !== index);
+    setValue("images", updatedImages);
+  };
+
   return (
     <div className="w-3/4 mx-auto mt-5">
       <h1 className="text-2xl font-extrabold text-blue-700 text-center">
@@ -230,6 +238,24 @@ function AddnewPackage({ onClose }: Props) {
         )}
         <div className="selectImage rounded-lg px-5 py-4 mt-4">
           <p className="mb-2">Main Package Image</p>
+          <div className="flex gap-2 my-2">
+            {(watch("images") || []).map((img, index) => (
+              <div key={index} className="relative">
+                <img
+                  src={img}
+                  alt={`uploaded-${index}`}
+                  className="w-20 aspect-square rounded-lg"
+                />
+                <button
+                  type="button"
+                  onClick={() => removeImage(index)}
+                  className="absolute top-1 aspect-square right-1 bg-red-500 text-white rounded-full p-1"
+                >
+                  X
+                </button>
+              </div>
+            ))}
+          </div>
           <input
             type="file"
             multiple
@@ -380,6 +406,15 @@ function AddnewPackage({ onClose }: Props) {
           <h1 className="text-lg font-semibold">Tour Includes</h1>
           {tourIncludesFields.map((item, index) => (
             <div key={item.id} className="flex gap-2 flex-col mt-2">
+              {/*@ts-ignore */}
+              {watch(`tourIncludes[${index}].image`) || null ? (
+                <img
+                  //@ts-ignore
+                  src={watch(`tourIncludes[${index}].image`) || ""}
+                  alt={`uploaded-${index}`}
+                  className="w-12 aspect-square rounded-lg"
+                />
+              ) : null}
               <Controller
                 control={control}
                 name={`tourIncludes.${index}.image`}

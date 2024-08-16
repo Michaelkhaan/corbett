@@ -131,7 +131,7 @@ function Explore() {
         </div>
       </div>
       <Model show={Modal} containerClass="bg-white" onClose={() => setModal(false)}>
-        <Data />
+        <Data onClose={()=>setModal(false)} />
       </Model>
     </>
   );

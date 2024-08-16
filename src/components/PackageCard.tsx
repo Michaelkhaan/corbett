@@ -3,17 +3,18 @@ import React from "react";
 
 interface Props {
   title: string;
-  images: string[];
+  image?: string;
   price: string;
   rooms: string;
   subtitle: string;
 }
 
-function PackageCard({ title, images, price, rooms, subtitle }: Props) {
+function PackageCard({ title, image, price, rooms, subtitle }: Props) {
+  console.log(image,'image')
   return (
     <div className="w-full mt-4">
       <Image
-        src={images?.[0] || "/deer.png"}
+        src={image || "/deer.png"}
         alt=""
         width={0}
         height={0}
@@ -23,7 +24,7 @@ function PackageCard({ title, images, price, rooms, subtitle }: Props) {
         {title}
       </h1>
       <h2 className="text-[10px] text-[#4c4b4b] font-Gotham font-medium mt-1">
-        {rooms}
+        {rooms?rooms: null}
       </h2>
       <h2 className="text-sm font-bold font-Gotham flex items-center gap-1 mt-1 -ml-1">
         <span>
@@ -35,7 +36,7 @@ function PackageCard({ title, images, price, rooms, subtitle }: Props) {
             className="w-4 aspect-square"
           />
         </span>
-        {price}/ROOM
+        {price}
       </h2>
       <p className="text-[#bbbbbb] text-xs font-Gotham -mt-1">{subtitle}</p>
     </div>

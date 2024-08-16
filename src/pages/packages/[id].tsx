@@ -57,7 +57,7 @@ function Index() {
         id: data?.id?.toString() || "",
         images: data?.images || "",
         title: data?.title || "",
-        rooms: "3 rooms" || "",
+        rooms: "",
         subtitle: "per person" || "",
         prices: data?.price?.toString() || "",
       };
@@ -308,7 +308,7 @@ function Index() {
           containerClass="!w-1/3"
         >
           <div className="bg-white">
-            <Data />
+            <Data onClose={() => setOpen(false)} />
           </div>
         </Model>
       </div>

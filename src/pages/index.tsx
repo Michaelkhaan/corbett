@@ -43,9 +43,9 @@ export default function Home() {
     return packages?.getAllPackages?.data?.map((data) => {
       return {
         id: data?.id?.toString() || "",
-        image: data?.images || "",
-        title: data?.title || "",
-        rooms: "3 rooms" || "",
+        images: data?.images || [],
+        title: data?.name || "",
+        rooms:  `${data?.day} ${data?.night}`,
         subtitle: "per person" || "",
         prices: data?.price?.toString() || "",
       };
@@ -260,7 +260,7 @@ export default function Home() {
               >
                 <PackageCard
                   title={e?.title}
-                  images={e?.images}
+                  image={e?.images?.[0]}
                   price={e?.prices}
                   rooms={e?.rooms}
                   subtitle={e?.subtitle}
