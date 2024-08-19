@@ -32,8 +32,9 @@ function ButtonCard() {
     try {
       const response = await submitForm({
         date: data.travelDate,
-        contact: data.Number,
-        city: data.emailID,
+        number: data.Number,
+        email: data.emailID,
+        person:""
 
       });
       toast.success(response?.submitForm?.message);
