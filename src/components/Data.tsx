@@ -6,11 +6,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSubmitFormMutation } from "@/queries/generated";
+import Spinner from "./spinner";
 
 const schema = yup.object().shape({
-  travelDate: yup.string().required("Travel date is required"),
-  EmailAddress: yup.string().required("contact is required"),
-  City: yup.string().required("City is required"),
+  date: yup.string().required("Travel date is required"),
+  number: yup.string().required("number is required"),
+  email: yup.string().email().required("email is required"),
+  person: yup.string().required("person is required"),
 });
 
 export default function Data({ onClose }: any) {
@@ -20,14 +22,15 @@ export default function Data({ onClose }: any) {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const { mutateAsync: submitForm } = useSubmitFormMutation();
+  const { mutateAsync: submitForm, isPending } = useSubmitFormMutation();
 
   const onSubmit = async (data: any) => {
     try {
       const response = await submitForm({
-        date: data.travelDate,
-        contact: data.EmailAddress,
-        city: data.City,
+        date: data.date,
+        number: data.number,
+        email: data.email,
+        person: data.person,
       });
       toast.success("Form submitted successfully!");
       onClose?.();
@@ -48,12 +51,12 @@ export default function Data({ onClose }: any) {
           <input
             type="date"
             placeholder="Travel Date"
-            {...register("travelDate")}
+            {...register("date")}
             className="px-12 w-full focus:outline-none border border-black py-1 mb-4 hover:border-black"
           />
-          {errors.travelDate && (
+          {errors.date && (
             <p className="absolute left-0 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
-              {errors.travelDate.message}
+              {errors.date.message}
             </p>
           )}
         </div>
@@ -62,12 +65,12 @@ export default function Data({ onClose }: any) {
           <input
             type="text"
             placeholder="Phone Number"
-            {...register("EmailAddress")}
+            {...register("number")}
             className="px-12 w-full focus:outline-none border border-black py-1 mb-4"
           />
-          {errors.EmailAddress && (
+          {errors.number && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
-              {errors.EmailAddress.message}
+              {errors.number.message}
             </p>
           )}
         </div>
@@ -76,12 +79,12 @@ export default function Data({ onClose }: any) {
           <input
             type="text"
             placeholder="Email"
-            {...register("City")}
+            {...register("email")}
             className="px-12 w-full focus:outline-none border border-black py-1 mb-4"
           />
-          {errors.City && (
+          {errors.email && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
-              {errors.City.message}
+              {errors.email.message}
             </p>
           )}
         </div>
@@ -90,12 +93,12 @@ export default function Data({ onClose }: any) {
           <input
             type="text"
             placeholder="Number of Persons"
-            {...register("City")}
+            {...register("person")}
             className="px-12 w-full focus:outline-none border border-black py-1 mb-4"
           />
-          {errors.City && (
+          {errors.person && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
-              {errors.City.message}
+              {errors.person.message}
             </p>
           )}
         </div>
@@ -105,7 +108,7 @@ export default function Data({ onClose }: any) {
             type="submit"
             className="w-auto bg-[#f8bd01] px-12 text-[13px] font-Gotham font-bold uppercase py-[10px] hover:bg-black hover:text-white"
           >
-            Submit
+            {isPending ? <Spinner /> : "Submit"}
           </button>
         </div>
       </form>

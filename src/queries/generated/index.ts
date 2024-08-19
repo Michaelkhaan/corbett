@@ -46,9 +46,10 @@ export type Category = {
 
 export type Form = {
   __typename?: 'Form';
-  city: Scalars['String']['output'];
-  contact: Scalars['String']['output'];
-  date: Scalars['String']['output'];
+  date?: Maybe<Scalars['String']['output']>;
+  email?: Maybe<Scalars['String']['output']>;
+  number?: Maybe<Scalars['String']['output']>;
+  person?: Maybe<Scalars['String']['output']>;
 };
 
 export type FormResponse = {
@@ -155,9 +156,10 @@ export type MutationDeletePackageArgs = {
 
 
 export type MutationSubmitFormArgs = {
-  city: Scalars['String']['input'];
-  contact: Scalars['String']['input'];
-  date: Scalars['String']['input'];
+  date?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  number?: InputMaybe<Scalars['String']['input']>;
+  person?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -351,9 +353,10 @@ export type LoginMutationVariables = Exact<{
 export type LoginMutation = { __typename?: 'Mutation', Login: { __typename?: 'LoginResponse', token?: string | null, message?: string | null } };
 
 export type SubmitFormMutationVariables = Exact<{
-  date: Scalars['String']['input'];
-  contact: Scalars['String']['input'];
-  city: Scalars['String']['input'];
+  date?: InputMaybe<Scalars['String']['input']>;
+  number?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  person?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
@@ -396,7 +399,7 @@ export type GetAllCategoriesQuery = { __typename?: 'Query', getAllCategories?: A
 export type GetAllFormQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllFormQuery = { __typename?: 'Query', getAllForm?: { __typename?: 'FormResponse', total?: number | null, data?: Array<{ __typename?: 'Form', date: string, contact: string, city: string } | null> | null } | null };
+export type GetAllFormQuery = { __typename?: 'Query', getAllForm?: { __typename?: 'FormResponse', total?: number | null, data?: Array<{ __typename?: 'Form', date?: string | null, number?: string | null, email?: string | null, person?: string | null } | null> | null } | null };
 
 export type GetAllPackagesQueryVariables = Exact<{
   startPrice?: InputMaybe<Scalars['Float']['input']>;
@@ -537,8 +540,8 @@ export const useLoginMutation = <
     )};
 
 export const SubmitFormDocument = `
-    mutation SubmitForm($date: String!, $contact: String!, $city: String!) {
-  submitForm(date: $date, contact: $contact, city: $city) {
+    mutation SubmitForm($date: String, $number: String, $email: String, $person: String) {
+  submitForm(date: $date, number: $number, email: $email, person: $person) {
     message
   }
 }
@@ -646,8 +649,9 @@ export const GetAllFormDocument = `
     total
     data {
       date
-      contact
-      city
+      number
+      email
+      person
     }
   }
 }

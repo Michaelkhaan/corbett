@@ -15,8 +15,9 @@ function Contact() {
             <thead className="bg-gray-200">
               <tr>
                 <th className="py-2 px-4 border-b">Date</th>
-                <th className="py-2 px-4 border-b">Contact</th>
-                <th className="py-2 px-4 border-b">City</th>
+                <th className="py-2 px-4 border-b">number</th>
+                <th className="py-2 px-4 border-b">email</th>
+                <th className="py-2 px-4 border-b">person</th>
               </tr>
             </thead>
             <tbody>
@@ -34,8 +35,9 @@ function Contact() {
                       ? new Date(parseInt(formData?.date))?.toDateString()
                       : null}
                   </td>
-                  <td className="py-2 px-4 border-b">{formData?.contact}</td>
-                  <td className="py-2 px-4 border-b">{formData?.city}</td>
+                  <td className="py-2 px-4 border-b">{formData?.number}</td>
+                  <td className="py-2 px-4 border-b">{formData?.email}</td>
+                  <td className="py-2 px-4 border-b">{formData?.person}</td>
                 </tr>
               ))}
             </tbody>
