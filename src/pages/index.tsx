@@ -226,7 +226,7 @@ export default function Home() {
               } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
               onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
             >
-              <h1 className="text-[10px] text-sm font-Gotham">Less than Rs 10,000</h1>
+              <h1 className="text-sm font-Gotham">Less than Rs 10,000</h1>
             </div>
             <div
               className={`${
