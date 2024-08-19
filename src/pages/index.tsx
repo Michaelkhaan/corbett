@@ -226,7 +226,7 @@ export default function Home() {
               } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
               onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
             >
-              <h1 className="text-[10px] font-Gotham">Less than Rs 10,000</h1>
+              <h1 className="text-[10px] text-sm font-Gotham">Less than Rs 10,000</h1>
             </div>
             <div
               className={`${
@@ -236,7 +236,7 @@ export default function Home() {
               } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
               onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
             >
-              <h1 className="text-xs font-Gotham">Rs 10,000 to Rs 20,000</h1>
+              <h1 className="text-sm font-Gotham">Rs 10,000 to Rs 20,000</h1>
             </div>
             <div
               className={`${
@@ -246,7 +246,7 @@ export default function Home() {
               } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
               onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
             >
-              <h1 className="text-[10.74px] leading-4 font-Gotham">
+              <h1 className="text-sm leading-4 font-Gotham">
                 Rs 30,000 to Rs 50,000
               </h1>
             </div>
@@ -303,7 +303,7 @@ export default function Home() {
               <h1 className="lg:text-xl 2xl:text-2xl font-bold font-Gotham lg:w-[300px] 2xl:w-[400px] w-full">
                 FAQ Regarding Benzaara Travels
               </h1>
-              <button className="bg-[#e9e951] rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham">
+              <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham">
                 Enquire Now
               </button>
             </div>

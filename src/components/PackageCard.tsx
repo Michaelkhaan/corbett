@@ -18,12 +18,12 @@ function PackageCard({ title, image, price, rooms, subtitle }: Props) {
         alt=""
         width={0}
         height={0}
-        className="w-full lg:h-24 object-cover"
+        className="w-full lg:h-32 object-cover"
       />
       <h1 className="text-[16px] mt-2 font-Gotham font-extrabold tracking-tight">
         {title}
       </h1>
-      <h2 className="text-[10px] text-[#4c4b4b] font-Gotham font-medium mt-1">
+      <h2 className="text-sm text-[#4c4b4b] font-Gotham font-medium mt-1">
         {rooms?rooms: null}
       </h2>
       <h2 className="text-sm font-bold font-Gotham flex items-center gap-1 mt-1 -ml-1">

@@ -17,7 +17,7 @@ function TourCard({ image, title, desc }: Props) {
         <h1 className="lg:text-base 2xl:text-2xl font-Gotham font-bold text-gray-600">
           {title}
         </h1>
-        <p className="text-[10px] font-medium  text-gray-500  font-Gotham mt-1">{desc}</p>
+        <p className="text-sm font-medium  text-gray-500  font-Gotham mt-1">{desc}</p>
       </div>
     </div>
   );
