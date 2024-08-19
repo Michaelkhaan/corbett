@@ -339,7 +339,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="w-full mt-20 px-4 lg:px-32">
+        <div className="w-full 2xl:w-[70%] mx-auto mt-20 px-4 lg:px-32 2xl:px-16">
           <h1 className="text-xl lg:text-2xl font-medium text-gray-700 font-Ghotam text-center">
             All inclusive tours, Chalo Bag Bharo Nikal Pado
           </h1>
