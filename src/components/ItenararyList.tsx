@@ -9,8 +9,9 @@ export default function ItenararyList({ data }: any) {
         Itinerary (Day Wise)
       </h1>
       <div className="w-full lg:w-1/2 2xl:w-full mt-3">
-        {data?.map((e: any, index:any) => (
+        {data?.map((e: any, index: any) => (
           <Itinerary
+            key={index?.toString()}
             openId={openId}
             setOpenId={setOpenId as any}
             className="mb-1"
