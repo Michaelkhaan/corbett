@@ -19,6 +19,7 @@ import React, { useMemo, useState } from "react";
 import { start } from "repl";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import ItenararyList from "@/components/ItenararyList";
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -175,24 +176,25 @@ function Index() {
           </div>
           <div className="w-11/12 border-b border-gray-700 mt-5" />
           {data?.getPackageById?.Itinerary?.length ? (
-            <div className="2xl:px-10 mt-5">
-              <h1 className="lg:text-lg text-sm 2xl:text-[21px] font-Gotham font-bold leading-8">
-                Itinerary (Day Wise)
-              </h1>
-              <div className="w-full lg:w-1/2 2xl:w-full mt-3">
-                {data?.getPackageById?.Itinerary?.map((e, index) => (
-                  <Itinerary
-                    className="mb-1"
-                    key={index?.toString()}
-                    days={e?.name || ""}
-                    title={e?.title}
-                    desc={e?.description || ""}
-                    isOpen={index === 0 ? true : false}
-                    paraClass="lg:w-[450px] xl:w-[600px]"
-                  />
-                ))}
-              </div>
-            </div>
+            // <div className="2xl:px-10 mt-5">
+            //   <h1 className="lg:text-lg text-sm 2xl:text-[21px] font-Gotham font-bold leading-8">
+            //     Itinerary (Day Wise)
+            //   </h1>
+            //   <div className="w-full lg:w-1/2 2xl:w-full mt-3">
+            //     {data?.getPackageById?.Itinerary?.map((e, index) => (
+            //       <Itinerary
+            //         className="mb-1"
+            //         key={index?.toString()}
+            //         days={e?.name || ""}
+            //         title={e?.title}
+            //         desc={e?.description || ""}
+            //         isOpen={index === 0 ? true : false}
+            //         paraClass="lg:w-[450px] xl:w-[600px]"
+            //       />
+            //     ))}
+            //   </div>
+            // </div>
+            <ItenararyList data={data?.getPackageById?.Itinerary}/>
           ) : null}
           <div className="w-full mx-auto pb-5 mt-14">
             {!!data?.getPackageById?.Inclusions?.length ? (
