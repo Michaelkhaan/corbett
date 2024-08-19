@@ -3,7 +3,7 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 
 interface Props {
   openId: string | null;
-  setOpenId: (x: string | null) => {};
+  setOpenId: (x: any) => {};
   className?: string;
   days: string;
   index: string;
@@ -20,13 +20,11 @@ function Itinerary({
   days,
   title,
   desc,
-  index:key,
+  index: key,
   paraClass,
 }: Props) {
-
-
-  const handleToggle = (id: string) => {
-    setOpenId(id);
+  const handleToggle = (id: any) => {
+    setOpenId((pre: any) => (pre === id ? null : id));
   };
   return (
     <>
