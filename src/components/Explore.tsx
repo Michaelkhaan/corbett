@@ -51,7 +51,7 @@ function Explore() {
             </p>
             <button
               onClick={() => setModal(true)}
-              className="bg-black 2xl:text-base text-[10px] font-Gotham rounded-xs px-4 text-white mt-2 2xl:mt-3"
+              className="bg-primary 2xl:text-base text-[16px] font-Gotham rounded-xs px-4 py-[10px] leading-[22px] text-white mt-2 2xl:mt-3"
             >
               Book Saffari
             </button>

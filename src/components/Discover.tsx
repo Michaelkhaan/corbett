@@ -109,7 +109,7 @@ export default function Discover() {
               Tell us what you want and what we will design it for you
             </p>
             <div className="flex mt-2 gap-2 flex-col items-center md:flex-row md:gap-6">
-              <button className="bg-[#FED800] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded">
+              <button className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded">
                 Enquire now
               </button>
               <p className="">or</p>
