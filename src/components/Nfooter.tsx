@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsFacebook, BsYoutube } from "react-icons/bs";
@@ -62,8 +63,10 @@ export default function Nfooter() {
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-3">
           <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham font-semibold">
-            <li className="">Home</li>
-            <li className="">About us</li>
+            <li className="">
+              <Link href="/">Home</Link>
+            </li>
+            <li className=""> <Link href="/aboutUs">About us</Link></li>
             <li>Packages</li>
             <li>Jeep Safari</li>
             <li>Canter Saferi</li>

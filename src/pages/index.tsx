@@ -303,7 +303,7 @@ export default function Home() {
               <h1 className="lg:text-xl 2xl:text-2xl font-bold font-Gotham lg:w-[300px] 2xl:w-[400px] w-full">
                 FAQ Regarding Benzaara Travels
               </h1>
-              <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham">
+              <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham text-black">
                 Enquire Now
               </button>
             </div>

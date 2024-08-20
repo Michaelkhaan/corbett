@@ -37,7 +37,7 @@ function FAQ({ question, key, answer }: Props) {
           openId === key ? "" : "hidden"
         }`}
       >
-        <div className="">{answer}</div>
+        <div className="text-black">{answer}</div>
       </div>
     </div>
   );

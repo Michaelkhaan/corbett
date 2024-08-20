@@ -56,7 +56,7 @@ function Index() {
     return packages?.getAllPackages?.data?.map((data) => {
       return {
         id: data?.id?.toString() || "",
-        images: data?.images || "",
+        images: data?.images || [],
         title: data?.title || "",
         rooms: "",
         subtitle: "per person" || "",
@@ -280,7 +280,7 @@ function Index() {
               key={index}
               title={e?.title}
               //@ts-ignore
-              images={e?.images}
+              image={e?.images?.[0]}
               price={e?.prices}
               rooms={e?.rooms}
               subtitle={e?.subtitle}
