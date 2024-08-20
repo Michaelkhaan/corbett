@@ -54,7 +54,7 @@ function Footer() {
             <ul className="flex flex-col">
               <li className="text-left">Home</li>
               <li className="text-left">About us</li>
-              <li>Packages</li>
+              <li> Packages</li>
               <li>Jeep Safari</li>
               <li>Canter Saferi</li>
               <li>Zone</li>

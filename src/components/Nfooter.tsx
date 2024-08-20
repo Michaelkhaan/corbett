@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsFacebook, BsYoutube } from "react-icons/bs";
@@ -62,18 +63,18 @@ export default function Nfooter() {
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-3">
           <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham font-semibold">
-            <li className="">Home</li>
-            <li className="">About us</li>
-            <li>Packages</li>
-            <li>Jeep Safari</li>
-            <li>Canter Saferi</li>
-            <li>Zone</li>
-            <li>Dhikala Rest House</li>
+            <li className=""> <Link href="/">Home</Link></li>
+            <li className=""> <Link href="/aboutUs">About us</Link> </li>
+            <li> <Link href="/packages">Packages</Link></li>
+            <li> <Link href="/jeep">Jeep Safari</Link> </li>
+            <li> <Link href="/cantersafari">Canter Saferi</Link> </li>
+            <li> Zone </li>
+            <li> <Link href="/dhikalaresthouse">Dhikala Rest House</Link></li>
           </ul>
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-4">
           <ul className="lg:px-4 2xl:px-0 text-[14px] font-Gotham font-semibold">
-            <li>Contact Us</li>
+            <li> <Link href="/contact_us">Contact Us</Link></li>
             <li>Terms & Conditions </li>
             <li>Privacy Policy</li>
           </ul>

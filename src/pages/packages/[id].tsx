@@ -38,7 +38,7 @@ function Index() {
     setOpen(!open);
   };
 
-  const { data } = useGetPackageByIdQuery(
+  const { data  , isPending} = useGetPackageByIdQuery(
     {
       getPackageByIdId: router?.query?.id?.toString() || "",
     },
@@ -226,8 +226,8 @@ function Index() {
             <Highlight data={data?.getPackageById?.Highlights as any} />
           ) : null}
           <div className="w-full mt-5">
-            {data?.getPackageById?.Includes?.length ? (
-              <Touricons data={data?.getPackageById?.Includes as any} />
+            {data?.getPackageById?.Includes?.length || isPending ? (
+              <Touricons data={data?.getPackageById?.Includes as any} isLoading={isPending} />
             ) : null}
           </div>
           <div className="w-full mt-10">
