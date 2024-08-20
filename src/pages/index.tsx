@@ -307,7 +307,7 @@ export default function Home() {
               <h1 className="lg:text-xl 2xl:text-2xl font-bold font-Gotham lg:w-[300px] 2xl:w-[400px] w-full">
                 FAQ Regarding Benzaara Travels
               </h1>
-              <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham">
+              <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham text-black">
                 Enquire Now
               </button>
             </div>
@@ -343,7 +343,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="w-full mt-20 px-4 lg:px-32">
+        <div className="w-full 2xl:w-[70%] mx-auto mt-20 px-4 lg:px-32 2xl:px-16">
           <h1 className="text-xl lg:text-2xl font-medium text-gray-700 font-Ghotam text-center">
             All inclusive tours, Chalo Bag Bharo Nikal Pado
           </h1>

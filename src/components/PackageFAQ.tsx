@@ -35,7 +35,7 @@ function Itinerary({ className, question, answer, key }: Props) {
       </div>
       <div
         className={`w-full text-black transition-all duration-1000 ease-in-out px-2 mt-2 ${
-          openId === key ? "" : "hidden"
+          openId === key ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <p className="text-black text-xs font-Gotham 2xl:text-[15px]">
