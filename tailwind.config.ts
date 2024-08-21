@@ -8,8 +8,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors:{
-        primary: "#f8bd01"
+      colors: {
+        primary: "#f8bd01",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -17,16 +17,15 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        Gotham: ['var(--Gotham)'],
-        frinkRio: ['var(--frinkRio)'],
-        FONTSpringDemo: ['FONTSpringDemo', 'Arial', 'sans-serif'],
-        dejavu:['var(--dejavu)'],
-        myriadPro:['var(--myriadPro)']
-
+        Gotham: ["var(--Gotham)", "sans-serif"],
+        frinkRio: ["var(--frinkRio)", "sans-serif"],
+        FONTSpringDemo: ["FONTSpringDemo", "Arial", "sans-serif"],
+        dejavu: ["var(--dejavu)", "sans-serif"],
+        myriadPro: ["var(--myriadPro)", "sans-serif"],
       },
       boxShadow: {
-        card: '0px 0px 4px 0px #00000040',
-      }
+        card: "0px 0px 4px 0px #00000040",
+      },
     },
   },
   plugins: [],

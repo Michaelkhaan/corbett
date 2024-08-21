@@ -45,7 +45,7 @@ function Explore() {
             <h1 className="2xl:text-[29px] text-xl font-bold font-Gotham">
               BOOK A PERMIT
             </h1>
-            <p className="2xl:text-[20px] text-xs font-Gotham text-center lg:text-left ">
+            <p className="2xl:text-[20px] 2xl:leading-6 text-xs font-Gotham text-center lg:text-left ">
               FOR JUNGLE SAFFARI <br />
               CORBETT TOURISM
             </p>

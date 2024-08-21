@@ -18,6 +18,7 @@ import Nfooter from "@/components/Nfooter";
 import Go from "@/components/Go";
 import { useGetAllPackagesQuery } from "@/queries/generated";
 import { useRouter } from "next/router";
+import PackageLoader from "@/components/PackageLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,7 +35,7 @@ export default function Home() {
     setSelectedPrice(price);
   };
 
-  const { data: packages } = useGetAllPackagesQuery({
+  const { data: packages , isPending } = useGetAllPackagesQuery({
     startPrice: selectedPrice?.start,
     endPrice: selectedPrice?.end,
   });
@@ -45,7 +46,7 @@ export default function Home() {
         id: data?.id?.toString() || "",
         images: data?.images || [],
         title: data?.name || "",
-        rooms:  `${data?.day} ${data?.night}`,
+        rooms: `${data?.day} ${data?.night}`,
         subtitle: "per person" || "",
         prices: data?.price?.toString() || "",
       };
@@ -70,22 +71,22 @@ export default function Home() {
     {
       image: "/nightsleep.png",
       title: "Night Stay",
-      link: '/dhikalaresthouse'
+      link: "/dhikalaresthouse",
     },
     {
       image: "/jeep.png",
       title: "Saffari",
-      link: '/jeep'
+      link: "/jeep",
     },
     {
       image: "/packages.png",
       title: "Packages",
-      link: '/packages'
+      link: "/packages",
     },
     {
       image: "/resort.png",
       title: "Resorts",
-        link: '/dhikalaresthouse'
+      link: "/dhikalaresthouse",
     },
   ];
 
@@ -190,7 +191,7 @@ export default function Home() {
             key={index}
             image={e?.image}
             title={e?.title}
-            link= {e?.link}
+            link={e?.link}
             className={`
             ${index === 0 ? "aspect-[74/72] w-[74px]" : ""} 
             ${index === 1 ? "aspect-[117/72] w-[117px]" : ""} 
@@ -252,6 +253,9 @@ export default function Home() {
             </div>
           </div>
           <div className="w-11/12 lg:w-3/4 2xl:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
+            {isPending  ? Array.from({ length: 4 }).map((e, index) => (
+              <PackageLoader key={index} />
+            )) : null}
             {packagesData?.map((e: any) => (
               <div
                 key={e.id}
@@ -303,7 +307,7 @@ export default function Home() {
               <h1 className="lg:text-xl 2xl:text-2xl font-bold font-Gotham lg:w-[300px] 2xl:w-[400px] w-full">
                 FAQ Regarding Benzaara Travels
               </h1>
-              <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham">
+              <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham text-black">
                 Enquire Now
               </button>
             </div>
