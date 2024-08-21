@@ -15,29 +15,36 @@ import OverView1 from "@/components/OverView1";
 import JungleSaferi from "@/components/JungleSaferi";
 import ExperienceHd from "@/components/ExperienceHd";
 import TraficPrice1 from "@/components/TraficPrice1";
+import Faq from "@/components/PackageFAQ";
+import FaqList from "@/components/FaqList";
 
 const faq = [
   {
+    id: 1,
     question: "1. What I bring for the safari?",
     answer:
       "2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
   },
   {
+    id: 2,
     question: "3. Are childern allowed on the  safari?",
     answer:
       "4.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
   },
   {
+    id: 3,
     question: "5.Is it safe to encounter wildlife up close?",
     answer:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
   },
   {
+    id: 4,
     question: "6. Can I customize my safari experience?",
     answer:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
   },
   {
+    id: 5,
     question: "7.How do i book a safari?",
     answer:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus porro at mollitia error placeat et harum necessitatibus animi quos, doloremque dolores illo temporibus fugiat quidem recusandae tempore quae? Officia, eaque aperiam? Doloribus aperiam voluptatibus qui iste deserunt voluptatem sit tempora reprehenderit rem, pariatur necessitatibus ipsum esse repellat quo quisquam beatae.",
@@ -145,16 +152,7 @@ function index() {
 
         <div className=" bg-[#efefee] py-12">
           <div className="flex lg:w-[70%] 2xl:w-[40%] w-11/12  mx-auto flex-col justify-start items-start">
-            <p className="text-xl font-medium font-Gotham">
-              FAQ Regarding Corbett safari!
-            </p>
-            {faq?.map((e, index) => (
-              <PackageFAQ
-                key={index?.toString()}
-                question={e?.question}
-                answer={e?.answer}
-              />
-            ))}
+            <FaqList data={faq} />
           </div>
         </div>
         <OurGuestLoveUs className="!mt-0" />
