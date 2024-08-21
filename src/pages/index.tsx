@@ -171,7 +171,7 @@ answer:"Booking a safari with us is easy! Simply visit our website or contact ou
       desc: "Our experienced product and destination research team works diligently to create the most cost-effective and enriching itineraries, ensuring you get the best value for your money.",
     },
     {
-      image: "/transport.png",
+      image: "/Transport.png",
       title: "On-Tour Transport",
       desc: "Relax and enjoy your journey with all rail, sea, and road transport included in your itinerary. We handle the logistics so you can travel stress-free.",
     },
