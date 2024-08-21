@@ -103,7 +103,7 @@ function index() {
           </h1>
         </div>
         <Image
-          src="/vectorsmart.png"
+          src="/VectorSmart.png"
           alt="Vector Smart"
           width={0}
           height={0}
