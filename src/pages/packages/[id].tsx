@@ -20,6 +20,7 @@ import { start } from "repl";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import ItenararyList from "@/components/ItenararyList";
+import FaqList from "@/components/FaqList";
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -194,7 +195,7 @@ function Index() {
             //     ))}
             //   </div>
             // </div>
-            <ItenararyList data={data?.getPackageById?.Itinerary}/>
+            <ItenararyList data={data?.getPackageById?.Itinerary} />
           ) : null}
           <div className="w-full mx-auto pb-5 mt-14">
             {!!data?.getPackageById?.Inclusions?.length ? (
@@ -207,18 +208,7 @@ function Index() {
           </div>
 
           {data?.getPackageById?.Faqs?.length ? (
-            <div className="w-full mx-auto mt-14 2xl:px-6">
-              <h1 className="text-xl font-Gotham font-bold lg:px-5">
-                FAQ Regarding Corbett Saffari!
-              </h1>
-              {data?.getPackageById?.Faqs?.map((e, index) => (
-                <PackageFAQ
-                  key={index?.toString()}
-                  question={e?.title || ""}
-                  answer={e?.description || ""}
-                />
-              ))}
-            </div>
+            <FaqList data={data?.getPackageById?.Faqs as any} />
           ) : null}
         </div>
         <div className="w-full lg:w-2/6 mx-auto mt-6">
