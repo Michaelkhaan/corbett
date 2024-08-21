@@ -83,7 +83,7 @@ function FAQ({ question, id, answer }: Props) {
           openId === id ? "max-h-screen" : "max-h-0"
         }`}
       >
-        <div className="py-2 text-black">{answer}</div>
+        <div className="py-2 text-gray-600">{answer}</div>
       </div>
     </div>
   );

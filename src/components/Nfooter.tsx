@@ -12,8 +12,11 @@ import {
 export default function Nfooter() {
   return (
     <div className="w-full bg-[#F8F9FD]">
-      <div className="border rounded-full p-2 flex items-center justify-center bg-black fixed lg:right-10 lg:bottom-20 bottom-4 right-4 z-50">
-        <FaWhatsapp className="lg:text-2xl text-base text-[#47e1d9]" />
+      <div className="border rounded-full p-2 flex items-center justify-center bg-black fixed lg:right-10 lg:bottom-20 bottom-4 right-4 z-50 ">
+        {/* <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center animate-shake"> */}
+        <a href="https://wa.me/919837166431" target="_blank">
+          <FaWhatsapp className="lg:text-2xl text-base text-[#47e1d9]" />
+        </a>
       </div>
       <div className="2xl:w-[70%] lg:w-4/5 flex mx-auto py-10 flex-wrap w-11/12">
         <div className="2xl:w-[27%] lg:w-[33%] md:w-1/2 md:order-1">
@@ -34,10 +37,12 @@ export default function Nfooter() {
         </div>
         <div className="2xl:w-[37%] lg:w-[43%] md:w-1/2 w-full md:order-2 order-5">
           <div className="flex flex-col items-center">
-            <h1 className="2xl:text-3xl text-xl text-black font-bold relative font-frinkRio">
-              corbett
-              <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
-            </h1>
+            <Link href="/">
+              <h1 className="2xl:text-3xl text-xl text-black font-bold relative font-frinkRio">
+                corbett
+                <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
+              </h1>
+            </Link>
 
             <h4 className="text-[22px] font-bold font-frinkRio">
               ITS NOT JUST A HAIR.
@@ -63,18 +68,39 @@ export default function Nfooter() {
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-3">
           <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham font-semibold">
-            <li className=""> <Link href="/">Home</Link></li>
-            <li className=""> <Link href="/aboutUs">About us</Link> </li>
-            <li> <Link href="/packages">Packages</Link></li>
-            <li> <Link href="/jeep">Jeep Safari</Link> </li>
-            <li> <Link href="/cantersafari">Canter Saferi</Link> </li>
+            <li className="">
+              {" "}
+              <Link href="/">Home</Link>
+            </li>
+            <li className="">
+              {" "}
+              <Link href="/aboutUs">About us</Link>{" "}
+            </li>
+            <li>
+              {" "}
+              <Link href="/packages">Packages</Link>
+            </li>
+            <li>
+              {" "}
+              <Link href="/jeep">Jeep Safari</Link>{" "}
+            </li>
+            <li>
+              {" "}
+              <Link href="/cantersafari">Canter Saferi</Link>{" "}
+            </li>
             <li> Zone </li>
-            <li> <Link href="/dhikalaresthouse">Dhikala Rest House</Link></li>
+            <li>
+              {" "}
+              <Link href="/dhikalaresthouse">Dhikala Rest House</Link>
+            </li>
           </ul>
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-4">
           <ul className="lg:px-4 2xl:px-0 text-[14px] font-Gotham font-semibold">
-            <li> <Link href="/contact_us">Contact Us</Link></li>
+            <li>
+              {" "}
+              <Link href="/contact_us">Contact Us</Link>
+            </li>
             <li>Terms & Conditions </li>
             <li>Privacy Policy</li>
           </ul>

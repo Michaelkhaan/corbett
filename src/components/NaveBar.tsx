@@ -48,12 +48,15 @@ function NaveBar({ className }: Props) {
       <div className="w-full bg-black/70  py-3 z-50">
         <div className="mx-auto w-11/12 lg:w-3/4 2xl:w-[70%] flex items-center justify-between lg:px-1 2xl:px-3 2xl:pr-12">
           <div className="relative">
-            <h1 className="2xl:text-3xl text-2xl text-white font-bold font-frinkRio cursor-pointer">
-              corbett
-            </h1>
-            <span
-              className={`w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 ${className}`}
-            ></span>
+            <Link href="/">
+              <h1 className="2xl:text-3xl text-2xl text-white font-bold font-frinkRio cursor-pointer">
+                corbett
+              </h1>
+
+              <span
+                className={`w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 ${className}`}
+              ></span>
+            </Link>
           </div>
           <ul
             className={`${
@@ -74,7 +77,9 @@ function NaveBar({ className }: Props) {
             ))}
           </ul>
           <div className="lg:flex items-center 2xl:gap-5 lg:gap-2 hidden">
-            <FaWhatsapp className="text-green-600 2xl:text-xl  lg:text-sm " />
+            <a href="https://wa.me/919837166431" target="_blank">
+              <FaWhatsapp className="text-green-600 2xl:text-xl  lg:text-sm " />
+            </a>
             <h1 className="2xl:text-sm lg:text-xs text-white">
               info@corbett.in
             </h1>

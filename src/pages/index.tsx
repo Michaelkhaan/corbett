@@ -19,6 +19,7 @@ import Go from "@/components/Go";
 import { useGetAllPackagesQuery } from "@/queries/generated";
 import { useRouter } from "next/router";
 import PackageLoader from "@/components/PackageLoader";
+import { title } from "process";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -92,20 +93,24 @@ export default function Home() {
 
   const faq = [
     {
-      title: "Is ATM Facility available in Haridwar?",
-      answer: "answer 1",
+      title: "What should I bring for the safari?",
+      answer: "We recommend bringing comfortable clothing, sturdy footwear, sunscreen, a hat, binoculars, and a camera to capture your wildlife encounters.",
     },
     {
-      title: "Is ATM Facility available in Haridwar?",
-      answer: "answer 2",
+      title: "Are children allowed on the safari?",
+      answer: "Yes, children are welcome on the safari! It's a really fantastic opportunity for them to connect with nature and learn about wildlife in a safe and supervised environment.",
     },
     {
-      title: "Is ATM Facility available in Haridwar?",
-      answer: "answer 3",
+      title: "Is it safe to encounter wildlife up close?",
+      answer: "While encountering wildlife up close can be very exciting, it's essential to follow safety guidelines and instructions from our expert guides. They are trained to ensure a safe and memorable experience for all visitors.",
     },
     {
-      title: "Is ATM Facility available in Haridwar?",
-      answer: "answer 4",
+      title: "Can I customise my safari experience?",
+      answer: "Absolutely! At JM Corbett Safari, we offer customisable packages to suit your preferences and interests. Whether you're interested in specific wildlife sightings, photography opportunities, or exploring particular areas of the park, we can tailor your safari experience to make it truly unforgettable.",
+    },
+    {
+title:"How do I book a safari?",
+answer:"Booking a safari with us is easy! Simply visit our website or contact our booking office to check availability and reserve your spot. Our friendly staff will assist you in selecting the perfect safari package for your preferences and schedule, ensuring a seamless booking process from start to finish.",
     },
   ];
 
@@ -146,40 +151,40 @@ export default function Home() {
 
   const tourCard = [
     {
-      image: "/building.png",
+      image: "/Accommodation.png",
       title: "Accommodation",
-      desc: "Comfortables and Convenient hotels cherry picked by our hotel managment team.",
+      desc: "Stay in comfort with our carefully selected hotels. Each one is chosen by our expert hotel management team to ensure a pleasant and convenient stay.",
     },
     {
-      image: "/building.png",
-      title: "Accommodation",
-      desc: "Comfortables and Convenient hotels cherry picked by our hotel managment team.",
+      image: "/TourManagers.png",
+      title: "Tour Managers",
+      desc: "Benefit from our dedicated team of 350 specialized tour managers, with expertise in both Indian and international tours.",
     },
     {
-      image: "/building.png",
-      title: "Accommodation",
-      desc: "Comfortables and Convenient hotels cherry picked by our hotel managment team.",
+      image: "/Meals.png",
+      title: "All Meals",
+      desc: "Enjoy meals to your heart’s content—breakfast, lunch, and dinner. Our packages offer the best value, with every meal taken care of.",
     },
     {
-      image: "/building.png",
-      title: "Accommodation",
-      desc: "Comfortables and Convenient hotels cherry picked by our hotel managment team.",
+      image: "/Itineraries.png",
+      title: "Best Value Itineraries",
+      desc: "Our experienced product and destination research team works diligently to create the most cost-effective and enriching itineraries, ensuring you get the best value for your money.",
     },
     {
-      image: "/building.png",
-      title: "Accommodation",
-      desc: "Comfortables and Convenient hotels cherry picked by our hotel managment team.",
+      image: "/transport.png",
+      title: "On-Tour Transport",
+      desc: "Relax and enjoy your journey with all rail, sea, and road transport included in your itinerary. We handle the logistics so you can travel stress-free.",
     },
     {
-      image: "/building.png",
-      title: "Accommodation",
-      desc: "Comfortables and Convenient hotels cherry picked by our hotel managment team.",
+      image: "/Airfare.png",
+      title: "Round-Trip Airfare",
+      desc: "Veena World tours include airfare from many major hubs within India, or you can choose the joining/leaving option if you prefer.",
     },
-    {
-      image: "/building.png",
-      title: "Accommodation",
-      desc: "Comfortables and Convenient hotels cherry picked by our hotel managment team.",
-    },
+    // {
+    //   image: "/building.png",
+    //   title: "Accommodation",
+    //   desc: "Comfortables and Convenient hotels cherry picked by our hotel managment team.",
+    // },
   ];
   return (
     <div className="w-full">
@@ -194,9 +199,9 @@ export default function Home() {
             link={e?.link}
             className={`
             ${index === 0 ? "aspect-[74/72] w-[74px]" : ""} 
-            ${index === 1 ? "aspect-[117/72] w-[117px]" : ""} 
-            ${index === 2 ? "aspect-[56/78] w-[56px]" : ""}
-            ${index === 3 ? "aspect-[117/80] w-[117px]" : ""}`}
+            ${index === 1 ? "aspect-[74/72] w-[74px]" : ""} 
+            ${index === 2 ? "aspect-[74/72] w-[74px]" : ""}
+            ${index === 3 ? "aspect-[74/72] w-[74px]" : ""}`}
           />
         ))}
       </div>
@@ -307,7 +312,7 @@ export default function Home() {
           <div className="grid grid-cols-7  mx-auto gap-2">
             <div className="lg:col-span-2 col-span-12 mt-3">
               <h1 className="lg:text-xl 2xl:text-2xl font-bold font-Gotham lg:w-[300px] 2xl:w-[400px] w-full">
-                FAQ Regarding Benzaara Travels
+                FAQ Regarding Travels
               </h1>
               <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham text-black">
                 Enquire Now

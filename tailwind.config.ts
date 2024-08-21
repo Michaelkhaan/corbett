@@ -11,6 +11,17 @@ const config: Config = {
       colors: {
         primary: "#f8bd01",
       },
+      animation: {
+        shake: "shake 0.5s ease-in-out infinite",
+      },
+      keyframes: {
+        shake: {
+          "0%, 100%": { transform: "translate(0, 0) rotate(0deg)" },
+          "25%": { transform: "translate(-2px, 2px) rotate(-2deg)" },
+          "50%": { transform: "translate(2px, -2px) rotate(2deg)" },
+          "75%": { transform: "translate(-2px, 2px) rotate(-2deg)" },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
