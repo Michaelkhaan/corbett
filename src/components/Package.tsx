@@ -26,9 +26,9 @@ function Package({
       <ul className="px-3">
         {isLoading
           ? Array.from({ length: 6 }).map((e, index) => (
-              <>
-                <div className="bg-slate-200 animate-pulse h-2 mt-2 " />
-              </>
+            
+                <div key={index?.toString()} className="bg-slate-200 animate-pulse h-2 mt-2 " />
+              
             ))
           : null}
         {data?.map((e, index) => (

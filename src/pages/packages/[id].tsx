@@ -179,6 +179,7 @@ function Index() {
             {isPending ? (
               Array.from({ length: 6 }).map((e, index) => (
                 <div
+                key={index?.toString()}
                   className={`bg-slate-200 animate-pulse h-2 mt-1 ${
                     index === 5 ? "w-1/2" : ""
                   }`}

@@ -87,6 +87,7 @@ const Jeep = () => {
             </p>
             {faq?.map((e, index) => (
               <PackageFAQ
+              id=""
                 key={index?.toString()}
                 question={e?.question}
                 answer={e?.answer}

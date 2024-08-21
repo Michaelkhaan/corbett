@@ -28,7 +28,7 @@ export default function Highlight({
       <ul className="text-[#000000] leading-[34px] font-Gotham text-sm 2xl:text-[16px] mt-3">
         {isLoading
           ? Array.from({ length: 6 }).map((e, index) => (
-              <div className="bg-slate-200 animate-pulse h-2 mt-2" />
+              <div key={index?.toString()} className="bg-slate-200 animate-pulse h-2 mt-2" />
             ))
           : null}
         {data?.map((item, index) => (
