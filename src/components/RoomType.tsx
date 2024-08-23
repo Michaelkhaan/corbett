@@ -22,7 +22,7 @@ const RoomType = () => {
         </h1>
       </div>
       {rooms?.map((item:any,index) => (
-        <div className="flex flex-col">
+        <div key={index} className="flex flex-col">
          <div className="flex py-4">
          <div className="w-[800px] h-[150px] relative">
             <Image
