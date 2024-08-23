@@ -12,6 +12,8 @@ import {
 import { toast } from "react-toastify";
 import UpdatePackage from "@/components/UpdatePackage";
 import { Router, useRouter } from "next/router";
+import AddnewNightStay from "@/components/Nightstay";
+import UpdateNightStay from "@/components/UpdateNightStay";
 
 const Index = () => {
   const [open, setOpen] = useState(false);
@@ -72,7 +74,7 @@ const Index = () => {
     <Layout>
       <div className="p-4 flex flex-col items-center justify-center">
         <div className="flex justify-between items-center w-full">
-          <h1 className="text-blue-400 text-2xl font-bold mb-4">Packages</h1>
+          <h1 className="text-blue-400 text-2xl font-bold mb-4">Night Stay</h1>
           <button
             className="bg-blue-400 text-white w-36 h-10 rounded flex items-center justify-center"
             onClick={handleAddPackage}
@@ -80,6 +82,7 @@ const Index = () => {
             Add New
           </button>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {data?.getAllPackages?.data.map((pkg) => (
             <div key={pkg?.id} className="bg-white shadow-md rounded p-4">
@@ -115,7 +118,7 @@ const Index = () => {
           onClose={() => setAddPackage(false)}
           containerClass="!w-[80%] bg-white h-screen overflow-y-auto py-10"
         >
-          <AddnewPackage onClose={() => [setAddPackage(false), refetch()]} />
+          <AddnewNightStay onClose={() => [setAddPackage(false), refetch()]} />
         </Model>
         <Model
           show={open}
@@ -169,7 +172,7 @@ const Index = () => {
           </form> */}
 
           <div>
-            <UpdatePackage onClose={() => [setOpen(false), refetch()]} />
+            <UpdateNightStay onClose={() => [setOpen(false), refetch()]} />
           </div>
         </Model>
       </div>
