@@ -156,6 +156,8 @@ function index() {
         <div className="flex md:w-[50%] w-11/12  mx-auto flex-col justify-start items-start">
           {faq?.map((e, index) => (
             <PackageFAQ
+
+            id=""
               key={index?.toString()}
               question={e?.question}
               answer={e?.answer}

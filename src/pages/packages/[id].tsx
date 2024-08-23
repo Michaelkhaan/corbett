@@ -39,7 +39,7 @@ function Index() {
     setOpen(!open);
   };
 
-  const { data  , isPending} = useGetPackageByIdQuery(
+  const { data, isPending } = useGetPackageByIdQuery(
     {
       getPackageByIdId: router?.query?.id?.toString() || "",
     },
@@ -167,43 +167,41 @@ function Index() {
       </div>
       <div className="w-11/12 lg:w-3/4 mx-auto flex lg:flex-row justify-between flex-col gap-10">
         <div className="w-full lg:w-3/5 mx-auto">
-          <div className="2xl:px-10">
-            <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter mt-5">
-              {data?.getPackageById?.title}
-            </h1>
-            <p className="lg:text-sm text-xs 2xl:text-xl font-Gotham leading-8 mt-2">
-              {data?.getPackageById?.description}
-            </p>
+          <div className="2xl:px-10 mt-5">
+            {isPending ? (
+              <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
+            ) : (
+              <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter ">
+                {data?.getPackageById?.title}
+              </h1>
+            )}
+
+            {isPending ? (
+              Array.from({ length: 6 }).map((e, index) => (
+                <div
+                key={index?.toString()}
+                  className={`bg-slate-200 animate-pulse h-2 mt-1 ${
+                    index === 5 ? "w-1/2" : ""
+                  }`}
+                />
+              ))
+            ) : (
+              <p className="lg:text-sm text-xs 2xl:text-xl font-Gotham leading-8 mt-2 text-wrap break-words">
+                {data?.getPackageById?.description}
+              </p>
+            )}
           </div>
           <div className="w-11/12 border-b border-gray-700 mt-5" />
           {data?.getPackageById?.Itinerary?.length ? (
-            // <div className="2xl:px-10 mt-5">
-            //   <h1 className="lg:text-lg text-sm 2xl:text-[21px] font-Gotham font-bold leading-8">
-            //     Itinerary (Day Wise)
-            //   </h1>
-            //   <div className="w-full lg:w-1/2 2xl:w-full mt-3">
-            //     {data?.getPackageById?.Itinerary?.map((e, index) => (
-            //       <Itinerary
-            //         className="mb-1"
-            //         key={index?.toString()}
-            //         days={e?.name || ""}
-            //         title={e?.title}
-            //         desc={e?.description || ""}
-            //         isOpen={index === 0 ? true : false}
-            //         paraClass="lg:w-[450px] xl:w-[600px]"
-            //       />
-            //     ))}
-            //   </div>
-            // </div>
             <ItenararyList data={data?.getPackageById?.Itinerary} />
           ) : null}
           <div className="w-full mx-auto pb-5 mt-14">
-            {!!data?.getPackageById?.Inclusions?.length ? (
-              <Package data={data?.getPackageById?.Inclusions as any} />
+            {!!data?.getPackageById?.Inclusions?.length || isPending ? (
+              <Package data={data?.getPackageById?.Inclusions as any} isLoading={isPending} />
             ) : null}
 
-            {!!data?.getPackageById?.Exclusions?.length ? (
-              <Packageexc data={data?.getPackageById?.Exclusions as any} />
+            {!!data?.getPackageById?.Exclusions?.length || isPending ? (
+              <Packageexc data={data?.getPackageById?.Exclusions as any} isLoading={isPending} />
             ) : null}
           </div>
 
@@ -212,12 +210,15 @@ function Index() {
           ) : null}
         </div>
         <div className="w-full lg:w-2/6 mx-auto mt-6">
-          {data?.getPackageById?.Highlights?.length ? (
-            <Highlight data={data?.getPackageById?.Highlights as any} />
+          {data?.getPackageById?.Highlights?.length || isPending ? (
+            <Highlight data={data?.getPackageById?.Highlights as any} isLoading={isPending} />
           ) : null}
           <div className="w-full mt-5">
             {data?.getPackageById?.Includes?.length || isPending ? (
-              <Touricons data={data?.getPackageById?.Includes as any} isLoading={isPending} />
+              <Touricons
+                data={data?.getPackageById?.Includes as any}
+                isLoading={isPending}
+              />
             ) : null}
           </div>
           <div className="w-full mt-10">
