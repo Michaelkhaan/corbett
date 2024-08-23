@@ -26,7 +26,7 @@ function index() {
   ];
   return (
     <div className="w-full">
-      <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative">
+      <div className="w-full aspect-[1920/490] min-h-[300px] flex flex-col items-center overflow-hidden relative">
         <Image
           src="/hero.png"
           alt=""
@@ -35,7 +35,7 @@ function index() {
           className=" object-cover absolute inset-0 w-full h-full -z-10 "
         />
         <NaveBar />
-        <h1 className="lg:text-4xl text-2xl 2xl:text-6xl text-white font-frinkRio font-bold left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] absolute">
+        <h1 className="lg:text-4xl text-4xl 2xl:text-7xl text-white font-frinkRio font-bold left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] absolute">
           ABOUT US
         </h1>
       </div>
@@ -72,7 +72,7 @@ function index() {
             <h1 className="lg:text-3xl text-xl 2xl:text-5xl font-Gotham font-bold px-4">
               Our History
             </h1>
-            <p className="lg:text-xl text-lg 2xl:text-2xl font-Gotham font-semibold lg:w-[600px] mt-4 px-4">
+            <p className="lg:text-sm text-sm 2xl:text-lg font-Gotham font-medium lg:w-[600px] mt-4 px-4">
               {`Jim corbett was established by a group of indeviduals united by their love for nature and wildlife. Recognising the need for concerted efforts to conserve the region's unique flora founa, they came together to form an organization committed to the preservation of Jim corbett National Park. Since the then, our organization has grown and evolved, but our commitment to conservation remains steadfast.`}
             </p>
           </div>

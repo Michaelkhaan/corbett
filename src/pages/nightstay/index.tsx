@@ -2,6 +2,7 @@ import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
 import PackageCard from "@/components/PackageCard";
 import { useGetAllPackagesQuery } from "@/queries/generated";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
 import { start } from "repl";
@@ -15,7 +16,7 @@ function Index() {
   const router = useRouter();
 
   const onClick = (id: string) => {
-    router.push("/packages/" + id);
+    router.push("/nightstay/" + id);
   };
 
   const handleClick = (price: any) => {
@@ -40,6 +41,7 @@ function Index() {
     });
   }, [packages]);
 
+
   console.log(packages);
 
   return (
@@ -53,14 +55,22 @@ function Index() {
           >
             Home <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
-          <p className=" pr-1 font-bold font-Gotham text-[10px] flex items-center">
-            package <span className="pl-[3px] mt-[1px]"></span>
+          <p className=" pr-1 font-Gotham text-[10px] flex items-center">
+          <Link href={""}> Resorts </Link>  <span className="font-bold"> <Link href={"/nightstay"}> </Link> </span> <span className="pl-[3px] mt-[1px]"></span>
           </p>
         </div>
       </div>
 
-      <div className="w-full mx-auto flex flex-col font-gotham items-center justify-center lg:mt-10">
-        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-Gotham px-3">
+      <div className="w-full mx-auto flex flex-col font-gotham items-center justify-center lg:mt-1">
+        
+      <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
+          OUR RESORTS
+        </h1>
+        <p className="2xl:text-base text-[15px] leading-[20px] text-center font-Gotham lg:w-[630px] mt-2">
+          We craft our packages based on your budget, taste & preference however these are 
+           some most popular packages our guest has chosen.
+        </p>
+        <h1 className="text-xl leading-[23px] font-bold text-gray-600 font-GothamBook px-3 mt-3">
           Best priced packages with in your budget
         </h1>
 
@@ -109,7 +119,7 @@ function Index() {
                 title={e?.title}
                 image={e?.images?.[0] as string}
                 price={e?.prices}
-                rooms={e?.rooms}
+                rooms={""}
                 subtitle={e?.subtitle}
               />
             </div>

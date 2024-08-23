@@ -109,19 +109,27 @@ export default function Discover() {
               Tell us what you want and what we will design it for you
             </p>
             <div className="flex mt-2 gap-2 flex-col items-center md:flex-row md:gap-6">
-              <button className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded">
+              {/* <button className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded">
                 Enquire now
-              </button>
+              </button> */}
+              <button
+  className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded"
+  onClick={() => window.location.href = 'tel:1800 22 7979'} // Replace with the actual number
+>
+  Enquire now
+</button>
+
               <p className="">or</p>
               <div className="flex items-center gap-1">
                 <Image
+                onClick={() => window.location.href = 'tel:1800 22 7979'} 
                   src="/telephone.svg"
-                  className="opacity-65"
+                  className="opacity-65 cursor-pointer"
                   alt=""
                   width={20}
                   height={20}
                 />
-                <p className="text-lg font-bold text-[#2E488B]">1800 22 7979</p>
+                <p className="text-lg font-bold text-[#2E488B] cursor-pointer"onClick={() => window.location.href = 'tel:1800 22 7979'} >1800 22 7979</p>
               </div>
             </div>
           </div>

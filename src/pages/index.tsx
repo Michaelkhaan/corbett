@@ -20,6 +20,7 @@ import { useGetAllPackagesQuery } from "@/queries/generated";
 import { useRouter } from "next/router";
 import PackageLoader from "@/components/PackageLoader";
 import { title } from "process";
+import PriceAndZone from "@/components/priceAndZone";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,7 +73,7 @@ export default function Home() {
     {
       image: "/nightsleep.png",
       title: "Night Stay",
-      link: "/dhikalaresthouse",
+      link: "/nightstay",
     },
     {
       image: "/jeep.png",
@@ -94,60 +95,32 @@ export default function Home() {
   const faq = [
     {
       title: "What should I bring for the safari?",
-      answer: "We recommend bringing comfortable clothing, sturdy footwear, sunscreen, a hat, binoculars, and a camera to capture your wildlife encounters.",
+      answer:
+        "We recommend bringing comfortable clothing, sturdy footwear, sunscreen, a hat, binoculars, and a camera to capture your wildlife encounters.",
     },
     {
       title: "Are children allowed on the safari?",
-      answer: "Yes, children are welcome on the safari! It's a really fantastic opportunity for them to connect with nature and learn about wildlife in a safe and supervised environment.",
+      answer:
+        "Yes, children are welcome on the safari! It's a really fantastic opportunity for them to connect with nature and learn about wildlife in a safe and supervised environment.",
     },
     {
       title: "Is it safe to encounter wildlife up close?",
-      answer: "While encountering wildlife up close can be very exciting, it's essential to follow safety guidelines and instructions from our expert guides. They are trained to ensure a safe and memorable experience for all visitors.",
+      answer:
+        "While encountering wildlife up close can be very exciting, it's essential to follow safety guidelines and instructions from our expert guides. They are trained to ensure a safe and memorable experience for all visitors.",
     },
     {
       title: "Can I customise my safari experience?",
-      answer: "Absolutely! At JM Corbett Safari, we offer customisable packages to suit your preferences and interests. Whether you're interested in specific wildlife sightings, photography opportunities, or exploring particular areas of the park, we can tailor your safari experience to make it truly unforgettable.",
+      answer:
+        "Absolutely! At JM Corbett Safari, we offer customisable packages to suit your preferences and interests. Whether you're interested in specific wildlife sightings, photography opportunities, or exploring particular areas of the park, we can tailor your safari experience to make it truly unforgettable.",
     },
     {
-title:"How do I book a safari?",
-answer:"Booking a safari with us is easy! Simply visit our website or contact our booking office to check availability and reserve your spot. Our friendly staff will assist you in selecting the perfect safari package for your preferences and schedule, ensuring a seamless booking process from start to finish.",
+      title: "How do I book a safari?",
+      answer:
+        "Booking a safari with us is easy! Simply visit our website or contact our booking office to check availability and reserve your spot. Our friendly staff will assist you in selecting the perfect safari package for your preferences and schedule, ensuring a seamless booking process from start to finish.",
     },
   ];
 
-  const priceCard = [
-    {
-      image: "/currency-1.png",
-      name: "Price",
-      title: "INR 7000-10000/ -Jeep",
-      subtitle: "Maximum 6 person's and 2 childerns",
-      desc: "Between - 5 to 12 years",
-      subdesc: "allowed in ONE Jeep",
-    },
-    {
-      image: "/currency-1.png",
-      name: "Price",
-      title: "INR 7000-10000/ -Jeep",
-      subtitle: "Maximum 6 person's and 2 childerns",
-      desc: "Between - 5 to 12 years",
-      subdesc: "allowed in ONE Jeep",
-    },
-    {
-      image: "/currency-1.png",
-      name: "Price",
-      title: "INR 7000-10000/ -Jeep",
-      subtitle: "Maximum 6 person's and 2 childerns",
-      desc: "Between - 5 to 12 years",
-      subdesc: "allowed in ONE Jeep",
-    },
-    {
-      image: "/currency-1.png",
-      name: "Price",
-      title: "INR 7000-10000/ -Jeep",
-      subtitle: "Maximum 6 person's and 2 childerns",
-      desc: "Between - 5 to 12 years",
-      subdesc: "allowed in ONE Jeep",
-    },
-  ];
+
 
   const tourCard = [
     {
@@ -213,7 +186,7 @@ answer:"Booking a safari with us is easy! Simply visit our website or contact ou
         <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
           OUR PACKAGES
         </h1>
-        <p className="2xl:text-base text-[15px] leading-[20px] font-semibold text-center font-Gotham lg:w-[470px] mt-4">
+        <p className="2xl:text-base text-[15px] leading-[20px] text-center font-Gotham lg:w-[470px] mt-4">
           We craft our packages based on your budget, taste & preference however
           these are some most popular packages our guest has chosen.
         </p>
@@ -330,27 +303,7 @@ answer:"Booking a safari with us is easy! Simply visit our website or contact ou
             </div>
           </div>
         </div>
-        <div className="w-full bg-[#f2f2f2] mt-20 py-8">
-          <h1 className="text-2xl lg:text-5xl font-bold font-Gotham tracking-tighter text-center">
-            Jim Corbett Saffari Price And Zones
-          </h1>
-          <div className="w-full mt-5">
-            <Buttons />
-          </div>
-          <div className="w-11/12  2xl:w-[70%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-4 lg:px-20 mt-10 gap-5">
-            {priceCard?.map((e, index) => (
-              <PriceCard
-                key={index}
-                name={e?.name}
-                title={e?.title}
-                subtitle={e?.subtitle}
-                desc={e?.desc}
-                subdesc={e?.subdesc}
-                image={e?.image}
-              />
-            ))}
-          </div>
-        </div>
+        <PriceAndZone />
         <div className="w-full 2xl:w-[70%] mx-auto mt-20 px-4 lg:px-32 2xl:px-16">
           <h1 className="text-xl lg:text-2xl font-medium text-gray-700 font-Ghotam text-center">
             All inclusive tours, Chalo Bag Bharo Nikal Pado

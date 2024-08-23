@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 
-function Buttons() {
-  const tabs = [
-    { name: "Jeep", key: "jeep" },
-    { name: "Canter", key: "canter" },
-    { name: "Elephent", key: "elephent" },
-  ];
-  const [tab, setTab] = useState("jeep");
+function Buttons({ tab , tabs , setTab} : any) {
+  
   return (
     <div className="w-full lg:w-1/2 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-0.5 px-4">
-      {tabs?.map((e, index) => (
+      {tabs?.map((e:any, index:number) => (
         <button
           key={index}
           onClick={() => setTab(e?.key)}

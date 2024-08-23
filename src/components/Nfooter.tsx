@@ -22,11 +22,11 @@ export default function Nfooter() {
         <div className="2xl:w-[27%] lg:w-[33%] md:w-1/2 md:order-1">
           <div className="2xl:px-8">
             <h1 className="font-bold font-frinkRio text-base">contact us</h1>
-            <h5 className="text-[14px] font-Gotham font-semibold">
+            <h5 className="text-[14px] font-Gotham ">
               <span className="font-bold">A : </span>
               A2,Ramnagar,Jim Corbette, Utranchal.
             </h5>
-            <h5 className="text-[14px] font-Gotham font-semibold">
+            <h5 className="text-[14px] font-Gotham ">
               <span className="font-bold">E : </span>info@jimcorbettour.com
             </h5>
             <h5 className="text-base font-Gotham font-bold mt-4">
@@ -67,7 +67,7 @@ export default function Nfooter() {
           </div>
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-3">
-          <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham font-semibold">
+          <ul className="lg:px-4 2xl:px-8 text-[14px] font-Gotham ">
             <li className="">
               {" "}
               <Link href="/">Home</Link>
@@ -96,7 +96,7 @@ export default function Nfooter() {
           </ul>
         </div>
         <div className="2xl:w-[18%] lg:w-[12%] md:w-1/2 w-full md:order-4">
-          <ul className="lg:px-4 2xl:px-0 text-[14px] font-Gotham font-semibold">
+          <ul className="lg:px-4 2xl:px-0 text-[14px] font-Gotham ">
             <li>
               {" "}
               <Link href="/contact_us">Contact Us</Link>
