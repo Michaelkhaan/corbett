@@ -159,6 +159,8 @@ function index() {
               key={index?.toString()}
               question={e?.question}
               answer={e?.answer}
+              openId={undefined}
+              id={""}
             />
           ))}
         </div>

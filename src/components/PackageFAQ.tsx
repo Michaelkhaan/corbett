@@ -4,7 +4,7 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 //
 
 interface Props {
-  openId: any;
+  openId?: any;
   setOpenId?: (x: any) => {};
   className?: string;
   question: string;

@@ -71,7 +71,7 @@ interface Props {
   onClose: () => void;
 }
 
-function UpdatePackage({ onClose }: Props) {
+function UpdateNightStay({ onClose }: Props) {
   const router = useRouter();
   const { data: packageData, refetch } = useGetPackageByIdQuery(
     {
@@ -315,39 +315,38 @@ function UpdatePackage({ onClose }: Props) {
   return (
     <div className="w-3/4 mx-auto mt-5">
       <h1 className="text-2xl font-extrabold text-blue-700 text-center">
-        Update Packages
+        Update Night Stay
       </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="category">Type</label>
-        <select
+        {/* <label htmlFor="category">Type</label> */}
+        {/* <select
           {...register("category")}
           className="w-full border-2 rounded-lg py-2 px-2 mt-2"
         >
-          {/* <option value="">Select a type</option> */}
           {data?.getAllCategories?.map((category: any) => (
             <option key={category.id} value={category.id}>
               {category.name}
             </option>
           ))}
-        </select>
+        </select> */}
         {errors.category && (
           <p className="text-red-500">{errors.category.message}</p>
         )}
         {/* Existing form fields... */}
         <div className="selectImage rounded-lg px-5 py-4 mt-4">
-          <p className="mb-2">Main Package Image</p>
+          <p className="mb-2"> Images</p>
           <div className="flex gap-2 my-2">
             {(watch("images") || []).map((img, index) => (
               <div key={index} className="relative">
                 <img
                   src={img}
                   alt={`uploaded-${index}`}
-                  className="w-20 aspect-square rounded-lg"
+                  className="w-20 aspect-square rounded-lg object-cover"
                 />
                 <button
                   type="button"
                   onClick={() => removeImage(index)}
-                  className="absolute top-1 aspect-square right-1 bg-red-500 text-white rounded-full p-1"
+                  className="absolute w-6 top-1 aspect-square right-1 bg-red-500 text-white rounded-full "
                 >
                   X
                 </button>
@@ -361,7 +360,7 @@ function UpdatePackage({ onClose }: Props) {
           />
         </div>
         <div className="selectImage rounded-lg px-5 py-4 mt-5">
-          <label htmlFor="packageName">Package Name</label>
+          <label htmlFor="packageName"> Name</label>
           <input
             {...register("packageName")}
             className="w-full border-2 rounded-lg py-2 px-2 mt-2"
@@ -370,9 +369,9 @@ function UpdatePackage({ onClose }: Props) {
             <p className="text-red-500">{errors.packageName.message}</p>
           )}
 
-          <label htmlFor="title">Duration</label>
+          {/* <label htmlFor="title">Duration</label> */}
           <div className=" flex gap-4">
-            <select
+            {/* <select
               {...register("night")}
               className="w-full border-2 rounded-lg py-2 px-2 mt-2"
             >
@@ -384,8 +383,8 @@ function UpdatePackage({ onClose }: Props) {
                   {night} Night{night !== 1 ? "s" : ""}
                 </option>
               ))}
-            </select>
-            <select
+            </select> */}
+            {/* <select
               {...register("day")}
               className="w-full border-2 rounded-lg py-2 px-2 mt-2"
             >
@@ -397,7 +396,7 @@ function UpdatePackage({ onClose }: Props) {
                   {day} Day{day !== 1 ? "s" : ""}
                 </option>
               ))}
-            </select>
+            </select> */}
           </div>
           {errors.title && (
             <p className="text-red-500">{errors.title.message}</p>
@@ -437,11 +436,32 @@ function UpdatePackage({ onClose }: Props) {
         </div>
 
         <div className="bg-gray-100 rounded-lg px-5 py-4 mt-5">
-          <h2 className="text-xl font-semibold mb-2">Itinerary</h2>
+          <h2 className="text-xl font-semibold mb-2">Rooms</h2>
           {itineraryFields.map((field, index) => (
             <div key={field.id} className="mb-4">
-              <label htmlFor={`itinerary[${index}].day`}>Day</label>
+              <label htmlFor={`itinerary[${index}].day`}>Image</label>
+              {/*@ts-ignore */}
+              {watch(`tourIncludes[${index}].image`) || null ? (
+                <img
+                  //@ts-ignore
+                  src={watch(`tourIncludes[${index}].image`) || ""}
+                  alt={`uploaded-${index}`}
+                  className="w-12 aspect-square rounded-lg"
+                />
+              ) : null}
               <input
+                type="file"
+                onChange={(e) =>
+                  upload(e, { name: `tourIncludes[${index}].image` })
+                }
+                className="w-full border-2 rounded-lg py-2 px-2 mt-2"
+              />
+              {errors?.tourIncludes?.[index]?.image && (
+                <p className="text-red-500">
+                  {(errors as any)?.tourIncludes?.[index]?.image?.message ?? ""}
+                </p>
+              )}
+              {/* <input
                 //@ts-ignore
                 {...register(`itinerary[${index}].day`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
@@ -450,7 +470,7 @@ function UpdatePackage({ onClose }: Props) {
                 <p className="text-red-500">
                   {(errors as any)?.itinerary?.[index]?.day.message}
                 </p>
-              )}
+              )} */}
 
               <label htmlFor={`itinerary[${index}].title`}>Title</label>
               <input
@@ -497,7 +517,7 @@ function UpdatePackage({ onClose }: Props) {
             }
             className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg"
           >
-            Add Itinerary
+            Add Room
           </button>
         </div>
 
@@ -559,10 +579,10 @@ function UpdatePackage({ onClose }: Props) {
         </div>
 
         <div className="bg-gray-100 rounded-lg px-5 py-4 mt-5">
-          <h2 className="text-xl font-semibold mb-2">Highlights</h2>
+          <h2 className="text-xl font-semibold mb-2">Prices</h2>
           {highlightFields.map((field, index) => (
             <div key={field.id} className="mb-4">
-              <label htmlFor={`highlights[${index}].title`}>Title</label>
+              {/* <label htmlFor={`highlights[${index}].title`}>Title</label> */}
               <input
                 //@ts-ignore
                 {...register(`highlights[${index}].title`)}
@@ -588,12 +608,12 @@ function UpdatePackage({ onClose }: Props) {
             onClick={() => appendHighlight({ title: "" })}
             className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg"
           >
-            Add Highlight
+            Add Price
           </button>
         </div>
 
         <div className="bg-gray-100 rounded-lg px-5 py-4 mt-5">
-          <h2 className="text-xl font-semibold mb-2">Package Inclusions</h2>
+          <h2 className="text-xl font-semibold mb-2"> Inclusions</h2>
           {inclusionField.map((field, index) => (
             <div key={field.id} className="mb-4">
               <label htmlFor={`inclusion[${index}].title`}>Title</label>
@@ -627,7 +647,7 @@ function UpdatePackage({ onClose }: Props) {
         </div>
 
         <div className="bg-gray-100 rounded-lg px-5 py-4 mt-5">
-          <h2 className="text-xl font-semibold mb-2">Package Exclusions</h2>
+          <h2 className="text-xl font-semibold mb-2"> Exclusions</h2>
           {exclusionField.map((field, index) => (
             <div key={field.id} className="mb-4">
               <label htmlFor={`exclusion[${index}].title`}>Title</label>
@@ -721,4 +741,4 @@ function UpdatePackage({ onClose }: Props) {
   );
 }
 
-export default UpdatePackage;
+export default UpdateNightStay;

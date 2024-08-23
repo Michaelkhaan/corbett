@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children, className = "" }) => {
-  const { token } = useAuth()
+  const { token } = useAuth();
   const baseUrl = "/admin";
   const Links = [
     {
@@ -25,6 +25,10 @@ const Layout: React.FC<Props> = ({ children, className = "" }) => {
     {
       title: "Packages",
       link: baseUrl + "/packages",
+    },
+    {
+      title: "Night Stay",
+      link: baseUrl + "/nightstay",
     },
     // {
     //   title: "Jeep Saffari",

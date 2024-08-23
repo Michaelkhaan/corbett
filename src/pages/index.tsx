@@ -35,7 +35,7 @@ export default function Home() {
     setSelectedPrice(price);
   };
 
-  const { data: packages , isPending } = useGetAllPackagesQuery({
+  const { data: packages, isPending } = useGetAllPackagesQuery({
     startPrice: selectedPrice?.start,
     endPrice: selectedPrice?.end,
   });
@@ -253,9 +253,11 @@ export default function Home() {
             </div>
           </div>
           <div className="w-11/12 lg:w-3/4 2xl:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
-            {isPending  ? Array.from({ length: 4 }).map((e, index) => (
-              <PackageLoader key={index} />
-            )) : null}
+            {isPending
+              ? Array.from({ length: 4 }).map((e, index) => (
+                  <PackageLoader key={index} />
+                ))
+              : null}
             {packagesData?.map((e: any) => (
               <div
                 key={e.id}
@@ -314,6 +316,7 @@ export default function Home() {
             <div className="lg:col-span-5 col-span-12">
               {faq?.map((e, index) => (
                 <FAQ
+                  id={index?.toString()}
                   key={index?.toString()}
                   question={e?.title}
                   answer={e?.answer}
