@@ -7,9 +7,8 @@ import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import {
-  useUpdatePackageMutation,
-  useGetAllCategoriesQuery,
-  useGetPackageByIdQuery,
+  useGetNightStayByIdQuery,
+  useUpdateNightStayMutation,
 } from "@/queries/generated";
 import { toast } from "react-toastify";
 import Spinner from "./spinner";
@@ -20,9 +19,9 @@ const schema = yup.object().shape({
   packageName: yup.string().required("Package name is required"),
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
-  category: yup.string().required("Type is required"),
-  night: yup.string().required("night is required"),
-  day: yup.string().required("day is required"),
+  // category: yup.string().required("Type is required"),
+  // night: yup.string().required("night is required"),
+  // day: yup.string().required("day is required"),
   images: yup
     .array()
     .of(yup.string().required())
@@ -33,7 +32,6 @@ const schema = yup.object().shape({
     .positive("Price must be positive"),
   itinerary: yup.array().of(
     yup.object().shape({
-      day: yup.string().required("Day is required"),
       description: yup.string().required("Description is required"),
       title: yup.string().required("Title is required"),
     })
@@ -65,6 +63,11 @@ const schema = yup.object().shape({
       question: yup.string().required("Title is required"),
     })
   ),
+  prices: yup.array().of(
+    yup.object().shape({
+      name: yup.string(),
+    })
+  ),
 });
 
 interface Props {
@@ -73,9 +76,9 @@ interface Props {
 
 function UpdateNightStay({ onClose }: Props) {
   const router = useRouter();
-  const { data: packageData, refetch } = useGetPackageByIdQuery(
+  const { data: packageData, refetch } = useGetNightStayByIdQuery(
     {
-      getPackageByIdId: router?.query?.id?.toString() || "",
+      getNightStayByIdId: router?.query?.id?.toString() || "",
     },
     {
       enabled: !!router?.query?.id,
@@ -92,103 +95,107 @@ function UpdateNightStay({ onClose }: Props) {
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      packageName: packageData?.getPackageById?.name,
-      title: packageData?.getPackageById?.title,
-      night: packageData?.getPackageById?.night || "",
-      day: packageData?.getPackageById?.day || "",
-      description: packageData?.getPackageById?.description || "",
-      images: Array.isArray(packageData?.getPackageById?.images)
-        ? packageData.getPackageById.images.filter(
+      packageName: packageData?.getNightStayById?.name,
+      title: packageData?.getNightStayById?.title,
+      description: packageData?.getNightStayById?.description || "",
+      images: Array.isArray(packageData?.getNightStayById?.images)
+        ? packageData?.getNightStayById?.images?.filter(
             (img): img is string => img !== null
           )
-        : [],
-      category: packageData?.getPackageById?.Category?.id.toString() || "",
-      pricePerPerson: packageData?.getPackageById?.price,
-      itinerary: packageData?.getPackageById?.Itinerary?.map((e) => {
+        : // ? packageData.getPackageById.images.filter(
+          //     (img): img is string => img !== null
+          //   )
+          [],
+      // category: packageData?.getNightStayById?. || "",
+      pricePerPerson: packageData?.getNightStayById?.price,
+      itinerary: packageData?.getNightStayById?.Rooms?.map((e) => {
         return {
-          day: e?.name || "",
           title: e?.title || "",
           description: e?.description || "",
         };
-      }) || [{ day: "Day 1", description: "", title: "" }],
-      faq: packageData?.getPackageById?.Faqs?.map((e) => {
+      }) || [{ description: "", title: "" }],
+      faq: packageData?.getNightStayById?.Faqs?.map((e) => {
         return {
           answer: e?.description || "",
           question: e?.title || "",
         };
       }) || [{ answer: "", question: "" }],
-      tourIncludes: packageData?.getPackageById?.Includes?.map((e) => {
+      tourIncludes: packageData?.getNightStayById?.Includes?.map((e) => {
         return {
           image: e?.image || "",
           name: e?.name || "",
         };
       }) || [{ image: "", name: "" }],
-      highlights: packageData?.getPackageById?.Highlights?.map((e) => {
+      highlights: packageData?.getNightStayById?.Prices?.map((e) => {
         return {
           title: e?.name,
         };
       }) || [{ title: "" }],
-      inclusion: packageData?.getPackageById?.Inclusions?.map((e) => {
+      inclusion: packageData?.getNightStayById?.Inclusions?.map((e) => {
         return {
           title: e?.title,
         };
       }) || [{ title: "" }],
-      exclusion: packageData?.getPackageById?.Exclusions?.map((e) => {
+      exclusion: packageData?.getNightStayById?.Exclusions?.map((e) => {
         return {
           title: e?.title,
         };
       }) || [{ title: "" }],
+      prices: packageData?.getNightStayById?.Prices?.map((e) => ({
+        name: e?.name,
+      })) || [{ name: "" }],
     },
   });
 
   useEffect(() => {
     reset({
-      packageName: packageData?.getPackageById?.name,
-      title: packageData?.getPackageById?.title,
-      day: packageData?.getPackageById?.day || "",
-      night: packageData?.getPackageById?.night || "",
-      description: packageData?.getPackageById?.description || "",
-      images: Array.isArray(packageData?.getPackageById?.images)
-        ? packageData.getPackageById.images.filter(
+      packageName: packageData?.getNightStayById?.name,
+      title: packageData?.getNightStayById?.title,
+      description: packageData?.getNightStayById?.description || "",
+      images: Array.isArray(packageData?.getNightStayById?.images)
+        ? packageData?.getNightStayById?.images.filter(
             (img): img is string => img !== null
           )
         : [],
-      category: packageData?.getPackageById?.Category?.id.toString() || "",
-      pricePerPerson: packageData?.getPackageById?.price,
-      itinerary: packageData?.getPackageById?.Itinerary?.map((e) => {
+      // category: packageData?.getNightStayById?.Category?.id.toString() || "",
+      pricePerPerson: packageData?.getNightStayById?.price,
+      itinerary: packageData?.getNightStayById?.Rooms?.map((e) => {
         return {
-          day: e?.name || "",
+          image: e?.image,
           title: e?.title || "",
           description: e?.description || "",
         };
-      }) || [{ day: "Day 1", description: "", title: "" }],
-      faq: packageData?.getPackageById?.Faqs?.map((e) => {
+      }) || [{ description: "", title: "" }],
+      faq: packageData?.getNightStayById?.Faqs?.map((e) => {
         return {
           answer: e?.description || "",
           question: e?.title || "",
         };
       }) || [{ answer: "", question: "" }],
-      tourIncludes: packageData?.getPackageById?.Includes?.map((e) => {
+      tourIncludes: packageData?.getNightStayById?.Includes?.map((e) => {
         return {
           image: e?.image || "",
           name: e?.name || "",
         };
       }) || [{ image: "", name: "" }],
-      highlights: packageData?.getPackageById?.Highlights?.map((e) => {
+      highlights: packageData?.getNightStayById?.Prices?.map((e) => {
         return {
           title: e?.name,
         };
       }) || [{ title: "" }],
-      inclusion: packageData?.getPackageById?.Inclusions?.map((e) => {
+      inclusion: packageData?.getNightStayById?.Inclusions?.map((e) => {
         return {
           title: e?.title,
         };
       }) || [{ title: "" }],
-      exclusion: packageData?.getPackageById?.Exclusions?.map((e) => {
+      exclusion: packageData?.getNightStayById?.Exclusions?.map((e) => {
         return {
           title: e?.title,
         };
       }) || [{ title: "" }],
+      prices: packageData?.getNightStayById?.Prices?.map((e) => ({
+        name: e?.name,
+      })) || [{ name: "" }],
     });
 
     console.log(watch("images"), "test", "images");
@@ -214,6 +221,14 @@ function UpdateNightStay({ onClose }: Props) {
     append: appendHighlight,
     remove: removeHighlight,
   } = useFieldArray({ control, name: "highlights" });
+  const {
+    fields: priceFields,
+    append: appendPrice,
+    remove: removePrice,
+  } = useFieldArray({
+    control,
+    name: "prices",
+  });
 
   const {
     fields: inclusionField,
@@ -227,32 +242,21 @@ function UpdateNightStay({ onClose }: Props) {
     remove: removeExclusion,
   } = useFieldArray({ control, name: "exclusion" });
 
-  const { mutateAsync, isPending } = useUpdatePackageMutation();
-
-  const { data, isPending: IsLoading } = useGetAllCategoriesQuery();
+  const { mutateAsync, isPending } = useUpdateNightStayMutation();
 
   const onSubmit = async (data: any) => {
+    console.log(data, "data");
     try {
       await mutateAsync({
-        updatePackageId: router?.query?.id?.toString() || "", // Pass the package id here
+        updateNightStayId: router?.query?.id?.toString() || "",
         name: data.packageName,
         title: data.title,
-        day: data?.day,
-        night: data?.night,
         description: data.description,
         price: parseFloat(data.pricePerPerson),
         images: data.images,
-        itinerary: data.itinerary.map((itinerary: any) => ({
-          name: itinerary.day,
-          description: itinerary.description,
-          title: itinerary.title,
-        })),
         includes: data.tourIncludes.map((tourInclude: any) => ({
           image: tourInclude.image,
           name: tourInclude.name,
-        })),
-        highlights: data.highlights.map((highlight: any) => ({
-          name: highlight.title,
         })),
         inclusions: data.inclusion.map((inclusion: any) => ({
           title: inclusion.title,
@@ -264,15 +268,21 @@ function UpdateNightStay({ onClose }: Props) {
           title: faq.answer,
           description: faq.question,
         })),
-        categoryId: parseInt(data.category),
+        rooms: data.itinerary.map((room: any) => ({
+          image: room?.image,
+          title: room.title,
+          description: room.description,
+        })),
+        prices: data.prices.map((price: any) => ({
+          name: price.name,
+        })),
       });
-      toast?.success("Package updated successfully");
+      toast?.success("Updated successfully");
       refetch();
       onClose();
     } catch (errors) {
-      toast?.error("Invalid package");
+      toast?.error("Invalid Data");
     }
-    console.log(data);
   };
 
   const upload = async (e: any, field: any) => {
@@ -312,6 +322,8 @@ function UpdateNightStay({ onClose }: Props) {
     setValue("images", updatedImages);
   };
 
+  console.log(errors, "error");
+
   return (
     <div className="w-3/4 mx-auto mt-5">
       <h1 className="text-2xl font-extrabold text-blue-700 text-center">
@@ -329,9 +341,9 @@ function UpdateNightStay({ onClose }: Props) {
             </option>
           ))}
         </select> */}
-        {errors.category && (
+        {/* {errors.category && (
           <p className="text-red-500">{errors.category.message}</p>
-        )}
+        )} */}
         {/* Existing form fields... */}
         <div className="selectImage rounded-lg px-5 py-4 mt-4">
           <p className="mb-2"> Images</p>
@@ -512,9 +524,7 @@ function UpdateNightStay({ onClose }: Props) {
           ))}
           <button
             type="button"
-            onClick={() =>
-              appendItinerary({ day: "", description: "", title: "" })
-            }
+            onClick={() => appendItinerary({ description: "", title: "" })}
             className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg"
           >
             Add Room
@@ -578,39 +588,39 @@ function UpdateNightStay({ onClose }: Props) {
           </button>
         </div>
 
-        <div className="bg-gray-100 rounded-lg px-5 py-4 mt-5">
-          <h2 className="text-xl font-semibold mb-2">Prices</h2>
-          {highlightFields.map((field, index) => (
-            <div key={field.id} className="mb-4">
-              {/* <label htmlFor={`highlights[${index}].title`}>Title</label> */}
-              <input
-                //@ts-ignore
-                {...register(`highlights[${index}].title`)}
-                className="w-full border-2 rounded-lg py-2 px-2 mt-2"
-              />
-              {errors?.highlights?.[index]?.title && (
-                <p className="text-red-500">
-                  {(errors as any)?.highlights?.[index]?.title?.message ?? ""}
-                </p>
-              )}
 
-              <button
-                type="button"
-                onClick={() => removeHighlight(index)}
-                className="bg-red-500 text-white px-4 py-2 mt-2 rounded-lg"
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() => appendHighlight({ title: "" })}
-            className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg"
-          >
-            Add Price
-          </button>
+        <div className="bg-gray-100 rounded-lg px-5 py-4 mt-5">
+          <h2 className="text-xl font-semibold mb-2">Pricing</h2>
+          {priceFields.map((field, index) => (
+          <div key={field.id} className="mb-4">
+            <input
+            // @ts-ignore
+              {...register(`prices[${index}].name`)}
+              className="w-full border-2 rounded-lg py-2 px-2 mt-2"
+            />
+            {errors?.prices?.[index]?.name && (
+              <p className="text-red-500">
+                {(errors as any)?.prices?.[index]?.name?.message ?? ""}
+              </p>
+            )}
+            <button
+              type="button"
+              onClick={() => removePrice(index)}
+              className="bg-red-500 text-white px-4 py-2 mt-2 rounded-lg"
+            >
+              Remove
+            </button>
+          </div>
+        ))}
+        <button
+          type="button"
+          onClick={() => appendPrice({ name: "" })}
+          className="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg"
+        >
+          Add Price
+        </button>
         </div>
+        
 
         <div className="bg-gray-100 rounded-lg px-5 py-4 mt-5">
           <h2 className="text-xl font-semibold mb-2"> Inclusions</h2>

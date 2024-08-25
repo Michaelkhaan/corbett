@@ -1,0 +1,59 @@
+query getNightStayById($getNightStayByIdId: ID!) {
+  getNightStayById(id: $getNightStayByIdId) {
+    id
+    images
+    name
+    location
+    title
+    description
+    price
+    createdAt
+    updatedAt
+    Prices {
+      id
+      name
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+    Includes {
+      id
+      image
+      name
+      createdAt
+      updatedAt
+      night_stay_id
+    }
+    Inclusions {
+      id
+      title
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+    Exclusions {
+      id
+      title
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+    Faqs {
+      id
+      title
+      description
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+    Rooms {
+      id
+      image
+      title
+      description
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+  }
+}

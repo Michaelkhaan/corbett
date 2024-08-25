@@ -1,7 +1,7 @@
 import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
 import PackageCard from "@/components/PackageCard";
-import { useGetAllPackagesQuery } from "@/queries/generated";
+import { useGetAllNightStayQuery, useGetAllPackagesQuery } from "@/queries/generated";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
@@ -23,26 +23,26 @@ function Index() {
     setSelectedPrice(price);
   };
 
-  const { data: packages } = useGetAllPackagesQuery({
+  const {data}=useGetAllNightStayQuery({
     startPrice: selectedPrice?.start,
     endPrice: selectedPrice?.end,
-  });
+  })
+
 
   const packagesData = useMemo(() => {
-    return packages?.getAllPackages?.data?.map((data) => {
+    return data?.getAllNightStay?.data?.map((data)=>{
       return {
         id: data?.id?.toString() || "",
         images: data?.images || [],
         title: data?.name || "",
-        rooms: `${data?.day} ${data?.night}`,
         subtitle: "per person" || "",
         prices: data?.price?.toString() || "",
       };
     });
-  }, [packages]);
+  }, [data]);
 
 
-  console.log(packages);
+  console.log(data);
 
   return (
     <div className="w-full">

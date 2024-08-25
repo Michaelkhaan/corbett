@@ -8,6 +8,15 @@ declare module '*/addCategories.mutations.gql' {
 }
     
 
+declare module '*/addNightStay.mutations.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const addNightStay: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/addPackage.mutation.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;
@@ -21,6 +30,15 @@ declare module '*/deleteCategories.mutations.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;
   export const deleteCategory: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/deleteNightStay.mutations.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const deleteNightStay: DocumentNode;
 
   export default defaultDocument;
 }
@@ -62,6 +80,15 @@ declare module '*/updateCategories.mutations.gql' {
 }
     
 
+declare module '*/updateNightStay.mutation.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const UpdateNightStay: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/updatePackage.multan.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;
@@ -89,10 +116,28 @@ declare module '*/getAllForm.query.gql' {
 }
     
 
+declare module '*/getAllNightStay.query.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const GetAllNightStay: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/getAllPackages.query.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;
   export const GetAllPackages: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/getNightStayById.query.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const getNightStayById: DocumentNode;
 
   export default defaultDocument;
 }

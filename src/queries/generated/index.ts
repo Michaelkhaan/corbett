@@ -106,11 +106,14 @@ export type Mutation = {
   __typename?: 'Mutation';
   Login: LoginResponse;
   addCategory: Message;
+  addNightStay: Message;
   addPackage: Message;
   deleteCategory: Message;
+  deleteNightStay: Message;
   deletePackage: Message;
   submitForm: Message;
   updateCategory: Message;
+  updateNightStay: Message;
   updatePackage: Message;
   updateProfile?: Maybe<Message>;
 };
@@ -124,6 +127,22 @@ export type MutationLoginArgs = {
 
 export type MutationAddCategoryArgs = {
   name: Scalars['String']['input'];
+};
+
+
+export type MutationAddNightStayArgs = {
+  description?: InputMaybe<Scalars['String']['input']>;
+  exclusions?: InputMaybe<Array<InputMaybe<NightStayExclusionInput>>>;
+  faqs?: InputMaybe<Array<InputMaybe<NightStayFaqInput>>>;
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>>>;
+  inclusions?: InputMaybe<Array<InputMaybe<NightStayInclusionInput>>>;
+  location: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+  price: Scalars['Float']['input'];
+  prices?: InputMaybe<Array<InputMaybe<PriceInput>>>;
+  rooms?: InputMaybe<Array<InputMaybe<RoomInput>>>;
+  title: Scalars['String']['input'];
 };
 
 
@@ -150,6 +169,11 @@ export type MutationDeleteCategoryArgs = {
 };
 
 
+export type MutationDeleteNightStayArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
 export type MutationDeletePackageArgs = {
   id: Scalars['ID']['input'];
 };
@@ -166,6 +190,23 @@ export type MutationSubmitFormArgs = {
 export type MutationUpdateCategoryArgs = {
   id: Scalars['ID']['input'];
   name: Scalars['String']['input'];
+};
+
+
+export type MutationUpdateNightStayArgs = {
+  description?: InputMaybe<Scalars['String']['input']>;
+  exclusions?: InputMaybe<Array<InputMaybe<NightStayExclusionInput>>>;
+  faqs?: InputMaybe<Array<InputMaybe<NightStayFaqInput>>>;
+  id: Scalars['ID']['input'];
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>>>;
+  inclusions?: InputMaybe<Array<InputMaybe<NightStayInclusionInput>>>;
+  location?: InputMaybe<Scalars['String']['input']>;
+  name: Scalars['String']['input'];
+  price: Scalars['Float']['input'];
+  prices?: InputMaybe<Array<InputMaybe<PriceInput>>>;
+  rooms?: InputMaybe<Array<InputMaybe<RoomInput>>>;
+  title: Scalars['String']['input'];
 };
 
 
@@ -191,6 +232,72 @@ export type MutationUpdatePackageArgs = {
 export type MutationUpdateProfileArgs = {
   name: Scalars['String']['input'];
   password: Scalars['String']['input'];
+};
+
+export type NightStay = {
+  __typename?: 'NightStay';
+  Exclusions?: Maybe<Array<Maybe<NightStayExclusion>>>;
+  Faqs?: Maybe<Array<Maybe<NightStayFaq>>>;
+  Includes?: Maybe<Array<Maybe<TourIncludeNight>>>;
+  Inclusions?: Maybe<Array<Maybe<NightStayInclusion>>>;
+  Prices?: Maybe<Array<Maybe<Price>>>;
+  Rooms?: Maybe<Array<Maybe<Room>>>;
+  createdAt: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['Int']['output'];
+  images?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  location: Scalars['String']['output'];
+  name: Scalars['String']['output'];
+  price: Scalars['Float']['output'];
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
+export type NightStayExclusion = {
+  __typename?: 'NightStayExclusion';
+  createdAt: Scalars['String']['output'];
+  id: Scalars['Int']['output'];
+  night_stay_id: Scalars['Int']['output'];
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
+export type NightStayExclusionInput = {
+  title: Scalars['String']['input'];
+};
+
+export type NightStayFaq = {
+  __typename?: 'NightStayFaq';
+  createdAt: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['Int']['output'];
+  night_stay_id: Scalars['Int']['output'];
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
+export type NightStayFaqInput = {
+  description?: InputMaybe<Scalars['String']['input']>;
+  title: Scalars['String']['input'];
+};
+
+export type NightStayInclusion = {
+  __typename?: 'NightStayInclusion';
+  createdAt: Scalars['String']['output'];
+  id: Scalars['Int']['output'];
+  night_stay_id: Scalars['Int']['output'];
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
+export type NightStayInclusionInput = {
+  title: Scalars['String']['input'];
+};
+
+export type NightStayResponse = {
+  __typename?: 'NightStayResponse';
+  data: Array<Maybe<NightStay>>;
+  total: Scalars['Int']['output'];
 };
 
 export type Package = {
@@ -262,13 +369,34 @@ export type PackageResponse = {
   total: Scalars['Int']['output'];
 };
 
+export type Price = {
+  __typename?: 'Price';
+  createdAt: Scalars['String']['output'];
+  id: Scalars['Int']['output'];
+  name: Scalars['String']['output'];
+  night_stay_id: Scalars['Int']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
+export type PriceInput = {
+  name: Scalars['String']['input'];
+};
+
 export type Query = {
   __typename?: 'Query';
   getAllCategories?: Maybe<Array<Maybe<Category>>>;
   getAllForm?: Maybe<FormResponse>;
+  getAllNightStay: NightStayResponse;
   getAllPackages: PackageResponse;
+  getNightStayById: NightStay;
   getPackageById: Package;
   test?: Maybe<Scalars['String']['output']>;
+};
+
+
+export type QueryGetAllNightStayArgs = {
+  endPrice?: InputMaybe<Scalars['Float']['input']>;
+  startPrice?: InputMaybe<Scalars['Float']['input']>;
 };
 
 
@@ -278,8 +406,30 @@ export type QueryGetAllPackagesArgs = {
 };
 
 
+export type QueryGetNightStayByIdArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
 export type QueryGetPackageByIdArgs = {
   id: Scalars['ID']['input'];
+};
+
+export type Room = {
+  __typename?: 'Room';
+  createdAt: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['Int']['output'];
+  image: Scalars['String']['output'];
+  night_stay_id: Scalars['Int']['output'];
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
+export type RoomInput = {
+  description?: InputMaybe<Scalars['String']['input']>;
+  image: Scalars['String']['input'];
+  title: Scalars['String']['input'];
 };
 
 export type TourInclude = {
@@ -297,6 +447,16 @@ export type TourIncludeInput = {
   name: Scalars['String']['input'];
 };
 
+export type TourIncludeNight = {
+  __typename?: 'TourIncludeNight';
+  createdAt: Scalars['String']['output'];
+  id: Scalars['Int']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+  name: Scalars['String']['output'];
+  night_stay_id: Scalars['Int']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
 export type User = {
   __typename?: 'User';
   email: Scalars['String']['output'];
@@ -309,6 +469,24 @@ export type AddCategoryMutationVariables = Exact<{
 
 
 export type AddCategoryMutation = { __typename?: 'Mutation', addCategory: { __typename?: 'Message', message: string } };
+
+export type AddNightStayMutationVariables = Exact<{
+  name: Scalars['String']['input'];
+  location: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+  price: Scalars['Float']['input'];
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>> | InputMaybe<Scalars['String']['input']>>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  prices?: InputMaybe<Array<InputMaybe<PriceInput>> | InputMaybe<PriceInput>>;
+  includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>> | InputMaybe<TourIncludeInput>>;
+  inclusions?: InputMaybe<Array<InputMaybe<NightStayInclusionInput>> | InputMaybe<NightStayInclusionInput>>;
+  exclusions?: InputMaybe<Array<InputMaybe<NightStayExclusionInput>> | InputMaybe<NightStayExclusionInput>>;
+  faqs?: InputMaybe<Array<InputMaybe<NightStayFaqInput>> | InputMaybe<NightStayFaqInput>>;
+  rooms?: InputMaybe<Array<InputMaybe<RoomInput>> | InputMaybe<RoomInput>>;
+}>;
+
+
+export type AddNightStayMutation = { __typename?: 'Mutation', addNightStay: { __typename?: 'Message', message: string } };
 
 export type AddPackageMutationVariables = Exact<{
   categoryId: Scalars['Int']['input'];
@@ -336,6 +514,13 @@ export type DeleteCategoryMutationVariables = Exact<{
 
 
 export type DeleteCategoryMutation = { __typename?: 'Mutation', deleteCategory: { __typename?: 'Message', message: string } };
+
+export type DeleteNightStayMutationVariables = Exact<{
+  deleteNightStayId: Scalars['ID']['input'];
+}>;
+
+
+export type DeleteNightStayMutation = { __typename?: 'Mutation', deleteNightStay: { __typename?: 'Message', message: string } };
 
 export type DeletePackageMutationVariables = Exact<{
   deletePackageId: Scalars['ID']['input'];
@@ -370,6 +555,25 @@ export type UpdateCategoryMutationVariables = Exact<{
 
 export type UpdateCategoryMutation = { __typename?: 'Mutation', updateCategory: { __typename?: 'Message', message: string } };
 
+export type UpdateNightStayMutationVariables = Exact<{
+  updateNightStayId: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+  price: Scalars['Float']['input'];
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>> | InputMaybe<Scalars['String']['input']>>;
+  location?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  prices?: InputMaybe<Array<InputMaybe<PriceInput>> | InputMaybe<PriceInput>>;
+  includes?: InputMaybe<Array<InputMaybe<TourIncludeInput>> | InputMaybe<TourIncludeInput>>;
+  inclusions?: InputMaybe<Array<InputMaybe<NightStayInclusionInput>> | InputMaybe<NightStayInclusionInput>>;
+  exclusions?: InputMaybe<Array<InputMaybe<NightStayExclusionInput>> | InputMaybe<NightStayExclusionInput>>;
+  faqs?: InputMaybe<Array<InputMaybe<NightStayFaqInput>> | InputMaybe<NightStayFaqInput>>;
+  rooms?: InputMaybe<Array<InputMaybe<RoomInput>> | InputMaybe<RoomInput>>;
+}>;
+
+
+export type UpdateNightStayMutation = { __typename?: 'Mutation', updateNightStay: { __typename?: 'Message', message: string } };
+
 export type UpdatePackageMutationVariables = Exact<{
   updatePackageId: Scalars['ID']['input'];
   name: Scalars['String']['input'];
@@ -401,6 +605,14 @@ export type GetAllFormQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllFormQuery = { __typename?: 'Query', getAllForm?: { __typename?: 'FormResponse', total?: number | null, data?: Array<{ __typename?: 'Form', date?: string | null, number?: string | null, email?: string | null, person?: string | null } | null> | null } | null };
 
+export type GetAllNightStayQueryVariables = Exact<{
+  startPrice?: InputMaybe<Scalars['Float']['input']>;
+  endPrice?: InputMaybe<Scalars['Float']['input']>;
+}>;
+
+
+export type GetAllNightStayQuery = { __typename?: 'Query', getAllNightStay: { __typename?: 'NightStayResponse', total: number, data: Array<{ __typename?: 'NightStay', name: string, images?: Array<string | null> | null, price: number, id: number } | null> } };
+
 export type GetAllPackagesQueryVariables = Exact<{
   startPrice?: InputMaybe<Scalars['Float']['input']>;
   endPrice?: InputMaybe<Scalars['Float']['input']>;
@@ -408,6 +620,13 @@ export type GetAllPackagesQueryVariables = Exact<{
 
 
 export type GetAllPackagesQuery = { __typename?: 'Query', getAllPackages: { __typename?: 'PackageResponse', total: number, data: Array<{ __typename?: 'Package', images?: Array<string | null> | null, name: string, price: number, title: string, night?: string | null, day?: string | null, category_id: number, createdAt: string, description?: string | null, id: number, updatedAt: string, Category?: { __typename?: 'Category', id: number, name: string, createdAt: string, updatedAt: string } | null, Exclusions?: Array<{ __typename?: 'PackageExclusion', package_id: number, title: string, updatedAt: string, id: number, createdAt: string } | null> | null, Faqs?: Array<{ __typename?: 'PackageFaq', package_id: number, title: string, updatedAt: string, description?: string | null, id: number, createdAt: string } | null> | null, Highlights?: Array<{ __typename?: 'Highlight', package_id: number, updatedAt: string, name: string, id: number, createdAt: string } | null> | null, Includes?: Array<{ __typename?: 'TourInclude', createdAt: string, id: number, image?: string | null, name: string, package_id: number, updatedAt: string } | null> | null, Inclusions?: Array<{ __typename?: 'PackageInclusion', createdAt: string, id: number, package_id: number, title: string, updatedAt: string } | null> | null } | null> } };
+
+export type GetNightStayByIdQueryVariables = Exact<{
+  getNightStayByIdId: Scalars['ID']['input'];
+}>;
+
+
+export type GetNightStayByIdQuery = { __typename?: 'Query', getNightStayById: { __typename?: 'NightStay', id: number, images?: Array<string | null> | null, name: string, location: string, title: string, description?: string | null, price: number, createdAt: string, updatedAt: string, Prices?: Array<{ __typename?: 'Price', id: number, name: string, night_stay_id: number, createdAt: string, updatedAt: string } | null> | null, Includes?: Array<{ __typename?: 'TourIncludeNight', id: number, image?: string | null, name: string, createdAt: string, updatedAt: string, night_stay_id: number } | null> | null, Inclusions?: Array<{ __typename?: 'NightStayInclusion', id: number, title: string, night_stay_id: number, createdAt: string, updatedAt: string } | null> | null, Exclusions?: Array<{ __typename?: 'NightStayExclusion', id: number, title: string, night_stay_id: number, createdAt: string, updatedAt: string } | null> | null, Faqs?: Array<{ __typename?: 'NightStayFaq', id: number, title: string, description?: string | null, night_stay_id: number, createdAt: string, updatedAt: string } | null> | null, Rooms?: Array<{ __typename?: 'Room', id: number, image: string, title: string, description?: string | null, night_stay_id: number, createdAt: string, updatedAt: string } | null> | null } };
 
 export type GetPackageByIdQueryVariables = Exact<{
   getPackageByIdId: Scalars['ID']['input'];
@@ -435,6 +654,40 @@ export const useAddCategoryMutation = <
       {
     mutationKey: ['addCategory'],
     mutationFn: (variables?: AddCategoryMutationVariables) => fetcher<AddCategoryMutation, AddCategoryMutationVariables>(AddCategoryDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const AddNightStayDocument = `
+    mutation addNightStay($name: String!, $location: String!, $title: String!, $price: Float!, $images: [String], $description: String, $prices: [PriceInput], $includes: [TourIncludeInput], $inclusions: [NightStayInclusionInput], $exclusions: [NightStayExclusionInput], $faqs: [NightStayFaqInput], $rooms: [RoomInput]) {
+  addNightStay(
+    name: $name
+    location: $location
+    title: $title
+    price: $price
+    images: $images
+    description: $description
+    prices: $prices
+    includes: $includes
+    inclusions: $inclusions
+    exclusions: $exclusions
+    faqs: $faqs
+    rooms: $rooms
+  ) {
+    message
+  }
+}
+    `;
+
+export const useAddNightStayMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<AddNightStayMutation, TError, AddNightStayMutationVariables, TContext>) => {
+    
+    return useMutation<AddNightStayMutation, TError, AddNightStayMutationVariables, TContext>(
+      {
+    mutationKey: ['addNightStay'],
+    mutationFn: (variables?: AddNightStayMutationVariables) => fetcher<AddNightStayMutation, AddNightStayMutationVariables>(AddNightStayDocument, variables)(),
     ...options
   }
     )};
@@ -492,6 +745,27 @@ export const useDeleteCategoryMutation = <
       {
     mutationKey: ['deleteCategory'],
     mutationFn: (variables?: DeleteCategoryMutationVariables) => fetcher<DeleteCategoryMutation, DeleteCategoryMutationVariables>(DeleteCategoryDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const DeleteNightStayDocument = `
+    mutation deleteNightStay($deleteNightStayId: ID!) {
+  deleteNightStay(id: $deleteNightStayId) {
+    message
+  }
+}
+    `;
+
+export const useDeleteNightStayMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<DeleteNightStayMutation, TError, DeleteNightStayMutationVariables, TContext>) => {
+    
+    return useMutation<DeleteNightStayMutation, TError, DeleteNightStayMutationVariables, TContext>(
+      {
+    mutationKey: ['deleteNightStay'],
+    mutationFn: (variables?: DeleteNightStayMutationVariables) => fetcher<DeleteNightStayMutation, DeleteNightStayMutationVariables>(DeleteNightStayDocument, variables)(),
     ...options
   }
     )};
@@ -577,6 +851,41 @@ export const useUpdateCategoryMutation = <
       {
     mutationKey: ['UpdateCategory'],
     mutationFn: (variables?: UpdateCategoryMutationVariables) => fetcher<UpdateCategoryMutation, UpdateCategoryMutationVariables>(UpdateCategoryDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const UpdateNightStayDocument = `
+    mutation UpdateNightStay($updateNightStayId: ID!, $name: String!, $title: String!, $price: Float!, $images: [String], $location: String, $description: String, $prices: [PriceInput], $includes: [TourIncludeInput], $inclusions: [NightStayInclusionInput], $exclusions: [NightStayExclusionInput], $faqs: [NightStayFaqInput], $rooms: [RoomInput]) {
+  updateNightStay(
+    id: $updateNightStayId
+    name: $name
+    title: $title
+    price: $price
+    images: $images
+    location: $location
+    description: $description
+    prices: $prices
+    includes: $includes
+    inclusions: $inclusions
+    exclusions: $exclusions
+    faqs: $faqs
+    rooms: $rooms
+  ) {
+    message
+  }
+}
+    `;
+
+export const useUpdateNightStayMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<UpdateNightStayMutation, TError, UpdateNightStayMutationVariables, TContext>) => {
+    
+    return useMutation<UpdateNightStayMutation, TError, UpdateNightStayMutationVariables, TContext>(
+      {
+    mutationKey: ['UpdateNightStay'],
+    mutationFn: (variables?: UpdateNightStayMutationVariables) => fetcher<UpdateNightStayMutation, UpdateNightStayMutationVariables>(UpdateNightStayDocument, variables)(),
     ...options
   }
     )};
@@ -673,6 +982,36 @@ export const useGetAllFormQuery = <
   }
     )};
 
+export const GetAllNightStayDocument = `
+    query GetAllNightStay($startPrice: Float, $endPrice: Float) {
+  getAllNightStay(startPrice: $startPrice, endPrice: $endPrice) {
+    total
+    data {
+      name
+      images
+      price
+      id
+    }
+  }
+}
+    `;
+
+export const useGetAllNightStayQuery = <
+      TData = GetAllNightStayQuery,
+      TError = unknown
+    >(
+      variables?: GetAllNightStayQueryVariables,
+      options?: Omit<UseQueryOptions<GetAllNightStayQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<GetAllNightStayQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useQuery<GetAllNightStayQuery, TError, TData>(
+      {
+    queryKey: variables === undefined ? ['GetAllNightStay'] : ['GetAllNightStay', variables],
+    queryFn: fetcher<GetAllNightStayQuery, GetAllNightStayQueryVariables>(GetAllNightStayDocument, variables),
+    ...options
+  }
+    )};
+
 export const GetAllPackagesDocument = `
     query GetAllPackages($startPrice: Float, $endPrice: Float) {
   getAllPackages(startPrice: $startPrice, endPrice: $endPrice) {
@@ -749,6 +1088,84 @@ export const useGetAllPackagesQuery = <
       {
     queryKey: variables === undefined ? ['GetAllPackages'] : ['GetAllPackages', variables],
     queryFn: fetcher<GetAllPackagesQuery, GetAllPackagesQueryVariables>(GetAllPackagesDocument, variables),
+    ...options
+  }
+    )};
+
+export const GetNightStayByIdDocument = `
+    query getNightStayById($getNightStayByIdId: ID!) {
+  getNightStayById(id: $getNightStayByIdId) {
+    id
+    images
+    name
+    location
+    title
+    description
+    price
+    createdAt
+    updatedAt
+    Prices {
+      id
+      name
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+    Includes {
+      id
+      image
+      name
+      createdAt
+      updatedAt
+      night_stay_id
+    }
+    Inclusions {
+      id
+      title
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+    Exclusions {
+      id
+      title
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+    Faqs {
+      id
+      title
+      description
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+    Rooms {
+      id
+      image
+      title
+      description
+      night_stay_id
+      createdAt
+      updatedAt
+    }
+  }
+}
+    `;
+
+export const useGetNightStayByIdQuery = <
+      TData = GetNightStayByIdQuery,
+      TError = unknown
+    >(
+      variables: GetNightStayByIdQueryVariables,
+      options?: Omit<UseQueryOptions<GetNightStayByIdQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<GetNightStayByIdQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useQuery<GetNightStayByIdQuery, TError, TData>(
+      {
+    queryKey: ['getNightStayById', variables],
+    queryFn: fetcher<GetNightStayByIdQuery, GetNightStayByIdQueryVariables>(GetNightStayByIdDocument, variables),
     ...options
   }
     )};

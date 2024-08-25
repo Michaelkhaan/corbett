@@ -1,0 +1,5 @@
+mutation UpdateNightStay($updateNightStayId: ID!, $name: String!, $title: String!, $price: Float!, $images: [String], $location: String, $description: String, $prices: [PriceInput], $includes: [TourIncludeInput], $inclusions: [NightStayInclusionInput], $exclusions: [NightStayExclusionInput], $faqs: [NightStayFaqInput], $rooms: [RoomInput]) {
+  updateNightStay(id: $updateNightStayId, name: $name, title: $title, price: $price, images: $images, location: $location, description: $description, prices: $prices, includes: $includes, inclusions: $inclusions, exclusions: $exclusions, faqs: $faqs, rooms: $rooms) {
+    message
+  }
+}

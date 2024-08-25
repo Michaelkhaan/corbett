@@ -1,0 +1,5 @@
+mutation addNightStay($name: String!, $location: String!, $title: String!, $price: Float!, $images: [String], $description: String, $prices: [PriceInput], $includes: [TourIncludeInput], $inclusions: [NightStayInclusionInput], $exclusions: [NightStayExclusionInput], $faqs: [NightStayFaqInput], $rooms: [RoomInput]) {
+  addNightStay(name: $name, location: $location, title: $title, price: $price, images: $images, description: $description, prices: $prices, includes: $includes, inclusions: $inclusions, exclusions: $exclusions, faqs: $faqs, rooms: $rooms) {
+    message
+  }
+}

@@ -4,8 +4,7 @@ import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import {
-  useAddPackageMutation,
-  useGetAllCategoriesQuery,
+  useAddNightStayMutation,
 } from "@/queries/generated";
 import { toast } from "react-toastify";
 import Spinner from "./spinner";
@@ -75,8 +74,6 @@ function AddnewNightStay({ onClose }: Props) {
     defaultValues: {
       packageName: "",
       title: "",
-      night: "",
-      day: "",
       description: "",
       images: [],
       category: "",
@@ -125,55 +122,48 @@ function AddnewNightStay({ onClose }: Props) {
     remove: removeExclusion,
   } = useFieldArray({ control, name: "exclusion" });
 
-  const { mutateAsync, isPending } = useAddPackageMutation();
-
-  const { data, isPending: IsLoading } = useGetAllCategoriesQuery();
-  // data?.getAllCategories?.map((category) =>({ name: category?.name , categoryId: category?.id}))
+  const { mutateAsync, isPending } = useAddNightStayMutation()
 
   const onSubmit = async (data: any) => {
     try {
       await mutateAsync({
         name: data.packageName,
+        location: "", 
         title: data.title,
-        night: data.night,
-        day: data.day,
-        description: data.description,
         price: parseFloat(data.pricePerPerson),
         images: data.images,
-
-        itinerary: data.itinerary.map((itinerary: any) => ({
-          name: itinerary.day,
-          description: itinerary.description,
-          title: itinerary.title,
+        description: data.description,
+        prices: data.prices?.map((item:any)=>({
+          name:item?.name
         })),
-        includes: data.tourIncludes.map((tourInclude: any) => ({
-          image: tourInclude.image,
-          name: tourInclude.name,
+        includes: data.tourIncludes.map((item: any) => ({
+          image: item.image,
+          name: item.name,
         })),
-        highlights: data.highlights.map((highlight: any) => ({
-          name: highlight.title,
+        inclusions: data.inclusion.map((item: any) => ({
+          title: item.title,
         })),
-        inclusions: data.inclusion.map((inclusion: any) => ({
-          title: inclusion.title,
+        exclusions: data.exclusion.map((item: any) => ({
+          title: item.title,
         })),
-        exclusions: data.exclusion.map((exclusion: any) => ({
-          title: exclusion.title,
+        faqs: data.faq.map((item: any) => ({
+          title: item.question,
+          description: item.answer,
         })),
-        faqs: data.faq.map((faq: any) => ({
-          description: faq.answer,
-          title: faq.question,
+        rooms: data.itinerary.map((item: any) => ({
+          image: item.image,
+          description: item.description,
+          title: item.title,
         })),
-        categoryId: parseInt(data.category),
       });
-      toast?.success("Package added successfully");
-      // setIsModalOpen(false);
+      toast.success("Added successfully");
       onClose();
-    } catch (errors) {
-      toast?.error("invalid package");
+    } catch (error) {
+      toast.error("Failed to add");
     }
     console.log(data);
   };
-
+  
   const upload = async (e: any, field: any) => {
     try {
       const file = e.target.files[0];
