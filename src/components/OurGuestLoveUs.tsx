@@ -23,7 +23,7 @@ export default function OurGuestLoveUs({ className }: Props) {
     <div
       className={`w-full bg-[url('/bglayers.png')] py-16 px-4s ${className}`}
     >
-      <h1 className="text-center text-[30.7px] font-Gotham font-medium mb-10">
+      <h1 className="text-center text-[40px] font-Gotham font-[500] mb-10">
         OUR GUEST LOVE US
       </h1>
       <Swiper
@@ -62,7 +62,7 @@ export default function OurGuestLoveUs({ className }: Props) {
                 className="w-8 aspect-square object-cover rounded-full"
               />
 
-              <p className="text-xs font-Gotham ">{item}</p>
+              <p className="text-[0.80rem] font-GothamBook ">{item}</p>
             </div>
           </SwiperSlide>
         ))}

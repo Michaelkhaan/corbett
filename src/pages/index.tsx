@@ -230,7 +230,7 @@ export default function Home() {
               </h1>
             </div>
           </div>
-          <div className="w-11/12 lg:w-3/4 2xl:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
+          <div className="w-11/12 lg:w-4/5 2xl:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
             {isPending
               ? Array.from({ length: 4 }).map((e, index) => (
                   <PackageLoader key={index} />

@@ -30,11 +30,11 @@ const Gotham = localFont({
     //   weight: "200",
     //   style: "light",
     // },
-    // {
-    //   path: "../../public/fonts/gotham/GothamMedium.ttf",
-    //   weight: "500",
-    //   style: "medium",
-    // },
+    {
+      path: "../../public/fonts/gotham/GothamMedium.ttf",
+      weight: "500",
+      style: "medium",
+    },
     // {
     //   path: "../../public/fonts/gotham/Gotham-Light.otf",
     //   weight: "600",

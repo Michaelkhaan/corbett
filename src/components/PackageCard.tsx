@@ -10,7 +10,7 @@ interface Props {
 }
 
 function PackageCard({ title, image, price, rooms, subtitle }: Props) {
-  console.log(image,'image')
+  console.log(image, "image");
   return (
     <div className="w-full mt-4">
       <Image
@@ -20,22 +20,14 @@ function PackageCard({ title, image, price, rooms, subtitle }: Props) {
         height={0}
         className="w-full lg:h-32 object-cover"
       />
-      <h1 className="text-[16px] mt-2 font-Gotham font-extrabold tracking-tight">
+      <h1 className="text-[14px] mt-2 font-Gotham font-bold tracking-tight">
         {title}
       </h1>
-      <h2 className="text-sm text-[#4c4b4b] font-Gotham font-medium mt-1">
-        {rooms?rooms: null}
+      <h2 className="text-[10px] uppercase text-[#4c4b4b] font-Gotham font-medium mt-1">
+        {rooms ? rooms : null}
       </h2>
       <h2 className="text-sm font-bold font-Gotham flex items-center gap-1 mt-1 -ml-1">
-        <span>
-          <Image
-            src="/currency.png"
-            alt=""
-            width={0}
-            height={0}
-            className="w-4 aspect-square"
-          />
-        </span>
+        <span>₹</span>
         {price}
       </h2>
       <p className="text-[#bbbbbb] text-xs font-Gotham -mt-1">{subtitle}</p>
