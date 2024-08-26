@@ -1,0 +1,5 @@
+mutation deleteNightStay($deleteNightStayId: ID!) {
+  deleteNightStay(id: $deleteNightStayId) {
+    message
+  }
+}

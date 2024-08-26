@@ -5,8 +5,8 @@ import Model from "@/components/Model";
 import Spinner from "@/components/spinner";
 import AddnewPackage from "@/components/AddnewPackage";
 import {
-  useDeletePackageMutation,
-  useGetAllPackagesQuery,
+  useDeleteNightStayMutation,
+  useGetAllNightStayQuery,
   useUpdatePackageMutation,
 } from "@/queries/generated";
 import { toast } from "react-toastify";
@@ -24,19 +24,19 @@ const Index = () => {
   const [updatePrice, setUpdatePrice] = useState("");
   const [packagesId, setPackagesId] = useState(null);
 
-  const { data, refetch } = useGetAllPackagesQuery();
-  const { mutateAsync, isPending } = useDeletePackageMutation();
+  const { data, refetch } = useGetAllNightStayQuery()
+  const { mutateAsync, isPending } = useDeleteNightStayMutation()
   const { mutateAsync: updatePackage } = useUpdatePackageMutation();
   const router = useRouter();
 
   const handleDelete = async (id: any) => {
     setPackagesId(id);
     try {
-      const res = await mutateAsync({ deletePackageId: id });
-      toast.success(res?.deletePackage?.message);
+      const res = await mutateAsync({ deleteNightStayId: id });
+      toast.success(res?.deleteNightStay?.message);
       refetch();
     } catch (err) {
-      toast.error("Packagen is Not Deleted!");
+      toast.error("Not Deleted!");
     }
     setPackagesId(null);
   };
@@ -84,14 +84,14 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-          {data?.getAllPackages?.data.map((pkg) => (
+          {data?.getAllNightStay?.data.map((pkg) => (
             <div key={pkg?.id} className="bg-white shadow-md rounded p-4">
               <Image
                 src={pkg?.images?.[0] || "/default-image.png"}
                 alt=""
                 width={300}
                 height={200}
-                className="w-full"
+                className="w-full max-h-[200px]"
               />
               <div className="mt-3">
                 <p className="w-full">{pkg?.name}</p>

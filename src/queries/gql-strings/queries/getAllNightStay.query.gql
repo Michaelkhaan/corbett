@@ -1,0 +1,11 @@
+query GetAllNightStay($startPrice: Float, $endPrice: Float) {
+  getAllNightStay(startPrice: $startPrice, endPrice: $endPrice) {
+    total
+    data {
+      name
+      images
+      price
+      id
+    }
+  }
+}

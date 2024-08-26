@@ -20,33 +20,42 @@ const queryClient = new QueryClient({
 
 const Gotham = localFont({
   src: [
+    // {
+    //   path: "../../public/fonts/gotham/GothamBold.ttf",
+    //   weight: "700",
+    //   style: "bold",
+    // },
+    // {
+    //   path: "../../public/fonts/gotham/GothamLight.ttf",
+    //   weight: "200",
+    //   style: "light",
+    // },
+    // {
+    //   path: "../../public/fonts/gotham/GothamMedium.ttf",
+    //   weight: "500",
+    //   style: "medium",
+    // },
+    // {
+    //   path: "../../public/fonts/gotham/Gotham-Light.otf",
+    //   weight: "600",
+    //   style: "semibold",
+    // },
     {
-      path: "../../public/fonts/gotham/GothamBold.ttf",
-      weight: "700",
-      style: "bold",
-    },
-    {
-      path: "../../public/fonts/gotham/GothamLight.ttf",
-      weight: "200",
-      style: "light",
-    },
-    {
-      path: "../../public/fonts/gotham/GothamMedium.ttf",
-      weight: "500",
-      style: "medium",
-    },
-    {
-      path: "../../public/fonts/gotham/Gotham-Light.otf",
-      weight: "600",
-      style: "semibold",
-    },
-    {
-      path: "../../public/fonts/gotham/Gotham-XLight.otf",
-      weight: "400",
-      style: "normal",
+      path: "../../public/fonts/gotham/GothamBook.ttf",
+      // weight: "400",
+      // style: "normal",
     },
   ],
   variable: "--Gotham",
+});
+
+const GothamBook = localFont({
+  src: [
+    {
+      path: "../../public/fonts/gotham/GothamBook.ttf",
+    },
+  ],
+  variable: "--GothamBook",
 });
 
 const frinkRio = localFont({
@@ -87,7 +96,7 @@ const myriadPro = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main
-      className={`${Gotham?.variable} ${frinkRio?.variable} ${myriadPro?.variable} `}
+      className={`${Gotham?.variable} ${frinkRio?.variable} ${myriadPro?.variable} ${GothamBook?.variable} `}
     >
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />

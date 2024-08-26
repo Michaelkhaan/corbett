@@ -26,7 +26,7 @@ function index() {
   ];
   return (
     <div className="w-full">
-      <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative">
+      <div className="w-full aspect-[1920/490] min-h-[300px] flex flex-col items-center overflow-hidden relative">
         <Image
           src="/hero.png"
           alt=""
@@ -35,10 +35,12 @@ function index() {
           className=" object-cover absolute inset-0 w-full h-full -z-10 "
         />
         <NaveBar />
-        <h1 className="lg:text-4xl text-2xl 2xl:text-6xl text-white font-frinkRio font-bold left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] absolute">
+        <h1 className="lg:text-4xl text-4xl 2xl:text-7xl text-white font-frinkRio font-bold left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] absolute">
           ABOUT US
         </h1>
       </div>
+      {/* <div className="w-full h-full bg-[url('/bglayers.png')] bg-cover  bg-no-repeat py-16 px-4 overflow-hidden"> */}
+
       <div className="w-full flex flex-col items-center mt-16">
         <h1 className="text-3xl font-frinkRio font-bold text-center">
           Welcome to Jim Corbett
@@ -87,6 +89,8 @@ function index() {
           />
         </div>
       </div>
+      {/* </div> */}
+
       <div className="lg:w-3/4 mx-auto mt-20">
         <div className="px-4">
           <h1 className="text-3xl font-Gotham font-bold">What We Do:</h1>

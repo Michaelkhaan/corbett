@@ -29,6 +29,7 @@ const config: Config = {
       },
       fontFamily: {
         Gotham: ["var(--Gotham)", "sans-serif"],
+        GothamBook: ["var(--GothamBook)", "sans-serif"],
         frinkRio: ["var(--frinkRio)", "sans-serif"],
         FONTSpringDemo: ["FONTSpringDemo", "Arial", "sans-serif"],
         dejavu: ["var(--dejavu)", "sans-serif"],
