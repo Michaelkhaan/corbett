@@ -26,6 +26,7 @@ function index() {
   ];
   return (
     <div className="w-full">
+
       <div className="w-full aspect-[1920/490] min-h-[300px] flex flex-col items-center overflow-hidden relative">
         <Image
           src="/hero.png"
@@ -39,6 +40,8 @@ function index() {
           ABOUT US
         </h1>
       </div>
+      {/* <div className="w-full h-full bg-[url('/bglayers.png')] bg-cover  bg-no-repeat py-16 px-4 overflow-hidden"> */}
+
       <div className="w-full flex flex-col items-center mt-16">
         <h1 className="text-3xl font-frinkRio font-bold text-center">
           Welcome to Jim Corbett
@@ -87,6 +90,8 @@ function index() {
           />
         </div>
       </div>
+      {/* </div> */}
+
       <div className="lg:w-3/4 mx-auto mt-20">
         <div className="px-4">
           <h1 className="text-3xl font-Gotham font-semibold">What We Do:</h1>
