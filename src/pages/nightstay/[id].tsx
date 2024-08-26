@@ -10,7 +10,9 @@ import PackageFAQ from "@/components/PackageFAQ";
 import Packageexc from "@/components/Packageexc";
 import Touricons from "@/components/Touricons";
 import {
+  useGetAllNightStayQuery,
   useGetAllPackagesQuery,
+  useGetNightStayByIdQuery,
   useGetPackageByIdQuery,
 } from "@/queries/generated";
 import Image from "next/image";
@@ -40,26 +42,27 @@ function Index() {
     setOpen(!open);
   };
 
-  const { data, isPending } = useGetPackageByIdQuery(
+  const { data, isPending } = useGetNightStayByIdQuery(
     {
-      getPackageByIdId: router?.query?.id?.toString() || "",
+      getNightStayByIdId: router?.query?.id?.toString() || "",
     },
     {
       enabled: !!router?.query?.id?.toString(),
     }
   );
 
-  const { data: packages } = useGetAllPackagesQuery({
+
+  const { data: packages } = useGetAllNightStayQuery({
     startPrice: selectedPrice?.start,
     endPrice: selectedPrice?.end,
   });
 
   const packagesData = useMemo(() => {
-    return packages?.getAllPackages?.data?.map((data) => {
+    return packages?.getAllNightStay?.data?.map((data) => {
       return {
         id: data?.id?.toString() || "",
         images: data?.images || [],
-        title: data?.title || "",
+        title: data?.name || "",
         rooms: "",
         subtitle: "per person" || "",
         prices: data?.price?.toString() || "",
@@ -85,7 +88,7 @@ function Index() {
         Resort <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
           <p className=" pr-1 font-Gotham text-[10px] font-bold flex items-center">
-            {data?.getPackageById?.name}{" "}
+            {data?.getNightStayById?.name}{" "}
             <span className="pl-[3px] mt-[1px]"></span>
           </p>
         </div>
@@ -94,19 +97,11 @@ function Index() {
       <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <div className="w-full md:w-auto text-start">
           <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
-            {data?.getPackageById?.name}
+            {data?.getNightStayById?.name}
           </h1>
-          {data?.getPackageById?.night || data?.getPackageById?.day ? (
+          {data?.getNightStayById?.location  ? (
             <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-Gotham font-bold">
-              {data?.getPackageById?.night
-                ? data?.getPackageById?.night + ", "
-                : ""}
-              {data?.getPackageById?.day ? data?.getPackageById?.day : ""}
-              {/* Nights, 2 Guest */}
-              <span className="text-[12px] 2xl:text-base font-semibold font-Gotham">
-                {" "}
-                (No extra charges)
-              </span>
+            {data?.getNightStayById?.location}
             </p>
           ) : null}
         </div>
@@ -125,7 +120,7 @@ function Index() {
                   className="w-4 aspect-square"
                 />
               </span>
-              {data?.getPackageById?.price}*
+              {data?.getNightStayById?.price}*
             </p>
             <p className="text-[8px] font-Gotham pl-5">per person</p>
           </div>
@@ -152,7 +147,7 @@ function Index() {
           loop={true}
           modules={[Autoplay, Navigation, Pagination]}
         >
-          {data?.getPackageById?.images?.map((e, index) => (
+          {data?.getNightStayById?.images?.map((e, index) => (
             <SwiperSlide key={index}>
               <Image
                 src={e?.toString() || "/Layer 45.png"}
@@ -173,7 +168,7 @@ function Index() {
               <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
             ) : (
               <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter ">
-                {data?.getPackageById?.title}
+                {data?.getNightStayById?.title}
               </h1>
             )}
 
@@ -188,7 +183,7 @@ function Index() {
               ))
             ) : (
               <p className="lg:text-sm text-xs 2xl:text-xl font-Gotham leading-8 mt-2 text-wrap break-words">
-                {data?.getPackageById?.description}
+                {data?.getNightStayById?.description}
               </p>
             )}
           </div>
@@ -196,29 +191,30 @@ function Index() {
           {/* {data?.getPackageById?.Itinerary?.length ? (
             <ItenararyList data={data?.getPackageById?.Itinerary} />
           ) : null} */}
-          <RoomType/>
+         <RoomType data={data} />
+
           <div className="w-full mx-auto pb-5 mt-14">
-            {!!data?.getPackageById?.Inclusions?.length || isPending ? (
-              <Package data={data?.getPackageById?.Inclusions as any} isLoading={isPending} />
+            {!!data?.getNightStayById?.Inclusions?.length || isPending ? (
+              <Package data={data?.getNightStayById?.Inclusions as any} isLoading={isPending} />
             ) : null}
 
-            {!!data?.getPackageById?.Exclusions?.length || isPending ? (
-              <Packageexc data={data?.getPackageById?.Exclusions as any} isLoading={isPending} />
+            {!!data?.getNightStayById?.Exclusions?.length || isPending ? (
+              <Packageexc data={data?.getNightStayById?.Exclusions as any} isLoading={isPending} />
             ) : null}
           </div>
 
-          {data?.getPackageById?.Faqs?.length ? (
-            <FaqList data={data?.getPackageById?.Faqs as any} />
+          {data?.getNightStayById?.Faqs?.length ? (
+            <FaqList data={data?.getNightStayById?.Faqs as any} />
           ) : null}
         </div>
         <div className="w-full lg:w-2/6 mx-auto mt-6">
-          {data?.getPackageById?.Highlights?.length || isPending ? (
-            <Highlight data={data?.getPackageById?.Highlights as any} isLoading={isPending} />
+          {data?.getNightStayById?.Prices?.length || isPending ? (
+            <Highlight data={data?.getNightStayById?.Prices as any} isLoading={isPending} />
           ) : null}
           <div className="w-full mt-5">
-            {data?.getPackageById?.Includes?.length || isPending ? (
+            {data?.getNightStayById?.Includes?.length || isPending ? (
               <Touricons
-                data={data?.getPackageById?.Includes as any}
+                data={data?.getNightStayById?.Includes as any}
                 isLoading={isPending}
               />
             ) : null}
