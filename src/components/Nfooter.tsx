@@ -16,7 +16,7 @@ export default function Nfooter() {
       <div className="border rounded-full p-2 flex items-center justify-center bg-black fixed lg:right-10 lg:bottom-20 bottom-4 right-4 z-50 ">
         {/* <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center animate-shake"> */}
         <a href="https://wa.me/919837166431" target="_blank">
-          <FaWhatsapp className="lg:text-2xl text-base text-[#47e1d9]" />
+          <FaWhatsapp className="lg:text-2xl text-base text-[#47e1d9]" color="#47e1d9" fill="#47e1d9" />
         </a>
       </div>
       <div className="2xl:w-[70%] lg:w-4/5 flex mx-auto py-10 flex-wrap w-11/12">
@@ -52,17 +52,17 @@ export default function Nfooter() {
               ITS STATE OF MIND.
             </h4>
             <div className="flex gap-2 items-center mt-3">
-              <BsFacebook className="text-2xl" />
+              <BsFacebook className="text-2xl" fill="white" />
               <div className=" border rounded-full px-1 py-1 bg-black">
-                <FaInstagram className="text-white" />
+                <FaInstagram className="text-white" fill="white" />
               </div>
               <div className="border rounded-full px-1 py-1 bg-black">
-                <FaLinkedinIn className="text-white" />
+                <FaLinkedinIn className="text-white" fill="white"/>
               </div>
-              <AiFillTwitterCircle className="text-[28px]" />
-              <FaPinterest className="text-[26px]" />
+              <AiFillTwitterCircle className="text-[28px]"  />
+              <FaPinterest className="text-[26px]"/>
               <div className="border rounded-full px-1 py-1 bg-black">
-                <BsYoutube className="text-white" />
+                <BsYoutube className="text-white" fill="white" />
               </div>
             </div>
           </div>

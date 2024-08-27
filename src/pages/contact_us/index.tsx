@@ -16,7 +16,7 @@ function index() {
           alt=""
           sizes="100%"
           layout="fill"
-          className=" object-cover absolute inset-0 w-full -z-10 "
+          className=" object-cover absolute inset-0 w-full  "
         />
         <NaveBar />
         <h1 className="lg:text-4xl text-2xl whitespace-nowrap 2xl:text-6xl text-white font-frinkRio font-bold left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] absolute">
@@ -64,13 +64,13 @@ function index() {
             </h1>
             <div className="mt-4 flex items-center gap-2">
               <span className="w-8 aspect-square bg-black rounded-full flex items-center justify-center">
-                <FaFacebookF className="text-white" />
+                <FaFacebookF fill="white" />
               </span>
               <span className="w-8 aspect-square bg-black rounded-full flex items-center justify-center">
-                <FaTwitter className="text-white" />
+                <FaTwitter fill="white" />
               </span>
               <span className="w-8 aspect-square bg-black rounded-full flex items-center justify-center">
-                <FaInstagram className="text-white" />
+                <FaInstagram fill="white" />
               </span>
               <span className="w-8 aspect-square bg-black rounded-full flex items-center justify-center">
                 <Youtube />

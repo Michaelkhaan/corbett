@@ -96,7 +96,7 @@ const myriadPro = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main
-      className={`${Gotham?.variable} ${frinkRio?.variable} ${myriadPro?.variable} ${GothamBook?.variable} `}
+      className={`${Gotham?.variable} ${frinkRio?.variable} ${myriadPro?.variable} ${GothamBook?.variable} bg-white `}
     >
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />

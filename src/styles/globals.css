@@ -163,3 +163,7 @@ c #scroll-chat::-webkit-scrollbar-thumb {
 }
 
 /* Layout Right side bar */
+*{
+  color: black;
+  background-color: transparent;
+}

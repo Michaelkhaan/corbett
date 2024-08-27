@@ -160,7 +160,7 @@ export default function Home() {
     // },
   ];
   return (
-    <div className="w-full">
+    <div className="w-full absolute -z-50">
       <Hero />
       {/* <img src="/test/hero.png" className="w-full"/> */}
       <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-2 md:gap-5  lg:-mt-14 -mt-5">
@@ -182,7 +182,7 @@ export default function Home() {
       <ButtonCard />
       {/* </div> */}
       <Explore />
-      <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px] ">
+      <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px] bg-white ">
         <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
           OUR PACKAGES
         </h1>

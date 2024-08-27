@@ -29,7 +29,7 @@ function PriceCard({ name, title, subtitle, desc, subdesc, image }: Props) {
       <h1 className="text-lg font-bold font-GothamBook mt-4">{name}</h1>
       {title ? (
         <div className="flex items-center gap-2 mt-2">
-          <LuCheckCircle className="text-primary " />
+          <LuCheckCircle stroke="#f8bd01" />
           <h1 className="text-xs font-medium text-gray-600 font-GothamBook">
             {title}
           </h1>
@@ -37,7 +37,7 @@ function PriceCard({ name, title, subtitle, desc, subdesc, image }: Props) {
       ) : null}
       {subtitle ? (
         <div className="flex items-center gap-2 mt-2">
-          <LuCheckCircle className="text-primary" />
+          <LuCheckCircle stroke="#f8bd01" />
           <h1 className="text-xs font-medium text-gray-600 font-GothamBook">
             {subtitle}
           </h1>
@@ -45,7 +45,7 @@ function PriceCard({ name, title, subtitle, desc, subdesc, image }: Props) {
       ) : null}
       {desc ? (
         <div className="flex items-center gap-2 mt-2">
-          <LuCheckCircle className="text-primary" />
+          <LuCheckCircle stroke="#f8bd01" />
           <h1 className="text-xs font-medium text-gray-600  font-GothamBook">
             {desc}
           </h1>
@@ -53,7 +53,7 @@ function PriceCard({ name, title, subtitle, desc, subdesc, image }: Props) {
       ) : null}
       {subdesc ? (
         <div className="flex items-center gap-2 mt-2">
-          <LuCheckCircle className="text-primary" />
+          <LuCheckCircle stroke="#f8bd01" />
           <h1 className="text-xs font-medium text-gray-600 font-GothamBook">
             {subdesc}
           </h1>

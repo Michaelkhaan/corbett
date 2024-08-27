@@ -14,8 +14,9 @@ function Hero() {
     },
   ];
   return (
-    <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative">
-      <div className="absolute inset-0 -z-10">
+    <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative -z-10">
+     <NaveBar />
+      <div className="absolute inset-0">
         <Swiper
           className="w-full h-full"
           autoplay={{
@@ -43,7 +44,7 @@ function Hero() {
         </Swiper>
       </div>
 
-      <NaveBar />
+      
       <div className="my-auto flex flex-col items-center">
         <h1 className="text-xl 2xl:text-5xl text-white font-bold text-center font-frinkRio ">
           Adventure

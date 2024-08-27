@@ -39,9 +39,9 @@ function Explore() {
   ];
   return (
     <>
-      <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
-        <div className="flex w-full lg:w-1/4 items-start px-4">
-          <div className="mx-auto flex flex-col lg:items-start items-center">
+      <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20 bg-white">
+        <div className="flex w-full lg:w-1/4 items-start px-4 bg-transparent">
+          <div className="mx-auto flex flex-col lg:items-start items-center bg-transparent">
             <h1 className="2xl:text-[29px] text-xl font-bold font-GothamBook">
               BOOK A PERMIT
             </h1>
@@ -57,7 +57,7 @@ function Explore() {
             </button>
           </div>
         </div>
-        <div className="flex flex-col w-full lg:w-3/4 px-4">
+        <div className="flex flex-col w-full lg:w-3/4 px-4 bg-transparent">
           <h1 className="2xl:text-[33px] text-xl font-bold font-frinkRio">
             Explore the Untamed Destinations of jim corbett
           </h1>
@@ -67,7 +67,7 @@ function Explore() {
             <br />
             some most popular packages our guests have chosen.
           </p>
-          <div className="w-full mt-5">
+          <div className="w-full mt-5 bg-transparent">
             <Swiper
               ref={swiperRef}
               spaceBetween={3}

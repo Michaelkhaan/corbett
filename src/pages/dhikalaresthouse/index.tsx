@@ -94,7 +94,7 @@ function index() {
           alt=""
           sizes="100%"
           layout="fill"
-          className=" object-cover absolute inset-0 w-full h-full -z-10 "
+          className=" object-cover absolute inset-0 w-full h-full "
         />
         <NaveBar />
         <div className="absolute inset-0 flex items-center justify-center">

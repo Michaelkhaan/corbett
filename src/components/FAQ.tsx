@@ -72,6 +72,7 @@ function FAQ({ question, id, answer }: Props) {
         </h1>
         <span className="w-6 aspect-square bg-black rounded-full flex items-center justify-center">
           <TiMediaPlay
+            fill="white"
             className={`text-white transition-transform duration-[500ms] ease-in-out ${
               openId === id ? "rotate-90" : ""
             }`}
