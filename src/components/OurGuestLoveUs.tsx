@@ -82,7 +82,7 @@ export default function OurGuestLoveUs({ className }: Props) {
                 className="w-8 aspect-square object-cover rounded-full"
               />
 
-              <p className="text-[0.80rem] font-GothamBook text-justify ">
+              <p className="text-[0.80rem] font-GothamBookBook text-justify ">
                 {item?.desc}
                 <br />
                 <span className="font-bold text-[12px]">{item?.name}, </span>

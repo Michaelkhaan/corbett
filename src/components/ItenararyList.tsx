@@ -5,7 +5,7 @@ export default function ItenararyList({ data }: any) {
   const [openId, setOpenId] = useState<string | null>("0");
   return (
     <div className="2xl:px-10 mt-5">
-      <h1 className="lg:text-lg text-sm 2xl:text-[21px] font-Gotham font-bold leading-8">
+      <h1 className="lg:text-lg text-sm 2xl:text-[21px] font-GothamBook font-bold leading-8">
         Itinerary (Day Wise)
       </h1>
       <div className="w-full lg:w-1/2 2xl:w-full mt-3">

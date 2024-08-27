@@ -28,7 +28,7 @@ function Faq({ className, question, answer, id, openId, setOpenId }: Props) {
         onClick={() => handleToggle(id)}
       >
         <div className="flex justify-between items-center w-full">
-          <h1 className="font-Gotham font-bold text-sm">{question}</h1>
+          <h1 className="font-GothamBook font-bold text-sm">{question}</h1>
           {openId === id ? (
             <FaMinus className="text-[#f8bd00]" />
           ) : (
@@ -41,7 +41,7 @@ function Faq({ className, question, answer, id, openId, setOpenId }: Props) {
           openId === id ? "max-h-40" : "max-h-0"
         }`}
       >
-        <p className="text-black text-xs font-Gotham 2xl:text-[15px]">
+        <p className="text-black text-xs font-GothamBook 2xl:text-[15px]">
           {answer}
         </p>
       </div>

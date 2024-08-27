@@ -18,7 +18,7 @@ function Package({
       {isLoading ? (
         <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
       ) : (
-        <h1 className="text-[21px] leading-[32px] font-medium font-Gotham">
+        <h1 className="text-[21px] leading-[32px] font-medium font-GothamBook">
           Package inclusions
         </h1>
       )}
@@ -34,7 +34,7 @@ function Package({
         {data?.map((e, index) => (
           <li
             key={index}
-            className="text-[13px] leading-[24px] mt-3 font-Gotham"
+            className="text-[13px] leading-[24px] mt-3 font-GothamBook"
           >
             - {e?.title}
           </li>

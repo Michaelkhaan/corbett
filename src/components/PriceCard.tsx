@@ -24,22 +24,22 @@ function PriceCard({ name, title, subtitle, desc, subdesc, image }: Props) {
         /> */}
         ₹
       </span>
-      <h1 className="text-lg font-bold font-Gotham mt-4">{name}</h1>
+      <h1 className="text-lg font-bold font-GothamBook mt-4">{name}</h1>
       <div className="flex items-center gap-2 mt-2">
         <LuCheckCircle className="text-primary " />
-        <h1 className="text-xs font-medium text-gray-600 font-Gotham">{title}</h1>
+        <h1 className="text-xs font-medium text-gray-600 font-GothamBook">{title}</h1>
       </div>
       <div className="flex items-center gap-2 mt-2">
         <LuCheckCircle className="text-primary" />
-        <h1 className="text-xs font-medium text-gray-600 font-Gotham">{subtitle}</h1>
+        <h1 className="text-xs font-medium text-gray-600 font-GothamBook">{subtitle}</h1>
       </div>
       <div className="flex items-center gap-2 mt-2">
         <LuCheckCircle className="text-primary" />
-        <h1 className="text-xs font-medium text-gray-600  font-Gotham">{desc}</h1>
+        <h1 className="text-xs font-medium text-gray-600  font-GothamBook">{desc}</h1>
       </div>
       <div className="flex items-center gap-2 mt-2">
         <LuCheckCircle className="text-primary" />
-        <h1 className="text-xs font-medium text-gray-600 font-Gotham">{subdesc}</h1>
+        <h1 className="text-xs font-medium text-gray-600 font-GothamBook">{subdesc}</h1>
       </div>
     </div>
   );

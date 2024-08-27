@@ -46,7 +46,7 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 //         onClick={() => handleToggle(key)}
 //       >
 //         <div className="flex justify-between items-center w-full">
-//           <h1 className="font-bold text-lg tracking-wider font-Gotham">
+//           <h1 className="font-bold text-lg tracking-wider font-GothamBook">
 //             {Title}
 //           </h1>
 //           {openId === key ? (
@@ -61,29 +61,29 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 //           openId === key ? "" : "hidden"
 //         }`}
 //       >
-//         <h5 className="text-black text-lg font-bold mt-2 font-Gotham">
+//         <h5 className="text-black text-lg font-bold mt-2 font-GothamBook">
 //           {Dhikala}
 //         </h5>
-//         <p className="text-black text-xs 2xl:text-[15px] font-Gotham">{desc}</p>
-//         <p className=" text-black text-xs 2xl:text-[15px] mt-4 tracking-wide font-Gotham">
+//         <p className="text-black text-xs 2xl:text-[15px] font-GothamBook">{desc}</p>
+//         <p className=" text-black text-xs 2xl:text-[15px] mt-4 tracking-wide font-GothamBook">
 //           {desc1}
 //         </p>
-//         <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+//         <h1 className="text-black text-lg font-bold mt-6 font-GothamBook">
 //           {canter}
 //         </h1>
-//         <p className=" text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+//         <p className=" text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-GothamBook">
 //           {canterdesc}
 //         </p>
-//         <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+//         <h1 className="text-black text-lg font-bold mt-6 font-GothamBook">
 //           {Elephant}
 //         </h1>
-//         <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+//         <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-GothamBook">
 //           {Elephdesc}
 //         </p>
-//         <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+//         <h1 className="text-black text-lg font-bold mt-6 font-GothamBook">
 //           {jeep}
 //         </h1>
-//         <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+//         <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-GothamBook">
 //           {jeepdesc}
 //         </p>
 //       </div>
@@ -137,7 +137,7 @@ function JungleSaferi({
         onClick={() => handleToggle(key)}
       >
         <div className="flex justify-between items-center w-full">
-          <h1 className="font-bold text-lg tracking-wider font-Gotham">
+          <h1 className="font-bold text-lg tracking-wider font-GothamBook">
             {Title}
           </h1>
           {openId === key ? (
@@ -156,31 +156,31 @@ function JungleSaferi({
       >
         {openId === key && (
           <div className="px-2 mt-2">
-            <h5 className="text-black text-lg font-bold mt-2 font-Gotham">
+            <h5 className="text-black text-lg font-bold mt-2 font-GothamBook">
               {Dhikala}
             </h5>
-            <p className="text-black text-xs 2xl:text-[15px] font-Gotham">
+            <p className="text-black text-xs 2xl:text-[15px] font-GothamBook">
               {desc}
             </p>
-            <p className="text-black text-xs 2xl:text-[15px] mt-4 tracking-wide font-Gotham">
+            <p className="text-black text-xs 2xl:text-[15px] mt-4 tracking-wide font-GothamBook">
               {desc1}
             </p>
-            <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+            <h1 className="text-black text-lg font-bold mt-6 font-GothamBook">
               {canter}
             </h1>
-            <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+            <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-GothamBook">
               {canterdesc}
             </p>
-            <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+            <h1 className="text-black text-lg font-bold mt-6 font-GothamBook">
               {Elephant}
             </h1>
-            <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+            <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-GothamBook">
               {Elephdesc}
             </p>
-            <h1 className="text-black text-lg font-bold mt-6 font-Gotham">
+            <h1 className="text-black text-lg font-bold mt-6 font-GothamBook">
               {jeep}
             </h1>
-            <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-Gotham">
+            <p className="text-black text-xs tracking-wide mt-1 2xl:text-[15px] font-GothamBook">
               {jeepdesc}
             </p>
           </div>

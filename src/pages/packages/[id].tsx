@@ -72,18 +72,18 @@ function Index() {
       <div className="w-full flex justify-center mt-2">
         <div className="w-11/12 lg:w-3/4 flex">
           <p
-            className="cursor-pointer pr-1 font-Gotham text-[10px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
             onClick={() => router.push("/")}
           >
             Home <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
           <p
-            className="cursor-pointer pr-1 font-Gotham text-[10px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
             onClick={() => router.push("/packages")}
           >
             Package <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
-          <p className=" pr-1 font-Gotham text-[10px] font-bold flex items-center">
+          <p className=" pr-1 font-GothamBook text-[10px] font-bold flex items-center">
             {data?.getPackageById?.name}{" "}
             <span className="pl-[3px] mt-[1px]"></span>
           </p>
@@ -96,13 +96,13 @@ function Index() {
             {data?.getPackageById?.name}
           </h1>
           {data?.getPackageById?.night || data?.getPackageById?.day ? (
-            <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-Gotham font-bold">
+            <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-GothamBook font-bold">
               {data?.getPackageById?.night
                 ? data?.getPackageById?.night + ", "
                 : ""}
               {data?.getPackageById?.day ? data?.getPackageById?.day : ""}
               {/* Nights, 2 Guest */}
-              <span className="text-[12px] 2xl:text-base font-semibold font-Gotham">
+              <span className="text-[12px] 2xl:text-base font-semibold font-GothamBook">
                 {" "}
                 (No extra charges)
               </span>
@@ -111,10 +111,10 @@ function Index() {
         </div>
         <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
           <div className="w-full md:w-auto text-start">
-            <h1 className="text-sm lg:text-base 2xl:text-[20px] font-Gotham font-regular">
+            <h1 className="text-sm lg:text-base 2xl:text-[20px] font-GothamBook font-regular">
               Start From
             </h1>
-            <p className="flex items-center lg:text-2xl text-lg 2xl:text-[32px] font-Gotham font-bold leading-[28px]">
+            <p className="flex items-center lg:text-2xl text-lg 2xl:text-[32px] font-GothamBook font-bold leading-[28px]">
               <span>
                 <Image
                   src="/currency.png"
@@ -126,13 +126,13 @@ function Index() {
               </span>
               {data?.getPackageById?.price}*
             </p>
-            <p className="text-[8px] font-Gotham pl-5">per person</p>
+            <p className="text-[8px] font-GothamBook pl-5">per person</p>
           </div>
           <div
             className="w-full md:w-auto flex justify-start sm:justify-end"
             onClick={onClick}
           >
-            <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-Gotham font-medium ">
+            <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-GothamBook font-medium ">
               ENQUERY
             </button>
           </div>
@@ -171,7 +171,7 @@ function Index() {
             {isPending ? (
               <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
             ) : (
-              <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter ">
+              <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter ">
                 {data?.getPackageById?.title}
               </h1>
             )}
@@ -186,7 +186,7 @@ function Index() {
                 />
               ))
             ) : (
-              <p className="lg:text-sm text-xs 2xl:text-xl font-Gotham leading-8 mt-2 text-wrap break-words">
+              <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook leading-8 mt-2 text-wrap break-words">
                 {data?.getPackageById?.description}
               </p>
             )}
@@ -235,8 +235,8 @@ function Index() {
           </div>
         </div>
       </div>
-      <div className="w-full mx-auto flex flex-col font-gotham items-center justify-center mt-20 lg:mt-40">
-        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-Gotham px-3">
+      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20 lg:mt-40">
+        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
           Best priced packages with in your budget
         </h1>
 
@@ -249,7 +249,7 @@ function Index() {
             } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
             onClick={() => handleClick({ start: 1, end: 10000, id: 1 })}
           >
-            <h1 className="text-sm font-Gotham">Less than Rs 10,000</h1>
+            <h1 className="text-sm font-GothamBook">Less than Rs 10,000</h1>
           </div>
           <div
             className={`${
@@ -259,7 +259,7 @@ function Index() {
             } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
             onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
           >
-            <h1 className="text-xs font-Gotham">Rs 10,000 to Rs 20,000</h1>
+            <h1 className="text-xs font-GothamBook">Rs 10,000 to Rs 20,000</h1>
           </div>
           <div
             className={`${
@@ -269,7 +269,7 @@ function Index() {
             } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
             onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
           >
-            <h1 className="text-[10.74px] leading-4 font-Gotham">
+            <h1 className="text-[10.74px] leading-4 font-GothamBook">
               Rs 30,000 to Rs 50,000
             </h1>
           </div>
@@ -288,9 +288,9 @@ function Index() {
           ))}
         </div>
         <div className="w-full mt-8 lg:mt-24 mb-8 lg:mb-16">
-          <h1 className="text-lg font-medium font-Gotham text-center">
+          <h1 className="text-lg font-medium font-GothamBook text-center">
             LET YOUR{" "}
-            <span className="text-lg font-bold font-Gotham">SAFFARI TOUR</span>{" "}
+            <span className="text-lg font-bold font-GothamBook">SAFFARI TOUR</span>{" "}
             WITH SPECIAL OFFERS AND DEALS!
           </h1>
           <div className="w-full flex items-center justify-center gap-2 mt-3 pb-5 px-4">

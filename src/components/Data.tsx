@@ -106,7 +106,7 @@ export default function Data({ onClose }: any) {
         <div className="flex flex-col items-start">
           <button
             type="submit"
-            className="w-full sm:w-auto bg-[#f8bd01] sm:px-12 text-[13px] font-Gotham font-bold uppercase py-[10px] hover:bg-black hover:text-white"
+            className="w-full sm:w-auto bg-[#f8bd01] sm:px-12 text-[13px] font-GothamBook font-bold uppercase py-[10px] hover:bg-black hover:text-white"
           >
             {isPending ? <Spinner /> : "Submit"}
           </button>

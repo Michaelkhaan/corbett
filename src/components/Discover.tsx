@@ -96,27 +96,27 @@ export default function Discover() {
           </div>
         </div>
         <div className="text-left px-4 lg:px-0">
-          <h1 className="text-2xl 2xl:text-4xl lg:text-3xl font-medium font-gotham leading-16 text-gray-700">
+          <h1 className="text-2xl 2xl:text-4xl lg:text-3xl font-medium font-GothamBook leading-16 text-gray-700">
             Discover the World,
             <br /> specially curated for you!
           </h1>
-          <p className="mt-4 font-gotham  2xl:text-base text-sm text-gray-600">
+          <p className="mt-4 font-GothamBook  2xl:text-base text-sm text-gray-600">
             Our exclusive customized holidays division can cater to every travel
             need: hotel, air tickets, VISA, sightseeings, transfer or the entire
             package, all designed keeping in mind your interests!
           </p>
           <div className="flex w-full flex-col mt-6">
-            <p className="font-gotham  text-sm font-medium text-gray-600">
+            <p className="font-GothamBook  text-sm font-medium text-gray-600">
               Tell us what you want and what we will design it for you
             </p>
             <div className="flex mt-2 gap-2 flex-col items-center md:flex-row md:gap-6">
-              {/* <button className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded">
+              {/* <button className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-GothamBook px-5 py-1 rounded">
                 Enquire now
               </button> */}
 
               <a
                 href="https://wa.me/919837166431"
-                className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-Gotham px-5 py-1 rounded flex gap-2"
+                className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-GothamBook px-5 py-1 rounded flex gap-2"
                 target="_blank"
               >
                 <FaWhatsapp className="lg:text-2xl text-base text-black" />

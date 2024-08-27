@@ -186,13 +186,13 @@ export default function Home() {
         <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
           OUR PACKAGES
         </h1>
-        <p className="2xl:text-base text-[15px] leading-[20px] text-center font-Gotham lg:w-[470px] mt-4">
+        <p className="2xl:text-base text-[15px] leading-[20px] text-center font-GothamBook lg:w-[470px] mt-4">
           We craft our packages based on your budget, taste & preference however
           these are some most popular packages our guest has chosen.
         </p>
 
-        <div className="w-full mx-auto flex flex-col font-gotham items-center justify-center mt-20 lg:mt-10">
-          <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-Gotham px-3">
+        <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20 lg:mt-10">
+          <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
             Best priced packages with in your budget
           </h1>
 
@@ -205,7 +205,7 @@ export default function Home() {
               } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
               onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
             >
-              <h1 className="text-sm font-Gotham">Less than Rs 10,000</h1>
+              <h1 className="text-sm font-GothamBook">Less than Rs 10,000</h1>
             </div>
             <div
               className={`${
@@ -215,7 +215,7 @@ export default function Home() {
               } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
               onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
             >
-              <h1 className="text-sm font-Gotham">Rs 10,000 to Rs 20,000</h1>
+              <h1 className="text-sm font-GothamBook">Rs 10,000 to Rs 20,000</h1>
             </div>
             <div
               className={`${
@@ -225,7 +225,7 @@ export default function Home() {
               } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
               onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
             >
-              <h1 className="text-sm leading-4 font-Gotham">
+              <h1 className="text-sm leading-4 font-GothamBook">
                 Rs 30,000 to Rs 50,000
               </h1>
             </div>
@@ -284,10 +284,10 @@ export default function Home() {
         <div className="px-4 lg:w-[80%] w-11/12 mx-auto mt-10 lg:mt-20">
           <div className="grid grid-cols-7  mx-auto gap-2">
             <div className="lg:col-span-2 col-span-12 mt-3">
-              <h1 className="lg:text-xl 2xl:text-2xl font-bold font-Gotham lg:w-[300px] 2xl:w-[400px] w-full">
+              <h1 className="lg:text-xl 2xl:text-2xl font-bold font-GothamBook lg:w-[300px] 2xl:w-[400px] w-full">
                 FAQ Regarding Travels
               </h1>
-              {/* <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham text-black">
+              {/* <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-GothamBook text-black">
                 Enquire Now
               </button> */}
             </div>

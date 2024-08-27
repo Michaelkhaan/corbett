@@ -10,7 +10,7 @@ function Buttons({ tab , tabs , setTab} : any) {
           onClick={() => setTab(e?.key)}
           className={` ${
             tab === e.key ? "bg-[#f8bd01] text-white" : "bg-white text-black"
-          }   px-16 py-3  text-xl font-bold font-Gotham`}
+          }   px-16 py-3  text-xl font-bold font-GothamBook`}
         >
           {e?.name}
         </button>

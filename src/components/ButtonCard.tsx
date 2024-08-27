@@ -78,7 +78,7 @@ function ButtonCard() {
       </div>
 
       <div className="flex flex-col">
-        <button type="submit" className="w-11/12 mx-auto bg-[#f8bd01] rounded-full px-2 text-[13px] font-Gotham font-bold uppercase py-[10px] cursor-pointer hover:bg-black hover:text-white" >
+        <button type="submit" className="w-11/12 mx-auto bg-[#f8bd01] rounded-full px-2 text-[13px] font-GothamBook font-bold uppercase py-[10px] cursor-pointer hover:bg-black hover:text-white" >
           submit
         </button>
       </div>

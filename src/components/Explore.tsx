@@ -42,16 +42,16 @@ function Explore() {
       <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20">
         <div className="flex w-full lg:w-1/4 items-start px-4">
           <div className="mx-auto flex flex-col lg:items-start items-center">
-            <h1 className="2xl:text-[29px] text-xl font-bold font-Gotham">
+            <h1 className="2xl:text-[29px] text-xl font-bold font-GothamBook">
               BOOK A PERMIT
             </h1>
-            <p className="2xl:text-[20px] 2xl:leading-6 text-xs font-Gotham text-center lg:text-left ">
+            <p className="2xl:text-[20px] 2xl:leading-6 text-xs font-GothamBook text-center lg:text-left ">
               FOR JUNGLE SAFFARI <br />
               CORBETT TOURISM
             </p>
             <button
               onClick={() => setModal(true)}
-              className="bg-primary 2xl:text-base text-[16px] font-Gotham rounded-xs px-4 py-[10px] leading-[22px] text-white mt-2 2xl:mt-3"
+              className="bg-primary 2xl:text-base text-[16px] font-GothamBook rounded-xs px-4 py-[10px] leading-[22px] text-white mt-2 2xl:mt-3"
             >
               Book Saffari
             </button>
@@ -61,7 +61,7 @@ function Explore() {
           <h1 className="2xl:text-[33px] text-xl font-bold font-frinkRio">
             Explore the Untamed Destinations of jim corbett
           </h1>
-          <p className="font-Gotham 2xl:text-[15px] leading-6 text-base mt-4">
+          <p className="font-GothamBook 2xl:text-[15px] leading-6 text-base mt-4">
             We craft tour packages based on your budget, taste & preference
             however these are
             <br />

@@ -82,7 +82,7 @@ const Jeep = () => {
         <Attractions />
         <div className=" bg-[#efefee] py-12 mt-16">
           <div className="flex md:w-[70%] w-11/12  mx-auto flex-col justify-start items-start">
-            <p className="text-xl font-medium font-Gotham">
+            <p className="text-xl font-medium font-GothamBook">
               FAQ Regarding Corbett safari!
             </p>
             {faq?.map((e, index) => (

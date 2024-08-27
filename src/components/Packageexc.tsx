@@ -16,7 +16,7 @@ function Packageexc({
       {isLoading ? (
         <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
       ) : (
-        <h1 className="text-[21px] leading-[28px] font-medium font-Gotham">
+        <h1 className="text-[21px] leading-[28px] font-medium font-GothamBook">
           Package Exclusion:
         </h1>
       )}
@@ -28,7 +28,7 @@ function Packageexc({
             ))
           : null}
         {data?.map((e, index) => (
-          <li key={index} className="text-[13px] leading-[28px] font-Gotham">
+          <li key={index} className="text-[13px] leading-[28px] font-GothamBook">
             - {e?.title}
           </li>
         ))}

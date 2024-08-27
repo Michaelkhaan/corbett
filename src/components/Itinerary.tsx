@@ -35,7 +35,7 @@ function Itinerary({
         onClick={() => handleToggle(key)}
       >
         <div className="flex justify-between items-center w-full">
-          <h1 className="font-Gotham font-bold text-sm">{days}</h1>
+          <h1 className="font-GothamBook font-bold text-sm">{days}</h1>
           {openId === key ? (
             <FaMinus className="text-black" />
           ) : (
@@ -48,10 +48,10 @@ function Itinerary({
           openId === key ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         } ${paraClass}`}
       >
-        <h1 className="text-sm text-black font-Gotham font-extrabold">
+        <h1 className="text-sm text-black font-GothamBook font-extrabold">
           {title}
         </h1>
-        <p className="text-black text-xs font-Gotham">{desc}</p>
+        <p className="text-black text-xs font-GothamBook">{desc}</p>
       </div>
     </>
   );

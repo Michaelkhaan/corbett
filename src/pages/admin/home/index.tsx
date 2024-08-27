@@ -11,7 +11,7 @@ import { MdDelete } from "react-icons/md";
 function index() {
   return (
     // <Layout>
-    //   <h1 className="text-xl font-Gotham font-semibold mt-4">
+    //   <h1 className="text-xl font-GothamBook font-semibold mt-4">
     //     Add and Delete Hero Section Images
     //   </h1>
     //   <div className="w-full flex items-center flex-wrap gap-5">
@@ -34,21 +34,21 @@ function index() {
     //   </div>
     //   <div className="w-full mt-5">
     //     <div>
-    //       <h1 className="text-lg font-Gothamfont-bold">Title</h1>
+    //       <h1 className="text-lg font-GothamBookfont-bold">Title</h1>
     //       <input
     //         type="text"
     //         className="w-full px-2 py-3 border rounded-lg focus:outline-none"
     //       />
     //     </div>
     //     <div className="mt-4">
-    //       <h1 className="text-lg font-Gothamfont-bold">Discription</h1>
+    //       <h1 className="text-lg font-GothamBookfont-bold">Discription</h1>
     //       <input
     //         type="text"
     //         className="w-full px-2 py-3 border rounded-lg focus:outline-none"
     //       />
     //     </div>
     //     <div className="mt-4">
-    //       <h1 className="text-lg font-Gothamfont-bold">Button Title</h1>
+    //       <h1 className="text-lg font-GothamBookfont-bold">Button Title</h1>
     //       <input
     //         type="text"
     //         className="w-full px-2 py-3 border rounded-lg focus:outline-none"
@@ -57,16 +57,16 @@ function index() {
     //   </div>
     //   <hr className="w-full mt-5" />
     //   {/* <div className="w-full mt-4">
-    //     <h1 className="text-xl font-Gotham font-bold">Explore Section</h1>
+    //     <h1 className="text-xl font-GothamBook font-bold">Explore Section</h1>
     //     <div className="mt-4">
-    //       <h1 className="text-lg font-Gothamfont-bold">Title</h1>
+    //       <h1 className="text-lg font-GothamBookfont-bold">Title</h1>
     //       <input
     //         type="text"
     //         className="w-full px-2 py-3 border rounded-lg focus:outline-none"
     //       />
     //     </div>
     //     <div className="mt-4">
-    //       <h1 className="text-lg font-Gothamfont-bold">SubTitle</h1>
+    //       <h1 className="text-lg font-GothamBookfont-bold">SubTitle</h1>
     //       <input
     //         type="text"
     //         className="w-full px-2 py-3 border rounded-lg focus:outline-none"
