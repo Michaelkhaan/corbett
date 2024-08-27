@@ -29,7 +29,7 @@ const RoomType = ({data}:roomProps) => {
             <h1 className="text-black  font-GothamBook font-semibold  text-sm">
               {item?.title}
             </h1>
-            <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook  leading-8 mt-2 text-wrap break-words">{item?.desc}</p>
+            <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook  leading-8 mt-2 text-wrap break-words">{item?.description}</p>
           
             </div>
           
@@ -44,7 +44,7 @@ const RoomType = ({data}:roomProps) => {
       {/* border box for facilities */}
       <div className="w-4/5 flex border border-gray-600 h-auto">
         <div className="w-[95%] mx-auto p-5">
-        <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter my-2">Room Facilities</h1>
+        <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-medium leading-7 tracking-tighter my-2">Room Facilities</h1>
         <div className="lg:text-sm text-xs text-black 2xl:text-xl font-GothamBook ml-3 mb-5">
           <p>- Welcome Drink</p>
           <p>- 02 Mineral Water Bottle</p>
@@ -63,14 +63,6 @@ const RoomType = ({data}:roomProps) => {
           <p>- Wifi Connection (on request)</p>
 
         </div>
-
-        <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook ml-3"></p>
-        <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook ml-3"></p>
-        <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook ml-3"></p>
-        <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook ml-3"></p>
-        <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook ml-3"></p>
-        <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook ml-3"></p>
-        <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook ml-3"></p>
         </div>
       </div>
     </div>
