@@ -161,13 +161,13 @@ function Index() {
         </Swiper>
         {/* </div> */}
       </div>
-      <div className="w-11/12 lg:w-3/4 mx-auto flex lg:flex-row justify-between flex-col gap-10">
-        <div className="w-full lg:w-3/5 mx-auto">
-          <div className="2xl:px-10 mt-5">
+      <div className="w-11/12 lg:w-3/4 mx-auto 2xl:w-[3/4] flex lg:flex-row justify-between flex-col gap-10">
+        <div className="w-full lg:w-3/5 mx-auto text-left">
+          <div className="2xl:px-10 mt-5 ">
             {isPending ? (
               <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
             ) : (
-              <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter ">
+              <h1 className="text-base lg:text-lg 2xl:text-[26px]  text-red-600 font-GothamBook font-extrabold leading-7 tracking-tighter ">
                 {data?.getNightStayById?.title}
               </h1>
             )}

@@ -28,7 +28,7 @@ function index() {
     <div className="w-full">
       <div className="w-full aspect-[1920/490] min-h-[300px] flex flex-col items-center overflow-hidden relative">
         <Image
-          src="/hero.png"
+          src="/about.jpg"
           alt=""
           sizes="100%"
           layout="fill"
@@ -74,7 +74,7 @@ function index() {
             <h1 className="lg:text-3xl text-xl 2xl:text-5xl font-GothamBook font-bold px-4">
               Our History
             </h1>
-            <p className=" text-lg 2xl:text-xl font-GothamBook font-semibold lg:w-[650px] mt-4 px-4">
+            <p className=" text-xs 2xl:text-xs font-GothamBook font-normal lg:w-[650px] mt-4 px-4">
               {`Jim corbett was established by a group of indeviduals united by their love for nature and wildlife. Recognising the need for concerted efforts to conserve the region's unique flora founa, they came together to form an organization committed to the preservation of Jim corbett National Park. Since the then, our organization has grown and evolved, but our commitment to conservation remains steadfast.`}
             </p>
           </div>
@@ -94,7 +94,7 @@ function index() {
       <div className="lg:w-3/4 mx-auto mt-20">
         <div className="px-4">
           <h1 className="text-3xl font-GothamBook font-bold">What We Do:</h1>
-          <p className="text-lg font-GothamBook font-semibold">
+          <p className="text-xs 2xl:text-xs font-GothamBook font-normal">
             At Jim Corbett, we engage in a veriety of initiative aimed at
             preserving the natural heritage of the region:
           </p>
@@ -109,7 +109,7 @@ function index() {
             <h1 className="lg:text-xl 2xl:text-2xl font-GothamBook font-bold">
               WildLife Conservation
             </h1>
-            <p className="text-lg 2xl:text-xl font-GothamBook font-semibold mt-3 lg:w-[600px] 2xl:w-[950px]">
+            <p className="text-xs 2xl:text-xs font-GothamBook font-normal mt-3 lg:w-[600px] 2xl:w-[950px]">
               We Collaborate with local communities, government agencies, and
               conservation organizations to implement stratagies for the
               protection of endangered species and their habbits.
@@ -121,14 +121,14 @@ function index() {
             <h1 className="lg:text-xl 2xl:text-2xl font-GothamBook font-bold lg:text-end">
               Eco-Tourism:
             </h1>
-            <p className="text-lg 2xl:text-xl font-GothamBook font-semibold mt-4 lg:text-end">
+            <p className="text-xs 2xl:text-xs font-GothamBook font-normal mt-4 lg:text-end">
               Our guid tour and experiential programs offers visitors the
               oppurtunity to
             </p>
-            <p className="text-xl font-GothamBook font-semibold lg:text-end">
+            <p className="text-xs 2xl:text-xs font-GothamBook font-normal lg:text-end">
               Explore the wonder of Jim Corbett National Park while
             </p>
-            <p className="text-xl font-GothamBook font-semibold lg:text-end">
+            <p className="text-xs 2xl:text-xs  font-GothamBook font-normal lg:text-end">
               minimising their ecological footprint
             </p>
           </div>
@@ -148,7 +148,7 @@ function index() {
             <h1 className="lg:text-xl 2xl:text-2xl font-GothamBook font-bold">
               Education and Outreach:
             </h1>
-            <p className="text-lg 2xl:text-xl font-GothamBook font-semibold mt-4 lg:w-[600px] 2xl:w-[900px]">
+            <p className="text-xs 2xl:text-xs font-GothamBook font-normal mt-4 lg:w-[600px] 2xl:w-[900px]">
               Through workshops, seminars, and educational programs, we strive
               to raise awareness about the importance of conversation,
               biodiversity, and sustainable living practices.
@@ -170,7 +170,7 @@ function index() {
         </div>
       </div>
       <OurGuestLoveUs className="!mt-0" />
-      <div className="pt-12 pb-6">
+      <div className="">
         <Go />
       </div>
       <Nfooter />
