@@ -26,7 +26,6 @@ function index() {
   ];
   return (
     <div className="w-full">
-
       <div className="w-full aspect-[1920/490] min-h-[300px] flex flex-col items-center overflow-hidden relative">
         <Image
           src="/hero.png"
@@ -69,13 +68,13 @@ function index() {
           </p>
         </div>
       </div>
-      <div className="w-full lg:w-11/12 mt-20 grid grid-col-1 lg:grid-cols-3 2xl:grid-cols-2">
+      <div className="w-full lg:w-11/12  mt-20 grid grid-col-1 lg:grid-cols-3 2xl:grid-cols-2">
         <div className="w-full flex flex-col lg:items-end lg:col-span-2 2xl:col-span-1">
           <div>
             <h1 className="lg:text-3xl text-xl 2xl:text-5xl font-Gotham font-bold px-4">
               Our History
             </h1>
-            <p className="lg:text-sm text-sm 2xl:text-lg font-Gotham font-medium lg:w-[600px] mt-4 px-4">
+            <p className=" text-lg 2xl:text-xl font-Gotham font-semibold lg:w-[650px] mt-4 px-4">
               {`Jim corbett was established by a group of indeviduals united by their love for nature and wildlife. Recognising the need for concerted efforts to conserve the region's unique flora founa, they came together to form an organization committed to the preservation of Jim corbett National Park. Since the then, our organization has grown and evolved, but our commitment to conservation remains steadfast.`}
             </p>
           </div>
@@ -94,7 +93,7 @@ function index() {
 
       <div className="lg:w-3/4 mx-auto mt-20">
         <div className="px-4">
-          <h1 className="text-3xl font-Gotham font-semibold">What We Do:</h1>
+          <h1 className="text-3xl font-Gotham font-bold">What We Do:</h1>
           <p className="text-lg font-Gotham font-semibold">
             At Jim Corbett, we engage in a veriety of initiative aimed at
             preserving the natural heritage of the region:

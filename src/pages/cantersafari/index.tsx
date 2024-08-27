@@ -66,7 +66,7 @@ function index() {
           </p>
         </div>
       </div>
-      <div className="w-11/12 mt-20 grid grid-col-1 lg:grid-cols-3 2xl:grid-cols-2">
+      <div className="md:w-11/12 w-full mt-20 grid grid-col-1 lg:grid-cols-3 2xl:grid-cols-2">
         <div className="w-full flex flex-col lg:items-end lg:col-span-2 2xl:col-span-1">
           <div>
             <h1 className="lg:text-3xl text-xl 2xl:text-5xl font-Gotham font-bold px-4">

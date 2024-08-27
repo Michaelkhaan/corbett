@@ -92,7 +92,7 @@ function Index() {
 
       <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <div className="w-full md:w-auto text-start">
-          <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
+          <h1 className="w-full text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-wrap lg:whitespace-nowrap">
             {data?.getPackageById?.name}
           </h1>
           {data?.getPackageById?.night || data?.getPackageById?.day ? (
@@ -179,7 +179,7 @@ function Index() {
             {isPending ? (
               Array.from({ length: 6 }).map((e, index) => (
                 <div
-                key={index?.toString()}
+                  key={index?.toString()}
                   className={`bg-slate-200 animate-pulse h-2 mt-1 ${
                     index === 5 ? "w-1/2" : ""
                   }`}
@@ -197,11 +197,17 @@ function Index() {
           ) : null}
           <div className="w-full mx-auto pb-5 mt-14">
             {!!data?.getPackageById?.Inclusions?.length || isPending ? (
-              <Package data={data?.getPackageById?.Inclusions as any} isLoading={isPending} />
+              <Package
+                data={data?.getPackageById?.Inclusions as any}
+                isLoading={isPending}
+              />
             ) : null}
 
             {!!data?.getPackageById?.Exclusions?.length || isPending ? (
-              <Packageexc data={data?.getPackageById?.Exclusions as any} isLoading={isPending} />
+              <Packageexc
+                data={data?.getPackageById?.Exclusions as any}
+                isLoading={isPending}
+              />
             ) : null}
           </div>
 
@@ -211,7 +217,10 @@ function Index() {
         </div>
         <div className="w-full lg:w-2/6 mx-auto mt-6">
           {data?.getPackageById?.Highlights?.length || isPending ? (
-            <Highlight data={data?.getPackageById?.Highlights as any} isLoading={isPending} />
+            <Highlight
+              data={data?.getPackageById?.Highlights as any}
+              isLoading={isPending}
+            />
           ) : null}
           <div className="w-full mt-5">
             {data?.getPackageById?.Includes?.length || isPending ? (

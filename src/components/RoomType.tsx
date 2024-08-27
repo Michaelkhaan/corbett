@@ -1,19 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-const RoomType = () => {
-  const rooms = [
-    {
-      image: "/jeephero.png",
-      title: "Executive Non Hill (5 Rooms)",
-      desc: "Our representative will receive you at the airport and escort you to the Jungle Book Resort. Enjoy a traditional welcome drink and relish the stunning views of the surrounding jungle.",
-    },
-    {
-      image: "/jeephero.png",
-      title: "Executive Non Hill (5 Rooms)",
-      desc: "Our representative will receive you at the airport and escort you to the Jungle Book Resort. Enjoy a traditional welcome drink and relish the stunning views of the surrounding jungle.",
-    },
-  ];
+interface roomProps{
+  data: any 
+}
+const RoomType = ({data}:roomProps) => {
+  const roomsData = data?.getNightStayById?.Rooms || [];
   return (
     <div>
       <div>
@@ -21,8 +13,8 @@ const RoomType = () => {
           Room Types
         </h1>
       </div>
-      {rooms?.map((item:any,index) => (
-        <div key={index} className="flex flex-col">
+      {roomsData?.map((item:any,index:any) => {
+        return <div key={index} className="flex flex-col">
          <div className="flex py-4">
          <div className="w-[800px] h-[150px] relative">
             <Image
@@ -44,11 +36,11 @@ const RoomType = () => {
          </div>
          <p
             className={`w-full mb-2 ${
-              index !== (rooms.length -1) ? 'border-b' : ''
+              index !== (data.length -1) ? 'border-b' : ''
             }`}
           ></p>
         </div>
-      ))}
+ } )}
       {/* border box for facilities */}
       <div className="w-4/5 flex border border-gray-600 h-auto">
         <div className="w-[95%] mx-auto p-5">
