@@ -90,9 +90,9 @@ function Index() {
         </div>
       </div>
 
-      <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-        <div className="w-full md:w-auto text-start">
-          <h1 className="w-full text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-wrap lg:whitespace-nowrap">
+      <div className="w-11/12 lg:w-3/4 2xl:w-[3/4] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 ">
+        <div className="w-full md:w-auto text-left">
+          <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter  ">
             {data?.getPackageById?.name}
           </h1>
           {data?.getPackageById?.night || data?.getPackageById?.day ? (
@@ -165,13 +165,13 @@ function Index() {
         </Swiper>
         {/* </div> */}
       </div>
-      <div className="w-11/12 lg:w-3/4 mx-auto flex lg:flex-row justify-between flex-col gap-10">
-        <div className="w-full lg:w-3/5 mx-auto">
-          <div className="2xl:px-10 mt-5">
+      <div className="w-11/12 lg:w-3/4 mx-auto 2xl:w-3/4  flex lg:flex-row justify-between flex-col gap-10">
+        <div className="w-full lg:w-3/4 mx-auto text-left 2xl:text-left">
+          <div className=" mt-5">
             {isPending ? (
               <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
             ) : (
-              <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter ">
+              <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook  font-extrabold leading-7 tracking-tighter ">
                 {data?.getPackageById?.title}
               </h1>
             )}
@@ -186,7 +186,7 @@ function Index() {
                 />
               ))
             ) : (
-              <p className="lg:text-sm text-xs 2xl:text-xl font-GothamBook leading-8 mt-2 text-wrap break-words">
+              <p className="lg:text-xs text-xs 2xl:text-xl font-GothamBook leading-8 mt-2 text-wrap break-words">
                 {data?.getPackageById?.description}
               </p>
             )}

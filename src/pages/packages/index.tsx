@@ -64,7 +64,7 @@ function Index() {
           Best priced packages with in your budget
         </h1>
 
-        <div className="w-11/12 lg:w-1/2 2xl:w-2/6 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
+        <div className="w-11/12 lg:w-[60%] 2xl:w-2/6 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
           <div
             className={`${
               selectedPrice?.id === 1
@@ -73,7 +73,7 @@ function Index() {
             } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
             onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
           >
-            <h1 className="text-[10px] font-GothamBook">Less than Rs 10,000</h1>
+            <h1 className="text-xm leading-4 font-GothamBook text-nowrap">Less than Rs 10,000</h1>
           </div>
           <div
             className={`${
@@ -83,7 +83,7 @@ function Index() {
             } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
             onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
           >
-            <h1 className="text-xs font-GothamBook">Rs 10,000 to Rs 20,000</h1>
+            <h1 className="text-xm leading-4 font-GothamBook text-nowrap ">Rs 10,000 to Rs 20,000</h1>
           </div>
           <div
             className={`${
@@ -93,7 +93,7 @@ function Index() {
             } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
             onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
           >
-            <h1 className="text-[10.74px] leading-4 font-GothamBook">
+            <h1 className="text-xm leading-4 font-sans">
               Rs 30,000 to Rs 50,000
             </h1>
           </div>

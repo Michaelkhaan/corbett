@@ -12,8 +12,8 @@ import {
 export default function Nfooter() {
   return (
     <>
-    <div className="w-full bg-[#F8F9FD] py-3">
-      <div className="border rounded-full p-2 flex items-center justify-center bg-black fixed lg:right-10 lg:bottom-20 bottom-4 right-4 z-50 ">
+    <div className="w-full bg-[#F8F9FD] ">
+      <div className="border rounded-full  flex items-center justify-center bg-black fixed lg:right-10 lg:bottom-20 bottom-4 right-4 p-2 z-50 ">
         {/* <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center animate-shake"> */}
         <a href="https://wa.me/919837166431" target="_blank">
           <FaWhatsapp className="lg:text-2xl text-base text-[#47e1d9]" />

@@ -9,7 +9,7 @@ const RoomType = ({data}:roomProps) => {
   return (
     <div>
       <div>
-        <h1 className="w-4/5 text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter my-5">
+        <h1 className="w-4/5 text-red-600 text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter my-5">
           Room Types
         </h1>
       </div>

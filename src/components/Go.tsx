@@ -1,7 +1,7 @@
 const Go=()=>{
 
     return(
-        <div className="w-full mt-10">
+        <div className="w-full ">
         {/* <h1 className="text-lg font-semibold font-GothamBook text-center leading-6 text-base ">
           LET YOUR <span className="font-[400]">SAFARI TOUR</span> WITH SPECIAL OFFERS AND DEAL
         </h1>
