@@ -14,7 +14,7 @@ interface Props {
 function PriceCard({ name, title, subtitle, desc, subdesc, image }: Props) {
   return (
     <div className="w-full bg-white rounded-lg shadow-card px-3 py-6">
-      <span className="w-14 text-5xl  aspect-square border-2 border-primary text-primary rounded-full flex items-center justify-center">
+      <span className="w-14 text-5xl  aspect-square border-2 border-primary text-primary  flex items-center justify-center">
         {/* <Image
           src={image}
           alt=""

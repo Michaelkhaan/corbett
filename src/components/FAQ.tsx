@@ -66,20 +66,20 @@ function FAQ({ question, id, answer }: Props) {
       onClick={() => handleToggle(id)}
     >
       <div className="flex justify-between items-center w-full">
-        <h1 className="font-gotham 2xl:text-base text-sm text-gray-600">
+        <h1 className="font-Gotham 2xl:text-base text-sm text-gray-600">
           {" "}
           {question}
         </h1>
         <span className="w-6 aspect-square bg-black rounded-full flex items-center justify-center">
           <TiMediaPlay
-            className={`text-white transition-transform duration-300 ease-in-out ${
+            className={`text-white transition-transform duration-[500ms] ease-in-out ${
               openId === id ? "rotate-90" : ""
             }`}
           />
         </span>
       </div>
       <div
-        className={`w-full text-black transition-all duration-[2000ms] ease-in-out overflow-hidden ${
+        className={`w-full text-black transition-all duration-[500ms] ease-in-out overflow-hidden ${
           openId === id ? "max-h-screen" : "max-h-0"
         }`}
       >

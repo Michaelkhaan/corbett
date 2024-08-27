@@ -287,9 +287,9 @@ export default function Home() {
               <h1 className="lg:text-xl 2xl:text-2xl font-bold font-Gotham lg:w-[300px] 2xl:w-[400px] w-full">
                 FAQ Regarding Travels
               </h1>
-              <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham text-black">
+              {/* <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-Gotham text-black">
                 Enquire Now
-              </button>
+              </button> */}
             </div>
             <div className="lg:col-span-5 col-span-12">
               {faq?.map((e, index) => (
@@ -304,9 +304,9 @@ export default function Home() {
           </div>
         </div>
         <PriceAndZone />
-        <div className="w-full 2xl:w-[70%] mx-auto mt-20 px-4 lg:px-32 2xl:px-16">
+        <div className="w-full 2xl:w-[70%] mx-auto my-20 px-4 lg:px-32 2xl:px-16">
           <h1 className="text-xl lg:text-2xl font-medium text-gray-700 font-Ghotam text-center">
-            All inclusive tours, Chalo Bag Bharo Nikal Pado
+            All inclusive tours, Start your journey today! 
           </h1>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {tourCard?.map((e, index) => (

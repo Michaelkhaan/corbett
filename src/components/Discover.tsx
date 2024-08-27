@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa6";
 
 export default function Discover() {
   const swiperRef = useRef<SwiperRef | null>(null);
@@ -112,24 +113,38 @@ export default function Discover() {
               {/* <button className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded">
                 Enquire now
               </button> */}
-              <button
-  className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-gotham px-5 py-1 rounded"
+
+              <a
+                href="https://wa.me/919837166431"
+                className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-Gotham px-5 py-1 rounded flex gap-2"
+                target="_blank"
+              >
+                <FaWhatsapp className="lg:text-2xl text-base text-black" />
+                 Enquiry
+              </a>
+              {/* <button
+  className=""
   onClick={() => window.location.href = 'tel:1800 22 7979'} // Replace with the actual number
 >
-  Enquire now
-</button>
+  WhatsApp Enquire
+</button> */}
 
               <p className="">or</p>
               <div className="flex items-center gap-1">
                 <Image
-                onClick={() => window.location.href = 'tel:1800 22 7979'} 
+                  onClick={() => (window.location.href = "tel:1800 22 7979")}
                   src="/telephone.svg"
                   className="opacity-65 cursor-pointer"
                   alt=""
                   width={20}
                   height={20}
                 />
-                <p className="text-lg font-bold text-[#2E488B] cursor-pointer"onClick={() => window.location.href = 'tel:1800 22 7979'} >1800 22 7979</p>
+                <p
+                  className="text-lg font-bold text-[#2E488B] cursor-pointer"
+                  onClick={() => (window.location.href = "tel:1800 22 7979")}
+                >
+                  1800 22 7979
+                </p>
               </div>
             </div>
           </div>

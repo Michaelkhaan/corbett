@@ -7,15 +7,35 @@ interface Props {
 }
 
 const testimonials = [
-  "Our trip to Jim Corbett was absolutely seamless, thanks to the exceptional services provided! Every detail, from the safari bookings to the cozy accommodations, was meticulously arranged. The team’s local expertise made our experience truly unforgettable. We can't wait to book with them again!",
+  {
+    desc: "Our trip to Jim Corbett was absolutely seamless, thanks to the exceptional services provided! Every detail, from the safari bookings to the cozy accommodations, was meticulously arranged. The team’s local expertise made our experience truly unforgettable. We can't wait to book with them again!",
+    name: "Sakshi Thakur",
+    designation: "Director seta media Pune",
+  },
 
-  "We had the most amazing wildlife adventure at Jim Corbett, all thanks to the top-notch service. The personalised attention and well-planned itinerary allowed us to fully immerse ourselves in the beauty of the park. A must-book for anyone seeking a hassle-free and memorable experience!",
+  {
+    desc: "We had the most amazing wildlife adventure at Jim Corbett, all thanks to the top-notch service. The personalised attention and well-planned itinerary allowed us to fully immerse ourselves in the beauty of the park. A must-book for anyone seeking a hassle-free and memorable experience!",
+    name: "Amit Singh",
+    designation: "Civil Engineering Mumbai",
+  },
 
-  "From the moment we arrived, everything was perfectly organised. The knowledgeable guides, comfortable stay, and thrilling safaris made our Jim Corbett trip one of the best we’ve ever had. Highly recommended for anyone looking to explore this stunning destination!",
+  {
+    desc: "From the moment we arrived, everything was perfectly organised. The knowledgeable guides, comfortable stay, and thrilling safaris made our Jim Corbett trip one of the best we’ve ever had. Highly recommended for anyone looking to explore this stunning destination!",
+    name: "Muhammad Shikh",
+    designation: "Nyra backery, Delhi",
+  },
 
-  "Our Jim Corbett experience was incredible, thanks to the flawless arrangements. The team ensured that every aspect of our trip, including transport, safari, and lodging, was taken care of with precision. Their attention to detail made our vacation truly enjoyable and stress-free!",
+  {
+    desc: "Our Jim Corbett experience was incredible, thanks to the flawless arrangements. The team ensured that every aspect of our trip, including transport, safari, and lodging, was taken care of with precision. Their attention to detail made our vacation truly enjoyable and stress-free!",
+    name: "Narendra Gulati",
+    designation: "CEO feel brand, Ludhiyana",
+  },
 
-  "A huge thank you to the team for organising such a wonderful Jim Corbett trip for us. The safari experience was exhilarating, and the hospitality was beyond our expectations. We felt completely taken care of throughout our stay. We highly recommend their services!",
+  {
+    desc: "A huge thank you to the team for organising such a wonderful Jim Corbett trip for us. The safari experience was exhilarating, and the hospitality was beyond our expectations. We felt completely taken care of throughout our stay. We highly recommend their services!",
+    name: "Shrikrishna Nayyar",
+    designation: "Architecture Bangalore",
+  },
 ];
 
 export default function OurGuestLoveUs({ className }: Props) {
@@ -62,7 +82,12 @@ export default function OurGuestLoveUs({ className }: Props) {
                 className="w-8 aspect-square object-cover rounded-full"
               />
 
-              <p className="text-[0.80rem] font-GothamBook ">{item}</p>
+              <p className="text-[0.80rem] font-GothamBook text-justify ">
+                {item?.desc}
+                <br />
+                <span className="font-bold text-[12px]">{item?.name}, </span>
+                {item?.designation}
+              </p>
             </div>
           </SwiperSlide>
         ))}
