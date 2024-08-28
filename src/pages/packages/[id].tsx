@@ -111,10 +111,10 @@ function Index() {
         </div>
         <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row  pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
           <div className="w-full md:w-auto text-start">
-            <h1 className="text-xm 2xl:w-[150px] lg:text-base 2xl:text-[16px] font-GothamBook 2xl:break-words font-regular leading-[2px]">
+            <h1 className="text-xm 2xl:w-[150px] lg:text-base 2xl:text-[16px] font-GothamBook 2xl:break-words font-regular leading-[20px] lg:leading-[20px]">
               Start From
             </h1>
-            <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[1rem]">
+            <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[20px]">
               <span className="lg:text-2xl">
               ₹
               </span>
