@@ -78,7 +78,7 @@ function NaveBar({ className }: Props) {
           </ul>
           <div className="lg:flex items-center 2xl:gap-5 lg:gap-2 hidden">
             <a href="https://wa.me/919837166431" target="_blank">
-              <FaWhatsapp className="text-green-600 2xl:text-xl  lg:text-sm " />
+              <FaWhatsapp className="text-green-600 2xl:text-xl  lg:text-sm "  fill="#47e1d9"/>
             </a>
             <h1 className="2xl:text-sm lg:text-xs text-white">
               info@corbett.in
