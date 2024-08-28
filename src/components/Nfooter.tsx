@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
-import { BsFacebook, BsYoutube } from "react-icons/bs";
+import { BsYoutube } from "react-icons/bs";
 import {
   FaFacebookF,
   FaInstagram,

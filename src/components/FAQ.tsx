@@ -67,7 +67,6 @@ function FAQ({ question, id, answer }: Props) {
     >
       <div className="flex justify-between items-center w-full">
         <h1 className="font-GothamBook 2xl:text-base text-sm text-gray-600">
-          {" "}
           {question}
         </h1>
         <span className="w-6 aspect-square bg-black rounded-full flex items-center justify-center">
@@ -84,7 +83,7 @@ function FAQ({ question, id, answer }: Props) {
           openId === id ? "max-h-screen" : "max-h-0"
         }`}
       >
-        <div className="py-2 text-gray-600">{answer}</div>
+        <div className="py-2 text-gray-600 text-[11px]">{answer}</div>
       </div>
     </div>
   );

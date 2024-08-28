@@ -116,7 +116,7 @@ export default function Discover() {
 
               <a
                 href="https://wa.me/919837166431"
-                className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-GothamBook px-5 py-1 rounded flex gap-2"
+                className="bg-[#f8bd01] w-[180px] text-gray-700 font-medium text-base font-GothamBook px-5 py-1 rounded flex gap-2 items-center justify-center"
                 target="_blank"
               >
                 <FaWhatsapp className="lg:text-2xl text-base text-black" />

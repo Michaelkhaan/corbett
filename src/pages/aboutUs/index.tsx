@@ -400,7 +400,7 @@ const data = [
     {
       question: "Contact Us",
       answer:
-        "Questions, comments, or interested in getting involved? Don't hesitate to reach out to us. You can find our contact information",
+        "Questions, comments, or interested in getting involved? Don't hesitate to reach out to us. You can find our contact information ",
     },
   ];
 

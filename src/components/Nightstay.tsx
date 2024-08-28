@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import {
-  useAddNightStayMutation,
-} from "@/queries/generated";
+import { useAddNightStayMutation } from "@/queries/generated";
 import { toast } from "react-toastify";
 import Spinner from "./spinner";
 import uploadFile from "@/utils/uploadFile";
@@ -122,19 +120,19 @@ function AddnewNightStay({ onClose }: Props) {
     remove: removeExclusion,
   } = useFieldArray({ control, name: "exclusion" });
 
-  const { mutateAsync, isPending } = useAddNightStayMutation()
+  const { mutateAsync, isPending } = useAddNightStayMutation();
 
   const onSubmit = async (data: any) => {
     try {
       await mutateAsync({
         name: data.packageName,
-        location: "", 
+        location: "",
         title: data.title,
         price: parseFloat(data.pricePerPerson),
         images: data.images,
         description: data.description,
-        prices: data.prices?.map((item:any)=>({
-          name:item?.name
+        prices: data.prices?.map((item: any) => ({
+          name: item?.name,
         })),
         includes: data.tourIncludes.map((item: any) => ({
           image: item.image,
@@ -163,7 +161,7 @@ function AddnewNightStay({ onClose }: Props) {
     }
     console.log(data);
   };
-  
+
   const upload = async (e: any, field: any) => {
     try {
       const file = e.target.files[0];
@@ -366,8 +364,8 @@ function AddnewNightStay({ onClose }: Props) {
         </div>
 
         <div className="selectImage rounded-lg px-5 py-4 mt-5">
-          <h1 className="text-lg font-semibold">Tour Includes</h1>
-          {tourIncludesFields.map((item, index) => (
+          <h1 className="text-lg font-semibold">Amenities</h1>
+          {tourIncludesFields.map((item: any, index: number) => (
             <div key={item.id} className="flex gap-2 flex-col mt-2">
               {/*@ts-ignore */}
               {watch(`tourIncludes[${index}].image`) || null ? (
@@ -420,7 +418,7 @@ function AddnewNightStay({ onClose }: Props) {
               onClick={() => appendTourIncludes({ image: null, name: "" })}
               className="bg-blue-600 w-full min-[500px]:w-auto text-white rounded-lg px-3 py-1"
             >
-              Add Includes
+              Add Amenities
             </button>
           </div>
         </div>
@@ -462,14 +460,14 @@ function AddnewNightStay({ onClose }: Props) {
         </div>
 
         <div className="selectImage rounded-lg px-5 py-4 mt-5">
-          <h1 className="text-lg font-semibold">Inclusions</h1>
+          <h1 className="text-lg font-semibold">Room Facilities</h1>
           {inclusionField.map((item, index) => (
             <div key={item.id} className="mb-4 mt-4">
               <label>Title</label>
               <input
                 {...register(`inclusion.${index}.title`)}
                 className="w-full border-2 rounded-lg py-2 px-2 mt-2"
-                placeholder={`Inclusion ${index + 1}`}
+                placeholder={`Room Facilities ${index + 1}`}
               />
               {errors.inclusion && errors.inclusion[index]?.title && (
                 <p className="text-red-500">
@@ -492,12 +490,12 @@ function AddnewNightStay({ onClose }: Props) {
               onClick={() => appendInclusionField({ title: "" })}
               className="bg-blue-600 w-full min-[500px]:w-auto text-white rounded-lg px-3 py-1"
             >
-              Add Inclusion
+              Add Room Facilities
             </button>
           </div>
         </div>
 
-        <div className="selectImage rounded-lg px-5 py-4 mt-5">
+        {/* <div className="selectImage rounded-lg px-5 py-4 mt-5">
           <h1 className="text-lg font-semibold">Exclusions</h1>
           {exclusionField.map((item, index) => (
             <div key={item.id} className="mb-4 mt-4">
@@ -531,7 +529,7 @@ function AddnewNightStay({ onClose }: Props) {
               Add Inclusion
             </button>
           </div>
-        </div>
+        </div> */}
 
         <div className="selectImage rounded-lg px-5 py-4 mt-5">
           <h1 className="text-lg font-semibold">Faqs</h1>

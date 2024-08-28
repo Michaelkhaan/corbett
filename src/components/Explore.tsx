@@ -41,12 +41,12 @@ function Explore() {
     <>
       <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-10 bg-white gap-y-10">
         <div className="flex w-full lg:w-1/4 items-start px-4 bg-transparent ">
-          <div className="mx-auto flex flex-col  items-center bg-transparent">
+          <div className="lg:mx-auto flex flex-col  items-start bg-transparent">
             <h1 className="2xl:text-[29px] text-xl font-bold font-GothamBook">
               BOOK A PERMIT
             </h1>
-            <p className="2xl:text-[20px] 2xl:leading-6 text-xs font-GothamBook text-center lg:text-left ">
-              FOR JUNGLE SAFFARI CORBETT TOURISM
+            <p className="2xl:text-[20px] 2xl:leading-6 text-xs font-GothamBook lg:text-left ">
+              FOR JUNGLE SAFFARI <br/> CORBETT TOURISM
             </p>
             <button
               onClick={() => setModal(true)}

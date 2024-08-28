@@ -8,11 +8,11 @@ interface Data {
   image: string;
 }
 
-export default function Touricons({ data , isLoading }: { data: Data[] , isLoading?:boolean }) {
+export default function Touricons({ data , isLoading , name = "" }: { data: Data[] , isLoading?:boolean , name ?: string }) {
   return (
     <div className="border border-[#5d5d5d] w-full bg-[#2d2e2500] pb-3">
       <h1 className="text-[16px] text-[#000000] font-bold font-frinkRio leading-[26px] px-5 lg:px-14 py-6">
-        Tour includes
+        {name || "Tour includes"}
       </h1>
       <div className="grid grid-cols-3 items-center justify-center gap-y-4 px-3 lg:px-8">
       {isLoading ? Array.from({ length: 3 }).map((e, index) => (

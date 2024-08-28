@@ -51,7 +51,6 @@ function Index() {
     }
   );
 
-
   const { data: packages } = useGetAllNightStayQuery({
     startPrice: selectedPrice?.start,
     endPrice: selectedPrice?.end,
@@ -85,7 +84,7 @@ function Index() {
             className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
             onClick={() => router.push("/nightstay")}
           >
-        Resort <span className="pl-[3px] mt-[1px]">{">"}</span>
+            Resort <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
           <p className=" pr-1 font-GothamBook text-[10px] font-bold flex items-center">
             {data?.getNightStayById?.name}{" "}
@@ -94,14 +93,14 @@ function Index() {
         </div>
       </div>
 
-      <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      {/* <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <div className="w-full md:w-auto text-start">
           <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
             {data?.getNightStayById?.name}
           </h1>
-          {data?.getNightStayById?.location  ? (
+          {data?.getNightStayById?.location ? (
             <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-GothamBook font-bold">
-            {data?.getNightStayById?.location}
+              {data?.getNightStayById?.location}
             </p>
           ) : null}
         </div>
@@ -126,6 +125,40 @@ function Index() {
           </div>
           <div
             className="w-full md:w-auto flex justify-start sm:justify-end"
+            onClick={onClick}
+          >
+            <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-GothamBook font-medium ">
+              ENQUERY
+            </button>
+          </div>
+        </div>
+      </div> */}
+      <div className="w-11/12 lg:w-3/4 2xl:w-[3/4] mx-auto  flex flex-col md:flex-row md:items-center md:justify-between gap-2 ">
+        <div className="w-full md:w-auto text-left ">
+          <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter  ">
+            {data?.getNightStayById?.name}
+          </h1>
+          {data?.getNightStayById?.location ? (
+            <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-GothamBook font-bold">
+              {data?.getNightStayById?.location}
+            </p>
+          ) : null}
+        </div>
+        <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row  pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
+          <div className="w-full md:w-auto text-start">
+            <h1 className="text-xm 2xl:w-[150px] lg:text-base 2xl:text-[16px] font-GothamBook 2xl:break-words font-regular leading-[20px] lg:leading-[20px]">
+              Start From
+            </h1>
+            <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[20px]">
+              <span className="lg:text-2xl">
+              ₹
+              </span>
+              {data?.getNightStayById?.price}*
+            </p>
+            <p className="text-[12px] font-GothamBook leading-[8px]">per person</p>
+          </div>
+          <div
+            className="w-full md:w-auto flex justify-end"
             onClick={onClick}
           >
             <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-GothamBook font-medium ">
@@ -175,7 +208,7 @@ function Index() {
             {isPending ? (
               Array.from({ length: 6 }).map((e, index) => (
                 <div
-                key={index?.toString()}
+                  key={index?.toString()}
                   className={`bg-slate-200 animate-pulse h-2 mt-1 ${
                     index === 5 ? "w-1/2" : ""
                   }`}
@@ -188,20 +221,23 @@ function Index() {
             )}
           </div>
           <div className="w-11/12 border-b border-gray-700 mt-5" />
-          {/* {data?.getPackageById?.Itinerary?.length ? (
-            <ItenararyList data={data?.getPackageById?.Itinerary} />
-          ) : null} */}
-         <RoomType data={data} />
+          <RoomType data={data}  />
 
-          <div className="w-full mx-auto pb-5 mt-14">
+          {/* <div className="w-full mx-auto pb-5 mt-14">
             {!!data?.getNightStayById?.Inclusions?.length || isPending ? (
-              <Package data={data?.getNightStayById?.Inclusions as any} isLoading={isPending} />
+              <Package
+                data={data?.getNightStayById?.Inclusions as any}
+                isLoading={isPending}
+              />
             ) : null}
 
             {!!data?.getNightStayById?.Exclusions?.length || isPending ? (
-              <Packageexc data={data?.getNightStayById?.Exclusions as any} isLoading={isPending} />
+              <Packageexc
+                data={data?.getNightStayById?.Exclusions as any}
+                isLoading={isPending}
+              />
             ) : null}
-          </div>
+          </div> */}
 
           {data?.getNightStayById?.Faqs?.length ? (
             <FaqList data={data?.getNightStayById?.Faqs as any} />
@@ -209,11 +245,15 @@ function Index() {
         </div>
         <div className="w-full lg:w-2/6 mx-auto mt-6">
           {data?.getNightStayById?.Prices?.length || isPending ? (
-            <Highlight data={data?.getNightStayById?.Prices as any} isLoading={isPending} />
+            <Highlight
+              data={data?.getNightStayById?.Prices as any}
+              isLoading={isPending}
+            />
           ) : null}
           <div className="w-full mt-5">
             {data?.getNightStayById?.Includes?.length || isPending ? (
               <Touricons
+              name="Amenities"
                 data={data?.getNightStayById?.Includes as any}
                 isLoading={isPending}
               />
@@ -275,23 +315,6 @@ function Index() {
               subtitle={e?.subtitle}
             />
           ))}
-        </div>
-        <div className="w-full mt-8 lg:mt-24 mb-8 lg:mb-16">
-          <h1 className="text-lg font-medium font-GothamBook text-center">
-            LET YOUR{" "}
-            <span className="text-lg font-bold font-GothamBook">SAFFARI TOUR</span>{" "}
-            WITH SPECIAL OFFERS AND DEALS!
-          </h1>
-          <div className="w-full flex items-center justify-center gap-2 mt-3 pb-5 px-4">
-            <input
-              type="text"
-              placeholder="+91 000000000"
-              className="border border-black outline-none bg-transparent px-2 py-1 w-full lg:w-1/5"
-            />
-            <button className="bg-black rounded-sm px-4 py-1 text-white font-bold">
-              GO
-            </button>
-          </div>
         </div>
         <Model
           show={open}
