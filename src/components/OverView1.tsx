@@ -26,12 +26,9 @@ const OverView1 = () => {
           </p>
         </div>
         <div className="lg:mt-0 mt-6">
-          <Image
-            src="/cantersaffari.png"
-            className="w-full lg:w-[300px] 2xl:w-[500px] md:h-auto h-[300px] object-cover "
+          <img
+            src="/dikala.jpg"
             alt="Canter Safari"
-            width={0}
-            height={0}
           />
         </div>
       </div>
@@ -49,7 +46,7 @@ const OverView1 = () => {
         <h1 className="text-lg 2xl:text-2xl font-bold mt-8">
           Food & Other Serivce
         </h1>
-        <p className="text-[14px] 2xl:text-[20px] tracking-wide mb-24 leading-6">
+        <p className="text-[14px] 2xl:text-[20px] tracking-wide mb-12 leading-6">
           A nice Resturant service visitor at hte Dhikala Tourist Complex,
           offers amazing buffets meals with various variaty <br />
           of good qualit foods. There is also a small canteen available for your

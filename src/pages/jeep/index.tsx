@@ -7,6 +7,7 @@ import OurGuestLoveUs from "@/components/OurGuestLoveUs";
 // import Go from "@/components/Go";
 import Nfooter from "@/components/Nfooter";
 import OtherPageHero from "@/components/OtherPageHero";
+import { useState } from "react";
 
 const faq = [
   {
@@ -31,26 +32,48 @@ const faq = [
   },
 ];
 const Jeep = () => {
+
+  const data = [
+    {
+      image: "/Wildlife-sightings.jpg",
+      title: "Wildlife sightings",
+      description:
+        "Witness the untamed beauty of Jim Corbett National Park as you encounter a diverse array of wildlife species, including tigers, leopards, elephants, deer, and more.",
+    },
+    {
+      image: "/Scenic-Landscape.jpg",
+      title: "Scenic Landscape",
+      description:
+        "Experience the stunning beauty of Corbett National Park, with it's dense forests and winding rivers, perfect for capturing unforgettable moments",
+    },
+    {
+      image: "/Bird-Watching.jpg",
+      title: "Bird Watching",
+      description:
+        "Join guided bird watching trips to see over 600 birds species, including colourfull kingfishers and magestic eagles and enjoy the peaceful world of birds",
+    },
+  ];
+  const [open, setOpen] = useState("");
   return (
     <div className="w-full">
-     <OtherPageHero name="Jeep Safari" image="/jeephero.png" />
+      <OtherPageHero name="Jeep Safari" image="/jeephero.png" />
       <div className="w-full mt-5 flex justify-center items-center flex-col">
-        <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-lg text-base mb-2">
+        <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-[21px] text-base mb-2">
           Explore the world with JM Corbett Jeep Safari
         </h1>
-        <p className="text-center w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 lg:text-[15px] text-xs px-4 font-frinkRio ">
+        <p className="text-center leading-[26px] w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 lg:text-[15px] text-xs px-4 font-frinkRio ">
           {
             " Welcome to JM Corbett Jeep Safari,your gateway to adventure in the heart of nature's bounty! Nestled amidst the picturesque landscapes of Jim Corbett National Park our safari experiences offer an unparalleled opportunity to immerse yourself in the beauty and diversity of indian"
           }
         </p>
       </div>
       <div>
-        <OverView />
+        <OverView image="/jeep-safari.jpg"/>
         <div className="w-full mt-12">
           <Experience />
         </div>
         <TariffPrice />
-        <Attractions />
+        <Attractions data={data} />
         <div className=" bg-[#efefee] py-12 mt-16">
           <div className="flex md:w-[70%] w-11/12  mx-auto flex-col justify-start items-start">
             <p className="text-xl font-medium font-GothamBook">
@@ -58,6 +81,8 @@ const Jeep = () => {
             </p>
             {faq?.map((e, index) => (
               <PackageFAQ
+                openId={open}
+                setOpenId={setOpen as any}
                 id={index?.toString()}
                 key={index?.toString()}
                 question={e?.question}

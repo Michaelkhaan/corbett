@@ -17,7 +17,7 @@ function index() {
           <h1 className="text-xl lg:text-2xl 2xl:text-3xl font-GothamBook font-bold">
             Customer Support
           </h1>
-          <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook font-semibold lg:w-[500px] 2xl:w-[600px]">
+          <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook ">
             Our customer support is committed to providing you with extensive
             knwoledge about our tours and procedures. we are here to guide you
             every step of the way, ensuring your travelling experience with
@@ -28,7 +28,7 @@ function index() {
             <h1 className="lg:text-2xl text-xl 2xl:text-3xl font-GothamBook font-bold">
               Address
             </h1>
-            <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook font-semibold mt-5">
+            <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook mt-5">
               Block Road Khatari, Near Durga Mil, <br /> Noori Masjid, Ramnagar
               -244715 distt Nainital <br /> Uttarkand, India
             </p>
@@ -67,7 +67,7 @@ function index() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 lg:-mt-8">
+        <div className="w-full lg:w-1/2">
           {/* <Map address="1600 Amphitheatre Parkway, Mountain View, CA" /> */}
           <iframe
             width="100%"

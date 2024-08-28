@@ -22,7 +22,7 @@ const TraficTable = () => {
     },
   ];
   return (
-    <div className="mt-16">
+    <div className="mt-16 w-full">
       <table className=" w-full border-collapse border border-black">
         <thead className="bg-black">
           <tr>
