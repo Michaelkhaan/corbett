@@ -107,7 +107,7 @@ function Index() {
         </div>
         <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
           <div className="w-full md:w-auto text-start">
-            <h1 className="text-sm lg:text-base 2xl:text-[20px] font-GothamBook font-regular">
+            <h1 className="text-xs lg:text-base 2xl:text-[20px]  font-GothamBook font-regular">
               Start From
             </h1>
             <p className="flex items-center lg:text-2xl text-lg 2xl:text-[32px] font-GothamBook font-bold leading-[28px]">
@@ -167,7 +167,7 @@ function Index() {
             {isPending ? (
               <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
             ) : (
-              <h1 className="text-base lg:text-lg 2xl:text-[26px]  text-red-600 font-GothamBook font-extrabold leading-7 tracking-tighter ">
+              <h1 className="text-base lg:text-lg 2xl:text-[26px]  font-GothamBook font-extrabold leading-7 tracking-tighter ">
                 {data?.getNightStayById?.title}
               </h1>
             )}

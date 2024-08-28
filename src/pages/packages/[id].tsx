@@ -90,9 +90,9 @@ function Index() {
         </div>
       </div>
 
-      <div className="w-11/12 lg:w-3/4 2xl:w-[3/4] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 ">
+      <div className="w-11/12 lg:w-3/4 2xl:w-[3/4] mx-auto  flex flex-col md:flex-row md:items-center md:justify-between gap-2 ">
         <div className="w-full md:w-auto text-left">
-          <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter  ">
+          <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook 2xl:font-extrabold leading-7 tracking-tighter  ">
             {data?.getPackageById?.name}
           </h1>
           {data?.getPackageById?.night || data?.getPackageById?.day ? (
@@ -109,24 +109,24 @@ function Index() {
             </p>
           ) : null}
         </div>
-        <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
+        <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row mb-5 pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
           <div className="w-full md:w-auto text-start">
-            <h1 className="text-sm lg:text-base 2xl:text-[20px] font-GothamBook font-regular">
+            <h1 className="text-xm 2xl:w-[150px] lg:text-base 2xl:text-[16px] font-GothamBook 2xl:break-words font-regular">
               Start From
             </h1>
-            <p className="flex items-center lg:text-2xl text-lg 2xl:text-[32px] font-GothamBook font-bold leading-[28px]">
+            <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[28px]">
               <span>
                 <Image
                   src="/currency.png"
                   alt=""
                   width={0}
                   height={0}
-                  className="w-4 aspect-square"
+                  className="w-7 aspect-square"
                 />
               </span>
               {data?.getPackageById?.price}*
             </p>
-            <p className="text-[8px] font-GothamBook pl-5">per person</p>
+            <p className="text-[16px] font-GothamBook pl-5">per person</p>
           </div>
           <div
             className="w-full md:w-auto flex justify-start sm:justify-end"
