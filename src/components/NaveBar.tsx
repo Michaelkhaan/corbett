@@ -85,6 +85,7 @@ function NaveBar({ className }: Props) {
             </h1>
           </div>
           <GiHamburgerMenu
+          fill="white"
             onClick={() => setOpen(!open)}
             className="block lg:hidden text-white"
           />
