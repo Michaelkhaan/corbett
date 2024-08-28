@@ -1,6 +1,7 @@
 import Go from "@/components/Go";
 import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
+import OtherPageHeroShort from "@/components/OtherPageHeroShort";
 import OurGuestLoveUs from "@/components/OurGuestLoveUs";
 import PackageFAQ from "@/components/PackageFAQ";
 import Image from "next/image";
@@ -27,7 +28,8 @@ function Index() {
   ];
   return (
     <div className="w-full">
-      <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative">
+      <OtherPageHeroShort image="/hero.png" name="Canter Safari"/>
+      {/* <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative">
         <Image
           src="/hero.png"
           alt=""
@@ -39,7 +41,7 @@ function Index() {
         <h1 className="lg:text-4xl text-2xl 2xl:text-6xl text-white font-frinkRio font-bold left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] absolute">
           Canter Safari
         </h1>
-      </div>
+      </div> */}
       <div className="w-full flex flex-col items-center mt-16">
         <h1 className="text-3xl font-frinkRio font-bold text-center">
           Welcome to Jim Corbett

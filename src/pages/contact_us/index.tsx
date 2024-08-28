@@ -2,6 +2,7 @@ import Go from "@/components/Go";
 import { Youtube } from "@/components/Icons";
 import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
+import OtherPageHeroShort from "@/components/OtherPageHeroShort";
 import Image from "next/image";
 import React from "react";
 import { BsEnvelope } from "react-icons/bs";
@@ -10,19 +11,7 @@ import { FaFacebookF, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa6";
 function index() {
   return (
     <div className="w-full">
-      <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative">
-        <Image
-          src="/hero.png"
-          alt=""
-          sizes="100%"
-          layout="fill"
-          className=" object-cover absolute inset-0 w-full  "
-        />
-        <NaveBar />
-        <h1 className="lg:text-4xl text-2xl whitespace-nowrap 2xl:text-6xl text-white font-frinkRio font-bold left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] absolute">
-          CONTACT US
-        </h1>
-      </div>
+      <OtherPageHeroShort image="/hero.png" name="CONTACT US"/>
       <div className="w-full flex flex-col lg:flex-row gap-10 mt-8">
         <div className="w-full lg:w-1/2 px-4 lg:px-0 lg:pl-40 2xl:pl-56">
           <h1 className="text-xl lg:text-2xl 2xl:text-3xl font-GothamBook font-bold">
