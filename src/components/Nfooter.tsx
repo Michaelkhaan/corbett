@@ -3,6 +3,7 @@ import React from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsFacebook, BsYoutube } from "react-icons/bs";
 import {
+  FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
   FaPinterest,
@@ -57,7 +58,7 @@ export default function Nfooter() {
               </h4>
               <div className="flex gap-2 items-center mt-3">
                 <div className=" border rounded-full px-1 py-1 bg-black">
-                  <BsFacebook className="text-2xl text-white" fill="white" />
+                  <FaFacebookF className=" text-white" fill="white" />
                 </div>
 
                 <div className=" border rounded-full px-1 py-1 bg-black">
