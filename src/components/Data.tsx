@@ -42,10 +42,10 @@ export default function Data({ onClose }: any) {
   return (
     <div>
       <form
-        className="w-full border border-black px-4 py-4"
+        className="w-full border  px-4 py-4"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h1 className="mb-5 text-lg">Where do you want to go?</h1>
+        <h1 className="mb-5 text-lg font-bold">Where do you want to go?</h1>
 
         <div className="flex relative flex-col">
           <input

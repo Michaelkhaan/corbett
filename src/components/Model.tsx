@@ -20,7 +20,7 @@ function Model({ show, onClose, containerClass, className, children }: Props) {
     <div className={modalClasses}>
       {/* Background overlay to capture clicks outside the modal */}
       <div
-        className={`absolute w-full h-full bg-black opacity-60 ${className}`}
+        className={`absolute w-full h-full bg-black opacity-90 ${className}`}
         onClick={onClose}
       />
       {/* Modal content */}

@@ -22,7 +22,7 @@ const TraficTable = () => {
     },
   ];
   return (
-    <div className="mt-16 w-full">
+    <div className="mt-16 w-full overflow-scroll">
       <table className=" w-full border-collapse border border-black">
         <thead className="bg-black">
           <tr>

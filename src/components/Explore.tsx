@@ -39,15 +39,14 @@ function Explore() {
   ];
   return (
     <>
-      <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-20 bg-white">
-        <div className="flex w-full lg:w-1/4 items-start px-4 bg-transparent">
-          <div className="mx-auto flex flex-col lg:items-start items-center bg-transparent">
+      <div className="w-full flex flex-col lg:flex-row items-center gap-2 mt-10 bg-white gap-y-10">
+        <div className="flex w-full lg:w-1/4 items-start px-4 bg-transparent ">
+          <div className="mx-auto flex flex-col  items-center bg-transparent">
             <h1 className="2xl:text-[29px] text-xl font-bold font-GothamBook">
               BOOK A PERMIT
             </h1>
             <p className="2xl:text-[20px] 2xl:leading-6 text-xs font-GothamBook text-center lg:text-left ">
-              FOR JUNGLE SAFFARI <br />
-              CORBETT TOURISM
+              FOR JUNGLE SAFFARI CORBETT TOURISM
             </p>
             <button
               onClick={() => setModal(true)}
@@ -132,10 +131,12 @@ function Explore() {
       </div>
       <Model
         show={Modal}
-        containerClass="bg-white"
         onClose={() => setModal(false)}
+        containerClass="!md:w-1/3 w-11/12"
       >
-        <Data onClose={() => setModal(false)} />
+        <div className="bg-white w-1/2 mx-auto p-5">
+          <Data onClose={() => setModal(false)} />
+        </div>
       </Model>
     </>
   );

@@ -43,13 +43,14 @@ export default function OurGuestLoveUs({ className }: Props) {
     <div
       className={`w-full bg-[url('/bglayers.png')] py-16 px-4s ${className}`}
     >
-      <h1 className="text-center text-[40px] font-Gotham font-[500] mb-10">
+      <h1 className="text-center lg:text-[40px] text-[20px] font-Gotham font-[500] mb-10">
         OUR GUEST LOVE US
       </h1>
       <Swiper
         spaceBetween={1}
         slidesPerView={1}
         slidesOffsetBefore={50}
+        
         breakpoints={{
           640: {
             slidesPerView: 1,

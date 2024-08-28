@@ -59,12 +59,12 @@ function Index() {
         </div>
       </div>
 
-      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center lg:mt-10">
+      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center lg:my-10 ">
         <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
           Best priced packages with in your budget
         </h1>
 
-        <div className="w-11/12 lg:w-[60%] 2xl:w-2/6 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
+        <div className="w-11/12 lg:w-[60%] 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3 ">
           <div
             className={`${
               selectedPrice?.id === 1

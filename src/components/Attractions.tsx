@@ -4,13 +4,13 @@ import Image from "next/image";
 const Attractions = ({ data, IsShow = false }: any) => {
   return (
     <>
-      <div className="relative lg:w-2/3 2xl:w-1/2 w-11/12 px-4 mx-auto bg-white mb-6">
+      <div className="relative lg:w-[75%] 2xl:w-[65%] w-11/12 px-4 mx-auto bg-white mb-6">
         {IsShow ? (
           <>
-            <h1 className="text-lg font-GothamBook font-semibold">
+            <h1 className="text-lg font-GothamBook font-semibold mt-4 lg:mt-0">
               What We Do:
             </h1>
-            <p>
+            <p className="text-justify">
               At Jim Corbett, we engage in a variety of intiatives aimed at
               preserving the nature heritage of the region.
             </p>

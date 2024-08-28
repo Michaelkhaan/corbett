@@ -242,10 +242,10 @@ const Canter = () => {
     <div className="w-full">
       <OtherPageHero name="Canter Safari" image="/canter-safari.jpg" />
       <div className="w-full mt-5 flex justify-center items-center flex-col">
-        <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-[21px] text-base mb-2">
+        <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-[21px] 2xl:text-[30px]  text-base mb-2">
           Welcome to Jim Corbett
         </h1>
-        <p className="text-center leading-[26px] w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 lg:text-[15px] text-xs px-4 font-frinkRio ">
+        <p className="text-center leading-[28px] w-full md:w-2/3 lg:w-2/3 lg:text-[19px] text-xs px-4 font-frinkRio ">
           <span className="font-bold">Who We Are:</span>{" "}
           {` Jim corbett is more than just a name; it's a lagecy of onversation            and natural beauty. We are a dedicated tea of wildlifeenthusiasts, conservationaist, and             eco-tourism advocates Who are deeply passionate about preserving the rich biodiversity of             jim Corbett National Park and its surrounding areas. our mission is to             protect and nurture this pristine wilderness for future generations to enjoy.`}
         </p>
@@ -253,12 +253,12 @@ const Canter = () => {
       <div>
         {/* <OverView  /> */}
         <div className="w-full flex justify-center items-center mt-16">
-          <div className="lg:w-2/3 xl:w-2/3 2xl:w-1/2 w-11/12 grid md:grid-cols-2 grid-col-1">
+          <div className="lg:w-[75%] 2xl:w-[65%] w-11/12 grid md:grid-cols-2 grid-col-1">
             <div className="flex flex-col items-start justify-center">
               <p className="2xl:text-2xl text-lg font-GothamBook font-bold text-start">
                 Our History
               </p>
-              <p className="mt-2 text-[14px] w-11/12 font-normal font-GothamBook">
+              <p className="lg:text-base 2xl:text-lg text-[12px] text-justify w-11/12 ">
                 {`Jim corbett was established by a group of indeviduals united by their love for nature and wildlife. Recognising the need for concerted efforts to conserve the region's unique flora founa, they came together to form an organization committed to the preservation of Jim corbett National Park. Since the then, our organization has grown and evolved, but our commitment to conservation remains steadfast.`}
               </p>
             </div>

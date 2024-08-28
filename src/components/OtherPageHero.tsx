@@ -12,7 +12,7 @@ const OtherPageHero = ({ image, name }: any) => {
       />
       <NaveBar />
       <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="text-white font-frinkRio uppercase 2xl:text-[52px] text-4xl lg:text-6xl 2xl:leading-[36px] leading-5 font-semibold">
+        <h1 className="text-white break-words text-center font-frinkRio uppercase 2xl:text-[52px] text-4xl lg:text-6xl 2xl:leading-[36px] leading-8 font-semibold">
           {name}
         </h1>
       </div>

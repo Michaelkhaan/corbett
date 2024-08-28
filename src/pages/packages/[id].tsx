@@ -120,10 +120,10 @@ function Index() {
               </span>
               {data?.getPackageById?.price}*
             </p>
-            <p className="text-[12px] font-GothamBook leading-[2px]">per person</p>
+            <p className="text-[12px] font-GothamBook leading-[8px]">per person</p>
           </div>
           <div
-            className="w-full md:w-auto flex justify-start sm:justify-end"
+            className="w-full md:w-auto flex justify-end"
             onClick={onClick}
           >
             <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-GothamBook font-medium ">
@@ -180,7 +180,7 @@ function Index() {
                 />
               ))
             ) : (
-              <p className="lg:text-xs text-xs 2xl:text-xl font-GothamBook leading-8 mt-2 text-wrap break-words">
+              <p className="lg:text-xs text-xs 2xl:text-xl font-GothamBook leading-4 mt-2 text-wrap break-words text-justify">
                 {data?.getPackageById?.description}
               </p>
             )}
@@ -230,11 +230,11 @@ function Index() {
         </div>
       </div>
       <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20">
-        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
+        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3 text-center">
           Best priced packages with in your budget
         </h1>
 
-        <div className="w-11/12 lg:w-1/2 2xl:w-2/6 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
+        <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
           <div
             className={`${
               selectedPrice?.id === 1
@@ -253,7 +253,7 @@ function Index() {
             } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
             onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
           >
-            <h1 className="text-xs font-GothamBook">Rs 10,000 to Rs 20,000</h1>
+            <h1 className="text-sm font-GothamBook">Rs 10,000 to Rs 20,000</h1>
           </div>
           <div
             className={`${
@@ -263,7 +263,7 @@ function Index() {
             } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
             onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
           >
-            <h1 className="text-[10.74px] leading-4 font-GothamBook">
+            <h1 className="text-sm leading-4 font-GothamBook">
               Rs 30,000 to Rs 50,000
             </h1>
           </div>
@@ -301,9 +301,9 @@ function Index() {
         <Model
           show={open}
           onClose={() => setOpen(false)}
-          containerClass="!w-1/3"
+          containerClass="!md:w-1/3 w-11/12"
         >
-          <div className="bg-white">
+          <div className="bg-white w-1/2 mx-auto p-5">
             <Data onClose={() => setOpen(false)} />
           </div>
         </Model>

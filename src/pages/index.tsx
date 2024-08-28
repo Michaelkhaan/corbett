@@ -71,9 +71,10 @@ export default function Home() {
   };
   const heroCard = [
     {
-      image: "/nightsleep.png",
-      title: "Night Stay",
+      image: "/resort.png",
+      title: "Resorts",
       link: "/nightstay",
+      
     },
     {
       image: "/jeep.png",
@@ -86,8 +87,8 @@ export default function Home() {
       link: "/packages",
     },
     {
-      image: "/resort.png",
-      title: "Resorts",
+      image: "/nightsleep.png",
+      title: "Night Stay",
       link: "/dhikalaresthouse",
     },
   ];
@@ -163,7 +164,7 @@ export default function Home() {
     <div className="w-full absolute -z-50">
       <Hero />
       {/* <img src="/test/hero.png" className="w-full"/> */}
-      <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-2 md:gap-5  lg:-mt-14 -mt-5">
+      <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-2 md:gap-5  lg:-mt-14 mt-2">
         {heroCard?.map((e, index) => (
           <HeroCard
             key={index}
@@ -196,7 +197,7 @@ export default function Home() {
             Best priced packages with in your budget
           </h1>
 
-          <div className="w-11/12 lg:w-1/2 2xl:w-2/6 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
+          <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
             <div
               className={`${
                 selectedPrice?.id === 1

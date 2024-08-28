@@ -60,8 +60,8 @@ function NaveBar({ className }: Props) {
           </div>
           <ul
             className={`${
-              open ? "left-0 " : "-left-[100%] lg:left-0"
-            } flex lg:flex-row flex-col lg:items-center 2xl:gap-6 gap-3 absolute bg-black/65  top-14 px-8 lg:px-0 gap-y-4 py-2 lg:relative lg:top-0 lg:bg-transparent w-full lg:w-auto transition-all duration-700 ease-in !z-[9999] `}
+              open ? "left-0 " : "-left-[100%] lg:left-0 bottom-0"
+            } flex lg:flex-row flex-col lg:items-center 2xl:gap-6 gap-3 absolute bg-black  top-14 px-8 lg:px-0 gap-y-4 py-4 lg:py-2 lg:relative lg:top-0 lg:bg-transparent w-full lg:w-auto transition-all duration-300 ease-in !z-[9999999] `}
           >
             {navData?.map((nav, index) => (
               <Link key={index} href={nav?.link}>
