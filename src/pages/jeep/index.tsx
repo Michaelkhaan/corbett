@@ -51,7 +51,7 @@ const Jeep = () => {
           </h1>
         </div>
         <Image
-          src="/vectorSmart.png"
+          src="/VectorSmart.png"
           alt="Vector Smart"
           width={0}
           height={0}
