@@ -1,9 +1,6 @@
-import Go from "@/components/Go";
 import { Youtube } from "@/components/Icons";
-import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
 import OtherPageHeroShort from "@/components/OtherPageHeroShort";
-import Image from "next/image";
 import React from "react";
 import { BsEnvelope } from "react-icons/bs";
 import { FaFacebookF, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa6";
@@ -11,7 +8,7 @@ import { FaFacebookF, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa6";
 function index() {
   return (
     <div className="w-full">
-      <OtherPageHeroShort image="/hero.png" name="CONTACT US"/>
+      <OtherPageHeroShort image="/hero.png" name="CONTACT US" />
       <div className="w-full flex flex-col lg:flex-row gap-10 mt-8">
         <div className="w-full lg:w-1/2 px-4 lg:px-0 lg:pl-40 2xl:pl-56">
           <h1 className="text-xl lg:text-2xl 2xl:text-3xl font-GothamBook font-bold">
@@ -77,9 +74,6 @@ function index() {
             // scrolling="no"
           ></iframe>
         </div>
-      </div>
-      <div className="pt-12 pb-6">
-        <Go />
       </div>
       <Nfooter />
     </div>

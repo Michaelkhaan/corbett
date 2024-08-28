@@ -186,12 +186,8 @@
 // export default Index;
 
 import Attractions from "@/components/Attractions";
-import Experience from "@/components/Experince";
-import OverView from "@/components/OverView";
-import TariffPrice from "@/components/TariffPrice";
 import PackageFAQ from "@/components/PackageFAQ";
 import OurGuestLoveUs from "@/components/OurGuestLoveUs";
-// import Go from "@/components/Go";
 import Nfooter from "@/components/Nfooter";
 import OtherPageHero from "@/components/OtherPageHero";
 import { useState } from "react";
@@ -221,13 +217,13 @@ const faq = [
 
 const data = [
   {
-    image: "/Wildlife-sightings.jpg",
+    image: "/WildLife-Conservation.jpg",
     title: "Wildlife Conservation",
     description:
       "We collaborate with local communities, government agencies, and conservation organizations to implement strategies for the protection of endangered species and their habitats.",
   },
   {
-    image: "/Scenic-Landscape.jpg",
+    image: "/Eco-Tourism.jpg",
     title: "Eco-Tourism",
     description:
       "Our guided tours and experiential programs offer visitors the opportunity to explore the wonders of Jim Corbett National Park while minimising their ecological footprint.",
@@ -240,7 +236,7 @@ const data = [
   },
 ];
 
-const Jeep = () => {
+const Canter = () => {
   const [open, setOpen] = useState("");
   return (
     <div className="w-full">
@@ -290,13 +286,10 @@ const Jeep = () => {
           </div>
         </div>
         <OurGuestLoveUs className="!mt-0" />
-        {/* <div className="pt-12 pb-6">
-          <Go />
-        </div> */}
         <Nfooter />
       </div>
     </div>
   );
 };
 
-export default Jeep;
+export default Canter;
