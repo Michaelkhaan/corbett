@@ -1,12 +1,13 @@
 import Go from "@/components/Go";
-import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
+import OtherPageHeroShort from "@/components/OtherPageHeroShort";
 import OurGuestLoveUs from "@/components/OurGuestLoveUs";
 import PackageFAQ from "@/components/PackageFAQ";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
-function index() {
+function Index() {
+  const [open , setOpen] = useState("")
   const faq = [
     {
       question: "Our Team",
@@ -26,19 +27,7 @@ function index() {
   ];
   return (
     <div className="w-full">
-      <div className="w-full aspect-[1920/490] min-h-[300px] flex flex-col items-center overflow-hidden relative">
-        <Image
-          src="/about.jpg"
-          alt=""
-          sizes="100%"
-          layout="fill"
-          className=" object-cover absolute inset-0 w-full h-full  "
-        />
-        <NaveBar />
-        <h1 className="lg:text-4xl text-4xl 2xl:text-7xl text-white font-frinkRio font-bold left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] absolute">
-          ABOUT US
-        </h1>
-      </div>
+      <OtherPageHeroShort image="/about.jpg" name="ABOUT US" />
       {/* <div className="w-full h-full bg-[url('/bglayers.png')] bg-cover  bg-no-repeat py-16 px-4 overflow-hidden"> */}
 
       <div className="w-full flex flex-col items-center mt-16">
@@ -160,11 +149,12 @@ function index() {
         <div className="flex md:w-[50%] w-11/12  mx-auto flex-col justify-start items-start">
           {faq?.map((e, index) => (
             <PackageFAQ
-              id=""
+              id={index?.toString()}
               key={index?.toString()}
               question={e?.question}
               answer={e?.answer}
-              openId={undefined}
+              openId={open}
+              setOpenId={setOpen as any}
             />
           ))}
         </div>
@@ -178,4 +168,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

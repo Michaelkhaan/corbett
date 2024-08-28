@@ -94,7 +94,7 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 interface Props {
   className?: string;
   Title: string;
-  key: string;
+  id: string;
   Dhikala?: string;
   desc?: string;
   desc1?: string;
@@ -118,7 +118,7 @@ function JungleSaferi({
   Elephdesc,
   jeep,
   jeepdesc,
-  key,
+  id: key,
 }: Props) {
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -137,11 +137,15 @@ function JungleSaferi({
         onClick={() => handleToggle(key)}
       >
         <div className="flex justify-between items-center w-full">
-          <h1 className="font-bold text-lg tracking-wider font-GothamBook">
+          <h1
+            className={`font-bold text-lg tracking-wider font-GothamBook ${
+              openId === key ? "text-white" : ""
+            }`}
+          >
             {Title}
           </h1>
           {openId === key ? (
-            <FaMinus className="text-[#f8bd00]" />
+            <FaMinus className="text-[#f8bd00]" fill="#f8bd00" />
           ) : (
             <FaPlus className="text-black" />
           )}
@@ -150,7 +154,7 @@ function JungleSaferi({
 
       {/* Conditional Rendering */}
       <div
-        className={`w-full text-black transition-all duration-[4000ms] ease-in-out overflow-hidden ${
+        className={`w-full text-black transition-all duration-[1000ms] ease-in-out overflow-hidden ${
           openId === key ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >

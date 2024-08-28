@@ -17,6 +17,7 @@ import ExperienceHd from "@/components/ExperienceHd";
 import TraficPrice1 from "@/components/TraficPrice1";
 import Faq from "@/components/PackageFAQ";
 import FaqList from "@/components/FaqList";
+import OtherPageHero from "@/components/OtherPageHero";
 
 const faq = [
   {
@@ -85,31 +86,10 @@ const jungle = [
   },
 ];
 
-function index() {
+function Index() {
   return (
     <div className="w-full">
-      <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative">
-        <Image
-          src="/jeephero.png"
-          alt=""
-          sizes="100%"
-          layout="fill"
-          className=" object-cover absolute inset-0 w-full h-full "
-        />
-        <NaveBar />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white font-frinkRio 2xl:text-[52px] lg:text-4xl 2xl:leading-[36px] leading-5 font-bold sm:text-3xl text-2xl">
-            DHIKALA REST HOUSE
-          </h1>
-        </div>
-        <Image
-          src="/VectorSmart.png"
-          alt="Vector Smart"
-          width={0}
-          height={0}
-          className="w-full object-cover absolute bottom-0 left-0"
-        />
-      </div>
+      <OtherPageHero image="/jeephero.png" name="DHIKALA REST HOUSE" />
       {/* <div className="w-full mt-5 flex justify-center items-center flex-col">
         <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-lg text-base">
           Explore the world with JM Corbett Jeep Safari
@@ -131,6 +111,7 @@ function index() {
           {jungle?.map((e, index) => (
             <JungleSaferi
               key={index?.toString()}
+              id={index?.toString()}
               Title={e?.Title}
               Dhikala={e?.Dhikala}
               desc={e?.desc}
@@ -156,13 +137,10 @@ function index() {
           </div>
         </div>
         <OurGuestLoveUs className="!mt-0" />
-        <div className="pt-12 pb-6">
-          <Go />
-        </div>
         <Nfooter />
       </div>
     </div>
   );
 }
 
-export default index;
+export default Index;

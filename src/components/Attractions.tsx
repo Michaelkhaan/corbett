@@ -23,7 +23,7 @@ const Attractions = () => {
     
   ]
   return (
-    <div className="relative max-w-[800px] px-6 mx-auto bg-white mb-6">
+    <div className="relative lg:w-2/3 2xl:w-1/2 w-11/12 px-4 mx-auto bg-white mb-6">
     {/* <div className="relative w-full flex justify-center items-start md:items-center">
       <div className="absolute inset-0 flex justify-center items-center">
         <Image src="/box.png" alt="box" layout="fill" className="object-contain" />

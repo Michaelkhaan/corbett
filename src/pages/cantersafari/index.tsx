@@ -4,9 +4,10 @@ import Nfooter from "@/components/Nfooter";
 import OurGuestLoveUs from "@/components/OurGuestLoveUs";
 import PackageFAQ from "@/components/PackageFAQ";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
-function index() {
+function Index() {
+  const [open, setOpen] = useState();
   const faq = [
     {
       question: "Our Team",
@@ -89,7 +90,9 @@ function index() {
       </div>
       <div className="lg:w-3/4 mx-auto mt-20">
         <div className="px-4">
-          <h1 className="text-3xl font-GothamBook font-semibold">What We Do:</h1>
+          <h1 className="text-3xl font-GothamBook font-semibold">
+            What We Do:
+          </h1>
           <p className="text-lg font-GothamBook font-semibold">
             At Jim Corbett, we engage in a veriety of initiative aimed at
             preserving the natural heritage of the region:
@@ -156,7 +159,9 @@ function index() {
         <div className="flex md:w-[50%] w-11/12  mx-auto flex-col justify-start items-start">
           {faq?.map((e, index) => (
             <PackageFAQ
-              id=""
+              openId={open}
+              setOpenId={setOpen as any}
+              id={index?.toString()}
               key={index?.toString()}
               question={e?.question}
               answer={e?.answer}
@@ -173,4 +178,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Faq from "./PackageFAQ";
 
 export default function FaqList({ data }: any) {
-  console.log(data, "test");
   const [openId, setOpenId] = useState<string | null>(null);
   return (
     <div className="w-full mx-auto mt-14 2xl:px-6">
