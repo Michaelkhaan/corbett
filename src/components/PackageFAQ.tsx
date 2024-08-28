@@ -22,22 +22,22 @@ function Faq({ className, question, answer, id, openId, setOpenId }: Props) {
       <div
         className={`w-full rounded-lg lg:rounded-full px-5 py-3 flex flex-col items-center justify-between mt-4 cursor-pointer ${className} ${
           openId === id
-            ? "bg-black text-white"
+            ? "bg-[#333]"
             : "bg-white border border-black rounded-full text-black"
         }`}
         onClick={() => handleToggle(id)}
       >
         <div className="flex justify-between items-center w-full">
-          <h1 className="font-GothamBook font-bold text-sm">{question}</h1>
+          <h1 className={`font-GothamBook font-bold text-sm ${openId === id ? "text-white" : ""} `}>{question}</h1>
           {openId === id ? (
-            <FaMinus className="text-[#f8bd00]" />
+            <FaMinus className="text-[#f8bd00]" fill="#f8bd00" />
           ) : (
-            <FaPlus className="text-black" />
+            <FaPlus className="text-black"  />
           )}
         </div>
       </div>
       <div
-        className={`w-full text-black transition-all duration-[2000ms] ease-in-out px-2 mt-2 overflow-hidden ${
+        className={`w-full text-black transition-all duration-[500ms] ease-in-out px-2 mt-2 overflow-hidden ${
           openId === id ? "max-h-40" : "max-h-0"
         }`}
       >

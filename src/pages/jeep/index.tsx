@@ -36,7 +36,7 @@ const faq = [
 const Jeep = () => {
   return (
     <div className="w-full">
-      <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative">
+      <div className="w-full aspect-[1920/750] min-h-[300px] flex flex-col items-center overflow-hidden relative">
         <Image
           src="/jeephero.png"
           alt=""
@@ -46,7 +46,7 @@ const Jeep = () => {
         />
         <NaveBar />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white font-frinkRio 2xl:text-[52px] text-2xl 2xl:leading-[36px] leading-5 font-bold">
+          <h1 className="text-white font-frinkRio uppercase 2xl:text-[52px] text-4xl lg:text-6xl 2xl:leading-[36px] leading-5 font-semibold">
             Jeep Safari
           </h1>
         </div>
@@ -59,18 +59,13 @@ const Jeep = () => {
         />
       </div>
       <div className="w-full mt-5 flex justify-center items-center flex-col">
-        <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-lg text-base">
+        <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-lg text-base mb-2">
           Explore the world with JM Corbett Jeep Safari
         </h1>
-        <p className="text-center w-full lg:text-[15px] text-xs px-4 font-frinkRio">
+        <p className="text-center w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 lg:text-[15px] text-xs px-4 font-frinkRio ">
           {
-            " Welcome to JM Corbett Jeep Safari,your gateway to adventure in the heart of nature's bounty!"
+            " Welcome to JM Corbett Jeep Safari,your gateway to adventure in the heart of nature's bounty! Nestled amidst the picturesque landscapes of Jim Corbett National Park our safari experiences offer an unparalleled opportunity to immerse yourself in the beauty and diversity of indian"
           }
-          <br /> Nestled amidst the picturesque landscapes of Jim Corbett
-          National Park, <br />
-          our safari experiences offer an unparalleled opportunity to immerse
-          yourself <br />
-          in the beauty and diversity of indian
         </p>
       </div>
       <div>

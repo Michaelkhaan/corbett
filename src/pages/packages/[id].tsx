@@ -91,8 +91,8 @@ function Index() {
       </div>
 
       <div className="w-11/12 lg:w-3/4 2xl:w-[3/4] mx-auto  flex flex-col md:flex-row md:items-center md:justify-between gap-2 ">
-        <div className="w-full md:w-auto text-left">
-          <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook 2xl:font-extrabold leading-7 tracking-tighter  ">
+        <div className="w-full md:w-auto text-left ">
+          <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter  ">
             {data?.getPackageById?.name}
           </h1>
           {data?.getPackageById?.night || data?.getPackageById?.day ? (
@@ -109,24 +109,18 @@ function Index() {
             </p>
           ) : null}
         </div>
-        <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row mb-5 pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
+        <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row  pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
           <div className="w-full md:w-auto text-start">
-            <h1 className="text-xm 2xl:w-[150px] lg:text-base 2xl:text-[16px] font-GothamBook 2xl:break-words font-regular">
+            <h1 className="text-xm 2xl:w-[150px] lg:text-base 2xl:text-[16px] font-GothamBook 2xl:break-words font-regular leading-[2px]">
               Start From
             </h1>
-            <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[28px]">
-              <span>
-                <Image
-                  src="/currency.png"
-                  alt=""
-                  width={0}
-                  height={0}
-                  className="w-7 aspect-square"
-                />
+            <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[1rem]">
+              <span className="lg:text-2xl">
+              ₹
               </span>
               {data?.getPackageById?.price}*
             </p>
-            <p className="text-[16px] font-GothamBook pl-5">per person</p>
+            <p className="text-[12px] font-GothamBook leading-[2px]">per person</p>
           </div>
           <div
             className="w-full md:w-auto flex justify-start sm:justify-end"
@@ -138,7 +132,7 @@ function Index() {
           </div>
         </div>
       </div>
-      <div className="w-11/12 lg:w-3/4 mx-auto mt-5">
+      <div className="w-11/12 lg:w-3/4 mx-auto mt-4">
         <Swiper
           className="w-full h-full"
           autoplay={{
@@ -171,7 +165,7 @@ function Index() {
             {isPending ? (
               <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
             ) : (
-              <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook  font-extrabold leading-7 tracking-tighter ">
+              <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham  font-extrabold leading-7 tracking-tighter ">
                 {data?.getPackageById?.title}
               </h1>
             )}
@@ -235,7 +229,7 @@ function Index() {
           </div>
         </div>
       </div>
-      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20 lg:mt-40">
+      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20">
         <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
           Best priced packages with in your budget
         </h1>
@@ -274,7 +268,7 @@ function Index() {
             </h1>
           </div>
         </div>
-        <div className="w-11/12 lg:w-[60%] 2xl:w-3/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
+        <div className="w-11/12 lg:w-[80%] 2xl:w-3/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6 mb-12">
           {packagesData?.map((e, index) => (
             <PackageCard
               key={index}
@@ -287,7 +281,7 @@ function Index() {
             />
           ))}
         </div>
-        <div className="w-full mt-8 lg:mt-24 mb-8 lg:mb-16">
+        {/* <div className="w-full mt-8 lg:mt-24 mb-8 lg:mb-16">
           <h1 className="text-lg font-medium font-GothamBook text-center">
             LET YOUR{" "}
             <span className="text-lg font-bold font-GothamBook">SAFFARI TOUR</span>{" "}
@@ -303,7 +297,7 @@ function Index() {
               GO
             </button>
           </div>
-        </div>
+        </div> */}
         <Model
           show={open}
           onClose={() => setOpen(false)}
