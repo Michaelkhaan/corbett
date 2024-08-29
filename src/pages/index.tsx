@@ -170,7 +170,7 @@ export default function Home() {
         <NaveBar />
         <Hero />
         {/* <img src="/test/hero.png" className="w-full"/> */}
-        <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-3 md:gap-5  lg:-mt-14 mt-2 ">
+        {/* <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-3 md:gap-5  lg:-mt-14 mt-2 ">
           {heroCard?.map((e, index) => (
             <HeroCard
               key={index}
@@ -184,7 +184,7 @@ export default function Home() {
             ${index === 3 ? "aspect-[74/72] w-[74px]" : ""}`}
             />
           ))}
-        </div>
+        </div> */}
         {/* <div className="w-11/12 lg:w-1/2 mx-auto mt-10"> */}
         <ButtonCard />
         {/* </div> */}

@@ -130,14 +130,14 @@ function Explore() {
         </div>
       </div>
       <Model
-        show={Modal}
-        onClose={() => setModal(false)}
-        containerClass="!md:w-1/3 w-11/12"
-      >
-        <div className="bg-white w-1/2 mx-auto p-5">
-          <Data onClose={() => setModal(false)} />
-        </div>
-      </Model>
+          show={Modal}
+          onClose={() => setModal(false)}
+          containerClass="mx-auto w-11/12 md:w-1/2 lg:w-1/3"
+        >
+          <div className="bg-white mx-auto p-5 w-full">
+            <Data onClose={() => setModal(false)} />
+          </div>
+        </Model>
     </>
   );
 }
