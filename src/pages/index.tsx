@@ -121,6 +121,12 @@ export default function Home() {
     },
   ];
 
+  const priceRanges = [
+    { start: 0, end: 10000, id: 1, label: "Less than Rs 10,000" },
+    { start: 10000, end: 20000, id: 2, label: "Rs 10,000 to Rs 20,000" },
+    { start: 30000, end: 50000, id: 3, label: "Rs 30,000 to Rs 50,000" },
+  ];
+
   const tourCard = [
     {
       image: "/Accommodation.png",
@@ -160,13 +166,11 @@ export default function Home() {
   ];
   return (
     <>
-      
-
       <div className="w-full absolute -z-50">
-      <NaveBar />
+        <NaveBar />
         <Hero />
         {/* <img src="/test/hero.png" className="w-full"/> */}
-        <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-2 md:gap-5  lg:-mt-14 mt-2">
+        <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-3 md:gap-5  lg:-mt-14 mt-2 ">
           {heroCard?.map((e, index) => (
             <HeroCard
               key={index}
@@ -200,40 +204,33 @@ export default function Home() {
             </h1>
 
             <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
-              <div
-                className={`${
-                  selectedPrice?.id === 1
-                    ? "bg-[#f8bd01] text-white"
-                    : "bg-white border text-black"
-                } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
-                onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
-              >
-                <h1 className="text-sm font-GothamBook">Less than Rs 10,000</h1>
-              </div>
-              <div
-                className={`${
-                  selectedPrice?.id === 2
-                    ? "bg-[#f8bd01] text-white"
-                    : "bg-white border text-black"
-                } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
-                onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
-              >
-                <h1 className="text-sm font-GothamBook">
-                  Rs 10,000 to Rs 20,000
-                </h1>
-              </div>
-              <div
-                className={`${
-                  selectedPrice?.id === 3
-                    ? "bg-[#f8bd01] text-white"
-                    : "bg-white border text-black"
-                } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
-                onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
-              >
-                <h1 className="text-sm leading-4 font-GothamBook">
-                  Rs 30,000 to Rs 50,000
-                </h1>
-              </div>
+              {priceRanges.map((price) => (
+                <div
+                  key={price.id}
+                  className={`${
+                    selectedPrice?.id === price.id
+                      ? "bg-[#f8bd01] text-white"
+                      : "bg-white border text-black"
+                  } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
+                  onClick={() =>
+                    handleClick({
+                      start: price.start,
+                      end: price.end,
+                      id: price.id,
+                    })
+                  }
+                >
+                  <h1
+                    className={`text-sm font-GothamBook  ${
+                      selectedPrice?.id === price.id
+                        ? " text-white"
+                        : " text-black"
+                    }`}
+                  >
+                    {price.label}
+                  </h1>
+                </div>
+              ))}
             </div>
             <div className="w-11/12 lg:w-4/5 2xl:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
               {isPending

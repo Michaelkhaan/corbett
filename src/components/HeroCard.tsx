@@ -12,7 +12,7 @@ interface Props {
 function HeroCard({ image, title, className, link = '#'}: Props) {
   return (
     <Link
-      className="w-[14%] min-w-[170px] max-w-[210px] rounded-[20px] bg-black flex flex-col items-center justify-end p-5 py-8"
+      className="w-[14%] min-w-[145px] max-w-[210px] rounded-[20px] bg-black flex flex-col items-center justify-end p-5 py-5"
       href={link}
     >
       <Image
