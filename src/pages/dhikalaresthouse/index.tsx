@@ -89,6 +89,7 @@ const jungle = [
 function Index() {
   return (
     <div className="w-full">
+      <NaveBar />
       <OtherPageHero image="/dikala-rest-house.jpg" name="DHIKALA REST HOUSE" />
       <div>
         <OverView1 />

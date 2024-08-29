@@ -1,4 +1,5 @@
 import { Youtube } from "@/components/Icons";
+import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
 import OtherPageHeroShort from "@/components/OtherPageHeroShort";
 import React from "react";
@@ -8,6 +9,7 @@ import { FaFacebookF, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa6";
 function index() {
   return (
     <div className="w-full">
+      <NaveBar />
       <OtherPageHeroShort image="/hero.png" name="CONTACT US" />
       <div className="w-full flex flex-col lg:flex-row gap-10 mt-8">
         <div className="w-full lg:w-1/2 px-4 lg:px-0 lg:pl-40 2xl:pl-56">

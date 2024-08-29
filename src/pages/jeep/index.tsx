@@ -8,6 +8,7 @@ import OurGuestLoveUs from "@/components/OurGuestLoveUs";
 import Nfooter from "@/components/Nfooter";
 import OtherPageHero from "@/components/OtherPageHero";
 import { useState } from "react";
+import NaveBar from "@/components/NaveBar";
 
 const faq = [
   {
@@ -56,6 +57,7 @@ const Jeep = () => {
   const [open, setOpen] = useState("");
   return (
     <div className="w-full">
+      <NaveBar />
       <OtherPageHero name="Jeep Safari" image="/jeephero.png" />
       <div className="w-full mt-5 flex justify-center items-center flex-col">
         <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-[21px] text-base mb-2">

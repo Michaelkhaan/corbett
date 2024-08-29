@@ -364,6 +364,7 @@ import Nfooter from "@/components/Nfooter";
 import OtherPageHero from "@/components/OtherPageHero";
 import { useState } from "react";
 import OtherPageHeroShort from "@/components/OtherPageHeroShort";
+import NaveBar from "@/components/NaveBar";
 
 const data = [
   {
@@ -408,6 +409,7 @@ const Canter = () => {
   const [open, setOpen] = useState("");
   return (
     <div className="w-full">
+      <NaveBar />
       <OtherPageHeroShort image="/about.jpg" name="ABOUT US" />
       <div className="w-full mt-5 flex justify-center items-center flex-col">
         <h1 className="font-frinkRio leading-8 font-semibold px-4 lg:text-[21px] 2xl:text-[30px]  text-base mb-2">

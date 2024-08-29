@@ -8,10 +8,10 @@ const OtherPageHero = ({ image, name }: any) => {
         alt=""
         sizes="100%"
         layout="fill"
-        className=" object-cover absolute inset-0 w-full h-full "
+        className=" object-cover absolute inset-0 w-full h-full z-10 "
       />
-      <NaveBar />
-      <div className="absolute inset-0 flex items-center justify-center">
+      
+      <div className="absolute inset-0 flex items-center justify-center z-20">
         <h1 className="text-white break-words text-center font-frinkRio uppercase 2xl:text-[52px] text-4xl lg:text-6xl 2xl:leading-[36px] leading-8 font-semibold">
           {name}
         </h1>

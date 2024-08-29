@@ -6,8 +6,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 interface Props {
   className?: string;
+  mainClassName?: string;
 }
-function NaveBar({ className }: Props) {
+function NaveBar({ className = "", mainClassName = "" }: Props) {
   const router = useRouter();
   const navData = [
     {
@@ -43,9 +44,9 @@ function NaveBar({ className }: Props) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      {/* <img src="/test/image.png" className="w-full" /> */}
-
-      <div className="w-full bg-black/70  py-3 z-[9999]">
+      <div
+        className={`w-full bg-black/70  py-3 z-[9999] absolute left-0 right-0 top-0 ${mainClassName}`}
+      >
         <div className="mx-auto w-11/12 lg:w-3/4 2xl:w-[70%] flex items-center justify-between lg:px-1 2xl:px-3 2xl:pr-12">
           <div className="relative">
             <Link href="/">
@@ -78,14 +79,17 @@ function NaveBar({ className }: Props) {
           </ul>
           <div className="lg:flex items-center 2xl:gap-5 lg:gap-2 hidden">
             <a href="https://wa.me/919837166431" target="_blank">
-              <FaWhatsapp className="text-green-600 2xl:text-xl  lg:text-sm "  fill="#47e1d9"/>
+              <FaWhatsapp
+                className="text-green-600 2xl:text-xl  lg:text-sm "
+                fill="#47e1d9"
+              />
             </a>
             <h1 className="2xl:text-sm lg:text-xs text-white">
               info@corbett.in
             </h1>
           </div>
           <GiHamburgerMenu
-          fill="white"
+            fill="white"
             onClick={() => setOpen(!open)}
             className="block lg:hidden text-white"
           />

@@ -21,6 +21,7 @@ import { useRouter } from "next/router";
 import PackageLoader from "@/components/PackageLoader";
 import { title } from "process";
 import PriceAndZone from "@/components/priceAndZone";
+import NaveBar from "@/components/NaveBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -74,7 +75,6 @@ export default function Home() {
       image: "/resort.png",
       title: "Resorts",
       link: "/nightstay",
-      
     },
     {
       image: "/jeep.png",
@@ -121,8 +121,6 @@ export default function Home() {
     },
   ];
 
-
-
   const tourCard = [
     {
       image: "/Accommodation.png",
@@ -161,118 +159,124 @@ export default function Home() {
     // },
   ];
   return (
-    <div className="w-full absolute -z-50">
-      <Hero />
-      {/* <img src="/test/hero.png" className="w-full"/> */}
-      <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-2 md:gap-5  lg:-mt-14 mt-2">
-        {heroCard?.map((e, index) => (
-          <HeroCard
-            key={index}
-            image={e?.image}
-            title={e?.title}
-            link={e?.link}
-            className={`
+    <>
+      
+
+      <div className="w-full absolute -z-50">
+      <NaveBar />
+        <Hero />
+        {/* <img src="/test/hero.png" className="w-full"/> */}
+        <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-2 md:gap-5  lg:-mt-14 mt-2">
+          {heroCard?.map((e, index) => (
+            <HeroCard
+              key={index}
+              image={e?.image}
+              title={e?.title}
+              link={e?.link}
+              className={`
             ${index === 0 ? "aspect-[74/72] w-[74px]" : ""} 
             ${index === 1 ? "aspect-[74/72] w-[74px]" : ""} 
             ${index === 2 ? "aspect-[74/72] w-[74px]" : ""}
             ${index === 3 ? "aspect-[74/72] w-[74px]" : ""}`}
-          />
-        ))}
-      </div>
-      {/* <div className="w-11/12 lg:w-1/2 mx-auto mt-10"> */}
-      <ButtonCard />
-      {/* </div> */}
-      <Explore />
-      <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px] bg-white ">
-        <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
-          OUR PACKAGES
-        </h1>
-        <p className="2xl:text-base text-[15px] leading-[20px] text-center font-GothamBook lg:w-[470px] mt-4">
-          We craft our packages based on your budget, taste & preference however
-          these are some most popular packages our guest has chosen.
-        </p>
-
-        <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20 lg:mt-10">
-          <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
-            Best priced packages with in your budget
+            />
+          ))}
+        </div>
+        {/* <div className="w-11/12 lg:w-1/2 mx-auto mt-10"> */}
+        <ButtonCard />
+        {/* </div> */}
+        <Explore />
+        <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px] bg-white ">
+          <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
+            OUR PACKAGES
           </h1>
+          <p className="2xl:text-base text-[15px] leading-[20px] text-center font-GothamBook lg:w-[470px] mt-4">
+            We craft our packages based on your budget, taste & preference
+            however these are some most popular packages our guest has chosen.
+          </p>
 
-          <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
-            <div
-              className={`${
-                selectedPrice?.id === 1
-                  ? "bg-[#f8bd01] text-white"
-                  : "bg-white border text-black"
-              } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
-              onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
-            >
-              <h1 className="text-sm font-GothamBook">Less than Rs 10,000</h1>
-            </div>
-            <div
-              className={`${
-                selectedPrice?.id === 2
-                  ? "bg-[#f8bd01] text-white"
-                  : "bg-white border text-black"
-              } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
-              onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
-            >
-              <h1 className="text-sm font-GothamBook">Rs 10,000 to Rs 20,000</h1>
-            </div>
-            <div
-              className={`${
-                selectedPrice?.id === 3
-                  ? "bg-[#f8bd01] text-white"
-                  : "bg-white border text-black"
-              } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
-              onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
-            >
-              <h1 className="text-sm leading-4 font-GothamBook">
-                Rs 30,000 to Rs 50,000
-              </h1>
-            </div>
-          </div>
-          <div className="w-11/12 lg:w-4/5 2xl:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
-            {isPending
-              ? Array.from({ length: 4 }).map((e, index) => (
-                  <PackageLoader key={index} />
-                ))
-              : null}
-            {packagesData?.map((e: any) => (
+          <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20 lg:mt-10">
+            <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
+              Best priced packages with in your budget
+            </h1>
+
+            <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
               <div
-                key={e.id}
-                onClick={() => onClick(e.id)}
-                className="cursor-pointer"
+                className={`${
+                  selectedPrice?.id === 1
+                    ? "bg-[#f8bd01] text-white"
+                    : "bg-white border text-black"
+                } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
+                onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
               >
-                <PackageCard
-                  title={e?.title}
-                  image={e?.images?.[0]}
-                  price={e?.prices}
-                  rooms={e?.rooms}
-                  subtitle={e?.subtitle}
-                />
+                <h1 className="text-sm font-GothamBook">Less than Rs 10,000</h1>
               </div>
-            ))}
+              <div
+                className={`${
+                  selectedPrice?.id === 2
+                    ? "bg-[#f8bd01] text-white"
+                    : "bg-white border text-black"
+                } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
+                onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
+              >
+                <h1 className="text-sm font-GothamBook">
+                  Rs 10,000 to Rs 20,000
+                </h1>
+              </div>
+              <div
+                className={`${
+                  selectedPrice?.id === 3
+                    ? "bg-[#f8bd01] text-white"
+                    : "bg-white border text-black"
+                } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
+                onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
+              >
+                <h1 className="text-sm leading-4 font-GothamBook">
+                  Rs 30,000 to Rs 50,000
+                </h1>
+              </div>
+            </div>
+            <div className="w-11/12 lg:w-4/5 2xl:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
+              {isPending
+                ? Array.from({ length: 4 }).map((e, index) => (
+                    <PackageLoader key={index} />
+                  ))
+                : null}
+              {packagesData?.map((e: any) => (
+                <div
+                  key={e.id}
+                  onClick={() => onClick(e.id)}
+                  className="cursor-pointer"
+                >
+                  <PackageCard
+                    title={e?.title}
+                    image={e?.images?.[0]}
+                    price={e?.prices}
+                    rooms={e?.rooms}
+                    subtitle={e?.subtitle}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="w-full h-full border mt-20 relative">
-          <video
-            id="video"
-            className="aspect-video w-full max-h-96 object-cover relative"
-            src="https://videos.pexels.com/video-files/2491276/2491276-uhd_4096_2160_24fps.mp4"
-          ></video>
-          <span
-            className="w-10 aspect-square bg-white/60 rounded-full flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-            onClick={togglePlay}
-          >
-            {isPlaying ? (
-              <IoMdPause className="text-black" />
-            ) : (
-              <IoMdPlay className="text-black" />
-            )}
-          </span>
-        </div>
-        <OurGuestLoveUs />
-        {/* <Image
+          <div className="w-full h-full border mt-20 relative">
+            <video
+              id="video"
+              className="aspect-video w-full max-h-96 object-cover relative"
+              src="https://videos.pexels.com/video-files/2491276/2491276-uhd_4096_2160_24fps.mp4"
+            ></video>
+            <span
+              className="w-10 aspect-square bg-white/60 rounded-full flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+              onClick={togglePlay}
+            >
+              {isPlaying ? (
+                <IoMdPause className="text-black" />
+              ) : (
+                <IoMdPlay className="text-black" />
+              )}
+            </span>
+          </div>
+          <OurGuestLoveUs />
+          {/* <Image
         src="/image.png"
         alt=""
         width={0}
@@ -281,49 +285,50 @@ export default function Home() {
         unoptimized
         priority
       /> */}
-        <Discover />
-        <div className="px-4 lg:w-[80%] w-11/12 mx-auto mt-10 lg:mt-20">
-          <div className="grid grid-cols-7  mx-auto gap-2">
-            <div className="lg:col-span-2 col-span-12 mt-3">
-              <h1 className="lg:text-xl 2xl:text-2xl font-bold font-GothamBook lg:w-[300px] 2xl:w-[400px] w-full">
-                FAQ Regarding Travels
-              </h1>
-              {/* <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-GothamBook text-black">
+          <Discover />
+          <div className="px-4 lg:w-[80%] w-11/12 mx-auto mt-10 lg:mt-20">
+            <div className="grid grid-cols-7  mx-auto gap-2">
+              <div className="lg:col-span-2 col-span-12 mt-3">
+                <h1 className="lg:text-xl 2xl:text-2xl font-bold font-GothamBook lg:w-[300px] 2xl:w-[400px] w-full">
+                  FAQ Regarding Travels
+                </h1>
+                {/* <button className="bg-primary rounded-md mt-6 px-3 py-2 text-[14px] font-GothamBook text-black">
                 Enquire Now
               </button> */}
+              </div>
+              <div className="lg:col-span-5 col-span-12">
+                {faq?.map((e, index) => (
+                  <FAQ
+                    id={index?.toString()}
+                    key={index?.toString()}
+                    question={e?.title}
+                    answer={e?.answer}
+                  />
+                ))}
+              </div>
             </div>
-            <div className="lg:col-span-5 col-span-12">
-              {faq?.map((e, index) => (
-                <FAQ
-                  id={index?.toString()}
-                  key={index?.toString()}
-                  question={e?.title}
-                  answer={e?.answer}
+          </div>
+          <PriceAndZone />
+          <div className="w-full 2xl:w-[70%] mx-auto my-20 px-4 lg:px-32 2xl:px-16">
+            <h1 className="text-xl lg:text-2xl font-medium text-gray-700 font-Ghotam text-center">
+              All inclusive tours, Start your journey today!
+            </h1>
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {tourCard?.map((e, index) => (
+                <TourCard
+                  key={index}
+                  image={e?.image}
+                  title={e?.title}
+                  desc={e?.desc}
                 />
               ))}
             </div>
           </div>
+          {/* <Go /> */}
+          {/* <Footer /> */}
+          <Nfooter />
         </div>
-        <PriceAndZone />
-        <div className="w-full 2xl:w-[70%] mx-auto my-20 px-4 lg:px-32 2xl:px-16">
-          <h1 className="text-xl lg:text-2xl font-medium text-gray-700 font-Ghotam text-center">
-            All inclusive tours, Start your journey today! 
-          </h1>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {tourCard?.map((e, index) => (
-              <TourCard
-                key={index}
-                image={e?.image}
-                title={e?.title}
-                desc={e?.desc}
-              />
-            ))}
-          </div>
-        </div>
-        <Go />
-        {/* <Footer /> */}
-        <Nfooter />
       </div>
-    </div>
+    </>
   );
 }

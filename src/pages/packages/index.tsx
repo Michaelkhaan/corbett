@@ -44,7 +44,7 @@ function Index() {
 
   return (
     <div className="w-full">
-      <NaveBar className="!bg-[#f8bd00]" />
+      <NaveBar className="!bg-[#f8bd00] " mainClassName="!relative" />
       <div className="w-full flex justify-center mt-2">
         <div className="w-11/12 lg:w-3/4 flex">
           <p
