@@ -14,7 +14,7 @@ function Hero() {
     },
   ];
   return (
-    <div className="w-full aspect-[1920/790] min-h-[300px] flex flex-col items-center overflow-hidden relative lg:-z-10">
+    <div className="w-full aspect-[1920/850] min-h-[300px] flex flex-col items-center overflow-hidden relative lg:-z-10">
       <div className="absolute inset-0">
         <Swiper
           className="w-full h-full"

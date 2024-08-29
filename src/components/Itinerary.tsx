@@ -44,7 +44,7 @@ function Itinerary({
         </div>
       </div>
       <div
-        className={`w-full text-black overflow-hidden transition-max-height duration-1000 ease-in-out ${
+        className={`w-full text-black overflow-hidden transition-max-height ease-in-out ${
           openId === key ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         } ${paraClass}`}
       >

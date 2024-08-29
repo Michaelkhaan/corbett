@@ -41,11 +41,13 @@ const testimonials = [
 export default function OurGuestLoveUs({ className }: Props) {
   return (
     <div
-      className={`w-full bg-[url('/bglayers.png')] py-16 px-4s ${className}`}
+      className={`w-full bg-[url('/bglayers.png')] py-16 ${className}`}
     >
-      <h1 className="text-center lg:text-[40px] text-[20px] font-Gotham font-[500] mb-10">
+      <div className="flex justify-center">
+      <h1 className="text-center lg:text-[40px] text-[28px] font-Gotham font-[500] mb-10 border-b-2 border-black">
         OUR GUEST LOVE US
       </h1>
+      </div>
       <Swiper
         spaceBetween={1}
         slidesPerView={1}
@@ -80,7 +82,7 @@ export default function OurGuestLoveUs({ className }: Props) {
                 alt=""
                 width={0}
                 height={0}
-                className="w-8 aspect-square object-cover rounded-full"
+                className="w-10 aspect-square object-cover rounded-full"
               />
 
               <p className="text-[0.80rem] font-GothamBookBook text-justify ">

@@ -2,9 +2,9 @@ import Image from "next/image";
 const OverView1 = () => {
   return (
     <div className="w-full ">
-      <div className=" lg:w-[75%] 2xl:w-[65%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-10 px-2">
+      <div className=" lg:w-[75%] 2xl:w-[65%] w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-10">
         <div className="mt-5">
-          <h1 className="2xl:text-3xl text-lg font-GothamBook font-bold tracking-wide">
+          <h1 className="2xl:text-3xl text-xl font-GothamBook font-bold tracking-wide">
             Overview
           </h1>
           <p className="text-[14px] 2xl:text-[16px] font-GothamBook mt-3 tracking-wide leading-6 text-justify">
@@ -32,8 +32,8 @@ const OverView1 = () => {
           />
         </div>
       </div>
-      <div className=" lg:w-[75%] 2xl:w-[65%] px-2 mx-auto mt-10">
-        <h1 className="text-lg 2xl:text-2xl font-bold tracking-wide">
+      <div className=" lg:w-[75%] 2xl:w-[65%] w-11/12 mx-auto mt-10">
+        <h1 className="2xl:text-3xl text-xl font-GothamBook font-bold tracking-wide">
           Accomodation: Rest House a Dhikala Forest
         </h1>
         <p className="text-[14px] 2xl:text-[20px] tracking-wide leading-6 mt-2 text-justify">
@@ -43,7 +43,7 @@ const OverView1 = () => {
           annex, and 24 bunk beds in log huts. The rooms are comfortable with
           all basic amenities.
         </p>
-        <h1 className="text-lg 2xl:text-2xl font-bold mt-8">
+        <h1 className="2xl:text-3xl text-xl font-GothamBook font-bold tracking-wide mt-8">
           Food & Other Serivce
         </h1>
         <p className="text-[14px] 2xl:text-[20px] tracking-wide mb-12 leading-6 mt-2 text-justify">

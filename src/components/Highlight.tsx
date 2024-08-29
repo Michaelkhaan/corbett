@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { FaRegCircleCheck } from "react-icons/fa6";
+import { LuCheckCircle } from "react-icons/lu";
 
 interface Data {
   id: any;
@@ -33,13 +34,7 @@ export default function Highlight({
           : null}
         {data?.map((item, index) => (
           <span key={index} className="flex items-center gap-3">
-            <Image
-              src="/Layer 46.png"
-              alt=""
-              width={0}
-              height={0}
-              className="w-4 2xl:w-5 aspect-square"
-            />{" "}
+            <LuCheckCircle stroke="#f8bd01" />
             <li>{item?.name}</li>
           </span>
         ))}

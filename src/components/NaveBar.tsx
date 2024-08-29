@@ -62,14 +62,14 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
           <ul
             className={`${
               open ? "left-0 " : "-left-[100%] lg:left-0 bottom-0"
-            } flex lg:flex-row flex-col lg:items-center 2xl:gap-6 gap-3 absolute bg-black  top-14 px-8 lg:px-0 gap-y-4 py-4 lg:py-2 lg:relative lg:top-0 lg:bg-transparent w-full lg:w-auto transition-all duration-300 ease-in !z-[9999999] `}
+            } flex lg:flex-row flex-col lg:items-center 2xl:gap-6 gap-3 absolute bg-black/70  top-14 px-8 lg:px-0 gap-y-4 py-4 lg:py-2 lg:relative lg:top-0 lg:bg-transparent w-full lg:w-auto transition-all duration-300 ease-in !z-[9999999] `}
           >
             {navData?.map((nav, index) => (
               <Link key={index} href={nav?.link}>
                 <li
                   className="text-white 2xl:text-base lg:text-xs font-semibold font-GothamBook cursor-pointer hover:text-[#00f9e9]"
                   style={{
-                    color: nav?.link === router?.pathname ? "#00f9e9" : "white",
+                    color: nav?.link === router?.pathname ? "#f8bd01" : "white",
                   }}
                 >
                   {nav?.title}

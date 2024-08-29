@@ -18,6 +18,7 @@ import TraficPrice1 from "@/components/TraficPrice1";
 import Faq from "@/components/PackageFAQ";
 import FaqList from "@/components/FaqList";
 import OtherPageHero from "@/components/OtherPageHero";
+import OtherPageHeroShort from "@/components/OtherPageHeroShort";
 
 const faq = [
   {
@@ -53,7 +54,7 @@ const faq = [
 ];
 const jungle = [
   {
-    Title: "jungle Saferi Details",
+    Title: "jungle Safari Details",
     Dhikala: "Dhikala Ecotourism Zone",
     desc: "Dhikala ecotourism zone in Corbett National Park is famous for its stunning scenery. it's the most popular tourism zone in india, with diverse wildlife. Dhikala is the largest of Cor-bett's five zones,feature Dense Sal forests, vast grasslands, narrow valleys, and the winding Ramganga River. The Ramganga River is the park's lifeline, enriching its beauty and nour-ishing the pants and animals. ",
     desc1:
@@ -91,6 +92,7 @@ function Index() {
     <div className="w-full">
       <NaveBar />
       <OtherPageHero image="/dikala-rest-house.jpg" name="DHIKALA REST HOUSE" />
+      {/* <OtherPageHeroShort image="/dikala-rest-house.jpg" name="DHIKALA REST HOUSE" /> */}
       <div>
         <OverView1 />
         <div className="flex lg:w-[75%] 2xl:w-[65%] w-11/12  mx-auto flex-col justify-start items-start mb-12">
@@ -117,7 +119,7 @@ function Index() {
         </div>
         <TraficPrice1 />
 
-        <div className=" bg-[#efefee] py-12">
+        <div className=" bg-[#efefee] pb-12">
           <div className="flex lg:w-[70%] 2xl:w-[40%] w-11/12  mx-auto flex-col justify-start items-start">
             <FaqList data={faq} />
           </div>

@@ -37,7 +37,7 @@ function Faq({ className, question, answer, id, openId, setOpenId }: Props) {
         </div>
       </div>
       <div
-        className={`w-full text-black transition-all duration-[500ms] ease-in-out px-2 mt-2 overflow-hidden ${
+        className={`w-full text-black transition-all ease-in-out px-2 mt-2 overflow-hidden ${
           openId === id ? "max-h-40" : "max-h-0"
         }`}
       >

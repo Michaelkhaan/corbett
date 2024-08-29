@@ -138,7 +138,7 @@ function JungleSaferi({
       >
         <div className="flex justify-between items-center w-full">
           <h1
-            className={`font-bold text-lg tracking-wider font-GothamBook ${
+            className={`font-bold text-lg tracking-wider font-GothamBook uppercase ${
               openId === key ? "text-white" : ""
             }`}
           >
@@ -154,7 +154,7 @@ function JungleSaferi({
 
       {/* Conditional Rendering */}
       <div
-        className={`w-full text-black transition-all duration-[1000ms] ease-in-out overflow-hidden ${
+        className={`w-full text-black transition-all ease-in-out overflow-hidden ${
           openId === key ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >

@@ -30,7 +30,7 @@ export default function Touricons({ data , isLoading , name = "" }: { data: Data
                 height={40}
               />
             </span>
-            <h1>{e?.name}</h1>
+            <h1 className="text-center">{e?.name}</h1>
           </div>
         ))}
       </div>

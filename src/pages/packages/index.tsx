@@ -48,7 +48,7 @@ function Index() {
       <div className="w-full flex justify-center mt-2">
         <div className="w-11/12 lg:w-3/4 flex">
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[12px] flex items-center"
             onClick={() => router.push("/")}
           >
             Home <span className="pl-[3px] mt-[1px]">{">"}</span>
@@ -59,10 +59,10 @@ function Index() {
         </div>
       </div>
 
-      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center lg:my-10 ">
-        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
-          Best priced packages with in your budget
-        </h1>
+      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center my-6 ">
+      <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[28px] leading-[23.69px] font-extrabold font-frinkRio border-b-2 border-black uppercase">
+            All Packages 
+          </h1>
 
         <div className="w-11/12 lg:w-[60%] 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3 ">
           <div

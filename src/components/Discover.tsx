@@ -29,7 +29,7 @@ export default function Discover() {
         <div className="relative flex justify-between items-center overflow-hidden">
           <div
             onClick={goPrev}
-            className="p-[5px] border border-gray-300 rounded-full cursor-pointer hidden lg:block"
+            className="p-[5px] border border-gray-300 rounded-full cursor-pointer absolute left-0 lg:block"
           >
             <svg
               className="rotate-[-90deg]"
@@ -77,7 +77,7 @@ export default function Discover() {
 
           <div
             onClick={goNext}
-            className=" p-[5px] border border-gray-300 rounded-full cursor-pointer hidden lg:block"
+            className=" p-[5px] border border-gray-300 rounded-full cursor-pointer absolute right-0 lg:block"
           >
             <svg
               className="rotate-[90deg]"
@@ -96,7 +96,7 @@ export default function Discover() {
           </div>
         </div>
         <div className="text-left px-4 lg:px-0">
-          <h1 className="text-2xl 2xl:text-4xl lg:text-3xl font-medium font-GothamBook leading-16 text-gray-700">
+          <h1 className="text-2xl 2xl:text-4xl lg:text-3xl font-semibold font-GothamBook leading-16 text-gray-700">
             Discover the World,
             <br /> specially curated for you!
           </h1>
@@ -120,7 +120,7 @@ export default function Discover() {
                 target="_blank"
               >
                 <FaWhatsapp className="lg:text-2xl text-base text-black" />
-                 Enquiry
+                 <span className="font-bold">Enquiry</span>
               </a>
               {/* <button
   className=""

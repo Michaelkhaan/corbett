@@ -73,7 +73,7 @@ function Index() {
       <div className="w-full flex justify-center mt-2">
         <div className="w-11/12 lg:w-3/4 flex">
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[12px] flex items-center"
             onClick={() => router.push("/")}
           >
             Home <span className="pl-[3px] mt-[1px]">{">"}</span>
@@ -91,9 +91,9 @@ function Index() {
         </div>
       </div>
 
-      <div className="w-11/12 lg:w-3/4 2xl:w-[3/4] mx-auto  flex flex-col md:flex-row md:items-center md:justify-between gap-2 ">
+      <div className="w-11/12 lg:w-3/4 2xl:w-[3/4] mx-auto  flex flex-col md:flex-row md:items-center md:justify-between gap-2 mt-2 ">
         <div className="w-full md:w-auto text-left ">
-          <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter  ">
+          <h1 className="text-lg lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter  ">
             {data?.getPackageById?.name}
           </h1>
           {data?.getPackageById?.night || data?.getPackageById?.day ? (
@@ -116,7 +116,7 @@ function Index() {
               Start From
             </h1>
             <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[20px]">
-              <span className="lg:text-2xl">₹</span>
+              <span className="mr-1 mt-1">₹</span>
               {data?.getPackageById?.price}*
             </p>
             <p className="text-[12px] font-GothamBook leading-[8px]">
@@ -124,7 +124,7 @@ function Index() {
             </p>
           </div>
           <div className="w-full md:w-auto flex justify-end" onClick={onClick}>
-            <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-GothamBook font-medium ">
+            <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-6 py-3 font-GothamBook font-medium ">
               ENQUERY
             </button>
           </div>
@@ -227,8 +227,8 @@ function Index() {
           </div>
         </div>
       </div>
-      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20">
-        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3 text-center">
+      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-10">
+        <h1 className="text-xl lg:text-2xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3 text-center">
           Best priced packages with in your budget
         </h1>
 

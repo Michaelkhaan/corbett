@@ -191,7 +191,7 @@ export default function Home() {
         <Explore />
         <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px] bg-white ">
           <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[28px] leading-[23.69px] font-extrabold font-frinkRio border-b-2 border-black">
-            OUR PACKAGES
+            OUR PACKAGES 
           </h1>
           <p className="2xl:text-base text-[13px] leading-[20px] text-center font-GothamBook lg:w-[470px] mt-4 px-2">
             We craft our packages based on your budget, taste & preference
@@ -200,7 +200,7 @@ export default function Home() {
 
           <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-2 lg:mt-10">
             <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3 text-center">
-              Best priced packages with in your budget
+             Best priced packages with in your budget
             </h1>
 
             <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 gap-y-3 mt-3">
@@ -306,7 +306,7 @@ export default function Home() {
             </div>
           </div>
           <PriceAndZone />
-          <div className="w-full 2xl:w-[70%] mx-auto my-20 px-4 lg:px-32 2xl:px-16">
+          <div className="w-full 2xl:w-[70%] mx-auto my-10 px-4 lg:px-32 2xl:px-16">
             <h1 className="text-xl lg:text-2xl font-medium text-gray-700 font-Ghotam text-center">
               All inclusive tours, Start your journey today!
             </h1>

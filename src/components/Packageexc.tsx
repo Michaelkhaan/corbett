@@ -16,9 +16,11 @@ function Packageexc({
       {isLoading ? (
         <div className="bg-slate-200 animate-pulse h-4 w-1/2 md:w-1/3" />
       ) : (
-        <h1 className="text-[21px] leading-[28px] font-medium font-GothamBook">
+        <div className="flex justify-start">
+          <h1 className="text-[21px] leading-[28px] font-semibold font-GothamBook border-b border-black">
           Package Exclusion:
         </h1>
+        </div>
       )}
 
       <ul className="px-3">
