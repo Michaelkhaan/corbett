@@ -73,18 +73,18 @@ function Index() {
       <div className="w-full flex justify-center mt-2">
         <div className="w-11/12 lg:w-3/4 flex">
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[12px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[14px] flex items-center"
             onClick={() => router.push("/")}
           >
             Home <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[14px] flex items-center"
             onClick={() => router.push("/packages")}
           >
             Package <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
-          <p className=" pr-1 font-GothamBook text-[10px] font-bold flex items-center">
+          <p className=" pr-1 font-GothamBook text-[14px] flex items-center font-bold">
             {data?.getPackageById?.name}{" "}
             <span className="pl-[3px] mt-[1px]"></span>
           </p>
