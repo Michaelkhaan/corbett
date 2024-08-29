@@ -38,7 +38,7 @@ export default function PriceSection() {
   ];
 
   return (
-    <div className="w-11/12 md:px-[74px] lg:px-0 lg:w-[65%] 2xl:w-1/2 2xl:px-6 mx-auto py-4">
+    <div className=" lg:w-[75%] 2xl:w-[65%] w-11/12 mx-auto py-4">
       {sections.map(({ id, title, content }) => (
         <div key={id}>
           <div
@@ -46,7 +46,7 @@ export default function PriceSection() {
             onClick={() => handleToggle(id)}
           >
             <h1
-              className={`text-black text-base font-GothamBook font-semibold transition-all duration-500`}
+              className={`text-black2xl:text-3xl text-xl font-GothamBook font-bold tracking-wide`}
             >
               {title}
             </h1>
@@ -63,7 +63,7 @@ export default function PriceSection() {
                 : "max-h-0 opacity-0 transform -translate-y-2"
             }`}
           >
-            <p className="text-black text-xs mt-1 mb-2 leading-6 font-GothamBook">
+            <p className="text-black text-[14px] 2xl:text-[16px] mt-1 mb-2 leading-6 font-GothamBook">
               {content}
             </p>
           </div>

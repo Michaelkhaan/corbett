@@ -4,7 +4,7 @@ import Image from "next/image";
 const Attractions = ({ data, IsShow = false }: any) => {
   return (
     <>
-      <div className="relative lg:w-[75%] 2xl:w-[65%] w-11/12 px-4 mx-auto bg-white mb-6">
+      <div className="relative lg:w-[75%] 2xl:w-[65%] w-11/12 mx-auto bg-white mb-6">
         {IsShow ? (
           <>
             <h1 className="text-lg font-GothamBook font-semibold mt-4 lg:mt-0">
