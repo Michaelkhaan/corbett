@@ -47,7 +47,7 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
       <div
         className={`w-full bg-black/70  py-3 z-[9999] absolute left-0 right-0 top-0 ${mainClassName}`}
       >
-        <div className="mx-auto w-11/12 lg:w-4/5 2xl:w-[70%] flex items-center justify-between lg:px-1 2xl:px-3 2xl:pr-12">
+        <div className="mx-auto w-11/12 lg:w-3/4 2xl:w-[75%] flex items-center justify-between lg:px-1 2xl:px-3 2xl:pr-12">
           <div className="relative">
             <Link href="/">
               <h1 className="2xl:text-3xl text-2xl text-white font-bold font-frinkRio cursor-pointer">
