@@ -20,15 +20,15 @@ function PackageCard({ title, image, price, rooms, subtitle }: Props) {
         height={0}
         className="w-full lg:h-32 object-cover"
       />
-      <h1 className="text-[14px] mt-2 font-GothamBook font-bold tracking-tight">
+      <h1 className="text-[16px] mt-2 font-GothamBook font-bold tracking-tight">
         {title}
       </h1>
       <h2 className="text-[10px] uppercase text-[#4c4b4b] font-GothamBook font-medium mt-1">
         {rooms ? rooms : null}
       </h2>
-      <h2 className="text-sm font-bold font-GothamBook flex items-center gap-1 mt-1 -ml-1">
-        <span>₹</span>
-        {price}
+      <h2 className="text-sm font-bold font-GothamBook flex items-center gap-1 mt-1">
+        ₹
+        {" "+price}
       </h2>
       <p className="text-[#bbbbbb] text-xs font-GothamBook -mt-1">{subtitle}</p>
     </div>

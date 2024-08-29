@@ -44,7 +44,7 @@ function Hero() {
       </div>
 
       
-      <div className="my-auto flex flex-col items-center z-[999]">
+      <div className="my-auto flex flex-col items-center z-[999] mb-10 md:mb-auto">
         <h1 className="text-xl lg:text-5xl 2xl:text-7xl text-white font-bold text-center font-frinkRio ">
           Adventure
         </h1>

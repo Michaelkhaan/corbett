@@ -78,7 +78,7 @@ export default function Home() {
     },
     {
       image: "/jeep.png",
-      title: "Saffari",
+      title: "Safari",
       link: "/jeep",
     },
     {
@@ -190,20 +190,20 @@ export default function Home() {
         {/* </div> */}
         <Explore />
         <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px] bg-white ">
-          <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
+          <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[28px] leading-[23.69px] font-extrabold font-frinkRio border-b-2 border-black">
             OUR PACKAGES
           </h1>
-          <p className="2xl:text-base text-[15px] leading-[20px] text-center font-GothamBook lg:w-[470px] mt-4">
+          <p className="2xl:text-base text-[13px] leading-[20px] text-center font-GothamBook lg:w-[470px] mt-4 px-2">
             We craft our packages based on your budget, taste & preference
             however these are some most popular packages our guest has chosen.
           </p>
 
-          <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20 lg:mt-10">
-            <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
+          <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-2 lg:mt-10">
+            <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3 text-center">
               Best priced packages with in your budget
             </h1>
 
-            <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
+            <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 gap-y-3 mt-3">
               {priceRanges.map((price) => (
                 <div
                   key={price.id}
@@ -255,7 +255,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="w-full h-full border mt-20 relative">
+          <div className="w-full h-full border mt-10 relative">
             <video
               id="video"
               className="aspect-video w-full max-h-96 object-cover relative"

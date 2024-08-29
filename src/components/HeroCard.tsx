@@ -22,7 +22,7 @@ function HeroCard({ image, title, className, link = '#'}: Props) {
         height={0}
         className={`${className}`}
       />
-      <h1 className="text-[20px] font-GothamBook font-semibold text-white mt-2">
+      <h1 className="text-[18px] font-GothamBook font-semibold text-white mt-2">
         {title}
       </h1>
     </Link>
