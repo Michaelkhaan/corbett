@@ -67,7 +67,7 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
             {navData?.map((nav, index) => (
               <Link key={index} href={nav?.link}>
                 <li
-                  className="text-white 2xl:text-base lg:text-xs font-semibold font-GothamBook cursor-pointer hover:text-[#00f9e9]"
+                  className="text-white whitespace-nowrap 2xl:text-base lg:text-xs font-semibold font-GothamBook cursor-pointer hover:text-[#00f9e9]"
                   style={{
                     color: nav?.link === router?.pathname ? "#f8bd01" : "white",
                   }}
