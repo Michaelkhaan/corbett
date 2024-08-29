@@ -45,10 +45,10 @@ function Hero() {
 
       
       <div className="my-auto flex flex-col items-center z-[999]">
-        <h1 className="text-xl 2xl:text-5xl text-white font-bold text-center font-frinkRio ">
+        <h1 className="text-xl lg:text-5xl 2xl:text-7xl text-white font-bold text-center font-frinkRio ">
           Adventure
         </h1>
-        <h1 className="text-[40px] leading-[0.8] md:leading-[0.8] lg:text-[100px] 2xl:text-[134px] text-white font-extrabold tracking-widest text-center font-frinkRio">
+        <h1 className="text-[40px] leading-[0.8] md:leading-[0.8] lg:text-[70px] 2xl:text-[110px] text-white font-extrabold tracking-widest text-center font-frinkRio">
           SAFARI <br /> CORBETT
         </h1>
         <div className="mt-5">
