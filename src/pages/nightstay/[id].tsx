@@ -24,6 +24,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import ItenararyList from "@/components/ItenararyList";
 import FaqList from "@/components/FaqList";
 import RoomType from "@/components/RoomType";
+import Link from "next/link";
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -150,17 +151,14 @@ function Index() {
               Start From
             </h1>
             <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[20px]">
-              <span className="lg:text-2xl">
-              ₹
-              </span>
+              <span className="lg:text-2xl">₹</span>
               {data?.getNightStayById?.price}*
             </p>
-            <p className="text-[12px] font-GothamBook leading-[8px]">per person</p>
+            <p className="text-[12px] font-GothamBook leading-[8px]">
+              per person
+            </p>
           </div>
-          <div
-            className="w-full md:w-auto flex justify-end"
-            onClick={onClick}
-          >
+          <div className="w-full md:w-auto flex justify-end" onClick={onClick}>
             <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-GothamBook font-medium ">
               ENQUERY
             </button>
@@ -221,7 +219,7 @@ function Index() {
             )}
           </div>
           <div className="w-11/12 border-b border-gray-700 mt-5" />
-          <RoomType data={data}  />
+          <RoomType data={data} />
 
           {/* <div className="w-full mx-auto pb-5 mt-14">
             {!!data?.getNightStayById?.Inclusions?.length || isPending ? (
@@ -253,7 +251,7 @@ function Index() {
           <div className="w-full mt-5">
             {data?.getNightStayById?.Includes?.length || isPending ? (
               <Touricons
-              name="Amenities"
+                name="Amenities"
                 data={data?.getNightStayById?.Includes as any}
                 isLoading={isPending}
               />
@@ -305,15 +303,17 @@ function Index() {
         </div>
         <div className="w-11/12 lg:w-[60%] 2xl:w-3/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
           {packagesData?.map((e, index) => (
-            <PackageCard
-              key={index}
-              title={e?.title}
-              //@ts-ignore
-              image={e?.images?.[0]}
-              price={e?.prices}
-              rooms={e?.rooms}
-              subtitle={e?.subtitle}
-            />
+            <Link key={index} href={"/nightstay/" + e?.id}>
+              <PackageCard
+                key={index}
+                title={e?.title}
+                //@ts-ignore
+                image={e?.images?.[0]}
+                price={e?.prices}
+                rooms={e?.rooms}
+                subtitle={e?.subtitle}
+              />
+            </Link>
           ))}
         </div>
         <Model

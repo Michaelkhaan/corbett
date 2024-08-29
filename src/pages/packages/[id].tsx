@@ -21,6 +21,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import ItenararyList from "@/components/ItenararyList";
 import FaqList from "@/components/FaqList";
+import Link from "next/link";
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -115,17 +116,14 @@ function Index() {
               Start From
             </h1>
             <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[20px]">
-              <span className="lg:text-2xl">
-              ₹
-              </span>
+              <span className="lg:text-2xl">₹</span>
               {data?.getPackageById?.price}*
             </p>
-            <p className="text-[12px] font-GothamBook leading-[8px]">per person</p>
+            <p className="text-[12px] font-GothamBook leading-[8px]">
+              per person
+            </p>
           </div>
-          <div
-            className="w-full md:w-auto flex justify-end"
-            onClick={onClick}
-          >
+          <div className="w-full md:w-auto flex justify-end" onClick={onClick}>
             <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-GothamBook font-medium ">
               ENQUERY
             </button>
@@ -270,15 +268,17 @@ function Index() {
         </div>
         <div className="w-11/12 lg:w-[80%] 2xl:w-3/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6 mb-12">
           {packagesData?.map((e, index) => (
-            <PackageCard
-              key={index}
-              title={e?.title}
-              //@ts-ignore
-              image={e?.images?.[0]}
-              price={e?.prices}
-              rooms={e?.rooms}
-              subtitle={e?.subtitle}
-            />
+            <Link key={index} href={"/packages/" + e?.id}>
+              <PackageCard
+                key={index}
+                title={e?.title}
+                //@ts-ignore
+                image={e?.images?.[0]}
+                price={e?.prices}
+                rooms={e?.rooms}
+                subtitle={e?.subtitle}
+              />
+            </Link>
           ))}
         </div>
         {/* <div className="w-full mt-8 lg:mt-24 mb-8 lg:mb-16">
@@ -301,9 +301,9 @@ function Index() {
         <Model
           show={open}
           onClose={() => setOpen(false)}
-          containerClass="!md:w-1/3 w-11/12"
+          containerClass="mx-auto w-11/12 md:w-1/2 lg:w-1/3"
         >
-          <div className="bg-white w-1/2 mx-auto p-5">
+          <div className="bg-white mx-auto p-5 w-full">
             <Data onClose={() => setOpen(false)} />
           </div>
         </Model>
