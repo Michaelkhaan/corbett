@@ -186,8 +186,6 @@ function Index() {
             )}
           </div>
           <div className="w-11/12 border-b border-gray-700 mt-5" />
-          <TraficTable />
-          <div className="w-11/12 border-b border-gray-700 mt-5" />
           {data?.getPackageById?.Itinerary?.length ? (
             <ItenararyList data={data?.getPackageById?.Itinerary} />
           ) : null}
