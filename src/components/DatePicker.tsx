@@ -153,6 +153,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
         <div className="absolute mt-2 min-w-[250px] p-4 bg-white border border-gray-300 rounded shadow-lg z-10">
           <div className="flex justify-between items-center mb-4">
             <button
+              type="button"
               onClick={() => navigateMonthHandler(-1)}
               className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
             >
@@ -174,11 +175,12 @@ const DatePicker: React.FC<DatePickerProps> = ({
             </button>
             <span className="text-lg font-semibold">
               {new Date(currentYear, currentMonth).toLocaleString("default", {
-                month: "long",
+                month: "short",
                 year: "numeric",
               })}
             </span>
             <button
+              type="button"
               onClick={() => navigateMonthHandler(1)}
               className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
             >
@@ -208,6 +210,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
             ))}
             {dateArray.map((dateText, index) => (
               <button
+                type="button"
                 key={index}
                 onClick={() => selectDateHandler(dateText)}
                 className={`p-2 rounded ${
