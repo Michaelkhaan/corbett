@@ -123,21 +123,21 @@ function Index() {
           </div>
         </div>
       </div>
-      <div className="w-11/12 lg:w-3/4 mx-auto mt-5">
+      <div className="w-11/12 lg:w-3/4 mx-auto mt-4">
         <Swiper
           className="w-full h-full"
-          autoplay={{
-            delay: 1000,
-            disableOnInteraction: false,
-            waitForTransition: true,
-          }}
+          // autoplay={{
+          //   delay: 1000,
+          //   disableOnInteraction: false,
+          //   waitForTransition: true,
+          // }}
           navigation={true}
           speed={3000}
           loop={true}
           modules={[Autoplay, Navigation, Pagination]}
         >
           {data?.getNightStayById?.images?.map((e, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide className="w-full" key={index}>
               <Image
                 src={e?.toString() || "/Layer 45.png"}
                 alt=""

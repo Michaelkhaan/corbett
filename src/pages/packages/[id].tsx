@@ -133,11 +133,11 @@ function Index() {
       <div className="w-11/12 lg:w-3/4 mx-auto mt-4">
         <Swiper
           className="w-full h-full"
-          autoplay={{
-            delay: 1000,
-            disableOnInteraction: false,
-            waitForTransition: true,
-          }}
+          // autoplay={{
+          //   delay: 1000,
+          //   disableOnInteraction: false,
+          //   waitForTransition: true,
+          // }}
           navigation={true}
           speed={3000}
           loop={true}
