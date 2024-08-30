@@ -40,6 +40,10 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
       link: "/dhikalaresthouse",
     },
     {
+      title: "Resorts",
+      link: "/nightstay",
+    },
+    {
       title: "Contact Us",
       link: "/contact_us",
     },

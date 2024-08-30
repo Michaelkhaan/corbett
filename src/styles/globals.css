@@ -167,3 +167,25 @@ c #scroll-chat::-webkit-scrollbar-thumb {
   color: black;
   background-color: transparent;
 }
+
+.swiper-button-prev , .swiper-button-next {
+  background-color: rgba(128, 128, 128, 0.667);
+  color: white;
+  height: auto !important;
+  width: auto !important;
+  padding: 20px 25px;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+}
+.swiper-button-next{
+  right: 0 !important;
+}
+
+.swiper-button-prev::after , .swiper-button-next::after {
+  font-size: 20px !important;
+  color: white;
+  font-size: bold;
+
+}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { LuCheckCircle } from "react-icons/lu";
 
 interface roomProps {
   data: any;
@@ -52,7 +53,12 @@ const RoomType = ({ data }: roomProps) => {
             <div className="lg:text-sm text-xs text-black 2xl:text-xl font-GothamBook ml-3 mb-5">
               {data?.getNightStayById?.Inclusions?.map(
                 (item: any, index: any) => (
-                  <p key={index?.toString()}>- {item?.title}</p>
+                  <p
+                    key={index?.toString()}
+                    className="flex items-center gap-2"
+                  >
+                    <LuCheckCircle stroke="#f8bd01" /> {item?.title}
+                  </p>
                 )
               )}
             </div>
