@@ -1,30 +1,28 @@
 import Data from "@/components/Data";
 import Highlight from "@/components/Highlight";
-import Itinerary from "@/components/Itinerary";
 import Model from "@/components/Model";
 import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
-import Package from "@/components/Package";
 import PackageCard from "@/components/PackageCard";
-import PackageFAQ from "@/components/PackageFAQ";
-import Packageexc from "@/components/Packageexc";
 import Touricons from "@/components/Touricons";
 import {
   useGetAllNightStayQuery,
-  useGetAllPackagesQuery,
   useGetNightStayByIdQuery,
-  useGetPackageByIdQuery,
 } from "@/queries/generated";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
-import { start } from "repl";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import ItenararyList from "@/components/ItenararyList";
 import FaqList from "@/components/FaqList";
 import RoomType from "@/components/RoomType";
 import Link from "next/link";
+
+const priceRanges = [
+  { start: 0, end: 10000, id: 1, label: "Less than Rs 10,000" },
+  { start: 10000, end: 20000, id: 2, label: "Rs 10,000 to Rs 20,000" },
+  { start: 30000, end: 50000, id: 3, label: "Rs 30,000 to Rs 50,000" },
+];
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -76,64 +74,24 @@ function Index() {
       <div className="w-full flex justify-center mt-2">
         <div className="w-11/12 lg:w-3/4 flex">
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[14px] flex items-center"
             onClick={() => router.push("/")}
           >
             Home <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[14px] flex items-center"
             onClick={() => router.push("/nightstay")}
           >
             Resort <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
-          <p className=" pr-1 font-GothamBook text-[10px] font-bold flex items-center">
+          <p className=" pr-1 font-GothamBook text-[14px] font-bold flex items-center">
             {data?.getNightStayById?.name}{" "}
             <span className="pl-[3px] mt-[1px]"></span>
           </p>
         </div>
       </div>
 
-      {/* <div className="w-11/12 lg:w-[73%] 2xl:w-[70%] mx-auto mt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-        <div className="w-full md:w-auto text-start">
-          <h1 className="text-lg lg:text-[24px] 2xl:text-[32px] font-bold font-frinkRio whitespace-nowrap">
-            {data?.getNightStayById?.name}
-          </h1>
-          {data?.getNightStayById?.location ? (
-            <p className="text-xs lg:text-[14px] 2xl:text-[16px] font-GothamBook font-bold">
-              {data?.getNightStayById?.location}
-            </p>
-          ) : null}
-        </div>
-        <div className="w-full md:w-1/2 flex flex-col min-[300px]:flex-row pr-0 2xl:pr-20 items-center justify-between md:justify-end lg:gap-20 2xl:gap-40 gap-2">
-          <div className="w-full md:w-auto text-start">
-            <h1 className="text-xs lg:text-base 2xl:text-[20px]  font-GothamBook font-regular">
-              Start From
-            </h1>
-            <p className="flex items-center lg:text-2xl text-lg 2xl:text-[32px] font-GothamBook font-bold leading-[28px]">
-              <span>
-                <Image
-                  src="/currency.png"
-                  alt=""
-                  width={0}
-                  height={0}
-                  className="w-4 aspect-square"
-                />
-              </span>
-              {data?.getNightStayById?.price}*
-            </p>
-            <p className="text-[8px] font-GothamBook pl-5">per person</p>
-          </div>
-          <div
-            className="w-full md:w-auto flex justify-start sm:justify-end"
-            onClick={onClick}
-          >
-            <button className="bg-black text-white text-sm 2xl:text-lg tracking-widest px-8 py-3 font-GothamBook font-medium ">
-              ENQUERY
-            </button>
-          </div>
-        </div>
-      </div> */}
       <div className="w-11/12 lg:w-3/4 2xl:w-[3/4] mx-auto  flex flex-col md:flex-row md:items-center md:justify-between gap-2 ">
         <div className="w-full md:w-auto text-left ">
           <h1 className="text-base lg:text-lg 2xl:text-[26px] font-Gotham font-extrabold leading-7 tracking-tighter  ">
@@ -221,22 +179,6 @@ function Index() {
           <div className="w-11/12 border-b border-gray-700 mt-5" />
           <RoomType data={data} />
 
-          {/* <div className="w-full mx-auto pb-5 mt-14">
-            {!!data?.getNightStayById?.Inclusions?.length || isPending ? (
-              <Package
-                data={data?.getNightStayById?.Inclusions as any}
-                isLoading={isPending}
-              />
-            ) : null}
-
-            {!!data?.getNightStayById?.Exclusions?.length || isPending ? (
-              <Packageexc
-                data={data?.getNightStayById?.Exclusions as any}
-                isLoading={isPending}
-              />
-            ) : null}
-          </div> */}
-
           {data?.getNightStayById?.Faqs?.length ? (
             <FaqList data={data?.getNightStayById?.Faqs as any} />
           ) : null}
@@ -263,43 +205,36 @@ function Index() {
         </div>
       </div>
       <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center mt-20 lg:mt-40">
-        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3">
+        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3 text-center">
           Best priced packages with in your budget
         </h1>
 
-        <div className="w-11/12 lg:w-1/2 2xl:w-2/6 grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-2 mt-3">
-          <div
-            className={`${
-              selectedPrice?.id === 1
-                ? "bg-[#f8bd01] text-white"
-                : "bg-white border text-black"
-            } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
-            onClick={() => handleClick({ start: 1, end: 10000, id: 1 })}
-          >
-            <h1 className="text-sm font-GothamBook">Less than Rs 10,000</h1>
-          </div>
-          <div
-            className={`${
-              selectedPrice?.id === 2
-                ? "bg-[#f8bd01] text-white"
-                : "bg-white border text-black"
-            } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
-            onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
-          >
-            <h1 className="text-xs font-GothamBook">Rs 10,000 to Rs 20,000</h1>
-          </div>
-          <div
-            className={`${
-              selectedPrice?.id === 3
-                ? "bg-[#f8bd01] text-white"
-                : "bg-white border text-black"
-            } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
-            onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
-          >
-            <h1 className="text-[10.74px] leading-4 font-GothamBook">
-              Rs 30,000 to Rs 50,000
-            </h1>
-          </div>
+        <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 gap-y-3 mt-3">
+          {priceRanges.map((price) => (
+            <div
+              key={price.id}
+              className={`${
+                selectedPrice?.id === price.id
+                  ? "bg-[#f8bd01] text-white"
+                  : "bg-white border text-black"
+              } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
+              onClick={() =>
+                handleClick({
+                  start: price.start,
+                  end: price.end,
+                  id: price.id,
+                })
+              }
+            >
+              <h1
+                className={`text-sm font-GothamBook  ${
+                  selectedPrice?.id === price.id ? " text-white" : " text-black"
+                }`}
+              >
+                {price.label}
+              </h1>
+            </div>
+          ))}
         </div>
         <div className="w-11/12 lg:w-[60%] 2xl:w-3/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
           {packagesData?.map((e, index) => (
@@ -319,9 +254,9 @@ function Index() {
         <Model
           show={open}
           onClose={() => setOpen(false)}
-          containerClass="!w-1/3"
+          containerClass="mx-auto w-11/12 md:w-1/2 lg:w-1/3"
         >
-          <div className="bg-white">
+          <div className="bg-white mx-auto p-5 w-full">
             <Data onClose={() => setOpen(false)} />
           </div>
         </Model>

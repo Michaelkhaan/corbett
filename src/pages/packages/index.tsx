@@ -115,23 +115,6 @@ function Index() {
             </div>
           ))}
         </div>
-        {/* <div className="w-full mt-8 lg:mt-24 mb-8 lg:mb-16">
-          <h1 className="text-lg font-medium font-GothamBook text-center">
-            LET YOUR{" "}
-            <span className="text-lg font-bold font-GothamBook">SAFFARI TOUR</span>{" "}
-            WITH SPECIAL OFFERS AND DEALS!
-          </h1>
-          <div className="w-full flex items-center justify-center gap-2 mt-3 pb-5 px-4">
-            <input
-              type="text"
-              placeholder="+91 000000000"
-              className="border border-black outline-none bg-transparent px-2 py-1 w-full lg:w-1/5"
-            />
-            <button className="bg-black rounded-sm px-4 py-1 text-white font-bold">
-              GO
-            </button>
-          </div>
-        </div> */}
       </div>
       <Nfooter />
     </div>

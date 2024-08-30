@@ -169,25 +169,7 @@ export default function Home() {
       <div className="w-full absolute -z-50">
         <NaveBar />
         <Hero />
-        {/* <img src="/test/hero.png" className="w-full"/> */}
-        {/* <div className="w-full lg:w-full flex flex-wrap justify-center mx-auto gap-3 md:gap-5  lg:-mt-14 mt-2 ">
-          {heroCard?.map((e, index) => (
-            <HeroCard
-              key={index}
-              image={e?.image}
-              title={e?.title}
-              link={e?.link}
-              className={`
-            ${index === 0 ? "aspect-[74/72] w-[74px]" : ""} 
-            ${index === 1 ? "aspect-[74/72] w-[74px]" : ""} 
-            ${index === 2 ? "aspect-[74/72] w-[74px]" : ""}
-            ${index === 3 ? "aspect-[74/72] w-[74px]" : ""}`}
-            />
-          ))}
-        </div> */}
-        {/* <div className="w-11/12 lg:w-1/2 mx-auto mt-10"> */}
         <ButtonCard />
-        {/* </div> */}
         <Explore />
         <div className="w-full flex flex-col items-center justify-center mt-10 mx-auto max-w-[1920px] bg-white ">
           <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[28px] leading-[23.69px] font-extrabold font-frinkRio border-b-2 border-black">

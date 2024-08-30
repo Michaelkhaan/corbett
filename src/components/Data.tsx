@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSubmitFormMutation } from "@/queries/generated";
 import Spinner from "./spinner";
+import DatePicker from "./DatePicker";
 
 const schema = yup.object().shape({
   date: yup.string().required("Travel date is required"),
@@ -20,6 +21,7 @@ export default function Data({ onClose }: any) {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm({ resolver: yupResolver(schema) });
 
   const { mutateAsync: submitForm, isPending } = useSubmitFormMutation();
@@ -48,11 +50,16 @@ export default function Data({ onClose }: any) {
         <h1 className="mb-5 text-lg font-bold">Where do you want to go?</h1>
 
         <div className="flex relative flex-col">
-          <input
-            type="date"
-            placeholder="Travel Date"
-            {...register("date")}
-            className="px-12 w-full focus:outline-none border border-black py-1 mb-4 hover:border-black"
+          <Controller
+            name="date"
+            control={control}
+            render={({ field }) => (
+              <DatePicker
+                {...field}
+                placeholder="Travel Date"
+                className="lg:px-12 w-full focus:outline-none border border-gray-400 py-1 mb-4"
+              />
+            )}
           />
           {errors.date && (
             <p className="absolute left-0 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
@@ -66,7 +73,7 @@ export default function Data({ onClose }: any) {
             type="text"
             placeholder="Phone Number"
             {...register("number")}
-            className="px-12 w-full focus:outline-none border border-black py-1 mb-4"
+            className="lg:px-12 w-full focus:outline-none border border-gray-400 py-1 mb-4"
           />
           {errors.number && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
@@ -80,7 +87,7 @@ export default function Data({ onClose }: any) {
             type="text"
             placeholder="Email"
             {...register("email")}
-            className="px-12 w-full focus:outline-none border border-black py-1 mb-4"
+            className="lg:px-12 w-full focus:outline-none border border-gray-400 py-1 mb-4"
           />
           {errors.email && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
@@ -94,7 +101,7 @@ export default function Data({ onClose }: any) {
             type="text"
             placeholder="Name"
             {...register("person")}
-            className="px-12 w-full focus:outline-none border border-black py-1 mb-4"
+            className="lg:px-12 w-full focus:outline-none border border-gray-400 py-1 mb-4"
           />
           {errors.person && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
@@ -112,7 +119,6 @@ export default function Data({ onClose }: any) {
           </button>
         </div>
       </form>
-      {/* <ToastContainer /> */}
     </div>
   );
 }

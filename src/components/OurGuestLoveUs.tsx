@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 interface Props {
   className?: string;
@@ -40,19 +41,25 @@ const testimonials = [
 
 export default function OurGuestLoveUs({ className }: Props) {
   return (
-    <div
-      className={`w-full bg-[url('/bglayers.png')] py-16 ${className}`}
-    >
+    <div className={`w-full bg-[url('/bglayers.png')] py-16 ${className}`}>
       <div className="flex justify-center">
-      <h1 className="text-center lg:text-[40px] text-[28px] font-Gotham font-[500] mb-10 border-b-2 border-black">
-        OUR GUEST LOVE US
-      </h1>
+        <h1 className="text-center lg:text-[40px] text-[28px] font-Gotham font-[500] mb-10 border-b-2 border-black">
+          OUR GUEST LOVE US
+        </h1>
       </div>
       <Swiper
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+          waitForTransition: true,
+        }}
+        speed={3000}
+        loop={true}
+        modules={[Autoplay, Navigation, Pagination]}
         spaceBetween={1}
         slidesPerView={1}
-        slidesOffsetBefore={50}
-        
+        // slidesOffsetBefore={50}
+
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -85,7 +92,7 @@ export default function OurGuestLoveUs({ className }: Props) {
                 className="w-10 aspect-square object-cover rounded-full"
               />
 
-              <p className="text-[0.80rem] font-GothamBookBook text-justify ">
+              <p className="text-[0.80rem] font-GothamBookBook text-justify pr-6 md:pr-0 ">
                 {item?.desc}
                 <br />
                 <span className="font-bold text-[12px]">{item?.name}, </span>

@@ -1,11 +1,19 @@
 import NaveBar from "@/components/NaveBar";
 import Nfooter from "@/components/Nfooter";
 import PackageCard from "@/components/PackageCard";
-import { useGetAllNightStayQuery, useGetAllPackagesQuery } from "@/queries/generated";
+import {
+  useGetAllNightStayQuery,
+  useGetAllPackagesQuery,
+} from "@/queries/generated";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useMemo, useState } from "react";
-import { start } from "repl";
+
+const priceRanges = [
+  { start: 0, end: 10000, id: 1, label: "Less than Rs 10,000" },
+  { start: 10000, end: 20000, id: 2, label: "Rs 10,000 to Rs 20,000" },
+  { start: 30000, end: 50000, id: 3, label: "Rs 30,000 to Rs 50,000" },
+];
 
 function Index() {
   const [selectedPrice, setSelectedPrice] = useState({
@@ -23,14 +31,13 @@ function Index() {
     setSelectedPrice(price);
   };
 
-  const {data}=useGetAllNightStayQuery({
+  const { data } = useGetAllNightStayQuery({
     startPrice: selectedPrice?.start,
     endPrice: selectedPrice?.end,
-  })
-
+  });
 
   const packagesData = useMemo(() => {
-    return data?.getAllNightStay?.data?.map((data)=>{
+    return data?.getAllNightStay?.data?.map((data) => {
       return {
         id: data?.id?.toString() || "",
         images: data?.images || [],
@@ -41,7 +48,6 @@ function Index() {
     });
   }, [data]);
 
-
   console.log(data);
 
   return (
@@ -50,63 +56,59 @@ function Index() {
       <div className="w-full flex justify-center mt-2">
         <div className="w-11/12 lg:w-3/4 flex">
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[10px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[14px] flex items-center"
             onClick={() => router.push("/")}
           >
             Home <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
-          <p className=" pr-1 font-GothamBook text-[10px] flex items-center">
-          <Link href={""}> Resorts </Link>  <span className="font-bold"> <Link href={"/nightstay"}> </Link> </span> <span className="pl-[3px] mt-[1px]"></span>
+          <p className=" pr-1 font-GothamBook text-[14px] flex items-center">
+            <Link href={""}> Resorts </Link>
+            <span className="font-bold">
+              <Link href={"/nightstay"}> </Link>
+            </span>
+            <span className="pl-[3px] mt-[1px]"></span>
           </p>
         </div>
       </div>
 
       <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center lg:mt-1">
-        
-      <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio">
+        <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[28px] leading-[23.69px] font-extrabold font-frinkRio border-b-2 border-black">
           OUR RESORTS
         </h1>
-        <p className="2xl:text-base text-[15px] leading-[20px] text-center font-GothamBook lg:w-[630px] mt-2">
-          We craft our packages based on your budget, taste & preference however these are 
-           some most popular packages our guest has chosen.
+        <p className="2xl:text-base text-[13px] leading-[20px] text-center font-GothamBook lg:w-[470px] mt-4 px-2">
+          We craft our packages based on your budget, taste & preference however
+          these are some most popular packages our guest has chosen.
         </p>
-        <h1 className="text-xl leading-[23px] font-bold text-gray-600 font-GothamBookBook px-3 mt-3">
+        <h1 className="text-xl leading-[23px] font-medium text-gray-800 font-GothamBook px-3 text-center">
           Best priced packages with in your budget
         </h1>
 
-        <div className="w-11/12 lg:w-1/2 2xl:w-2/6 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 mt-3">
-          <div
-            className={`${
-              selectedPrice?.id === 1
-                ? "bg-[#f8bd01] text-white"
-                : "bg-white border text-black"
-            } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
-            onClick={() => handleClick({ start: 0, end: 10000, id: 1 })}
-          >
-            <h1 className="text-[10px] font-GothamBook">Less than Rs 10,000</h1>
-          </div>
-          <div
-            className={`${
-              selectedPrice?.id === 2
-                ? "bg-[#f8bd01] text-white"
-                : "bg-white border text-black"
-            } rounded-full px-2 flex justify-center py-2 cursor-pointer`}
-            onClick={() => handleClick({ start: 10000, end: 20000, id: 2 })}
-          >
-            <h1 className="text-xs font-GothamBook">Rs 10,000 to Rs 20,000</h1>
-          </div>
-          <div
-            className={`${
-              selectedPrice?.id === 3
-                ? "bg-[#f8bd01] text-white"
-                : "bg-white border text-black"
-            } rounded-full px-1 py-2 flex justify-center cursor-pointer`}
-            onClick={() => handleClick({ start: 30000, end: 50000, id: 3 })}
-          >
-            <h1 className="text-[10.74px] leading-4 font-GothamBook">
-              Rs 30,000 to Rs 50,000
-            </h1>
-          </div>
+        <div className="w-11/12 lg:w-2/3 2xl:w-1/2 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-2 gap-y-3 mt-3">
+          {priceRanges.map((price) => (
+            <div
+              key={price.id}
+              className={`${
+                selectedPrice?.id === price.id
+                  ? "bg-[#f8bd01] text-white"
+                  : "bg-white border text-black"
+              } rounded-full px-6 py-2 flex justify-center cursor-pointer`}
+              onClick={() =>
+                handleClick({
+                  start: price.start,
+                  end: price.end,
+                  id: price.id,
+                })
+              }
+            >
+              <h1
+                className={`text-sm font-GothamBook  ${
+                  selectedPrice?.id === price.id ? " text-white" : " text-black"
+                }`}
+              >
+                {price.label}
+              </h1>
+            </div>
+          ))}
         </div>
         <div className="w-11/12 mb-5 lg:w-3/4 2xl:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
           {packagesData?.map((e) => (
