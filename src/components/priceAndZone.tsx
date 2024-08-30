@@ -109,7 +109,7 @@ export default function PriceAndZone({}: Props) {
       const [tab, setTab] = useState("jeep");
   return (
     <div className="w-full bg-[#f2f2f2] mt-20 py-8">
-          <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] leading-[23.69px] font-extrabold font-frinkRio text-center">
+          <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[20px] font-extrabold font-frinkRio text-center">
             Jim Corbett Saffari Price And Zones
           </h1>
           <div className="w-full mt-5">

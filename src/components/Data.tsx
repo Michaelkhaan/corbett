@@ -73,7 +73,7 @@ export default function Data({ onClose }: any) {
             type="text"
             placeholder="Phone Number"
             {...register("number")}
-            className="lg:px-12 w-full focus:outline-none border border-gray-400 py-1 mb-4"
+            className="lg:px-12 px-4 w-full focus:outline-none border border-gray-400 py-1 mb-4"
           />
           {errors.number && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
@@ -87,7 +87,7 @@ export default function Data({ onClose }: any) {
             type="text"
             placeholder="Email"
             {...register("email")}
-            className="lg:px-12 w-full focus:outline-none border border-gray-400 py-1 mb-4"
+            className="lg:px-12 px-4 w-full focus:outline-none border border-gray-400 py-1 mb-4"
           />
           {errors.email && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">
@@ -101,7 +101,7 @@ export default function Data({ onClose }: any) {
             type="text"
             placeholder="Name"
             {...register("person")}
-            className="lg:px-12 w-full focus:outline-none border border-gray-400 py-1 mb-4"
+            className="lg:px-12 px-4 w-full focus:outline-none border border-gray-400 py-1 mb-4"
           />
           {errors.person && (
             <p className="absolute left-5 sm:left-0 text-sm -bottom-7 md:-bottom-0 text-red-600">

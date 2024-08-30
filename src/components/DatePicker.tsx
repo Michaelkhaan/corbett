@@ -120,7 +120,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
   return (
     <div ref={popupRef} className="relative inline-block w-full">
       <div
-        className={`relative flex items-center px-12 w-full border  py-1 ${className}`}
+        className={`relative flex items-center w-full border  py-1 px-4 ${className}`}
       >
         <input
           type="text"
