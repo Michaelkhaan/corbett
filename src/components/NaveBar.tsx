@@ -63,7 +63,7 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
               </h1>
 
               <span
-                className={`w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 ${className}`}
+                className={`w-2 aspect-square rounded-full !bg-[#00f9e9] absolute top-1 -right-2 ${className}`}
               ></span>
             </Link>
           </div>

@@ -47,7 +47,7 @@ const RoomType = ({ data }: roomProps) => {
       {data?.getNightStayById?.Inclusions?.length ? (
         <div className="w-4/5 flex border border-gray-600 h-auto">
           <div className="w-[95%] mx-auto p-5">
-            <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-medium leading-7 tracking-tighter my-2">
+            <h1 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter my-2">
               Room Facilities
             </h1>
             <div className="lg:text-sm text-xs text-black 2xl:text-xl font-GothamBook ml-3 mb-5">

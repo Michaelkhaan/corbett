@@ -26,7 +26,7 @@ function Package({
         </div>
       )}
 
-      <ul className="px-3">
+      <ul className="px-3 mt-3">
         {isLoading
           ? Array.from({ length: 6 }).map((e, index) => (
             
@@ -37,7 +37,7 @@ function Package({
         {data?.map((e, index) => (
           <li
             key={index}
-            className="text-[13px] leading-[24px] mt-3 font-GothamBook flex items-center gap-2"
+            className="text-[13px] leading-[24px] font-GothamBook flex items-center gap-2"
           >
             <LuCheckCircle stroke="#f8bd01" /> {e?.title}
           </li>

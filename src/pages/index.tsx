@@ -264,7 +264,7 @@ export default function Home() {
         unoptimized
         priority
       /> */}
-          <Discover />
+          <Discover/>
           <div className="px-4 lg:w-[80%] w-11/12 mx-auto mt-10 lg:mt-20">
             <div className="grid grid-cols-7  mx-auto gap-2">
               <div className="lg:col-span-2 col-span-12 mt-3">

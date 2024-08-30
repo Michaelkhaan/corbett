@@ -68,11 +68,11 @@ function Hero() {
 
       
       <div className="my-auto flex flex-col items-center z-[999] mb-8 md:mb-auto">
-        <h1 className="text-xl lg:text-5xl 2xl:text-7xl text-white font-bold text-center font-frinkRio">
-          Adventure
+        <h1 className="text-[30px] lg:text-6xl 2xl:text-7xl text-white font-bold text-center font-frinkRio">
+          Experience
         </h1>
-        <h1 className="text-[40px] leading-[0.8] md:leading-[0.8] lg:text-[70px] 2xl:text-[110px] text-white font-extrabold tracking-widest text-center font-frinkRio">
-          SAFARI <br /> CORBETT
+        <h1 className="text-[45px] leading-[0.8] md:leading-[0.8] lg:text-[70px] 2xl:text-[110px] text-white font-extrabold tracking-widest text-center font-frinkRio">
+        <span className="lg:text-[60px] text-[40px] text-white">CORBETT</span> <br />  SAFARI 
         </h1>
         {/* <div className="mt-5">
           <h1 className=" relative  text-xl text-white border border-white font-semibold  text-center  px-5 py-1">

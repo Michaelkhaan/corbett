@@ -24,7 +24,7 @@ export default function Nfooter() {
               fill="#47e1d9"
             /> */}
              <RiWhatsappFill
-                className="text-[#25D366] lg:text-5xl text-base  "
+                className="text-[#25D366] lg:text-5xl text-3xl  "
                 fill="#25D366"
               />
           </a>

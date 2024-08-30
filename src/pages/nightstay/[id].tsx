@@ -68,6 +68,36 @@ function Index() {
     });
   }, [packages]);
 
+  const policy = [
+    {
+      name: "Meal Policy",
+      data: [
+        "A P American Plan Buffet Breakfast, Lunch & Dinner",
+        "MAP Modified American Plan Buffet Breakfast Lunch ",
+        "CP Continental Plan Buffet Breakfast ",
+        "EP Economical Plan Room Only",
+      ],
+    },
+    {
+      name: "Child Policy",
+      data: [
+        "Children below 5 years complimentary with parents",
+        "Children between 6-12 years will be charged 25% of total package cost",
+      ],
+    },
+    {
+      name: "Guest Policy",
+      data: ["Extra adult in the same Cottage will be 35% of the package cost"],
+    },{
+      name: "Terms & Conditions",
+      data: [
+        "Reservation can be done online or at reception (Depends on avallability)",
+        "Check-In time is 12 PM and Check-Out Time is 11 noon.",
+        "All Government Taxes are charged additionally and will be levied as per the charges prevalent during the time of the stay In case of advance remittances, the additional tax amount, if any, will be collected directly at the time of check-out",
+      ],
+    }
+  ];
+
   return (
     <div className="w-full">
       <NaveBar className="!bg-[#f8bd00] " mainClassName="!relative" />
@@ -178,6 +208,25 @@ function Index() {
           </div>
           <div className="w-11/12 border-b border-gray-700 mt-5" />
           <RoomType data={data} />
+          <div className="w-11/12 border-b border-gray-700 py-5">
+            {policy?.map((item, index) => {
+              return (
+                <div key={index?.toString()} className="mt-5">
+                  <h2 className="text-base lg:text-lg 2xl:text-[26px] font-GothamBook font-extrabold leading-7 tracking-tighter">{item.name}</h2>
+                  <div className="">
+                    {item?.data?.map((item, i) => (
+                      <p
+                        key={i?.toString()}
+                        className="lg:text-sm text-xs text-black 2xl:text-xl font-GothamBook"
+                      >
+                       <span className="font-bold">{i+1}</span>  {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
           {data?.getNightStayById?.Faqs?.length ? (
             <FaqList data={data?.getNightStayById?.Faqs as any} />
