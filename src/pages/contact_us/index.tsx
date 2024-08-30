@@ -16,19 +16,20 @@ function index() {
           <h1 className="text-xl lg:text-2xl 2xl:text-3xl font-GothamBook font-bold">
             Customer Support
           </h1>
-          <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook ">
+          <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook mt-3 lg:mt-5">
             Our customer support is committed to providing you with extensive
             knwoledge about our tours and procedures. we are here to guide you
             every step of the way, ensuring your travelling experience with
             Kesari Tours is seamless and memorable. Contact us now to have all
             of your travle-related question answered
           </p>
-          <div className="mt-10">
+          <div className="bg-black w-full lg:w-3/4 h-[1px] mt-5" />
+          <div className="mt-5">
             <h1 className="lg:text-2xl text-xl 2xl:text-3xl font-GothamBook font-bold">
               Address
             </h1>
-            <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook mt-5">
-              Block Road Khatari, Near Durga Mil, <br /> Noori Masjid, Ramnagar
+            <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook mt-3 lg:mt-5">
+              Near Roadways Bus Station, <br /> Near Eidgah, Ramnagar
               -244715 distt Nainital <br /> Uttarkand, India
             </p>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import CardSkeleton from "./CardSkeleton";
+import { LuCheckCircle } from "react-icons/lu";
 
 interface Data {
   title: string;
@@ -20,7 +21,7 @@ function Package({
       ) : (
         <div className="flex justify-start">
         <h1 className="text-[21px] leading-[32px] font-semibold font-GothamBook border-b border-black">
-          Package inclusions
+          Package Inclusions
         </h1>
         </div>
       )}
@@ -36,9 +37,9 @@ function Package({
         {data?.map((e, index) => (
           <li
             key={index}
-            className="text-[13px] leading-[24px] mt-3 font-GothamBook"
+            className="text-[13px] leading-[24px] mt-3 font-GothamBook flex items-center gap-2"
           >
-            - {e?.title}
+            <LuCheckCircle stroke="#f8bd01" /> {e?.title}
           </li>
         ))}
       </ul>

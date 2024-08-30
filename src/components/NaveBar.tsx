@@ -3,6 +3,10 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { RiWhatsappFill } from "react-icons/ri";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { LuPhone } from "react-icons/lu";
+import Image from "next/image";
 
 interface Props {
   className?: string;
@@ -79,20 +83,48 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
           </ul>
           <div className="lg:flex items-center 2xl:gap-5 lg:gap-2 hidden">
             <a href="https://wa.me/919837166431" target="_blank">
-              <FaWhatsapp
-                className="text-green-600 2xl:text-xl  lg:text-sm "
-                fill="#47e1d9"
+              <RiWhatsappFill
+                className="text-[#25D366] text-2xl  "
+                fill="#25D366"
               />
             </a>
-            <h1 className="2xl:text-sm lg:text-xs text-white">
+            {/* <h1 className="2xl:text-sm lg:text-xs text-white">
               info@corbett.in
-            </h1>
+            </h1> */}
+
+            <div className="flex items-center gap-3 rounded-2xl pr-5 bg-gray-600">
+              <span className="bg-primary rounded-full p-1 ">
+              <LuPhone
+                onClick={() => (window.location.href = "tel:+919837166431")}
+                className="text-sm text-white"
+                fill="white"
+                // stroke="white"
+                strokeWidth={0}
+              />
+              </span>
+              <p
+                className="text-sm tracking-wider text-white cursor-pointer"
+                onClick={() => (window.location.href = "tel:+919837166431")}
+              >
+                9837166431
+              </p>
+            </div>
           </div>
-          <GiHamburgerMenu
-            fill="white"
-            onClick={() => setOpen(!open)}
-            className="block lg:hidden text-white"
-          />
+
+          <div className="flex items-center gap-x-4 lg:hidden">
+            <a href="https://wa.me/919837166431" target="_blank">
+              <RiWhatsappFill
+                className="text-[#25D366] text-xl  "
+                fill="#25D366"
+              />
+            </a>
+
+            <GiHamburgerMenu
+              fill="white"
+              onClick={() => setOpen(!open)}
+              className="block lg:hidden text-white"
+            />
+          </div>
         </div>
       </div>
     </>

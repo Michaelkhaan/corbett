@@ -34,7 +34,8 @@ export default function Highlight({
           : null}
         {data?.map((item, index) => (
           <span key={index} className="flex items-center gap-3">
-            <LuCheckCircle stroke="#f8bd01" />
+            {/* <LuCheckCircle stroke="#f8bd01" /> */}
+            <i className="fa-solid fa-circle-check text-primary"></i>
             <li>{item?.name}</li>
           </span>
         ))}

@@ -1,4 +1,5 @@
 import React from "react";
+import { MdOutlineCancel } from "react-icons/md";
 
 interface Data {
   title: string;
@@ -30,8 +31,8 @@ function Packageexc({
             ))
           : null}
         {data?.map((e, index) => (
-          <li key={index} className="text-[13px] leading-[28px] font-GothamBook">
-            - {e?.title}
+          <li key={index} className="text-[13px] leading-[28px] font-GothamBook flex items-center gap-2">
+            <MdOutlineCancel stroke="#f8bd01" fill="#f8bd01" /> {e?.title}
           </li>
         ))}
       </ul>

@@ -9,19 +9,24 @@ import {
   FaPinterest,
   FaWhatsapp,
 } from "react-icons/fa6";
+import { RiWhatsappFill } from "react-icons/ri";
 
 export default function Nfooter() {
   return (
     <>
       <div className="w-full bg-[#F8F9FD] ">
-        <div className="border rounded-full  flex items-center justify-center bg-black fixed lg:right-10 lg:bottom-20 bottom-4 right-4 p-2 z-50 ">
+        <div className="rounded-full  flex items-center justify-center fixed lg:right-10 lg:bottom-20 bottom-4 right-4 z-50 ">
           {/* <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center animate-shake"> */}
           <a href="https://wa.me/919837166431" target="_blank">
-            <FaWhatsapp
+            {/* <FaWhatsapp
               className="lg:text-2xl text-base text-[#47e1d9]"
               color="#47e1d9"
               fill="#47e1d9"
-            />
+            /> */}
+             <RiWhatsappFill
+                className="text-[#25D366] lg:text-5xl text-base  "
+                fill="#25D366"
+              />
           </a>
         </div>
         <div className="2xl:w-[70%] lg:w-4/5 flex mx-auto py-10 flex-wrap w-11/12">
