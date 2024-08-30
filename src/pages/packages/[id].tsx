@@ -140,7 +140,7 @@ function Index() {
           // }}
           navigation={true}
           
-          // speed={3000}
+          speed={3000}
           loop={true}
           modules={[Autoplay, Navigation, Pagination]}
         >
