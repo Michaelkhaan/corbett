@@ -6,7 +6,7 @@ import { EffectCards } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import { Autoplay , Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa6";
 
@@ -53,7 +53,15 @@ export default function Discover() {
             ref={swiperRef}
             className="rounded-xl w-4/5"
             effect={"cards"}
-            modules={[EffectCards]}
+            modules={[EffectCards ,Autoplay, Navigation, Pagination]}
+
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+              waitForTransition: true,
+            }}
+            // navigation={true}
+            speed={3000}
           >
             <SwiperSlide>
               <Image
