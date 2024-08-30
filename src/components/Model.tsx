@@ -12,7 +12,7 @@ interface Props {
 
 function Model({ show, onClose, containerClass, className, children }: Props) {
   // Compute dynamic class names based on the 'show' prop
-  const modalClasses = `z-20 fixed top-0 left-0 w-full h-full flex items-center justify-center ${
+  const modalClasses = `z-[9999] fixed top-0 left-0 w-full h-full flex items-center justify-center ${
     show ? "opacity-100 scale-100" : "opacity-0 scale-0"
   } transition-all duration-300`;
 

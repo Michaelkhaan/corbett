@@ -74,18 +74,18 @@ function Index() {
       <div className="w-full flex justify-center mt-2">
         <div className="w-11/12 lg:w-3/4 flex">
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[14px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[12px] lg:text-[14px] flex items-center"
             onClick={() => router.push("/")}
           >
             Home <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
           <p
-            className="cursor-pointer pr-1 font-GothamBook text-[14px] flex items-center"
+            className="cursor-pointer pr-1 font-GothamBook text-[12px] lg:text-[14px] flex items-center"
             onClick={() => router.push("/nightstay")}
           >
             Resort <span className="pl-[3px] mt-[1px]">{">"}</span>
           </p>
-          <p className=" pr-1 font-GothamBook text-[14px] font-bold flex items-center">
+          <p className=" pr-1 font-GothamBook text-[12px] lg:text-[14px] font-bold flex items-center">
             {data?.getNightStayById?.name}{" "}
             <span className="pl-[3px] mt-[1px]"></span>
           </p>

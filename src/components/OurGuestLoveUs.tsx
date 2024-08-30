@@ -42,11 +42,11 @@ const testimonials = [
 export default function OurGuestLoveUs({ className }: Props) {
   return (
     <div className={`w-full bg-[url('/bglayers.png')] py-16 ${className}`}>
-      <div className="flex justify-center">
-        <h1 className="text-center lg:text-[40px] text-[28px] font-Gotham font-[500] mb-10 border-b-2 border-black">
+      {/* <div className="flex justify-center"> */}
+        <h1 className="text-center lg:text-[40px] text-[28px] font-Gotham font-[500] mb-10 ">
           OUR GUEST LOVE US
         </h1>
-      </div>
+      {/* </div> */}
       <Swiper
         autoplay={{
           delay: 1000,

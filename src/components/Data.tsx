@@ -47,7 +47,7 @@ export default function Data({ onClose }: any) {
         className="w-full border  px-4 py-4"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h1 className="mb-5 text-lg font-bold">Where do you want to go?</h1>
+        <h1 className="mb-5 text-lg font-bold">Enquiry</h1>
 
         <div className="flex relative flex-col">
           <Controller
