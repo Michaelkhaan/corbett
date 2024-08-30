@@ -71,7 +71,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center lg:mt-1">
+      <div className="w-full mx-auto flex flex-col font-GothamBook items-center justify-center my-6">
         <h1 className="2xl:text-[26.79px] lg:text-[26.79px] sm:text-[47px] text-[28px] leading-[23.69px] font-extrabold font-frinkRio border-b-2 border-black">
           OUR RESORTS
         </h1>

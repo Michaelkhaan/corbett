@@ -356,6 +356,7 @@ function UpdatePackage({ onClose }: Props) {
           </div>
           <input
             type="file"
+            multiple
             onChange={(e) => uploadmulti(e, { name: "images" })}
             className="w-full border-2 rounded-lg py-2 px-2"
           />
