@@ -48,23 +48,6 @@ const Index = () => {
     });
   };
 
-  // const handleUpdate = async (e: any) => {
-  //   e.preventDefault();
-  //   if (packagesId)
-  //     try {
-  //       const res = await updatePackage({
-  //         updatePackageId: packagesId || "",
-  //         name: updateName,
-  //         title: updateTitle,
-  //         price: parseFloat(updatePrice), // Convert price back to number if needed
-  //       });
-  //       toast.success(res?.updatePackage?.message);
-  //       refetch();
-  //       setOpen(false);
-  //     } catch (error) {
-  //       toast.error("Failed to update package.");
-  //     }
-  // };
 
   const handleAddPackage = () => {
     setAddPackage(true);
@@ -72,112 +55,73 @@ const Index = () => {
 
   return (
     <Layout>
-      <div className="p-4 flex flex-col items-center justify-center">
-        <div className="flex justify-between items-center w-full">
-          <h1 className="text-blue-400 text-2xl font-bold mb-4">Night Stay</h1>
+   
+<div className="p-4 flex flex-col items-center justify-center">
+  <div className="flex flex-col sm:flex-row justify-between items-center w-full">
+    <h1 className="text-blue-400 text-xl sm:text-2xl font-bold mb-4 sm:mb-0">Night Stay</h1>
+    <button
+      className="bg-blue-400 text-white w-full sm:w-36 h-10 rounded flex items-center justify-center"
+      onClick={handleAddPackage}>
+      Add New
+    </button>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 w-full">
+    {data?.getAllNightStay?.data.map((pkg) => (
+      <div key={pkg?.id} className="bg-white shadow-md rounded md:p-4 p-1">
+        <Image
+          src={pkg?.images?.[0] || "/default-image.png"}
+          alt=""
+          width={300}
+          height={200}
+          className="w-full h-48 sm:h-56 lg:h-64 object-cover  rounded"
+        />
+        <div className="mt-3">
+          <p className="text-sm sm:text-base w-full">{pkg?.name}</p>
+        </div>
+        <div className="flex justify-between mt-4 space-x-2">
           <button
-            className="bg-blue-400 text-white w-36 h-10 rounded flex items-center justify-center"
-            onClick={handleAddPackage}
+            onClick={() => handleUpdateModalOpen(pkg?.id)}
+            className="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-3 sm:px-4 rounded w-1/2"
           >
-            Add New
+            Update
+          </button>
+          <button
+            onClick={() => handleDelete(pkg?.id)}
+            className="bg-red-500 hover:bg-red-600 text-white py-2 px-3 sm:px-4 rounded w-1/2 flex items-center justify-center"
+          >
+            {isPending && packagesId === pkg?.id ? <Spinner /> : "Delete"}
           </button>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-          {data?.getAllNightStay?.data.map((pkg) => (
-            <div key={pkg?.id} className="bg-white shadow-md rounded p-4">
-              <Image
-                src={pkg?.images?.[0] || "/default-image.png"}
-                alt=""
-                width={300}
-                height={200}
-                className="w-full max-h-[200px]"
-              />
-              <div className="mt-3">
-                <p className="w-full">{pkg?.name}</p>
-              </div>
-              <div className="flex justify-between mt-4">
-                <button
-                  onClick={() => handleUpdateModalOpen(pkg?.id)}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-4 rounded"
-                >
-                  Update
-                </button>
-                <button
-                  onClick={() => handleDelete(pkg?.id)}
-                  className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded flex items-center justify-center"
-                >
-                  {isPending && packagesId === pkg?.id ? <Spinner /> : "Delete"}
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        <Model
-          show={addPackage}
-          onClose={() => setAddPackage(false)}
-          containerClass="!w-[80%] bg-white h-screen overflow-y-auto py-10"
-        >
-          <AddnewNightStay onClose={() => [setAddPackage(false), refetch()]} />
-        </Model>
-        <Model
-          show={open}
-          onClose={() => setOpen(false)}
-          containerClass="bg-white p-4 rounded !w-[80%] h-screen overflow-y-auto"
-        >
-          {/* <h2 className="text-lg font-bold mb-4">Update Package</h2>
-          <form onSubmit={handleUpdate}>
-            <div className="mb-3">
-              <label htmlFor="updateName" className="block">
-                Name
-              </label>
-              <input
-                type="text"
-                id="updateName"
-                value={updateName}
-                onChange={(e) => setUpdateName(e.target.value)}
-                className="border p-2 rounded w-full"
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="updateTitle" className="block">
-                Title
-              </label>
-              <input
-                type="text"
-                id="updateTitle"
-                value={updateTitle}
-                onChange={(e) => setUpdateTitle(e.target.value)}
-                className="border p-2 rounded w-full"
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="updatePrice" className="block">
-                Price
-              </label>
-              <input
-                type="number"
-                id="updatePrice"
-                value={updatePrice}
-                onChange={(e) => setUpdatePrice(e.target.value)}
-                className="border p-2 rounded w-full"
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
-            >
-              Update
-            </button>
-          </form> */}
-
-          <div>
-            <UpdateNightStay onClose={() => [setOpen(false), refetch()]} />
-          </div>
-        </Model>
       </div>
+    ))}
+  </div>
+
+  <Model
+    show={addPackage}
+    onClose={() => setAddPackage(false)}
+    containerClass="w-full sm:w-[80%] bg-white h-screen overflow-y-auto py-10"
+  >
+    <AddnewNightStay onClose={() => [setAddPackage(false), refetch()]} />
+  </Model>
+
+  <Model
+    show={open}
+    onClose={() => setOpen(false)}
+    containerClass="w-full sm:w-[80%] bg-white p-4 rounded h-screen overflow-y-auto"
+  >
+    <div>
+      <UpdateNightStay onClose={() => [setOpen(false), refetch()]} />
+    </div>
+  </Model>
+
+</div>
+
     </Layout>
   );
 };
 
 export default Index;
+
+
+
