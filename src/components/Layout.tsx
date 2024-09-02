@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import SideBar from "@/components/SideBar";
 import Header from "@/components/Header";
 import Login from "./Login";
@@ -11,6 +11,7 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children, className = "" }) => {
+  const [open, setOpen] = useState(false);
   const { token } = useAuth();
   const baseUrl = "/admin";
   const Links = [
@@ -55,14 +56,19 @@ const Layout: React.FC<Props> = ({ children, className = "" }) => {
     <div className="w-full h-screen flex">
       <title>Employee</title>
       <SideBar
+        setOpen={setOpen}
         data={Links}
-        mainClassName="max-w-[250px] "
-        SideBarLogoClassName={""}
+        mainClassName={`max-w-[250px] lg:block z-50 lg:max-w-auto ${
+          open
+            ? " min-w-[250px] block fixed lg:relative top-0 bottom-0"
+            : "hidden lg:relative"
+        } `}
+        SideBarLogoClassName={"w-full"}
       />
 
       <div id="scroll-right" className="w-full overflow-y-scroll">
-        <Header />
-        <div className={`px-6 max-w-[1600px] mx-auto ${className}`}>
+        <Header setOpen={setOpen} />
+        <div className={`px-0 lg:px-6 max-w-[1600px] mx-auto ${className}`}>
           {children}
         </div>
       </div>

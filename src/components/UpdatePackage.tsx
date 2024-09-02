@@ -313,7 +313,9 @@ function UpdatePackage({ onClose }: Props) {
   };
 
   return (
-    <div className="w-3/4 mx-auto mt-5">
+    <div className="w-full lg:w-3/4 mx-auto mt-5">
+       <div className="flex justify-center items-center lg:hidden mt-2"><button onClick={onClose} className="w-10 text-lg aspect-square rounded-full bg-red-500 text-center text-white">x</button></div>
+      
       <h1 className="text-2xl font-extrabold text-blue-700 text-center">
         Update Packages
       </h1>

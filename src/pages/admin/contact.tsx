@@ -30,7 +30,7 @@ function Contact() {
                       : "bg-white text-center hover:bg-gray-50"
                   }
                 >
-                  <td className="py-2 px-4 border-b">
+                  <td className="py-2 px-4 border-b text-nowrap">
                     {formData?.date
                       ? new Date(parseInt(formData?.date))?.toDateString()
                       : null}
