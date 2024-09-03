@@ -5,10 +5,8 @@ import { LuCheckCircle } from "react-icons/lu";
 interface roomProps {
   data: any;
 }
-
 const RoomType = ({ data }: roomProps) => {
   const roomsData = data?.getNightStayById?.Rooms || [];
-
   return (
     <div>
       <div>

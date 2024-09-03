@@ -497,7 +497,7 @@ function AddnewNightStay({ onClose }: Props) {
           </div>
         </div>
 
-        {/* <div className="selectImage rounded-lg px-5 py-4 mt-5">
+         <div className="selectImage rounded-lg px-5 py-4 mt-5">
           <h1 className="text-lg font-semibold">Exclusions</h1>
           {exclusionField.map((item, index) => (
             <div key={item.id} className="mb-4 mt-4">
@@ -531,7 +531,7 @@ function AddnewNightStay({ onClose }: Props) {
               Add Inclusion
             </button>
           </div>
-        </div> */}
+        </div> 
 
         <div className="selectImage rounded-lg px-5 py-4 mt-5">
           <h1 className="text-lg font-semibold">Faqs</h1>
@@ -607,3 +607,4 @@ function AddnewNightStay({ onClose }: Props) {
 }
 
 export default AddnewNightStay;
+
