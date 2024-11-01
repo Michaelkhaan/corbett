@@ -27,7 +27,7 @@ function PackageCard({ title, image, price, rooms, subtitle }: Props) {
         {rooms ? rooms : null}
       </h2>
       <h2 className="text-sm font-bold font-GothamBook flex items-center gap-1 mt-1">
-        ₹
+        Rs
         {" "+price}
       </h2>
       <p className="text-[#bbbbbb] text-xs font-GothamBook -mt-1">{subtitle}</p>

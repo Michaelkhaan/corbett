@@ -29,8 +29,8 @@ function index() {
               Address
             </h1>
             <p className="lg:text-sm text-xs 2xl:text-lg text-gray-700 font-GothamBook mt-3 lg:mt-5">
-              Near Roadways Bus Station, <br /> Near Eidgah, Ramnagar
-              -244715 distt Nainital <br /> Uttarkand, India
+              KPK Dirstrict Kurram, <br /> Parachinar
+               <br /> Pakistan
             </p>
           </div>
           <div className="bg-black w-full lg:w-3/4 h-[1px] mt-5" />
@@ -39,11 +39,11 @@ function index() {
               Call No.(24X7)
             </h1>
             <p className="text-sm lg:text-base 2xl:text-lg tracking-wide text-gray-700 font-GothamBook font-bold flex items-center gap-2 mt-4">
-              <FaPhone /> <span>+91-9917681111</span>{" "}
-              <span>+91-9105531111</span>
+              <FaPhone /> <span>+92654654454</span>{" "}
+              <span>+9276545566545</span>
             </p>
             <p className="text-sm lg:text-base 2xl:text-lg mt-2 tracking-wide text-gray-700 font-GothamBook font-bold flex items-center gap-2">
-              <BsEnvelope /> <span>booking@jimcorbettpark.co.in</span>
+              <BsEnvelope /> <span>booking.com</span>
             </p>
           </div>
           <div className="bg-black w-full lg:w-3/4 h-[1px] mt-5" />
@@ -73,7 +73,7 @@ function index() {
             width="100%"
             height="500"
             // id="gmap_canvas"
-            src="https://maps.google.com/maps?q=india&t=&z=13&ie=UTF8&iwloc=&output=embed"
+           src="https://maps.google.com/maps?q=Kurram,+Pakistan&t=&z=13&ie=UTF8&iwloc=&output=embed"
             // scrolling="no"
           ></iframe>
         </div>

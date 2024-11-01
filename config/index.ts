@@ -1,4 +1,4 @@
-export const API_URL = 'https://www.corbett-server.cruxdevs.com/graphql';
+export const API_URL = 'http://localhost:4000/graphql';
 
 export const fetchParams = () => {
   let token = '';

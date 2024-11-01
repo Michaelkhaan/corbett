@@ -117,7 +117,7 @@ function Index() {
               Start From
             </h1>
             <p className="flex items-center lg:text-3xl text-lg 2xl:text-[36px] font-GothamBook font-bold leading-[20px]">
-              <span className="mr-1 mt-1">₹</span>
+              <span className="mr-1 mt-1">Rs</span>
               {data?.getPackageById?.price}*
             </p>
             <p className="text-[12px] font-GothamBook leading-[8px]">

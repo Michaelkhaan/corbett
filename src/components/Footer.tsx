@@ -24,15 +24,15 @@ function Footer() {
               A2,Ramnagar,Jim Corbette, Utranchal.
             </h5>
             <h5 className="mb-5">
-              <span className="font-semibold">E : </span>info@jimcorbettour.com
+              <span className="font-semibold">E : </span>rauf.alimcosoft@gmail.com
             </h5>
             <h5 className="font-semibold">
               <span>M:</span>
-              +91 88 504 501 4
+              +3939393939333
             </h5>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/5">
-            <h1 className="text-2xl font-bold mb-4">Corbett</h1>
+            <h1 className="text-2xl font-bold mb-4">Tour Stay</h1>
             <h4 className="text-xl font-bold">ITS NOT JUST A HAIR.</h4>
             <h4 className="text-xl font-bold"> ITS STATE OF MIND.</h4>
             <div className="flex gap-2 items-center mt-3">
@@ -73,7 +73,7 @@ function Footer() {
             <h4 className="text-sm text-white px-1">2024 ©</h4>
 
             <p className="text-sm text-white px-1">
-              copyright corbetttour.com
+              copyright tourstay.com
               <span className="text-white"> | </span>
             </p>
 

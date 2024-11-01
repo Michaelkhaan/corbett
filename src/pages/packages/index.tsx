@@ -23,10 +23,12 @@ function Index() {
   };
 
   const priceRanges = [
-    { start: 0, end: 10000, id: 1, label: "Less than Rs 10,000" },
+    { start: null, end: null, id: 0, label: "All" }, 
     { start: 10000, end: 20000, id: 2, label: "Rs 10,000 to Rs 20,000" },
     { start: 30000, end: 50000, id: 3, label: "Rs 30,000 to Rs 50,000" },
   ];
+  
+  
 
   const { data: packages } = useGetAllPackagesQuery({
     startPrice: selectedPrice?.start,

@@ -35,14 +35,14 @@ export default function Nfooter() {
               <h1 className="font-bold font-frinkRio text-base">contact us</h1>
               <h5 className="text-[14px] font-GothamBook ">
                 <span className="font-bold">A : </span>
-                A2,Ramnagar,Jim Corbette, Utranchal.
+                A2,Kurram,Tour stay, Utranchal.
               </h5>
               <h5 className="text-[14px] font-GothamBook ">
-                <span className="font-bold">E : </span>info@jimcorbettour.com
+                <span className="font-bold">E : </span>rauf.alimcosoft@gmail.com
               </h5>
               <h5 className="text-base font-GothamBook font-bold mt-4">
                 <span className="font-bold">M:</span>
-                +91 88 504 501 4
+                +4323483289898
               </h5>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function Nfooter() {
             <div className="flex flex-col items-center">
               <Link href="/">
                 <h1 className="2xl:text-3xl text-xl text-black font-bold relative font-frinkRio">
-                  corbett
+                  tour stay
                   <span className="w-2 aspect-square rounded-full bg-[#00f9e9] absolute top-1 -right-2 "></span>
                 </h1>
               </Link>
@@ -126,7 +126,7 @@ export default function Nfooter() {
           <h4 className="text-sm text-white px-1">2024 ©</h4>
 
           <p className="text-sm text-white px-1">
-            copyright corbetttour.com
+            copyright tourstay.com
             <span className="text-white"> | </span>
           </p>
 
