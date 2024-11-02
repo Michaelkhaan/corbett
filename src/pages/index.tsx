@@ -50,7 +50,7 @@ export default function Home() {
         images: data?.images || [],
         title: data?.name || "",
         rooms: `${data?.day} ${data?.night}`,
-        subtitle: "per person" || "",
+        subtitle: "per person",
         prices: data?.price?.toString() || "",
       };
     });

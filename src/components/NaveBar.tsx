@@ -50,6 +50,10 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
   ];
 
   const [open, setOpen] = useState(false);
+
+  const handleLogin=()=>{
+    router.push("/login")
+  }
   return (
     <>
       <div
@@ -98,13 +102,13 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
 
             <div className="flex items-center gap-3 rounded-2xl pr-5 bg-gray-600">
               <span className="bg-primary rounded-full p-1 ">
-              <LuPhone
-                onClick={() => (window.location.href = "tel:+919837166431")}
-                className="text-sm text-white"
-                fill="white"
-                // stroke="white"
-                strokeWidth={0}
-              />
+                <LuPhone
+                  onClick={() => (window.location.href = "tel:+919837166431")}
+                  className="text-sm text-white"
+                  fill="white"
+                  // stroke="white"
+                  strokeWidth={0}
+                />
               </span>
               <p
                 className="text-sm tracking-wider text-white cursor-pointer"
@@ -112,6 +116,14 @@ function NaveBar({ className = "", mainClassName = "" }: Props) {
               >
                 9837166431
               </p>
+            </div>
+            <div>
+              <button
+                className="px-6 py-1 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 focus:outline-none transition duration-200 ease-in-out"
+                onClick={handleLogin}
+              >
+                Login
+              </button>
             </div>
           </div>
 
