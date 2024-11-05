@@ -62,6 +62,15 @@ declare module '*/login.mutation.gql' {
 }
     
 
+declare module '*/signup.mutation.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const Signup: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/submitForm.mutations.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;

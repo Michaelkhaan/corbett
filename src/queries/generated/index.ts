@@ -105,6 +105,7 @@ export type Message = {
 export type Mutation = {
   __typename?: 'Mutation';
   Login: LoginResponse;
+  Signup: SignupResponse;
   addCategory: Message;
   addNightStay: Message;
   addPackage: Message;
@@ -122,6 +123,17 @@ export type Mutation = {
 export type MutationLoginArgs = {
   email: Scalars['String']['input'];
   password: Scalars['String']['input'];
+};
+
+
+export type MutationSignupArgs = {
+  display_name: Scalars['String']['input'];
+  email: Scalars['String']['input'];
+  first_name?: InputMaybe<Scalars['String']['input']>;
+  last_name?: InputMaybe<Scalars['String']['input']>;
+  password: Scalars['String']['input'];
+  profile?: InputMaybe<Scalars['String']['input']>;
+  role?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -432,6 +444,14 @@ export type RoomInput = {
   title: Scalars['String']['input'];
 };
 
+export type SignupResponse = {
+  __typename?: 'SignupResponse';
+  data?: Maybe<User>;
+  message?: Maybe<Scalars['String']['output']>;
+  status?: Maybe<Scalars['Int']['output']>;
+  token?: Maybe<Scalars['String']['output']>;
+};
+
 export type TourInclude = {
   __typename?: 'TourInclude';
   createdAt: Scalars['String']['output'];
@@ -536,6 +556,15 @@ export type LoginMutationVariables = Exact<{
 
 
 export type LoginMutation = { __typename?: 'Mutation', Login: { __typename?: 'LoginResponse', token?: string | null, message?: string | null } };
+
+export type SignupMutationVariables = Exact<{
+  displayName: Scalars['String']['input'];
+  email: Scalars['String']['input'];
+  password: Scalars['String']['input'];
+}>;
+
+
+export type SignupMutation = { __typename?: 'Mutation', Signup: { __typename?: 'SignupResponse', message?: string | null, status?: number | null, token?: string | null } };
 
 export type SubmitFormMutationVariables = Exact<{
   date?: InputMaybe<Scalars['String']['input']>;
@@ -809,6 +838,29 @@ export const useLoginMutation = <
       {
     mutationKey: ['Login'],
     mutationFn: (variables?: LoginMutationVariables) => fetcher<LoginMutation, LoginMutationVariables>(LoginDocument, variables)(),
+    ...options
+  }
+    )};
+
+export const SignupDocument = `
+    mutation Signup($displayName: String!, $email: String!, $password: String!) {
+  Signup(display_name: $displayName, email: $email, password: $password) {
+    message
+    status
+    token
+  }
+}
+    `;
+
+export const useSignupMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<SignupMutation, TError, SignupMutationVariables, TContext>) => {
+    
+    return useMutation<SignupMutation, TError, SignupMutationVariables, TContext>(
+      {
+    mutationKey: ['Signup'],
+    mutationFn: (variables?: SignupMutationVariables) => fetcher<SignupMutation, SignupMutationVariables>(SignupDocument, variables)(),
     ...options
   }
     )};
